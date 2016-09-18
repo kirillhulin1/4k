@@ -1,0 +1,28 @@
+.btn {
+  background-image: none;
+  border: none;
+  outline: none !important;
+}
+.btn-warning {
+  -webkit-box-shadow: 0 2px 0 #c9561f;
+  -moz-box-shadow: 0 2px 0 #c9561f;
+  box-shadow: 0 2px 0 #c9561f;
+}
+.btn-primary {
+  -webkit-box-shadow: 0 2px 0 #004a89;
+  -moz-box-shadow: 0 2px 0 #004a89;
+  box-shadow: 0 2px 0 #004a89;
+}
+.btn-warning:hover,  .btn-warning:focus, .btn-warning:active {
+  background-color: #eb9123 !important;
+  -webkit-box-shadow: 0 2px 0 #d17e18 !important;
+  -moz-box-shadow: 0 2px 0 #d17e18 !important;
+  box-shadow: 0 2px 0 #d17e18 !important;
+
+}
+.btn-primary:hover,  .btn-primary:focus, .btn-primary:active {
+  background-color: $mainColorHover !important;
+  -webkit-box-shadow: 0 2px 0 #0059c7;
+  -moz-box-shadow: 0 2px 0 #0059c7;
+  box-shadow: 0 2px 0 #0059c7;
+}

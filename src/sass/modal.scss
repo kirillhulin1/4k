@@ -1,0 +1,27 @@
+.close {
+  opacity: 1;
+  &:hover {
+    color: red;
+    opacity: 1;
+  }
+}
+.modal-title {
+  font-family: "SegoeUIBold", Verdana, sans-serif;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 150%;
+}
+.modal-body_gray {
+  background-color: $gray;
+}
+.modal-footer {
+  padding-top: 25px;
+}
+.modal {
+  font-size: 12px;
+}
+@media all and (min-width:768px) {
+  .modal {
+    font-size: 16px;
+  }
+}

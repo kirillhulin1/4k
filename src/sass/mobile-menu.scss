@@ -1,0 +1,16 @@
+.mobile-menu__icon {
+  width: 28px;
+  height: 26px;
+  display: block;
+  margin-top: 5px;
+  background: url("images/menu-icon.png") no-repeat;
+  margin-left: -15px;
+  float: left;
+}
+
+@media all and (max-width: $sm-size) {
+  header {
+    position: relative !important;
+  }
+
+}

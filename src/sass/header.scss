@@ -1,0 +1,93 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+}
+.header-top {
+  height: 32px;
+  position: relative;
+  z-index: 100;
+
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .header-top {
+    height: 56px;
+  }
+  .header-top__phone-me {
+    padding-top: 10px;
+  }
+
+}
+
+.header-top__phone-me {
+  line-height: 1;
+  vertical-align: baseline;
+  color: #01589f;
+  font-family: "SegoeUISemiBold";
+  &:focus {
+    outline: none !important;
+  }
+  display: inline-block;
+}
+.header-top__phones {
+  float: right;
+  position: relative;
+}
+@media all and (min-width: $sm-size) {
+  .header-top__phones {
+    float: none;
+  }
+
+}
+.header-top__schedule {
+  vertical-align: top;
+  position: relative;
+  top: -3px;
+
+}
+.header-top__schedule-wrapper {
+  line-height: 1;
+}
+.header-top__phone_main {
+  font-size: 110%;
+
+}
+@media all and (min-width: 756px) {
+  .header-top__phone_main {
+    position: relative;
+    top: -2px;
+  }
+
+}
+@media all and (max-width: $sm-size) {
+  .header-top__phone_main a {
+    font-size: 17px;
+  }
+}
+.header-top__phone {
+  font-size: 110%;
+  position: relative;
+  top: -2px;
+}
+
+.header-top__phone-icon {
+  height: 16px;
+  margin-right: 5px;
+}
+@media all and (max-width: $sm-size) {
+  .header-top__phone-icon {
+    height: 20px;
+    position: relative;
+    top: -2px;
+
+  }
+}
+.header-top__phone-icon_small {
+  height: 14px;
+  margin-right: 5px;
+}
+.header-top__logo {
+  height: 25.6px;
+}
+
+

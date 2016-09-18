@@ -1,0 +1,19 @@
+.modal-phone-me {
+  text-align: justify;
+}
+
+@media all and (min-width: $sm-size) {
+  .modal-phone-me__half_left {
+    float: left;
+  }
+  .modal-phone-me__half {
+    width: 48%;
+  }
+  .modal-phone-me__half_right {
+    margin-left: 52%;
+  }
+}
+.select {
+  margin-bottom:15px;
+  color: #999;
+}

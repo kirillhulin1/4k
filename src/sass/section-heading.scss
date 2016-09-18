@@ -1,0 +1,34 @@
+.section-heading_news {
+  background: url(images/news_bg.jpg) no-repeat;
+}
+.section-heading {
+  line-height: 60px;
+  height: 60px;
+  margin: 2em 0 1em;
+  background-color: $gray;
+  padding: 0 0 0 2rem;
+
+  background-size: cover;
+}
+.section-heading__title {
+  line-height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media all and (min-width: $sm-size) {
+  .section-heading {
+    height: 75px;
+  }
+  .section-heading__title {
+    line-height: 75px;
+  }
+}
+@media all and (min-width: $lg-size) {
+  .section-heading {
+    height: 90px;
+  }
+  .section-heading__title {
+    line-height: 90px;
+  }
+}

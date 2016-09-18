@@ -1,0 +1,150 @@
+@media all and (min-width: $sm-size) {
+  .tabs-tires__header {
+    background-color: $mainColor;
+  }
+
+  .tabs-tires__anchor {
+    font-family: "SegoeUISemiBold", Verdana, sans-serif;
+    color: white;
+    border:none !important;
+    &:hover {
+      background-color: transparent !important;
+      color: white !important;
+    }
+  }
+  .tabs-tires__tab {
+    border:none !important;
+    box-sizing: border-box;
+    text-align: center;
+    a {
+      padding: 1em 0;
+      display: inline-block;
+      width: 100%;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      background-color: $mainColorHover;
+    }
+    &.active {
+      background-color: $gray !important;
+      color: black !important;
+      a {
+        background-color: transparent !important;
+        color: black !important;
+        &:hover {
+          color: black !important;
+        }
+      }
+    }
+  }
+
+}
+.tabs-tires__tabs {
+  width: 48px;
+  list-style-type: none;
+  float: left;
+  box-sizing: border-box;
+}
+@media all and (min-width: $sm-size) {
+  .tabs-tires__tabs {
+
+    width: 33.3%;
+
+  }
+}
+.tabs-tires__content {
+  background-color: $gray;
+  min-height: 200px;
+  &>div>div {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+@media all and (max-width: $sm-size) {
+  .tabs-tires__heading {
+    height: 38px;
+    background-color: $gray;
+    box-sizing: border-box;
+    padding-top: 8px;
+    font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  }
+  .tabs-tires__tab {
+    float: left !important;
+    width: 48px;
+    height: 37px;
+    a {
+      border: none !important;
+      padding: 0 !important;
+    }
+  }
+  .tabs-tires__list {
+    background-color: #666;
+  }
+  .tabs-tires__tab {
+    a {
+      height: 36px;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      position: relative;
+      span {
+        display: none;
+        position: absolute;
+        background-color: #666;
+        top: -14px;
+        left: 16px;
+
+        &::after {
+          content: '';
+          position: absolute; /* Абсолютное позиционирование */
+          bottom: -14px; /* Положение треугольника */
+          border: 7px solid transparent; /* Прозрачные границы */
+          border-bottom: 7px solid #666; /* Добавляем треугольник */
+        }
+      }
+    }
+  }
+  .tabs-tires__tab {
+
+    &:hover {
+      background-color:  #666 !important;
+      height: 35px;
+      a {
+        background-color:  #666 !important;
+        background-position: 100% 0 !important;
+      }
+    }
+    &.active {
+
+      a {
+        background-color:  #666 !important;
+        background-position: 100% 0 !important;
+        color: black !important;
+        a {
+          color: black !important;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+    a {
+      color: black !important;
+      background-color:  #666 !important;
+    }
+  }
+}
+
+
+.tabs-tires__start {
+  height: 224px;
+  color: gray;
+  text-align: center;
+  img {
+    margin-top: 75px;
+  }
+}

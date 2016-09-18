@@ -1,0 +1,19 @@
+.toggle-anchor {
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  font-size: 110%;
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 2rem;
+    height: 1rem;
+    transform: rotate(90deg);
+    background: url(images/right-arrow.png) no-repeat center;
+    transition: 150ms;
+  }
+  &.toggle-anchor_toggled:after {
+
+      transform: rotate(-90deg);
+
+  }
+}

@@ -1,0 +1,6 @@
+<li ng-class="[{active: active, disabled: disabled}, classes]" class="tabs-tires__tab uib-tab nav-item">
+  <a class="hidden-sm hidden-lg hidden-md" href="#" ng-click="select($event)" style="background-image:url('dest/images/{{index}}.png')">
+    <span></span>
+  </a>
+  <a href ng-click="select($event)" class="tabs-tires__anchor nav-link hidden-xs" uib-tab-heading-transclude>{{heading}}</a>
+</li>

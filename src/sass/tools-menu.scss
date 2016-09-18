@@ -1,0 +1,51 @@
+.tools-menu {
+  float: right;
+}
+.tools-menu__list {
+  line-height: 50px;
+  padding: 15px 0;
+}
+.tools-menu__item {
+  display: inline-block;
+  margin-left: 10px;
+  border-right: 1px solid $gray;
+  padding-right: 10px;
+  &:last-child {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  ul {
+    list-style-type: none;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 8px;
+  }
+}
+.tools-menu__icon {
+  font-size: 24px;
+  color: $mainColor;
+  margin-right: 5px;
+  position: relative;
+  top: 8px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+@media all and (max-width: $md-size) {
+  .tools-menu__list {
+    line-height: 40px;
+    padding: 10px 0;
+  }
+}
+@media all and (max-width: $sm-size) {
+  .tools-menu__list {
+    line-height: 20px;
+    padding: 8px 0;
+  }
+  .tools-menu__icon {
+    font-size: 16px;
+    top: 2px;
+  }
+}

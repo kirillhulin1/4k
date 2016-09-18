@@ -1,0 +1,51 @@
+.header-bottom {
+  height: 80px;
+
+  &.header-bottom_condensed {
+    height: 60px;
+    -webkit-box-shadow: 0 2px 25px -5px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 2px 25px -5px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 25px -5px rgba(0,0,0,0.4);
+    .header-bottom__tools {
+      padding: 5px 0;
+      @media all and (max-width: $md-size) {
+        padding: 10px 0;
+      }
+    }
+    .header-bottom__menu {
+      margin-top: 5px;
+      height: 55px;
+    }
+    .header-bottom__menu-item:after {
+      height: 45px !important;
+    }
+
+  }
+  &>.container {
+    height: 100%;
+  }
+}
+.header-bottom__logo {
+  height: 100%;
+
+}
+
+.header-bottom__logo-anchor {
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 15px 0;
+}
+
+@media all and (max-width: $md-size) {
+
+  .header-bottom {
+    height: 60px !important;
+  }
+}
+@media all and (max-width: $sm-size) {
+
+  .header-bottom {
+    height: 36px !important;
+  }
+}

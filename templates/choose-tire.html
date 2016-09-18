@@ -1,0 +1,157 @@
+<form class="tab1__form">
+    <section class="col-sm-6 col-lg-offset-2 col-lg-5">
+        <section class="row">
+            <div class="col-xs-4 tab1__paddingBottomSmall">
+                <div class="select__wrapper">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!width">Ширина*</span>
+                        <select id="widthSelect" ng-model="width" class="form-control select">
+                            <option>145</option>
+                            <option>155</option>
+                            <option>165</option>
+                            <option>175</option>
+                            <option>185</option>
+                            <option>195</option>
+                            <option>205</option>
+                            <option>215</option>
+                            <option>225</option>
+                            <option>235</option>
+                            <option>245</option>
+                            <option>255</option>
+                            <option>265</option>
+                        </select>
+                    </label>
+                </div>
+
+            </div>
+            <div class="col-xs-4 tab1__paddingBottomSmall">
+                <div class="select__wrapper">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!height">Высота*</span>
+                        <select ng-model="height" class="form-control select ">
+                            <option>145</option>
+                            <option>155</option>
+                            <option>165</option>
+                            <option>175</option>
+                            <option>185</option>
+                            <option>195</option>
+                            <option>205</option>
+                            <option>215</option>
+                            <option>225</option>
+                            <option>235</option>
+                            <option>245</option>
+                            <option>255</option>
+                            <option>265</option>
+                        </select>
+                    </label>
+                </div>
+
+            </div>
+            <div class="col-xs-4 tab1__paddingBottomSmall">
+                <div class="select__wrapper">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!diameter">Диаметр*</span>
+                        <select ng-model="diameter" class="form-control select ">
+                            <option>145</option>
+                            <option>155</option>
+                            <option>165</option>
+                            <option>175</option>
+                            <option>185</option>
+                            <option>195</option>
+                            <option>205</option>
+                            <option>215</option>
+                            <option>225</option>
+                            <option>235</option>
+                            <option>245</option>
+                            <option>255</option>
+                            <option>265</option>
+                        </select>
+                    </label>
+                </div>
+
+            </div>
+        </section>
+        <p class="tab__section-title">Сезонность</p>
+
+        <section class="row">
+            <div class="col-xs-4 tab1__paddingBottomSmall ">
+                <label id="test" ng-click="toggleValue($event)" class="btn btn-primary tab1__label" ng-model="season" uib-btn-radio="'Лето'">Лето</label>
+            </div>
+            <div class="col-xs-4 tab1__paddingBottomSmall ">
+                <label ng-click="toggleValue($event)" class="btn btn-primary tab1__label" ng-model="season" uib-btn-radio="'Зима'">Зима</label>
+            </div>
+            <div class="col-xs-4 tab1__paddingBottomSmall">
+                <label ng-click="toggleValue($event)" class="btn btn-primary tab1__label" ng-model="season" uib-btn-radio="'Всесезонная'">Всесезонная</label>
+
+            </div>
+        </section>
+
+        <p class="tab__section-title"  ng-show="showMore">Тип шиповки</p>
+        <div class="select__wrapper" ng-show="showMore">
+            <label class="tab1__select">
+                <span class="select__label" ng-show="!ship">Тип шиповки</span>
+                <select ng-model="ship" class="form-control select">
+                    <option>Все</option>
+                    <option>под шип.</option>
+                    <option>шип</option>
+                </select>
+            </label>
+        </div>
+        <div class="checkbox" ng-show="showMore">
+            <input id = "checkbox-111" class="checkbox__input" type="checkbox" ng-model="inStock">
+            <label for="checkbox-111" class="checkbox__label">
+                <span class="checkbox__span">Только в наличии</span>
+            </label>
+        </div>
+    </section>
+
+    <section class="col-sm-6 tab1__right col-lg-5" >
+        <div class="multiselect tab1__paddingBottom" multiselect  ng-show="showMore">
+            <div class="form-control multiselect__input">
+                Бренды <span ng-show="choosenBrands.length">({{choosenBrands.length}})</span>
+            </div>
+            <div class="multiselect__options tab1__multiselect">
+                <div>
+                    <div class="checkbox multiselect__option" ng-repeat="brand in brands">
+
+                        <input id = "{{brand.id}}" class="checkbox__input" type="checkbox">
+                        <label for="{{brand.id}}" class="checkbox__label">
+                            <span class="checkbox__span">{{brand.brand}}({{brand.quantity}})</span>
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <button class="multiselect__button btn btn-warning" ng-click="countBrands()">Выбор сделан</button>
+                <span class="close multiselect__close">x</span>
+            </div>
+        </div>
+        <a href="#" class="toggle-anchor tab1__more hidden-xs" toggle-anchor ng-click="showMore = !showMore" >Дополнительные параметры</a>
+        <button class="btn btn-warning form-control tab1__button">Подобрать</button>
+        <p class="tab__section-title tab__section-title_condensed">Задайте вопрос специалисту:</p>
+        <a class="tab1__phone" href="tel://+380800303336">0 800 303-336</a>
+    </section>
+
+    <section class="clearfix"></section>
+    <section class="tab1__results" ng-show="season || width || height || diameter || ship || inStock || choosenBrands.length">
+        <div class="container">
+            <span>Ваш выбор: &nbsp;</span>
+            <span class="tab1__result" ng-show="width">{{width}}</span>
+            <span ng-click="width=''" class="tab1__delete" ng-show="width">X</span>
+            <span class="tab1__result" ng-show="height">{{height}}</span>
+            <span ng-click="height=''" class="tab1__delete" ng-show="height">X</span>
+            <span class="tab1__result" ng-show="diameter">{{diameter}}</span>
+            <span ng-click="diameter=''" class="tab1__delete" ng-show="diameter">X</span>
+            <span class="tab1__result" ng-show="season">{{season}}</span>
+            <span ng-click="season=''" class="tab1__delete" ng-show="season">X</span>
+            <span class="tab1__result" ng-show="ship">{{ship}}</span>
+            <span ng-click="ship=''" class="tab1__delete" ng-show="ship">X</span>
+            <span class="tab1__result" ng-show="inStock">В наличии</span>
+            <span ng-click="inStock=false" class="tab1__delete" ng-show="inStock">X</span>
+            <span ng-repeat="brand in choosenBrands">
+                <span class="tab1__result">{{brand.brand}}</span>
+                <span ng-click="deleteBrand(brand.id)" class="tab1__delete">X</span>
+            </span>
+
+        </div>
+    </section>
+</form>

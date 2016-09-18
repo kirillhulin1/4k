@@ -1,0 +1,19 @@
+.help-us {
+  background-color: $grayDark;
+  margin: 2em 0 1em;
+  padding: 1em 0;
+  line-height: 1.2;
+  &>.container {
+    display: table;
+  }
+}
+.help-us__icon {
+  display: inline-block;
+  font-size: 250%;
+  float: left;
+}
+.help-us__text {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 15px;
+}

@@ -1,0 +1,20 @@
+.select {
+  background-color: transparent;
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.select__wrapper {
+  position: relative;
+  background-color: white;
+  height: 35px;
+}
+.select__label {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  color: #ccc;
+  font-weight: normal;
+  z-index:0;
+}

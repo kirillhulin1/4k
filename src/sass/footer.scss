@@ -1,0 +1,19 @@
+.footer {
+  border-top: 1px solid $gray;
+  padding: 1em 0;
+  padding-bottom: 44px;
+}
+.footer__subtitle {
+  margin-top: 0;
+  margin-bottom: 1em;
+  &>a {
+    color: black;
+    font-size: 110%;
+  }
+}
+.footer__text {
+  color: #999;
+  display: block;
+  padding: 10px 30px;
+  text-align: center;
+}

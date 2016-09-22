@@ -1,5 +1,10 @@
 .tools-menu {
   float: right;
+  @if ($theme == turquoise-theme) {
+    a {
+      color: black;
+    }
+  }
 }
 .tools-menu__list {
   line-height: 50px;

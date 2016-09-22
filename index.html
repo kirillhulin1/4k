@@ -42,11 +42,28 @@
                 </div>
                 <div condense-on-scroll class="panel-body header-bottom">
                     <div class="container">
-                        <a href="#" class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
-                        <nav class="menu-mobile hidden-sm hidden-md hidden-lg">
+                        <a open-menu-mobile href="#" class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
+                        <nav class="menu-mobile hidden-sm hidden-md hidden-lg" close-menu-mobile>
+                            <div class="close menu-mobile__close"><i class="glyphicon glyphicon-remove"></i></div>
+                            <ul ng-repeat="section in menu">
+                                <li class="menu-mobile__item"><a href="#">{{section.title}}</a>
+                                    <ul class="menu-mobile__subsection" ng-show="section.subsections">
+                                        <li ng-repeat="subsection in section.subsections">
+                                            <a href="#">{{subsection.title}}</a>
+                                            <ul class="menu-mobile__subsubsection"  ng-show="subsection.subsections">
+                                                <li ng-repeat="subsection in subsection.subsections">
+                                                    <a href="#">{{subsection.title}}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
 
                         </nav>
-                        <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/prokoleso-logo-base.png"></a>
+                        <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
+                        <a href="#" class="theme_hidden blue-theme_shown header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
+                        <a href="#" class="theme_hidden turquoise-theme_shown header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo3.png"></a>
                         <menu></menu>
                         <nav class="tools-menu">
                             <ul class="tools-menu__list header-bottom__tools">
@@ -63,7 +80,7 @@
                         </nav>
 
                     </div>
-                    <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent">
+                    <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick>
 
                     </div>
                 </div>
@@ -71,182 +88,248 @@
             </header>
 
         <main>
-                <div ng-controller="TabsCtrl">
-                    <div class="tabs-tires">
-                        <div class="tabs-tires__header">
-                            <div class="tabs-tires__heading hidden-sm hidden-md hidden-lg">
-                                <div class="container">
-                                    {{tabs[active].title}}
-                                </div>
-                            </div>
-                            <div class="container tabs-tires__list">
-                                <ul ng-repeat = "tab in tabs" class="tabs-tires__tabs">
-                                    <li class="tabs-tires__tab" ng-class="{active: active === $index}">
-                                        <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" style="background-image:url('dest/images/{{$index+1}}.png')">
-                                            <span></span>
-                                        </a>
-                                        <a href ng-click="changeActive($index)" class="tabs-tires__anchor hidden-xs">{{tab.title}}</a>
-                                    </li>
-                                </ul>
+            <div ng-controller="TabsCtrl">
+                <div class="tabs-tires">
+                    <div class="tabs-tires__header">
+                        <div class="tabs-tires__heading hidden-sm hidden-md hidden-lg">
+                            <div class="container">
+                                {{tabs[active].title}}
                             </div>
                         </div>
-                        <div class="tabs-tires__content">
-                            <div class="container tab-content">
-
-                                <div ng-repeat="tab in tabs"
-                                     ng-class="{active: active === $index}">
-                                    <div bind-html-compile="tab.content"><!--sce.trustAsHtml(tab.content)-->
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-
-<!--                    <uib-tabset active="activeJustified" justified="true" template-url="templates/tabset-tires.html">
-
-                        <uib-tab template-url="templates/tab-tires.html" index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}">
-                            {{tab.content}}
-                        </uib-tab>
-                    </uib-tabset>-->
-
-
-                </div>
-                <section class="advantages">
-                    <div class="container">
-                        <ul class="advantages__list list-inline">
-                            <li class="advantages__item col-xs-4">
-                                <img class="advantages__image" src="dest/images/q.png">
-                                <div class="advantages__text">
-                                    <p class="advantages__title">181 точка</p>
-                                    <small>выдачи</small>
-                                </div>
-
-                            </li>
-                            <li class="advantages__item col-xs-4">
-                                <img class="advantages__image" src="dest/images/delivery.png">
-                                <div class="advantages__text">
-                                    <p class="advantages__title">Гарантия</p>
-                                    <small>на все шины</small>
-                                </div>
-                            </li>
-                            <li class="advantages__item col-xs-4">
-                                <img class="advantages__image" src="dest/images/advantages-reception.png">
-                                <div class="advantages__text">
-                                    <p class="advantages__title">Доставка</p>
-                                    <small>по всей Беларуси</small>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="clearfix"></div>
-                </section>
-                <article class="popular-tires container" ng-controller="PopularTiresCtrl">
-                    <section class="popular-tires__header">
-                        <span class="popular-tires__title">Подбор шин</span>
-                        <ul class="popular-tires__list-top">
-                            <li ng-click = "season = 'Все'" class="popular-tires__item-top" ng-class="{'Все':'popular-tires__item-top_active'}[season]">Все</li>
-                            <li ng-click = "season = 'Лето'" class="popular-tires__item-top popular-tires__item-top_winter" ng-class="{'Лето':'popular-tires__item-top_active'}[season]"></li>
-                            <li ng-click = "season = 'Зима'" class="popular-tires__item-top popular-tires__item-top_summer" ng-class="{'Зима':'popular-tires__item-top_active'}[season]"></li>
-                            <li ng-click = "season = 'Всесезонные'" class="popular-tires__item-top popular-tires__item-top_allseason" ng-class="{'Всесезонные':'popular-tires__item-top_active'}[season]"></li>
-                        </ul>
-                    </section>
-                    <div class="clearfix"></div>
-                    <section class="popular-tires__body">
-                        <ul class="popular-tires__list-aside">
-                            <li ng-click = "diameter = 'R13'" class="popular-tires__item-aside col-sm-6" ng-class="{'R13':'popular-tires__item-aside_active'}[diameter]">R13</li>
-                            <li ng-click = "diameter = 'R14'" class="popular-tires__item-aside col-sm-6" ng-class="{'R14':'popular-tires__item-aside_active'}[diameter]">R14</li>
-                            <li ng-click = "diameter = 'R15'" class="popular-tires__item-aside col-sm-6" ng-class="{'R15':'popular-tires__item-aside_active'}[diameter]">R15</li>
-                            <li ng-click = "diameter = 'R16'" class="popular-tires__item-aside col-sm-6" ng-class="{'R16':'popular-tires__item-aside_active'}[diameter]">R16</li>
-                            <li ng-click = "diameter = 'R17'" class="popular-tires__item-aside col-sm-6" ng-class="{'R17':'popular-tires__item-aside_active'}[diameter]">R17</li>
-                            <li ng-click = "diameter = 'R18'" class="popular-tires__item-aside col-sm-6" ng-class="{'R18':'popular-tires__item-aside_active'}[diameter]">R18</li>
-                            <li ng-click = "diameter = 'R19'" class="popular-tires__item-aside col-sm-6" ng-class="{'R19':'popular-tires__item-aside_active'}[diameter]">R19</li>
-                            <li ng-click = "diameter = 'R20'" class="popular-tires__item-aside col-sm-6" ng-class="{'R20':'popular-tires__item-aside_active'}[diameter]">R20</li>
-                        </ul>
-                        <section class="popular-tires__results">
-                            <img class="popular-tires__preloader" src="dest/images/ajax-loader.gif" ng-show="!results.length">
-                            <ul class="popular-tires__list-result" ng-show="results.length">
-                                <li class="popular-tires__result col-sm-2 col-xs-6" ng-repeat="result in results track by $index">
-                                    <a href="#">{{result}}</a>
+                        <div class="container tabs-tires__list">
+                            <ul ng-repeat = "tab in tabs" class="tabs-tires__tabs">
+                                <li class="tabs-tires__tab" ng-class="{active: active === $index}">
+                                    <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" style="background-image:url('dest/images/{{$index+1}}.png')">
+                                        <span></span>
+                                    </a>
+                                    <a href ng-click="changeActive($index)" class="tabs-tires__anchor hidden-xs">{{tab.title}}</a>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="tabs-tires__content">
+                        <div class="container tab-content">
+
+                            <div ng-repeat="tab in tabs"
+                                 ng-class="{active: active === $index}">
+                                <div bind-html-compile="tab.content"><!--sce.trustAsHtml(tab.content)-->
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <section class="advantages">
+                <div class="container">
+                    <ul class="advantages__list list-inline">
+                        <li class="advantages__item col-xs-4">
+                            <img class="advantages__image" src="dest/images/delivery.png">
+                            <div class="advantages__text">
+                                <p class="advantages__title">Оперативная</p>
+                                <small>доставка</small>
+                            </div>
+                        </li>
+
+                        <li class="advantages__item col-xs-4">
+                            <img class="advantages__image" src="dest/images/warranty.png">
+                            <div class="advantages__text">
+                                <p class="advantages__title">Гарантия</p>
+                                <small>на все шины</small>
+                            </div>
+                        </li>
+                        <li class="advantages__item col-xs-4">
+                            <img class="advantages__image" src="dest/images/map.png">
+                            <div class="advantages__text">
+                                <p class="advantages__title">Доставка</p>
+                                <small>по всей Беларуси</small>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="clearfix"></div>
+            </section>
+            <article class="popular-tires container" ng-controller="PopularTiresCtrl">
+                <section class="popular-tires__header">
+                    <span class="popular-tires__title">Подбор шин</span>
+                    <ul class="popular-tires__list-top">
+                        <li ng-click = "season = 'Все'" class="popular-tires__item-top" ng-class="{'Все':'popular-tires__item-top_active'}[season]">Все</li>
+                        <li ng-click = "season = 'Лето'" class="popular-tires__item-top popular-tires__item-top_winter" ng-class="{'Лето':'popular-tires__item-top_active'}[season]"></li>
+                        <li ng-click = "season = 'Зима'" class="popular-tires__item-top popular-tires__item-top_summer" ng-class="{'Зима':'popular-tires__item-top_active'}[season]"></li>
+                        <li ng-click = "season = 'Всесезонные'" class="popular-tires__item-top popular-tires__item-top_allseason" ng-class="{'Всесезонные':'popular-tires__item-top_active'}[season]"></li>
+                    </ul>
+                </section>
+                <div class="clearfix"></div>
+                <section class="popular-tires__body">
+                    <ul class="popular-tires__list-aside">
+                        <li ng-click = "diameter = 'R13'" class="popular-tires__item-aside col-sm-6" ng-class="{'R13':'popular-tires__item-aside_active'}[diameter]">R13</li>
+                        <li ng-click = "diameter = 'R14'" class="popular-tires__item-aside col-sm-6" ng-class="{'R14':'popular-tires__item-aside_active'}[diameter]">R14</li>
+                        <li ng-click = "diameter = 'R15'" class="popular-tires__item-aside col-sm-6" ng-class="{'R15':'popular-tires__item-aside_active'}[diameter]">R15</li>
+                        <li ng-click = "diameter = 'R16'" class="popular-tires__item-aside col-sm-6" ng-class="{'R16':'popular-tires__item-aside_active'}[diameter]">R16</li>
+                        <li ng-click = "diameter = 'R17'" class="popular-tires__item-aside col-sm-6" ng-class="{'R17':'popular-tires__item-aside_active'}[diameter]">R17</li>
+                        <li ng-click = "diameter = 'R18'" class="popular-tires__item-aside col-sm-6" ng-class="{'R18':'popular-tires__item-aside_active'}[diameter]">R18</li>
+                        <li ng-click = "diameter = 'R19'" class="popular-tires__item-aside col-sm-6" ng-class="{'R19':'popular-tires__item-aside_active'}[diameter]">R19</li>
+                        <li ng-click = "diameter = 'R20'" class="popular-tires__item-aside col-sm-6" ng-class="{'R20':'popular-tires__item-aside_active'}[diameter]">R20</li>
+                    </ul>
+                    <section class="popular-tires__results">
+                        <img class="popular-tires__preloader" src="dest/images/ajax-loader.gif" ng-show="!results.length">
+                        <ul class="popular-tires__list-result" ng-show="results.length">
+                            <li class="popular-tires__result col-sm-2 col-xs-6" ng-repeat="result in results track by $index">
+                                <a href="#">{{result}}</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <div class="clearfix"></div>
+                </section>
+            </article>
+            <article class="news">
+                <div class="container">
+                    <section class="section-heading section-heading_news">
+                        <h2 class="section-heading__title">Самые свежие тесты и обзоры шин</h2>
+                    </section>
+                </div>
+                <section class="news-list container">
+                    <div class="row">
+<!--                        <article class="news-list__item col-sm-4">
+                            <p class="news-list__date">13.09.2016</p>
+                            <a href="#" class="news-list__anchor-image">
+                                <img class="news-list__image" src="dest/images/news1.jpg">
+                            </a>
+
+                            <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
+                            <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
+                        </article>
+                        <article class="news-list__item col-sm-4">
+                            <p class="news-list__date">13.09.2016</p>
+                            <a href="#" class="news-list__anchor-image">
+                                <img class="news-list__image" src="dest/images/news1.jpg">
+                            </a>
+                            <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
+                            <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
+                        </article>
+                        <article class="news-list__item col-sm-4">
+                            <p class="news-list__date">13.09.2016</p>
+                            <a href="#" class="news-list__anchor-image">
+                                <img class="news-list__image" src="dest/images/news1.jpg">
+                            </a>
+                            <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
+                            <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
+                        </article>-->       <!--Старый вариант новостей-->
+
+                        <section class="news-list__item col-sm-6 col-md-3">
+                            <div>
+                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
+                                    <a class="news-list__comments">
+                                        <i class="glyphicon glyphicon-comment"></i>
+                                        <span class="news-list__comments-number">23</span>
+                                    </a>
+                                    <a href="#" class="news-list__anchor"></a>
+                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
+                                </section>
+                                <section class="news-list__info">
+                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                    <p class="news-list__date">22.07.1986</p>
+                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </section>
+                        <section class="news-list__item col-sm-6 col-md-3">
+                            <div>
+                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
+                                    <a class="news-list__comments">
+                                        <i class="glyphicon glyphicon-comment"></i>
+                                        <span class="news-list__comments-number">23</span>
+                                    </a>
+                                    <a href="#" class="news-list__anchor"></a>
+                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
+                                </section>
+                                <section class="news-list__info">
+                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                    <p class="news-list__date">22.07.1986</p>
+                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </section>
+                        <section class="news-list__item col-sm-6 col-md-3">
+                            <div>
+                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_2.jpg')">
+                                    <a class="news-list__comments">
+                                        <i class="glyphicon glyphicon-comment"></i>
+                                        <span class="news-list__comments-number">23</span>
+                                    </a>
+                                    <a href="#" class="news-list__anchor"></a>
+                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
+                                </section>
+                                <section class="news-list__info">
+                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                    <p class="news-list__date">22.07.1986</p>
+                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </section>
+                        <section class="news-list__item col-sm-6 col-md-3">
+                            <div>
+                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_3.jpg')">
+                                    <a class="news-list__comments">
+                                        <i class="glyphicon glyphicon-comment"></i>
+                                        <span class="news-list__comments-number">23</span>
+                                    </a>
+                                    <a href="#" class="news-list__anchor"></a>
+                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
+                                </section>
+                                <section class="news-list__info">
+                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                    <p class="news-list__date">22.07.1986</p>
+                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
                         </section>
                         <div class="clearfix"></div>
-                    </section>
-                </article>
-                <article class="news">
-                    <div class="container">
-                        <section class="section-heading section-heading_news">
-                            <h2 class="section-heading__title">Самые свежие тесты и обзоры шин</h2>
-                        </section>
                     </div>
-                        <section class="news-list container">
-                            <div>
-                                <article class="news-list__item col-sm-4">
-                                    <p class="news-list__date">13.09.2016</p>
-                                    <a href="#" class="news-list__anchor-image">
-                                        <img class="news-list__image" src="dest/images/news1.jpg">
-                                    </a>
 
-                                    <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
-                                    <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
-                                </article>
-                                <article class="news-list__item col-sm-4">
-                                    <p class="news-list__date">13.09.2016</p>
-                                    <a href="#" class="news-list__anchor-image">
-                                        <img class="news-list__image" src="dest/images/news1.jpg">
-                                    </a>
-                                    <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
-                                    <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
-                                </article>
-                                <article class="news-list__item col-sm-4">
-                                    <p class="news-list__date">13.09.2016</p>
-                                    <a href="#" class="news-list__anchor-image">
-                                        <img class="news-list__image" src="dest/images/news1.jpg">
-                                    </a>
-                                    <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
-                                    <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
-                                </article>
-
-                            </div>
-
-                            <a href="#" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a>
-                        </section>
-
-                </article>
-                <article class="about hidden-xs">
-                    <div class="container">
-                        <div class="about__container">
-                            <div class="about__content">
-                                <h2>Зимняя и летняя резина, автомобильные литые диски в Украине</h2>
-                                <p>На ProKoleso.ua мы предлагаем Вам возможность легко и быстро подобрать и купить летние и зимние шины для легковых автомобилей, внедорожников и минивенов, грузовиков и автобусов, а также для сельскохозяйственной техники. Вне зависимости от того, что Вы ищете, колеса на ВАЗ, Ланос, Тойоту или Мерседес, наш интернет магазин предложит Вам самый лучший вариант, подходящий для Вашего транспортного средства. Широкий ассортимент и лучшие цены на легковые бренды Bridgestone, Kumho, Continental, Cordiant и многие другие позволяют Вам приобрести качественные автошины, а также получить официальную гарантию на них. Например, если Вас интересует продажа зимней резины, то рекомендуем обратить внимание на Bridgestone, серии Blizzak.</p>
-                                <p>В предлагаемом нами ассортименте Вы также можете подобрать и приобрести легкосплавные диски известных производителей: MOMO и Racing Wheels (RW).	Если Вы не помните точно размер своих автопокрышек, но знаете, что Вам нужно R15 (R13, R14, R16, R17, R18 и т.д.) - попробуйте наш подбор по авто. Указав правильно марку своего автомобиля, Вы в результате получите все варианты типоразмеров подходящие под Ваш запрос. Если вы хотите взять авторезину для грузовика или автобуса тогда предлагаем рассмотреть предложения от TyRex , Aeolus, Kumho, Continental, Hankook, Voltyre и др. Ну а если Вам нужны автопокрышки для сельскохозяйственной техники – у нас представлены такие производители, как - Alliance, Galaxy, Petlas, Honour, Speedways. Мы постарались сделать так, чтобы процесс подбора был удобен и понятен и Вы самостоятельно могли определиться с выбором и приобрести автоколеса для любого своего автотранспорта.</p>
-                                <p>Однако, не стоит забывать, что от правильного выбора зимней или летней резины зависит безопасность. Ведь качество и надежность сцепления, безопасность передвижения, уверенность водителя за рулем – на все эти факторы влияют рисунок протектора, состав резины, а также правильный подбор размера автошин для Вашего автомобиля. Очень важно гармонично подобрать автопокрышки с нужными характеристиками, чтобы в любой ситуации контролировать свое авто и получать удовольствие от управления.</p>
-                                <p>Если у Вас возникают сомнения по поводу выбора, наши специалисты всегда готовы предоставить Вам профессиональную консультацию. Вы можете заказать на сайте обратный звонок или позвонить нам по телефону горячей линии.	Мы осуществляем доставку товара по Украине без комиссий и скрытых процентов. Вы также можете забрать и оплатить автошины с интернет-скидками в наших розничных центрах «Твоя шина – Pole Position» для легковых автомобилей или сервисных станциях «Camion Tyres» для грузового транспорта, где наши специалисты профессионально установят их на авто.</p>
-                                <p>Квалифицированный персонал «Твоя шина – Pole Position» и «Camion Tyres» предоставит Вам весь комплекс услуг, связанных с подбором, установкой , и дальнейшим обслуживанием Ваших колес.	Все знают, что в сезон трудно записаться на шиномонтаж, чтобы переобуть свою машину. Поэтому для Вас на сайте действует онлайн запись на шиномонтаж, позволяющая сэкономить время и получить качественные услуги в наших сервисных центрах. За годы успешной деятельности в шинном бизнесе нам удалось создать крупную сеть сервисно-торговых центров и представительств по всей Украине. Сегодня Вы можете с максимальным удобством приобрести покрышки в Киеве, Днепропетровске, Харькове, Донецке, Одессе, Львове и других населенных пунктах Украины, где расположены наши отделения или центры наших партнеров.</p>
-                            </div>
-
-                        </div>
-                        <a class="about__toggle" href="#">
-                            <span class="about__anchor">Читать далее</span>
-                        </a>
-                    </div>
-                </article>
-                <section class="help-us">
-                    <div class="container">
-                        <span class="help-us__icon">
-                            <i class="glyphicon glyphicon-warning-sign"></i>
-                        </span>
-                        <span class="help-us__text">Вы можете нам помочь! Если Вы заметили опечатку или неточность на сайте, пожалуйста, выделите ее и нажмите <strong>Ctrl+Enter</strong></span>
-                    </div>
+                    <a href="#" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a>
                 </section>
-            </main>
+
+            </article>
+            <article class="about hidden-xs">
+                <div class="container">
+                    <div class="about__container">
+                        <div class="about__content">
+                            <h2>Зимняя и летняя резина, автомобильные литые диски в Украине</h2>
+                            <p>На ProKoleso.ua мы предлагаем Вам возможность легко и быстро подобрать и купить летние и зимние шины для легковых автомобилей, внедорожников и минивенов, грузовиков и автобусов, а также для сельскохозяйственной техники. Вне зависимости от того, что Вы ищете, колеса на ВАЗ, Ланос, Тойоту или Мерседес, наш интернет магазин предложит Вам самый лучший вариант, подходящий для Вашего транспортного средства. Широкий ассортимент и лучшие цены на легковые бренды Bridgestone, Kumho, Continental, Cordiant и многие другие позволяют Вам приобрести качественные автошины, а также получить официальную гарантию на них. Например, если Вас интересует продажа зимней резины, то рекомендуем обратить внимание на Bridgestone, серии Blizzak.</p>
+                            <p>В предлагаемом нами ассортименте Вы также можете подобрать и приобрести легкосплавные диски известных производителей: MOMO и Racing Wheels (RW).	Если Вы не помните точно размер своих автопокрышек, но знаете, что Вам нужно R15 (R13, R14, R16, R17, R18 и т.д.) - попробуйте наш подбор по авто. Указав правильно марку своего автомобиля, Вы в результате получите все варианты типоразмеров подходящие под Ваш запрос. Если вы хотите взять авторезину для грузовика или автобуса тогда предлагаем рассмотреть предложения от TyRex , Aeolus, Kumho, Continental, Hankook, Voltyre и др. Ну а если Вам нужны автопокрышки для сельскохозяйственной техники – у нас представлены такие производители, как - Alliance, Galaxy, Petlas, Honour, Speedways. Мы постарались сделать так, чтобы процесс подбора был удобен и понятен и Вы самостоятельно могли определиться с выбором и приобрести автоколеса для любого своего автотранспорта.</p>
+                            <p>Однако, не стоит забывать, что от правильного выбора зимней или летней резины зависит безопасность. Ведь качество и надежность сцепления, безопасность передвижения, уверенность водителя за рулем – на все эти факторы влияют рисунок протектора, состав резины, а также правильный подбор размера автошин для Вашего автомобиля. Очень важно гармонично подобрать автопокрышки с нужными характеристиками, чтобы в любой ситуации контролировать свое авто и получать удовольствие от управления.</p>
+                            <p>Если у Вас возникают сомнения по поводу выбора, наши специалисты всегда готовы предоставить Вам профессиональную консультацию. Вы можете заказать на сайте обратный звонок или позвонить нам по телефону горячей линии.	Мы осуществляем доставку товара по Украине без комиссий и скрытых процентов. Вы также можете забрать и оплатить автошины с интернет-скидками в наших розничных центрах «Твоя шина – Pole Position» для легковых автомобилей или сервисных станциях «Camion Tyres» для грузового транспорта, где наши специалисты профессионально установят их на авто.</p>
+                            <p>Квалифицированный персонал «Твоя шина – Pole Position» и «Camion Tyres» предоставит Вам весь комплекс услуг, связанных с подбором, установкой , и дальнейшим обслуживанием Ваших колес.	Все знают, что в сезон трудно записаться на шиномонтаж, чтобы переобуть свою машину. Поэтому для Вас на сайте действует онлайн запись на шиномонтаж, позволяющая сэкономить время и получить качественные услуги в наших сервисных центрах. За годы успешной деятельности в шинном бизнесе нам удалось создать крупную сеть сервисно-торговых центров и представительств по всей Украине. Сегодня Вы можете с максимальным удобством приобрести покрышки в Киеве, Днепропетровске, Харькове, Донецке, Одессе, Львове и других населенных пунктах Украины, где расположены наши отделения или центры наших партнеров.</p>
+                        </div>
+
+                    </div>
+                    <a class="about__toggle" href="#">
+                        <span class="about__anchor">Читать далее</span>
+                    </a>
+                </div>
+            </article>
+            <section class="help-us">
+                <div class="container">
+                    <span class="help-us__icon">
+                        <i class="glyphicon glyphicon-warning-sign"></i>
+                    </span>
+                    <span class="help-us__text">Вы можете нам помочь! Если Вы заметили опечатку или неточность на сайте, пожалуйста, выделите ее и нажмите <strong>Ctrl+Enter</strong></span>
+                </div>
+            </section>
+        </main>
 
         <footer class="footer">
             <div class="container">
@@ -339,6 +422,7 @@
         </div>
 
 
+
         <div class="modal fade modal-phone-me" tabindex="-1" role="dialog" id="callBack">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -419,6 +503,10 @@
     <script src="dest/js/directives/multiselect.js"></script>
     <script src="dest/js/directives/anchor.js"></script>
     <script src="dest/js/directives/condenseOnScroll.js"></script>
+    <script src="dest/js/directives/openMenuMobile.js"></script>
+    <script src="dest/js/directives/closeMenuMobile.js"></script>
+    <script src="dest/js/directives/tiresForCar.js"></script>
+    <script src="dest/js/directives/hideOnMisclick.js"></script>
 
 
 

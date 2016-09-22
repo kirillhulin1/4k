@@ -9,6 +9,10 @@
     height: 1rem;
     transform: rotate(90deg);
     background: url(images/right-arrow.png) no-repeat center;
+    @if ($theme == turquoise-theme)
+      {
+        background: url(images/right-arrow-turquoise.png) no-repeat center;
+      }
     transition: 150ms;
   }
   &.toggle-anchor_toggled:after {

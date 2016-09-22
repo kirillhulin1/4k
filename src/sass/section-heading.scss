@@ -1,9 +1,20 @@
 .section-heading_news {
-  background: url(images/news_bg.jpg) no-repeat;
+  /*background: url(images/news_bg.jpg) no-repeat;*/
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 19%, #0157a0 100%, #ffffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 19%,#0157a0 100%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #ffffff 0%,#ffffff 19%,#0157a0 100%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  @if ($theme == turquoise-theme) {
+    background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 19%, #00acc1 100%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 19%,#00acc1 100%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffffff 0%,#ffffff 19%,#00acc1 100%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 .section-heading {
-  line-height: 60px;
-  height: 60px;
+  line-height: 40px;
+  height: 40px;
   margin: 2em 0 1em;
   background-color: $gray;
   padding: 0 0 0 2rem;
@@ -11,24 +22,24 @@
   background-size: cover;
 }
 .section-heading__title {
-  line-height: 60px;
+  line-height: 40px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 @media all and (min-width: $sm-size) {
   .section-heading {
-    height: 75px;
+    height: 50px;
   }
   .section-heading__title {
-    line-height: 75px;
+    line-height: 50px;
   }
 }
 @media all and (min-width: $lg-size) {
   .section-heading {
-    height: 90px;
+    height: 60px;
   }
   .section-heading__title {
-    line-height: 90px;
+    line-height: 60px;
   }
 }

@@ -1,0 +1,15 @@
+.tab3 {
+  padding-top: 2em;
+}
+
+.tab3__input {
+  margin-bottom: 2em;
+}
+.tab3__p {
+  margin: 0;
+}
+@media all and (min-width: $lg-size) {
+  .tab3 {
+    background: url("images/car-filter.png") no-repeat left bottom;
+  }
+}

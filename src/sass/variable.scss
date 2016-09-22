@@ -1,6 +1,41 @@
-$mainColor: #0157a0; //#00acc1;
-$mainColorHover: #1e6aca; //#65D1E0;
+$mainColor: #0157a0;
+$mainColorHover: #1e6aca;
+$mainSuperDark: #004a89;
+$mainDark: #0059c7;
 $orange: #e8652d;
+$orangeHover: #eb9123;
+$orangeSuperDark: #c9561f;
+$orangeDark: #d17e18;
+
+.theme_hidden {
+  display: none !important;
+}
+$theme: blue/*turquoise-theme*/;
+@if ($theme == turquoise-theme) {
+  $mainColor: #00acc1; //#0157a0;
+  $mainColorHover: #65D1E0; //#1e6aca;
+  $mainSuperDark: #006E7D; //#004a89;
+  $mainDark: #248391; //#0059c7;
+  $orange: #FF7A00; //#e8652d
+  $orangeHover: #FF9B40; //#eb9123
+  $orangSuperDark: #A65000;//#c9561f;
+  $orangeDark: #BF7530;//#d17e18;
+  $anchorColor: #0033CB;
+  .turquoise-theme_shown {
+    display: block !important;
+  }
+}
+
+
+@if ($theme == blue) {
+  .blue-theme_shown {
+    display: block !important;
+  }
+}
+
+
+
+
 $gray: #e2e2e2;
 $grayDark: #ccc;
 $sm-size: 768px;

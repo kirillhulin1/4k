@@ -3,7 +3,7 @@
 }
 @media all and (min-width: $lg-size) {
   .tab1 {
-    background: url("images/tire-filter.png") no-repeat left bottom;
+    background: url("images/test2_bg.jpg") no-repeat left 10px;
   }
 }
 .tab1__label {
@@ -48,6 +48,7 @@
 .tab1__more {
   position: absolute;
   top: -40px;
+
 }
 .tab1__phone {
   font-size: 200%;

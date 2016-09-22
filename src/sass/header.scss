@@ -22,7 +22,7 @@ header {
 .header-top__phone-me {
   line-height: 1;
   vertical-align: baseline;
-  color: #01589f;
+  color: $mainColor;
   font-family: "SegoeUISemiBold";
   &:focus {
     outline: none !important;

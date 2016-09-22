@@ -1,0 +1,51 @@
+<section class="col-sm-6 col-lg-offset-4 col-lg-4">
+    <div class="select__wrapper tab3__input">
+        <label class="tab1__select">
+            <span class="select__label" ng-show="!brand">Бренд</span>
+            <select ng-model="brand" class="form-control select ">
+                <option ng-repeat="brand in brands">
+                    {{brand}}
+                </option>
+
+            </select>
+        </label>
+    </div>
+</section>
+<section class="col-sm-6 col-lg-4">
+    <div class="select__wrapper tab3__input">
+        <label class="tab1__select">
+            <span class="select__label" ng-show="!model">Модель</span>
+            <select ng-model="model" class="form-control select" ng-disabled="!models">
+                <option ng-repeat = "model in models">{{model}}</option>
+            </select>
+        </label>
+    </div>
+</section>
+<section class="col-sm-6 col-lg-offset-4 col-lg-4">
+    <div class="select__wrapper tab3__input">
+        <label class="tab1__select">
+            <span class="select__label" ng-show="!year">Год</span>
+            <select ng-model="year" class="form-control select" ng-disabled="!years">
+                <option ng-repeat = "year in years">{{year}}</option>
+            </select>
+        </label>
+    </div>
+</section>
+<section class="col-sm-6 col-lg-4">
+    <div class="select__wrapper tab3__input">
+        <label class="tab1__select">
+            <span class="select__label" ng-show="!model">Моdifications</span>
+            <select ng-model="modification" class="form-control select" ng-disabled="!modifications">
+                <option ng-repeat = "modification in modifications">{{modification}}</option>
+            </select>
+        </label>
+    </div>
+</section>
+<section class="col-sm-6 hidden-xs col-lg-offset-4 col-lg-4">
+    <p class="tab3__p">Задайте вопрос специалисту:</p>
+    <a class="tab1__phone" href="tel://+380800303336">0 800 303-336</a>
+</section>
+<section class="col-sm-6 col-lg-4">
+    <button class="btn btn-warning form-control tab1__button">Подобрать</button>
+</section>
+<div class="clearfix"></div>

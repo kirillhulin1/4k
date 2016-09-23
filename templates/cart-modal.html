@@ -1,0 +1,54 @@
+<p>В вашей корзине {{cart.items.length|goods}}</p>
+<section class="modal-cart__items">
+    <article class="modal-cart__item" ng-repeat="item in cart.items">
+        <section class="modal-cart__description">
+            <section class="col-xs-4 modal-cart__left">
+                <img ng-src="dest/images/{{item.picture}}" class="modal-cart__image">
+                <img ng-if = "item.type=='summer'" ng-src="dest/images/season-summer.png" class="modal-cart__season">
+                <img ng-if = "item.type=='winter'" ng-src="dest/images/season-winter.png" class="modal-cart__season">
+                <img ng-if = "item.type=='all'" ng-src="dest/images/season-all.png" class="modal-cart__season">
+            </section>
+            <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
+                <h3 class="modal-cart__title" ng-bind="item.name"></h3>
+                <p>
+                    <a href="#" class="modal-cart__parameters">
+                        <span ng-bind="item.width"></span>/
+                        <span ng-bind="item.height"></span>&nbsp;
+                        R<span ng-bind="item.diameter"></span>
+                        <span ng-bind="item.something"></span>
+                    </a>
+                </p>
+                <p class="modal-cart__articul"><small>Арт: <span ng-bind="item.articul"></span></small></p>
+            </section>
+            <div class="clearfix"></div>
+            <a href="#" class="modal-cart__trash" ng-click="deleteItem(item.id)"><i class="glyphicon glyphicon-trash"></i></a>
+        </section>
+        <section class="modal-cart__prices">
+            <div class="row">
+                <div class="col-xs-4">
+                    <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
+                </div>
+                <div class="col-xs-4">
+                    <small>Количество:</small>
+                </div>
+                <div class="col-xs-4">
+                    <small>Сумма:</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 modal-cart__price">
+                    <span ng-bind="item.price"></span> р.
+                </div>
+                <div class="col-xs-4">
+                    <a href="#" ng-click = "lowerQuantity(item)"><i class="glyphicon glyphicon-minus-sign"></i></a>
+                    <input class="form-control" type="text" ng-model="item.quantity">
+                    <a href="#" ng-click = "item.quantity=+item.quantity+1"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                </div>
+                <div class="col-xs-4 modal-cart__price">
+                    {{item.price * item.quantity}} р.
+                </div>
+            </div>
+        </section>
+    </article>
+</section>
+<p class="modal-cart__info">Цена на заказ действительна в течение суток со дня поступления товара на склад выдачи.</p>

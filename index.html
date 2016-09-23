@@ -9,771 +9,643 @@
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="dest/styles.min.css">
     <link rel="stylesheet" href="dest/rzslider.min.css">
+    <style>
+        body {
+            padding-right: 0 !important;
+
+        }
+        .modal-open {
+            overflow: inherit !important;
+        }
+    </style>
 </head>
 <body ng-app="app" ng-controller="AppCtrl as controller" anchor>
 
 
 
-        <header class="panel panel-default">
-                <div class="panel-heading header-top">
-                    <div class="container">
-                        <section class="row">
-                            <section class="col-xs-4 hidden-sm hidden-sm hidden-md hidden-lg">
-                                <a href="/"><img class="header-top__logo" src="dest/images/prokoleso-logo-base.png"></a>
-                            </section>
-                            <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
-                                <small class="header-top__schedule">Работаем с 9-00 до 20-00 без выходных</small>
-                            </section>
-                            <section class="col-sm-offset-2 col-sm-5  col-xs-offset-2 col-xs-6">
-                                <ul class="list-inline header-top__phones">
-                                    <li class="header-top__phone_main"><img class="header-top__phone-icon" src="dest/images/phone-icon.png"><small><a href="tel:0800303336"><strong>0(800) 303-336</strong></a></small></li>
-                                    <li class="hidden-sm hidden-md hidden-lg header-top__phone_main"><a data-toggle="modal" data-target="#morePhones" href="#">+</a></li>
-                                    <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/kievstar-icon.png"><small>(067) 209-21-12</small></li>
-                                    <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/mts-icon.png"><small>(050) 361-91-31</small></li>
-                                </ul>
-                            </section>
-                            <section class="col-sm-2 hidden-xs">
-                                <a href="#" data-toggle="modal" data-target="#callBack" class="header-top__phone-me text-center">
-                                    <i class="glyphicon glyphicon-menu-right"></i>&nbsp;Позвоните мне
-                                </a>
-                            </section>
-                        </section>
-                    </div>
-                </div>
-                <div condense-on-scroll class="panel-body header-bottom">
-                    <div class="container">
-                        <a open-menu-mobile href="#" class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
-                        <nav class="menu-mobile hidden-sm hidden-md hidden-lg" close-menu-mobile>
-                            <div class="close menu-mobile__close"><i class="glyphicon glyphicon-remove"></i></div>
-                            <ul ng-repeat="section in menu">
-                                <li class="menu-mobile__item"><a href="#">{{section.title}}</a>
-                                    <ul class="menu-mobile__subsection" ng-show="section.subsections">
-                                        <li ng-repeat="subsection in section.subsections">
+    <header class="panel panel-default">
+        <div class="panel-heading header-top">
+            <div class="container">
+                <section class="row">
+                    <section class="col-xs-4 hidden-sm hidden-sm hidden-md hidden-lg">
+                        <a href="/"><img class="header-top__logo" src="dest/images/prokoleso-logo-base.png"></a>
+                    </section>
+                    <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
+                        <small class="header-top__schedule">Работаем с 9-00 до 20-00 без выходных</small>
+                    </section>
+                    <section class="col-sm-offset-2 col-sm-5  col-xs-offset-2 col-xs-6">
+                        <ul class="list-inline header-top__phones">
+                            <li class="header-top__phone_main"><img class="header-top__phone-icon" src="dest/images/phone-icon.png"><small><a href="tel:0800303336"><strong>0(800) 303-336</strong></a></small></li>
+                            <li class="hidden-sm hidden-md hidden-lg header-top__phone_main"><a data-toggle="modal" data-target="#morePhones" href="#">+</a></li>
+                            <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/kievstar-icon.png"><small>(067) 209-21-12</small></li>
+                            <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/mts-icon.png"><small>(050) 361-91-31</small></li>
+                        </ul>
+                    </section>
+                    <section class="col-sm-2 hidden-xs">
+                        <a href = "#" data-toggle = "modal" data-target = "#callBack" class = "header-top__phone-me text-center">
+                            <i class="glyphicon glyphicon-menu-right"></i>&nbsp;Позвоните мне
+                        </a>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <div condense-on-scroll class="panel-body header-bottom">
+            <div class="container">
+                <a open-menu-mobile href="#" class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
+                <nav class="menu-mobile hidden-sm hidden-md hidden-lg">
+                    <div class="close menu-mobile__close"  close-menu-mobile><i class="glyphicon glyphicon-remove"></i></div>
+                    <ul ng-repeat="section in menu">
+                        <li class="menu-mobile__item"><a href="#">{{section.title}}</a>
+                            <ul class="menu-mobile__subsection" ng-show="section.subsections">
+                                <li ng-repeat="subsection in section.subsections">
+                                    <a href="#">{{subsection.title}}</a>
+                                    <ul class="menu-mobile__subsubsection"  ng-show="subsection.subsections">
+                                        <li ng-repeat="subsection in subsection.subsections">
                                             <a href="#">{{subsection.title}}</a>
-                                            <ul class="menu-mobile__subsubsection"  ng-show="subsection.subsections">
-                                                <li ng-repeat="subsection in subsection.subsections">
-                                                    <a href="#">{{subsection.title}}</a>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-
-                        </nav>
-                        <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
-                        <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
-<!--
-                        <a href="#" class="theme_hidden turquoise-theme_shown header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo3.png"></a>
--->
-                        <menu></menu>
-                        <nav class="tools-menu">
-                            <ul class="tools-menu__list header-bottom__tools">
-                                <li class="tools-menu__item"><a href="#"><i class="glyphicon glyphicon-search tools-menu__icon"></i><span class="hidden-sm hidden-md hidden-xs">Поиск</span></a></li>
-                                <li class="tools-menu__item">
-                                    <i class="glyphicon glyphicon-user tools-menu__icon"></i>
-                                    <ul class="hidden-sm hidden-md hidden-xs">
-                                        <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
-                                        <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class="tools-menu__item tools-menu__cart">
-                                    <a href="#" data-toggle="modal" data-target="#cart">
-                                        <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
-                                        <section class="tools-menu__goods">12</section>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                    </div>
-                    <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick hide-on-scroll>
-
-                    </div>
-                </div>
-
-            </header>
-
-        <main>
-            <div ng-controller="TabsCtrl">
-                <div class="tabs-tires">
-                    <div class="tabs-tires__header">
-                        <div class="tabs-tires__heading hidden-sm hidden-md hidden-lg">
-                            <div class="container">
-                                {{tabs[active].title}}
-                            </div>
-                        </div>
-                        <div class="container tabs-tires__list">
-                            <ul ng-repeat = "tab in tabs" class="tabs-tires__tabs">
-                                <li class="tabs-tires__tab" ng-class="{active: active === $index}">
-                                    <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" style="background-image:url('dest/images/{{$index+1}}.png')">
-                                        <span></span>
-                                    </a>
-                                    <a href ng-click="changeActive($index)" class="tabs-tires__anchor hidden-xs">{{tab.title}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="tabs-tires__content">
-                        <div class="container tab-content">
-
-                            <div ng-repeat="tab in tabs"
-                                 ng-class="{active: active === $index}">
-                                <div bind-html-compile="tab.content"><!--sce.trustAsHtml(tab.content)-->
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-            <section class="advantages">
-                <div class="container">
-                    <ul class="advantages__list list-inline">
-                        <li class="advantages__item col-xs-4">
-                            <img class="advantages__image" src="dest/images/delivery.png">
-                            <div class="advantages__text">
-                                <p class="advantages__title">Оперативная</p>
-                                <small>доставка</small>
-                            </div>
-                        </li>
-
-                        <li class="advantages__item col-xs-4">
-                            <img class="advantages__image" src="dest/images/warranty.png">
-                            <div class="advantages__text">
-                                <p class="advantages__title">Гарантия</p>
-                                <small>на все шины</small>
-                            </div>
-                        </li>
-                        <li class="advantages__item col-xs-4">
-                            <img class="advantages__image" src="dest/images/map.png">
-                            <div class="advantages__text">
-                                <p class="advantages__title">Доставка</p>
-                                <small>по всей Беларуси</small>
-                            </div>
                         </li>
                     </ul>
 
+                </nav>
+                <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
+                <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
+
+                <menu></menu>
+                <nav class="tools-menu">
+                    <ul class="tools-menu__list header-bottom__tools">
+                        <li class="tools-menu__item"><a href="#"><i class="glyphicon glyphicon-search tools-menu__icon"></i><span class="hidden-sm hidden-md hidden-xs">Поиск</span></a></li>
+                        <li class="tools-menu__item">
+                            <i class="glyphicon glyphicon-user tools-menu__icon"></i>
+                            <ul class="hidden-sm hidden-md hidden-xs">
+                                <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
+                                <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="tools-menu__item tools-menu__cart">
+                            <a ng-hide="cart.items.length" href="#" uib-tooltip="Ваша корзина пуста"
+                               tooltip-placement="bottom-right"
+                               tooltip-trigger="'mouseenter'">
+                                <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
+                            </a>
+                            <a ng-show="cart.items.length" href="#" data-toggle="modal" data-target="#cart">
+                                <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
+                                <section  class="tools-menu__goods">{{cart.items.length}}</section>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick hide-on-scroll>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div ng-controller="TabsCtrl">
+            <div class="tabs-tires">
+                <div class="tabs-tires__header">
+                    <div class="tabs-tires__heading hidden-sm hidden-md hidden-lg">
+                        <div class="container">
+                            {{tabs[active].title}}
+                        </div>
+                    </div>
+                    <div class="container tabs-tires__list">
+                        <ul ng-repeat = "tab in tabs" class="tabs-tires__tabs">
+                            <li class="tabs-tires__tab" ng-class="{active: active === $index}">
+                                <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" style="background-image:url('dest/images/{{$index+1}}.png')">
+                                    <span></span>
+                                </a>
+                                <a href ng-click="changeActive($index)" class="tabs-tires__anchor hidden-xs">{{tab.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="clearfix"></div>
+                <div class="tabs-tires__content">
+                    <div class="container tab-content">
+
+                        <div ng-repeat="tab in tabs"
+                             ng-class="{active: active === $index}">
+                            <div bind-html-compile="tab.content"><!--sce.trustAsHtml(tab.content)-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <section class="advantages">
+            <div class="container">
+                <ul class="advantages__list list-inline">
+                    <li class="advantages__item col-xs-4">
+                        <img class="advantages__image" src="dest/images/delivery.png">
+                        <div class="advantages__text">
+                            <p class="advantages__title">Оперативная</p>
+                            <small>доставка</small>
+                        </div>
+                    </li>
+
+                    <li class="advantages__item col-xs-4">
+                        <img class="advantages__image" src="dest/images/warranty.png">
+                        <div class="advantages__text">
+                            <p class="advantages__title">Гарантия</p>
+                            <small>на все шины</small>
+                        </div>
+                    </li>
+                    <li class="advantages__item col-xs-4">
+                        <img class="advantages__image" src="dest/images/map.png">
+                        <div class="advantages__text">
+                            <p class="advantages__title">Доставка</p>
+                            <small>по всей Беларуси</small>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <article class="popular-tires container" ng-controller="PopularTiresCtrl">
+            <section class="popular-tires__header">
+                <span class="popular-tires__title">Подбор шин</span>
+                <ul class="popular-tires__list-top">
+                    <li ng-click = "season = 'Все'" class="popular-tires__item-top" ng-class="{'Все':'popular-tires__item-top_active'}[season]">Все</li>
+                    <li ng-click = "season = 'Лето'" class="popular-tires__item-top popular-tires__item-top_winter" ng-class="{'Лето':'popular-tires__item-top_active'}[season]"></li>
+                    <li ng-click = "season = 'Зима'" class="popular-tires__item-top popular-tires__item-top_summer" ng-class="{'Зима':'popular-tires__item-top_active'}[season]"></li>
+                    <li ng-click = "season = 'Всесезонные'" class="popular-tires__item-top popular-tires__item-top_allseason" ng-class="{'Всесезонные':'popular-tires__item-top_active'}[season]"></li>
+                </ul>
             </section>
-            <article class="popular-tires container" ng-controller="PopularTiresCtrl">
-                <section class="popular-tires__header">
-                    <span class="popular-tires__title">Подбор шин</span>
-                    <ul class="popular-tires__list-top">
-                        <li ng-click = "season = 'Все'" class="popular-tires__item-top" ng-class="{'Все':'popular-tires__item-top_active'}[season]">Все</li>
-                        <li ng-click = "season = 'Лето'" class="popular-tires__item-top popular-tires__item-top_winter" ng-class="{'Лето':'popular-tires__item-top_active'}[season]"></li>
-                        <li ng-click = "season = 'Зима'" class="popular-tires__item-top popular-tires__item-top_summer" ng-class="{'Зима':'popular-tires__item-top_active'}[season]"></li>
-                        <li ng-click = "season = 'Всесезонные'" class="popular-tires__item-top popular-tires__item-top_allseason" ng-class="{'Всесезонные':'popular-tires__item-top_active'}[season]"></li>
+            <div class="clearfix"></div>
+            <section class="popular-tires__body">
+                <ul class="popular-tires__list-aside">
+                    <li ng-click = "diameter = 'R13'" class="popular-tires__item-aside col-sm-6" ng-class="{'R13':'popular-tires__item-aside_active'}[diameter]">R13</li>
+                    <li ng-click = "diameter = 'R14'" class="popular-tires__item-aside col-sm-6" ng-class="{'R14':'popular-tires__item-aside_active'}[diameter]">R14</li>
+                    <li ng-click = "diameter = 'R15'" class="popular-tires__item-aside col-sm-6" ng-class="{'R15':'popular-tires__item-aside_active'}[diameter]">R15</li>
+                    <li ng-click = "diameter = 'R16'" class="popular-tires__item-aside col-sm-6" ng-class="{'R16':'popular-tires__item-aside_active'}[diameter]">R16</li>
+                    <li ng-click = "diameter = 'R17'" class="popular-tires__item-aside col-sm-6" ng-class="{'R17':'popular-tires__item-aside_active'}[diameter]">R17</li>
+                    <li ng-click = "diameter = 'R18'" class="popular-tires__item-aside col-sm-6" ng-class="{'R18':'popular-tires__item-aside_active'}[diameter]">R18</li>
+                    <li ng-click = "diameter = 'R19'" class="popular-tires__item-aside col-sm-6" ng-class="{'R19':'popular-tires__item-aside_active'}[diameter]">R19</li>
+                    <li ng-click = "diameter = 'R20'" class="popular-tires__item-aside col-sm-6" ng-class="{'R20':'popular-tires__item-aside_active'}[diameter]">R20</li>
+                </ul>
+                <section class="popular-tires__results">
+                    <img class="popular-tires__preloader" src="dest/images/ajax-loader.gif" ng-show="!results.length">
+                    <ul class="popular-tires__list-result" ng-show="results.length">
+                        <li class="popular-tires__result col-sm-2 col-xs-6" ng-repeat="result in results track by $index">
+                            <a href="#">{{result}}</a>
+                        </li>
                     </ul>
                 </section>
                 <div class="clearfix"></div>
-                <section class="popular-tires__body">
-                    <ul class="popular-tires__list-aside">
-                        <li ng-click = "diameter = 'R13'" class="popular-tires__item-aside col-sm-6" ng-class="{'R13':'popular-tires__item-aside_active'}[diameter]">R13</li>
-                        <li ng-click = "diameter = 'R14'" class="popular-tires__item-aside col-sm-6" ng-class="{'R14':'popular-tires__item-aside_active'}[diameter]">R14</li>
-                        <li ng-click = "diameter = 'R15'" class="popular-tires__item-aside col-sm-6" ng-class="{'R15':'popular-tires__item-aside_active'}[diameter]">R15</li>
-                        <li ng-click = "diameter = 'R16'" class="popular-tires__item-aside col-sm-6" ng-class="{'R16':'popular-tires__item-aside_active'}[diameter]">R16</li>
-                        <li ng-click = "diameter = 'R17'" class="popular-tires__item-aside col-sm-6" ng-class="{'R17':'popular-tires__item-aside_active'}[diameter]">R17</li>
-                        <li ng-click = "diameter = 'R18'" class="popular-tires__item-aside col-sm-6" ng-class="{'R18':'popular-tires__item-aside_active'}[diameter]">R18</li>
-                        <li ng-click = "diameter = 'R19'" class="popular-tires__item-aside col-sm-6" ng-class="{'R19':'popular-tires__item-aside_active'}[diameter]">R19</li>
-                        <li ng-click = "diameter = 'R20'" class="popular-tires__item-aside col-sm-6" ng-class="{'R20':'popular-tires__item-aside_active'}[diameter]">R20</li>
-                    </ul>
-                    <section class="popular-tires__results">
-                        <img class="popular-tires__preloader" src="dest/images/ajax-loader.gif" ng-show="!results.length">
-                        <ul class="popular-tires__list-result" ng-show="results.length">
-                            <li class="popular-tires__result col-sm-2 col-xs-6" ng-repeat="result in results track by $index">
-                                <a href="#">{{result}}</a>
-                            </li>
-                        </ul>
+            </section>
+        </article>
+        <article class="news">
+            <div class="container">
+                <section class="section-heading section-heading_news">
+                    <h2 class="section-heading__title">Самые свежие тесты и обзоры шин</h2>
+                </section>
+            </div>
+            <section class="news-list container">
+                <div class="row">
+<!--                        <article class="news-list__item col-sm-4">
+                        <p class="news-list__date">13.09.2016</p>
+                        <a href="#" class="news-list__anchor-image">
+                            <img class="news-list__image" src="dest/images/news1.jpg">
+                        </a>
+
+                        <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
+                        <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
+                    </article>
+                    <article class="news-list__item col-sm-4">
+                        <p class="news-list__date">13.09.2016</p>
+                        <a href="#" class="news-list__anchor-image">
+                            <img class="news-list__image" src="dest/images/news1.jpg">
+                        </a>
+                        <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
+                        <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
+                    </article>
+                    <article class="news-list__item col-sm-4">
+                        <p class="news-list__date">13.09.2016</p>
+                        <a href="#" class="news-list__anchor-image">
+                            <img class="news-list__image" src="dest/images/news1.jpg">
+                        </a>
+                        <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
+                        <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
+                    </article>-->       <!--Старый вариант новостей-->
+
+                    <section class="news-list__item col-sm-6 col-md-3">
+                        <div>
+                            <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
+                                <a class="news-list__comments">
+                                    <i class="glyphicon glyphicon-comment"></i>
+                                    <span class="news-list__comments-number">23</span>
+                                </a>
+                                <a href="#" class="news-list__anchor"></a>
+                                <a href="#" class="news-list__heading">Примеряем на себя</a>
+                            </section>
+                            <section class="news-list__info">
+                                <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                <p class="news-list__date">22.07.1986</p>
+                                <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                            </section>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </section>
+                    <section class="news-list__item col-sm-6 col-md-3">
+                        <div>
+                            <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
+                                <a class="news-list__comments">
+                                    <i class="glyphicon glyphicon-comment"></i>
+                                    <span class="news-list__comments-number">23</span>
+                                </a>
+                                <a href="#" class="news-list__anchor"></a>
+                                <a href="#" class="news-list__heading">Примеряем на себя</a>
+                            </section>
+                            <section class="news-list__info">
+                                <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                <p class="news-list__date">22.07.1986</p>
+                                <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                            </section>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </section>
+                    <section class="news-list__item col-sm-6 col-md-3">
+                        <div>
+                            <section class="news-list__image" style= " background-image: url('dest/images/news_image_2.jpg')">
+                                <a class="news-list__comments">
+                                    <i class="glyphicon glyphicon-comment"></i>
+                                    <span class="news-list__comments-number">23</span>
+                                </a>
+                                <a href="#" class="news-list__anchor"></a>
+                                <a href="#" class="news-list__heading">Примеряем на себя</a>
+                            </section>
+                            <section class="news-list__info">
+                                <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                <p class="news-list__date">22.07.1986</p>
+                                <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                            </section>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </section>
+                    <section class="news-list__item col-sm-6 col-md-3">
+                        <div>
+                            <section class="news-list__image" style= " background-image: url('dest/images/news_image_3.jpg')">
+                                <a class="news-list__comments">
+                                    <i class="glyphicon glyphicon-comment"></i>
+                                    <span class="news-list__comments-number">23</span>
+                                </a>
+                                <a href="#" class="news-list__anchor"></a>
+                                <a href="#" class="news-list__heading">Примеряем на себя</a>
+                            </section>
+                            <section class="news-list__info">
+                                <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
+                                <p class="news-list__date">22.07.1986</p>
+                                <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                            </section>
+                            <div class="clearfix"></div>
+                        </div>
                     </section>
                     <div class="clearfix"></div>
-                </section>
-            </article>
-            <article class="news">
-                <div class="container">
-                    <section class="section-heading section-heading_news">
-                        <h2 class="section-heading__title">Самые свежие тесты и обзоры шин</h2>
-                    </section>
                 </div>
-                <section class="news-list container">
-                    <div class="row">
-<!--                        <article class="news-list__item col-sm-4">
-                            <p class="news-list__date">13.09.2016</p>
-                            <a href="#" class="news-list__anchor-image">
-                                <img class="news-list__image" src="dest/images/news1.jpg">
-                            </a>
 
-                            <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
-                            <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
-                        </article>
-                        <article class="news-list__item col-sm-4">
-                            <p class="news-list__date">13.09.2016</p>
-                            <a href="#" class="news-list__anchor-image">
-                                <img class="news-list__image" src="dest/images/news1.jpg">
-                            </a>
-                            <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
-                            <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
-                        </article>
-                        <article class="news-list__item col-sm-4">
-                            <p class="news-list__date">13.09.2016</p>
-                            <a href="#" class="news-list__anchor-image">
-                                <img class="news-list__image" src="dest/images/news1.jpg">
-                            </a>
-                            <h3 class="news-list__title"><a href="#">Тест летних шин размера 225/45 R17 Autozurnal (2016)</a></h3>
-                            <p class="news-list__text">Эксперты словацкого автомобильного издания Autozurnal провели сравнительное тестирование летних моделей шин в типоразмере 225/45 R17. В данном испытании были использованы 8 покрышек разной ценовой категории.<p>
-                        </article>-->       <!--Старый вариант новостей-->
-
-                        <section class="news-list__item col-sm-6 col-md-3">
-                            <div>
-                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
-                                    <a class="news-list__comments">
-                                        <i class="glyphicon glyphicon-comment"></i>
-                                        <span class="news-list__comments-number">23</span>
-                                    </a>
-                                    <a href="#" class="news-list__anchor"></a>
-                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
-                                </section>
-                                <section class="news-list__info">
-                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
-                                    <p class="news-list__date">22.07.1986</p>
-                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-
-                        </section>
-                        <section class="news-list__item col-sm-6 col-md-3">
-                            <div>
-                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
-                                    <a class="news-list__comments">
-                                        <i class="glyphicon glyphicon-comment"></i>
-                                        <span class="news-list__comments-number">23</span>
-                                    </a>
-                                    <a href="#" class="news-list__anchor"></a>
-                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
-                                </section>
-                                <section class="news-list__info">
-                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
-                                    <p class="news-list__date">22.07.1986</p>
-                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-
-                        </section>
-                        <section class="news-list__item col-sm-6 col-md-3">
-                            <div>
-                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_2.jpg')">
-                                    <a class="news-list__comments">
-                                        <i class="glyphicon glyphicon-comment"></i>
-                                        <span class="news-list__comments-number">23</span>
-                                    </a>
-                                    <a href="#" class="news-list__anchor"></a>
-                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
-                                </section>
-                                <section class="news-list__info">
-                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
-                                    <p class="news-list__date">22.07.1986</p>
-                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-
-                        </section>
-                        <section class="news-list__item col-sm-6 col-md-3">
-                            <div>
-                                <section class="news-list__image" style= " background-image: url('dest/images/news_image_3.jpg')">
-                                    <a class="news-list__comments">
-                                        <i class="glyphicon glyphicon-comment"></i>
-                                        <span class="news-list__comments-number">23</span>
-                                    </a>
-                                    <a href="#" class="news-list__anchor"></a>
-                                    <a href="#" class="news-list__heading">Примеряем на себя</a>
-                                </section>
-                                <section class="news-list__info">
-                                    <h3 class="news-list__title"><a href="#">Примеряем на себя</a></h3>
-                                    <p class="news-list__date">22.07.1986</p>
-                                    <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-                        </section>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <a href="#" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a>
-                </section>
-
-            </article>
-            <article class="about hidden-xs">
-                <div class="container">
-                    <div class="about__container">
-                        <div class="about__content">
-                            <h2>Зимняя и летняя резина, автомобильные литые диски в Украине</h2>
-                            <p>На ProKoleso.ua мы предлагаем Вам возможность легко и быстро подобрать и купить летние и зимние шины для легковых автомобилей, внедорожников и минивенов, грузовиков и автобусов, а также для сельскохозяйственной техники. Вне зависимости от того, что Вы ищете, колеса на ВАЗ, Ланос, Тойоту или Мерседес, наш интернет магазин предложит Вам самый лучший вариант, подходящий для Вашего транспортного средства. Широкий ассортимент и лучшие цены на легковые бренды Bridgestone, Kumho, Continental, Cordiant и многие другие позволяют Вам приобрести качественные автошины, а также получить официальную гарантию на них. Например, если Вас интересует продажа зимней резины, то рекомендуем обратить внимание на Bridgestone, серии Blizzak.</p>
-                            <p>В предлагаемом нами ассортименте Вы также можете подобрать и приобрести легкосплавные диски известных производителей: MOMO и Racing Wheels (RW).	Если Вы не помните точно размер своих автопокрышек, но знаете, что Вам нужно R15 (R13, R14, R16, R17, R18 и т.д.) - попробуйте наш подбор по авто. Указав правильно марку своего автомобиля, Вы в результате получите все варианты типоразмеров подходящие под Ваш запрос. Если вы хотите взять авторезину для грузовика или автобуса тогда предлагаем рассмотреть предложения от TyRex , Aeolus, Kumho, Continental, Hankook, Voltyre и др. Ну а если Вам нужны автопокрышки для сельскохозяйственной техники – у нас представлены такие производители, как - Alliance, Galaxy, Petlas, Honour, Speedways. Мы постарались сделать так, чтобы процесс подбора был удобен и понятен и Вы самостоятельно могли определиться с выбором и приобрести автоколеса для любого своего автотранспорта.</p>
-                            <p>Однако, не стоит забывать, что от правильного выбора зимней или летней резины зависит безопасность. Ведь качество и надежность сцепления, безопасность передвижения, уверенность водителя за рулем – на все эти факторы влияют рисунок протектора, состав резины, а также правильный подбор размера автошин для Вашего автомобиля. Очень важно гармонично подобрать автопокрышки с нужными характеристиками, чтобы в любой ситуации контролировать свое авто и получать удовольствие от управления.</p>
-                            <p>Если у Вас возникают сомнения по поводу выбора, наши специалисты всегда готовы предоставить Вам профессиональную консультацию. Вы можете заказать на сайте обратный звонок или позвонить нам по телефону горячей линии.	Мы осуществляем доставку товара по Украине без комиссий и скрытых процентов. Вы также можете забрать и оплатить автошины с интернет-скидками в наших розничных центрах «Твоя шина – Pole Position» для легковых автомобилей или сервисных станциях «Camion Tyres» для грузового транспорта, где наши специалисты профессионально установят их на авто.</p>
-                            <p>Квалифицированный персонал «Твоя шина – Pole Position» и «Camion Tyres» предоставит Вам весь комплекс услуг, связанных с подбором, установкой , и дальнейшим обслуживанием Ваших колес.	Все знают, что в сезон трудно записаться на шиномонтаж, чтобы переобуть свою машину. Поэтому для Вас на сайте действует онлайн запись на шиномонтаж, позволяющая сэкономить время и получить качественные услуги в наших сервисных центрах. За годы успешной деятельности в шинном бизнесе нам удалось создать крупную сеть сервисно-торговых центров и представительств по всей Украине. Сегодня Вы можете с максимальным удобством приобрести покрышки в Киеве, Днепропетровске, Харькове, Донецке, Одессе, Львове и других населенных пунктах Украины, где расположены наши отделения или центры наших партнеров.</p>
-                        </div>
-
-                    </div>
-                    <a class="about__toggle" href="#">
-                        <span class="about__anchor">Читать далее</span>
-                    </a>
-                </div>
-            </article>
-            <section class="help-us">
-                <div class="container">
-                    <span class="help-us__icon">
-                        <i class="glyphicon glyphicon-warning-sign"></i>
-                    </span>
-                    <span class="help-us__text">Вы можете нам помочь! Если Вы заметили опечатку или неточность на сайте, пожалуйста, выделите ее и нажмите <strong>Ctrl+Enter</strong></span>
-                </div>
+                <a href="#" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a>
             </section>
-        </main>
 
-        <footer class="footer">
+        </article>
+        <article class="about hidden-xs">
             <div class="container">
-                <span class="footer__text hidden-lg hidden-md hidden-sm"><small>2014-2016 © Интернет-магазин шин и дисков Prokoleso.ua</small></span>
-                <ul class="list-inline hidden-xs">
+                <div class="about__container">
+                    <div class="about__content">
+                        <h2>Зимняя и летняя резина, автомобильные литые диски в Украине</h2>
+                        <p>На ProKoleso.ua мы предлагаем Вам возможность легко и быстро подобрать и купить летние и зимние шины для легковых автомобилей, внедорожников и минивенов, грузовиков и автобусов, а также для сельскохозяйственной техники. Вне зависимости от того, что Вы ищете, колеса на ВАЗ, Ланос, Тойоту или Мерседес, наш интернет магазин предложит Вам самый лучший вариант, подходящий для Вашего транспортного средства. Широкий ассортимент и лучшие цены на легковые бренды Bridgestone, Kumho, Continental, Cordiant и многие другие позволяют Вам приобрести качественные автошины, а также получить официальную гарантию на них. Например, если Вас интересует продажа зимней резины, то рекомендуем обратить внимание на Bridgestone, серии Blizzak.</p>
+                        <p>В предлагаемом нами ассортименте Вы также можете подобрать и приобрести легкосплавные диски известных производителей: MOMO и Racing Wheels (RW).	Если Вы не помните точно размер своих автопокрышек, но знаете, что Вам нужно R15 (R13, R14, R16, R17, R18 и т.д.) - попробуйте наш подбор по авто. Указав правильно марку своего автомобиля, Вы в результате получите все варианты типоразмеров подходящие под Ваш запрос. Если вы хотите взять авторезину для грузовика или автобуса тогда предлагаем рассмотреть предложения от TyRex , Aeolus, Kumho, Continental, Hankook, Voltyre и др. Ну а если Вам нужны автопокрышки для сельскохозяйственной техники – у нас представлены такие производители, как - Alliance, Galaxy, Petlas, Honour, Speedways. Мы постарались сделать так, чтобы процесс подбора был удобен и понятен и Вы самостоятельно могли определиться с выбором и приобрести автоколеса для любого своего автотранспорта.</p>
+                        <p>Однако, не стоит забывать, что от правильного выбора зимней или летней резины зависит безопасность. Ведь качество и надежность сцепления, безопасность передвижения, уверенность водителя за рулем – на все эти факторы влияют рисунок протектора, состав резины, а также правильный подбор размера автошин для Вашего автомобиля. Очень важно гармонично подобрать автопокрышки с нужными характеристиками, чтобы в любой ситуации контролировать свое авто и получать удовольствие от управления.</p>
+                        <p>Если у Вас возникают сомнения по поводу выбора, наши специалисты всегда готовы предоставить Вам профессиональную консультацию. Вы можете заказать на сайте обратный звонок или позвонить нам по телефону горячей линии.	Мы осуществляем доставку товара по Украине без комиссий и скрытых процентов. Вы также можете забрать и оплатить автошины с интернет-скидками в наших розничных центрах «Твоя шина – Pole Position» для легковых автомобилей или сервисных станциях «Camion Tyres» для грузового транспорта, где наши специалисты профессионально установят их на авто.</p>
+                        <p>Квалифицированный персонал «Твоя шина – Pole Position» и «Camion Tyres» предоставит Вам весь комплекс услуг, связанных с подбором, установкой , и дальнейшим обслуживанием Ваших колес.	Все знают, что в сезон трудно записаться на шиномонтаж, чтобы переобуть свою машину. Поэтому для Вас на сайте действует онлайн запись на шиномонтаж, позволяющая сэкономить время и получить качественные услуги в наших сервисных центрах. За годы успешной деятельности в шинном бизнесе нам удалось создать крупную сеть сервисно-торговых центров и представительств по всей Украине. Сегодня Вы можете с максимальным удобством приобрести покрышки в Киеве, Днепропетровске, Харькове, Донецке, Одессе, Львове и других населенных пунктах Украины, где расположены наши отделения или центры наших партнеров.</p>
+                    </div>
 
-                    <li class="col-sm-3">
-                        <h4 class="footer__subtitle"><a href="#">Для покупателя</a></h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Оплата и доставка</a></li>
-                            <li><a href="#">Гарантия и шины</a></li>
-                            <li><a href="#">О компании</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </li>
-                    <li class="col-sm-3">
-                        <h4 class="footer__subtitle"><a href="#">Каталог шин и дисков</a></h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Легковые шины</a></li>
-                            <li><a href="#">Легковесные диски</a></li>
-                            <li><a href="#">Грузовые шины</a></li>
-                        </ul>
-                    </li>
-                    <li class="col-sm-3">
-                        <h4 class="footer__subtitle"><a href="#">Услуги и сервис</a></h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Шинные центры</a></li>
-                            <li><a href="#">Запись на шиномонтаж</a></li>
-                            <li><a href="#">Онлайн подбор шин</a></li>
-                            <li><a href="#">Онлайн подбор дисков</a></li>
-                            <li><a href="#">Подбор шин по авто</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <h4 class="footer__subtitle"><a href="#">Мы в социальных сетях</a></h4>
-                        <article>
-                            <rzslider
-                                    rz-slider-model="noSwitchingSlider.minValue"
-                                    rz-slider-high="noSwitchingSlider.maxValue"
-                                    rz-slider-options="noSwitchingSlider.options"
-
-                                    ></rzslider>
-                            <input type="text" ng-model="noSwitchingSlider.minValue">
-                            <input type="text" ng-model="noSwitchingSlider.maxValue">
-                        </article>
-                    </li>
-
-                </ul>
+                </div>
+                <a class="about__toggle" href="#">
+                    <span class="about__anchor">Читать далее</span>
+                </a>
             </div>
-            <section class="bottom-panel" ng-controller="FooterCtrl">
-                <div class="bottom-panel__open" ng-click = "showFixedPanel($event)"><i class="glyphicon glyphicon-plus"></i></div>
-                <ul class="bottom-panel__list list-inline">
-                    <li class="bottom-panel__item">
-                        <a href="#" uib-tooltip="Задать вопрос on-line"
-                           tooltip-placement="top"
-                           tooltip-trigger="'mouseenter'">
-                            <img class="bottom-panel__image" src="dest/images/sh.png">
-                            <span class="bottom-panel__text hidden-xs">Задать вопрос</span>
-                        </a>
-                    </li>
-                    <li class="bottom-panel__item">
-                        <a href="#" uib-tooltip="Недавно просмотренные товары!"
-                           tooltip-placement="top"
-                           tooltip-trigger="'mouseenter'">
-                            <img class="bottom-panel__image" src="dest/images/viewed.png">
-                            <span class="hidden-xs bottom-panel__text">Недавно просмотенные</span>
-                        </a>
-                    </li>
-                    <li class="bottom-panel__item">
-                        <a href="#" uib-tooltip="Избранные товары"
-                           tooltip-placement="top"
-                           tooltip-trigger="'mouseenter'">
-                            <img  class="bottom-panel__image " src="dest/images/favorites.png">
-                        </a>
-                    </li>
-                    <li class="bottom-panel__item">
-                        <a href="#"
-                           uib-tooltip="Нажмите, чтобы открыть окно поиска."
-                           tooltip-placement="top"
-                           tooltip-trigger="'mouseenter'">
-                            <img class="bottom-panel__image" src="dest/images/search.png">
-                        </a>
-                    </li>
-                    <li class="bottom-panel__item">
-                        <a href="#" uib-tooltip="Нажмите чтобы скрыть панель"
-                           tooltip-placement="top"
-                           tooltip-trigger="'mouseenter'"
-                            ng-click = "hideFixedPanel($event)"
-                        >
-                            <i class="glyphicon glyphicon-minus"></i>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-        </footer>
+        </article>
+        <section class="help-us">
+            <div class="container">
+                <span class="help-us__icon">
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                </span>
+                <span class="help-us__text">Вы можете нам помочь! Если Вы заметили опечатку или неточность на сайте, пожалуйста, выделите ее и нажмите <strong>Ctrl+Enter</strong></span>
+            </div>
+        </section>
+    </main>
 
+    <footer class="footer">
+        <div class="container">
+            <span class="footer__text hidden-lg hidden-md hidden-sm"><small>2014-2016 © Интернет-магазин шин и дисков Prokoleso.ua</small></span>
+            <ul class="list-inline hidden-xs">
 
-        <div class="scroll-up">
-            <img class="scroll-up__image" src="dest/images/anchor.png">
+                <li class="col-sm-3">
+                    <h4 class="footer__subtitle"><a href="#">Для покупателя</a></h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Оплата и доставка</a></li>
+                        <li><a href="#">Гарантия и шины</a></li>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-3">
+                    <h4 class="footer__subtitle"><a href="#">Каталог шин и дисков</a></h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Легковые шины</a></li>
+                        <li><a href="#">Легковесные диски</a></li>
+                        <li><a href="#">Грузовые шины</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-3">
+                    <h4 class="footer__subtitle"><a href="#">Услуги и сервис</a></h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Шинные центры</a></li>
+                        <li><a href="#">Запись на шиномонтаж</a></li>
+                        <li><a href="#">Онлайн подбор шин</a></li>
+                        <li><a href="#">Онлайн подбор дисков</a></li>
+                        <li><a href="#">Подбор шин по авто</a></li>
+                    </ul>
+                </li>
+
+                <li class="col-sm-3">
+                    <h4 class="footer__subtitle"><a href="#">Мы в социальных сетях</a></h4>
+                    <article>
+                        <rzslider
+                                rz-slider-model="noSwitchingSlider.minValue"
+                                rz-slider-high="noSwitchingSlider.maxValue"
+                                rz-slider-options="noSwitchingSlider.options"
+
+                                ></rzslider>
+                        <input type="text" ng-model="noSwitchingSlider.minValue">
+                        <input type="text" ng-model="noSwitchingSlider.maxValue">
+                    </article>
+                </li>
+
+            </ul>
         </div>
+        <section class="bottom-panel" ng-controller="FooterCtrl">
+            <div class="bottom-panel__open" ng-click = "showFixedPanel($event)"><i class="glyphicon glyphicon-plus"></i></div>
+            <ul class="bottom-panel__list list-inline">
+                <li class="bottom-panel__item">
+                    <a href="#" uib-tooltip="Задать вопрос on-line"
+                       tooltip-placement="top"
+                       tooltip-trigger="'mouseenter'">
+                        <img class="bottom-panel__image" src="dest/images/sh.png">
+                        <span class="bottom-panel__text hidden-xs">Задать вопрос</span>
+                    </a>
+                </li>
+                <li class="bottom-panel__item">
+                    <a href="#" uib-tooltip="Недавно просмотренные товары!"
+                       tooltip-placement="top"
+                       tooltip-trigger="'mouseenter'">
+                        <img class="bottom-panel__image" src="dest/images/viewed.png">
+                        <span class="hidden-xs bottom-panel__text">Недавно просмотенные</span>
+                    </a>
+                </li>
+                <li class="bottom-panel__item">
+                    <a href="#" uib-tooltip="Избранные товары"
+                       tooltip-placement="top"
+                       tooltip-trigger="'mouseenter'">
+                        <img  class="bottom-panel__image " src="dest/images/favorites.png">
+                    </a>
+                </li>
+                <li class="bottom-panel__item">
+                    <a href="#"
+                       uib-tooltip="Нажмите, чтобы открыть окно поиска."
+                       tooltip-placement="top"
+                       tooltip-trigger="'mouseenter'">
+                        <img class="bottom-panel__image" src="dest/images/search.png">
+                    </a>
+                </li>
+                <li class="bottom-panel__item">
+                    <a href="#" uib-tooltip="Нажмите чтобы скрыть панель"
+                       tooltip-placement="top"
+                       tooltip-trigger="'mouseenter'"
+                        ng-click = "hideFixedPanel($event)"
+                    >
+                        <i class="glyphicon glyphicon-minus"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+
+
+    <div class="scroll-up">
+        <img class="scroll-up__image" src="dest/images/anchor.png">
+    </div>
 
 
 
-        <div class="modal fade modal-phone-me" tabindex="-1" role="dialog" id="callBack">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Заявка на обратный звонок</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Для того что бы оставить заявку на обратный звонок, пожалуйста, заполните форму ниже:</p>
-                        <form>
-                            <div class="form-group modal-phone-me__half modal-phone-me__half_left">
-                                <input type="text" class="form-control" placeholder="ФИО *">
-                            </div>
-                            <div class="form-group modal-phone-me__half modal-phone-me__half_right">
-                                <input type="text" class="form-control" placeholder="Телефон *">
-                            </div>
-                            <select class="form-control modal-phone-me__select">
-                                <option selected>Выберите тему</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                            <textarea placeholder="Комментарий" class="form-control" rows="3"></textarea>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Отправить</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        <div class="modal fade modal-more-phones" tabindex="-1" role="dialog" id="morePhones">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Контакты</h4>
-                    </div>
-                    <div class="modal-body modal-body_gray">
-                        <p class="modal-more-phones__title"><strong>Горячая линия</strong></p>
-                        <p class="modal-more-phones__phone">0(800) 303-336</p>
-                        <p>Бесплатно со стационарных и мобильных по Украине</p>
-                    </div>
-                    <div class="modal-footer">
-                        <ul class="list-inline header-top__phones modal-more-phones__list">
-                            <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/kievstar-icon.png"><small>(067) 209-21-12</small></li>
-                            <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/mts-icon.png"><small>(050) 361-91-31</small></li>
-                        </ul>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        <div class="modal fade modal-cart" tabindex="-1" role="dialog" id="cart">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Корзина</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>В вашей корзине 4 товара</p>
-                        <section class="modal-cart__items">
-                            <article class="modal-cart__item">
-                                <section class="modal-cart__description">
-                                    <section class="col-xs-4 modal-cart__left">
-                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
-                                        <img src="dest/images/season-all.png" class="modal-cart__season">
-                                    </section>
-                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
-                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
-                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
-                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
-                                    </section>
-                                    <div class="clearfix"></div>
-                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
-                                </section>
-                                <section class="modal-cart__prices">
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Количество:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Сумма:</small>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 modal-cart__price">
-                                            50 р.
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                                            <input class="form-control" type="text" value="2">
-                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
-                                        </div>
-                                        <div class="col-xs-4 modal-cart__price">
-                                            100 р.
-                                        </div>
-                                    </div>
-                                </section>
-                            </article>
-                            <article class="modal-cart__item">
-                                <section class="modal-cart__description">
-                                    <section class="col-xs-4 modal-cart__left">
-                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
-                                        <img src="dest/images/season-winter.png" class="modal-cart__season">
-                                    </section>
-                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
-                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
-                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
-                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
-                                    </section>
-                                    <div class="clearfix"></div>
-                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
-                                </section>
-                                <section class="modal-cart__prices">
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Количество:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Сумма:</small>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 modal-cart__price">
-                                            50 р.
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                                            <input class="form-control" type="text" value="2">
-                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
-                                        </div>
-                                        <div class="col-xs-4 modal-cart__price">
-                                            100 р.
-                                        </div>
-                                    </div>
-                                </section>
-                            </article>
-                            <article class="modal-cart__item">
-                                <section class="modal-cart__description">
-                                    <section class="col-xs-4 modal-cart__left">
-                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
-                                        <img src="dest/images/season-summer.png" class="modal-cart__season">
-                                    </section>
-                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
-                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
-                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
-                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
-                                    </section>
-                                    <div class="clearfix"></div>
-                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
-                                </section>
-                                <section class="modal-cart__prices">
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Количество:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Сумма:</small>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 modal-cart__price">
-                                            50 р.
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                                            <input class="form-control" type="text" value="2">
-                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
-                                        </div>
-                                        <div class="col-xs-4 modal-cart__price">
-                                            100 р.
-                                        </div>
-                                    </div>
-                                </section>
-                            </article>
-                            <article class="modal-cart__item">
-                                <section class="modal-cart__description">
-                                    <section class="col-xs-4 modal-cart__left">
-                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
-                                        <img src="dest/images/season-winter.png" class="modal-cart__season">
-                                    </section>
-                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
-                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
-                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
-                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
-                                    </section>
-                                    <div class="clearfix"></div>
-                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
-                                </section>
-                                <section class="modal-cart__prices">
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Количество:</small>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <small>Сумма:</small>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 modal-cart__price">
-                                            50 р.
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                                            <input class="form-control" type="text" value="2">
-                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
-                                        </div>
-                                        <div class="col-xs-4 modal-cart__price">
-                                            100 р.
-                                        </div>
-                                    </div>
-                                </section>
-                            </article>
-                        </section>
-                        <p class="modal-cart__info">Цена на заказ действительна в течение суток со дня поступления товара на склад выдачи.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <span class="about__anchor modal-cart__continue-btn pull-left">Продолжить покупки</span>
-                        <button class="btn btn-warning">Оформить заказ</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        <div class="modal fade modal-cart" tabindex="-1" role="dialog" id="log-in">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Вход</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p class="hidden-lg hidden-md hidden-sm">
-                            <a href="#"  data-toggle="modal" data-target="#register">Зарегистрироваться</a>
-                            <a href="#" class="log-in__forget">Забыли пароль?</a>
-                        </p>
-                        <ul class="log-in__socials row list-unstyled">
-                            <li class="col-sm-4">
-                                <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
-                            </li>
-                            <li class="col-sm-4">
-                                <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
-                            </li>
-                            <li class="col-sm-4">
-                                <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
-                            </li>
-                            <li class="log-in__or">или</li>
-                        </ul>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя, номер телефона или email">
+    <div class="modal fade modal-phone-me" tabindex="-1" role="dialog" id="callBack">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Заявка на обратный звонок</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Для того что бы оставить заявку на обратный звонок, пожалуйста, заполните форму ниже:</p>
+                    <form>
+                        <div class="form-group modal-phone-me__half modal-phone-me__half_left">
+                            <input type="text" class="form-control" placeholder="ФИО *">
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Пароль">
+                        <div class="form-group modal-phone-me__half modal-phone-me__half_right">
+                            <input type="text" class="form-control" placeholder="Телефон *">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#register">Зарегистрироваться</a>
-                        <a href="#" class="pull-left log-in__forget hidden-xs">Забыли пароль?</a>
-                        <button class="btn btn-warning">Отправить</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+                        <select class="form-control modal-phone-me__select">
+                            <option selected>Выберите тему</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <textarea placeholder="Комментарий" class="form-control" rows="3"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning">Отправить</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-        <div class="modal fade" tabindex="-1" role="dialog" id="register">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Регистрация</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p class="hidden-lg hidden-md hidden-sm">
-                            <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
-                            <a href="#" class="log-in__forget">Забыли пароль?</a>
-                        </p>
-                        <ul class="log-in__socials row list-unstyled">
-                            <li class="col-sm-4">
-                                <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
-                            </li>
-                            <li class="col-sm-4">
-                                <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
-                            </li>
-                            <li class="col-sm-4">
-                                <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
-                            </li>
-                            <li class="log-in__or">или</li>
-                        </ul>
+    <div class="modal fade modal-more-phones" tabindex="-1" role="dialog" id="morePhones">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Контакты</h4>
+                </div>
+                <div class="modal-body modal-body_gray">
+                    <p class="modal-more-phones__title"><strong>Горячая линия</strong></p>
+                    <p class="modal-more-phones__phone">0(800) 303-336</p>
+                    <p>Бесплатно со стационарных и мобильных по Украине</p>
+                </div>
+                <div class="modal-footer">
+                    <ul class="list-inline header-top__phones modal-more-phones__list">
+                        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/kievstar-icon.png"><small>(067) 209-21-12</small></li>
+                        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/mts-icon.png"><small>(050) 361-91-31</small></li>
+                    </ul>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваш E-mail*">
-                        </div>
-                        <p class="log-in__explain">Существующий адрес электронной почты. Все почтовые сообщения с сайта будут отсылаться на этот адрес. Адрес электронной почты не будет публиковаться и будет использован только по вашему желанию: для восстановления пароля или для получения новостей и уведомлений по электронной почте.</p>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваш логин*">
-                        </div>
-                        <p class="log-in__explain">Пробелы разрешены; знаки пунктуации запрещены, за исключением точек, тире, апострофов и знаков подчеркивания.</p>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Пароль*">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Повторите пароль*">
-                        </div>
-                        <p class="log-in__explain">Укажите пароль для новой учетной записи в обоих полях.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
-                        <a href="#" class="pull-left log-in__forget hidden-xs">Забыли пароль?</a>
-                        <button class="btn btn-warning">Отправить</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+    <div class="modal fade modal-cart" tabindex="-1" role="dialog" id="cart">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Корзина</h4>
+                </div>
+                <div class="modal-body"  cart>
 
-        <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
+                </div>
+                <div class="modal-footer">
+                    <span class="about__anchor modal-cart__continue-btn pull-left">Продолжить покупки</span>
+                    <button class="btn btn-warning">Оформить заказ</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="log-in">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Вход</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="hidden-lg hidden-md hidden-sm">
+                        <a href="#"  data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                        <a href="#" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                    </p>
+                    <ul class="log-in__socials row list-unstyled">
+                        <li class="col-sm-4">
+                            <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
+                        </li>
+                        <li class="col-sm-4">
+                            <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
+                        </li>
+                        <li class="col-sm-4">
+                            <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
+                        </li>
+                        <li class="log-in__or">или</li>
+                    </ul>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ваше имя, номер телефона или email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Пароль">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                    <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                    <button class="btn btn-warning">Отправить</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="register">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Регистрация</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="hidden-lg hidden-md hidden-sm">
+                        <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
+                        <a href="#" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                    </p>
+                    <ul class="log-in__socials row list-unstyled">
+                        <li class="col-sm-4">
+                            <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
+                        </li>
+                        <li class="col-sm-4">
+                            <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
+                        </li>
+                        <li class="col-sm-4">
+                            <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
+                        </li>
+                        <li class="log-in__or">или</li>
+                    </ul>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ваш E-mail*">
+                    </div>
+                    <p class="log-in__explain">Существующий адрес электронной почты. Все почтовые сообщения с сайта будут отсылаться на этот адрес. Адрес электронной почты не будет публиковаться и будет использован только по вашему желанию: для восстановления пароля или для получения новостей и уведомлений по электронной почте.</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ваш логин*">
+                    </div>
+                    <p class="log-in__explain">Пробелы разрешены; знаки пунктуации запрещены, за исключением точек, тире, апострофов и знаков подчеркивания.</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Пароль*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Повторите пароль*">
+                    </div>
+                    <p class="log-in__explain">Укажите пароль для новой учетной записи в обоих полях.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                    <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                    <button class="btn btn-warning">Отправить</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="forget">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Восстановление пароля</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="hidden-lg hidden-md hidden-sm">
+                        <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
+                        <a href="#" class="log-in__forget" data-toggle="modal" data-target="#register">Регистрация</a>
+                    </p>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Логин, e-mail или номер телефона">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                    <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
+
+                    <button class="btn btn-warning">Выслать новый пароль</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
     <script src="dest/js/lib/angular.min.js"></script>
     <script src="dest/js/lib/angular-sanitize.js"></script>
     <script src="dest/bootstrap/js/bootstrap.min.js"></script>
@@ -805,7 +677,10 @@
     <script src="dest/js/directives/tiresForCar.js"></script>
     <script src="dest/js/directives/hideOnMisclick.js"></script>
     <script src="dest/js/directives/hideOnScroll.js"></script>
+    <script src="dest/js/directives/cart.js"></script>
 
+    <!--Фильтры-->
+    <script src="dest/js/filters/goods.js"></script>
 
 
     <script src="dest/bootstrap/angular/ui-bootstrap-2.1.3.js"></script>
@@ -838,6 +713,23 @@
 
 
         });
+    </script>
+
+    <script>
+        $("#log-in").on("show.bs.modal",function(){
+            $("#register").modal("hide");
+            $("#forget").modal("hide");
+        });
+        $("#register").on("show.bs.modal",function(){
+            $("#log-in").modal("hide");
+            $("#forget").modal("hide");
+        });
+        $("#forget").on("show.bs.modal",function(){
+            $("#log-in").modal("hide");
+            $("#register").modal("hide");
+        });
+
+
     </script>
 
 </body>

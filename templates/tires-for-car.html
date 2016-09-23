@@ -11,7 +11,13 @@
         </label>
     </div>
 </section>
-<section class="col-sm-6 col-lg-4">
+<section class="col-sm-6 col-lg-4" ng-show="models.length==1">
+    <div class="form-group tab3__input">
+        <input type="text" class = "form-control" ng-value = "model" readonly>
+    </div>
+
+</section>
+<section class="col-sm-6 col-lg-4" ng-hide="models.length==1">
     <div class="select__wrapper tab3__input">
         <label class="tab1__select">
             <span class="select__label" ng-show="!model">Модель</span>
@@ -21,8 +27,13 @@
         </label>
     </div>
 </section>
-<section class="col-sm-6 col-lg-offset-4 col-lg-4">
-    <div class="select__wrapper tab3__input">
+<section class="col-sm-6 col-lg-offset-4 col-lg-4" ng-show="years.length==1">
+    <div class="form-group tab3__input">
+        <input type="text" class = "form-control" ng-value = "year" readonly>
+    </div>
+</section>
+<section class="col-sm-6 col-lg-offset-4 col-lg-4" ng-hide="years.length==1">
+    <div class="select__wrapper tab3__input ">
         <label class="tab1__select">
             <span class="select__label" ng-show="!year">Год</span>
             <select ng-model="year" class="form-control select" ng-disabled="!years">
@@ -31,10 +42,15 @@
         </label>
     </div>
 </section>
-<section class="col-sm-6 col-lg-4">
+<section class="col-sm-6 col-lg-4" ng-show="modifications.length==1">
+    <div class="form-group tab3__input">
+        <input type="text" class = "form-control" ng-value = "modification" readonly>
+    </div>
+</section>
+<section class="col-sm-6 col-lg-4" ng-hide="modifications.length==1">
     <div class="select__wrapper tab3__input">
         <label class="tab1__select">
-            <span class="select__label" ng-show="!model">Моdifications</span>
+            <span class="select__label" ng-show="!modification">Модификация</span>
             <select ng-model="modification" class="form-control select" ng-disabled="!modifications">
                 <option ng-repeat = "modification in modifications">{{modification}}</option>
             </select>

@@ -1,0 +1,68 @@
+.log-in {
+
+}
+.log-in__forget {
+  padding-left: 20px;
+}
+.log-in__social {
+  width: 100%;
+  height: 2em;
+  border: 1px solid;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  line-height: 2;
+  text-align: center;
+  padding-left: 1rem;
+  display: block;
+  background: no-repeat .5rem center;
+  box-sizing: border-box;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.log-in__facebook {
+  background-color: #3b5795;
+  background-image: url(images/facebook-icon.png);
+}
+.log-in__google {
+  background-color: #dc3f2d;
+  background-image: url(images/google-icon.png);
+}
+.log-in__vkontakte {
+  background-color: #4b74a2;
+  background-image: url(images/vk-icon.png);
+}
+.log-in__socials {
+  border-bottom: 1px solid #ddd;
+/*  margin-left: 0;
+  margin-right: 0;*/
+  position: relative;
+  padding-bottom: 1em;
+  li {
+    margin-bottom: 1em;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  margin-bottom: 2em;
+}
+.log-in__or {
+  width: 16%;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 0.5em 0;
+  bottom: -1.2em;
+  position: absolute;
+  text-align: center;
+  left: 42%;
+  margin: 0 !important;
+}
+.log-in__explain {
+  margin-top: -1em;
+  color: #999;
+  font-size: 90%;
+  text-align: justify;
+}

@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
-
     <link rel="stylesheet" href="dest/styles.min.css">
+    <link rel="stylesheet" href="dest/rzslider.min.css">
 </head>
 <body ng-app="app" ng-controller="AppCtrl as controller" anchor>
 
@@ -62,8 +62,10 @@
 
                         </nav>
                         <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
-                        <a href="#" class="theme_hidden blue-theme_shown header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
+                        <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
+<!--
                         <a href="#" class="theme_hidden turquoise-theme_shown header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo3.png"></a>
+-->
                         <menu></menu>
                         <nav class="tools-menu">
                             <ul class="tools-menu__list header-bottom__tools">
@@ -71,16 +73,21 @@
                                 <li class="tools-menu__item">
                                     <i class="glyphicon glyphicon-user tools-menu__icon"></i>
                                     <ul class="hidden-sm hidden-md hidden-xs">
-                                        <li><a href="#"><span class="hidden-sm hidden-md hidden-xs">Вход</span></a></li>
-                                        <li><a href="#"><span class="hidden-sm hidden-md hidden-xs">Регистрация</span></a></li>
+                                        <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
+                                        <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
                                     </ul>
                                 </li>
-                                <li class="tools-menu__item"><a href="#"><i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i></a></li>
+                                <li class="tools-menu__item tools-menu__cart">
+                                    <a href="#" data-toggle="modal" data-target="#cart">
+                                        <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
+                                        <section class="tools-menu__goods">12</section>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
 
                     </div>
-                    <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick>
+                    <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick hide-on-scroll>
 
                     </div>
                 </div>
@@ -366,7 +373,18 @@
 
                     <li class="col-sm-3">
                         <h4 class="footer__subtitle"><a href="#">Мы в социальных сетях</a></h4>
+                        <article>
+                            <rzslider
+                                    rz-slider-model="noSwitchingSlider.minValue"
+                                    rz-slider-high="noSwitchingSlider.maxValue"
+                                    rz-slider-options="noSwitchingSlider.options"
+
+                                    ></rzslider>
+                            <input type="text" ng-model="noSwitchingSlider.minValue">
+                            <input type="text" ng-model="noSwitchingSlider.maxValue">
+                        </article>
                     </li>
+
                 </ul>
             </div>
             <section class="bottom-panel" ng-controller="FooterCtrl">
@@ -479,11 +497,290 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-    <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
+        <div class="modal fade modal-cart" tabindex="-1" role="dialog" id="cart">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Корзина</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>В вашей корзине 4 товара</p>
+                        <section class="modal-cart__items">
+                            <article class="modal-cart__item">
+                                <section class="modal-cart__description">
+                                    <section class="col-xs-4 modal-cart__left">
+                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
+                                        <img src="dest/images/season-all.png" class="modal-cart__season">
+                                    </section>
+                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
+                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
+                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
+                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
+                                    </section>
+                                    <div class="clearfix"></div>
+                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
+                                </section>
+                                <section class="modal-cart__prices">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Количество:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Сумма:</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 modal-cart__price">
+                                            50 р.
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                                            <input class="form-control" type="text" value="2">
+                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
+                                        </div>
+                                        <div class="col-xs-4 modal-cart__price">
+                                            100 р.
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                            <article class="modal-cart__item">
+                                <section class="modal-cart__description">
+                                    <section class="col-xs-4 modal-cart__left">
+                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
+                                        <img src="dest/images/season-winter.png" class="modal-cart__season">
+                                    </section>
+                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
+                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
+                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
+                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
+                                    </section>
+                                    <div class="clearfix"></div>
+                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
+                                </section>
+                                <section class="modal-cart__prices">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Количество:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Сумма:</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 modal-cart__price">
+                                            50 р.
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                                            <input class="form-control" type="text" value="2">
+                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
+                                        </div>
+                                        <div class="col-xs-4 modal-cart__price">
+                                            100 р.
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                            <article class="modal-cart__item">
+                                <section class="modal-cart__description">
+                                    <section class="col-xs-4 modal-cart__left">
+                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
+                                        <img src="dest/images/season-summer.png" class="modal-cart__season">
+                                    </section>
+                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
+                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
+                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
+                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
+                                    </section>
+                                    <div class="clearfix"></div>
+                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
+                                </section>
+                                <section class="modal-cart__prices">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Количество:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Сумма:</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 modal-cart__price">
+                                            50 р.
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                                            <input class="form-control" type="text" value="2">
+                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
+                                        </div>
+                                        <div class="col-xs-4 modal-cart__price">
+                                            100 р.
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                            <article class="modal-cart__item">
+                                <section class="modal-cart__description">
+                                    <section class="col-xs-4 modal-cart__left">
+                                        <img src="dest/images/cart_tire-1.png" class="modal-cart__image">
+                                        <img src="dest/images/season-winter.png" class="modal-cart__season">
+                                    </section>
+                                    <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
+                                        <h3 class="modal-cart__title">Taurus Winter 601</h3>
+                                        <p><a href="#" class="modal-cart__parameters">175/65R15 84T</a></p>
+                                        <p class="modal-cart__articul"><small>Арт: ta11</small></p>
+                                    </section>
+                                    <div class="clearfix"></div>
+                                    <a href="#" class="modal-cart__trash"><i class="glyphicon glyphicon-trash"></i></a>
+                                </section>
+                                <section class="modal-cart__prices">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Количество:</small>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small>Сумма:</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 modal-cart__price">
+                                            50 р.
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                                            <input class="form-control" type="text" value="2">
+                                            <a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a>
+                                        </div>
+                                        <div class="col-xs-4 modal-cart__price">
+                                            100 р.
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                        </section>
+                        <p class="modal-cart__info">Цена на заказ действительна в течение суток со дня поступления товара на склад выдачи.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <span class="about__anchor modal-cart__continue-btn pull-left">Продолжить покупки</span>
+                        <button class="btn btn-warning">Оформить заказ</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade modal-cart" tabindex="-1" role="dialog" id="log-in">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Вход</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="hidden-lg hidden-md hidden-sm">
+                            <a href="#"  data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                            <a href="#" class="log-in__forget">Забыли пароль?</a>
+                        </p>
+                        <ul class="log-in__socials row list-unstyled">
+                            <li class="col-sm-4">
+                                <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
+                            </li>
+                            <li class="log-in__or">или</li>
+                        </ul>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваше имя, номер телефона или email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Пароль">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                        <a href="#" class="pull-left log-in__forget hidden-xs">Забыли пароль?</a>
+                        <button class="btn btn-warning">Отправить</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="register">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Регистрация</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="hidden-lg hidden-md hidden-sm">
+                            <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
+                            <a href="#" class="log-in__forget">Забыли пароль?</a>
+                        </p>
+                        <ul class="log-in__socials row list-unstyled">
+                            <li class="col-sm-4">
+                                <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
+                            </li>
+                            <li class="log-in__or">или</li>
+                        </ul>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваш E-mail*">
+                        </div>
+                        <p class="log-in__explain">Существующий адрес электронной почты. Все почтовые сообщения с сайта будут отсылаться на этот адрес. Адрес электронной почты не будет публиковаться и будет использован только по вашему желанию: для восстановления пароля или для получения новостей и уведомлений по электронной почте.</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваш логин*">
+                        </div>
+                        <p class="log-in__explain">Пробелы разрешены; знаки пунктуации запрещены, за исключением точек, тире, апострофов и знаков подчеркивания.</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Пароль*">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Повторите пароль*">
+                        </div>
+                        <p class="log-in__explain">Укажите пароль для новой учетной записи в обоих полях.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                        <a href="#" class="pull-left log-in__forget hidden-xs">Забыли пароль?</a>
+                        <button class="btn btn-warning">Отправить</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
     <script src="dest/js/lib/angular.min.js"></script>
     <script src="dest/js/lib/angular-sanitize.js"></script>
     <script src="dest/bootstrap/js/bootstrap.min.js"></script>
     <script src="dest/build.clean.js"></script>
+    <script src="dest/js/lib/rzslider.min.js"></script>
+
+
 
 
     <script src="dest/js/app.js"></script>
@@ -507,6 +804,7 @@
     <script src="dest/js/directives/closeMenuMobile.js"></script>
     <script src="dest/js/directives/tiresForCar.js"></script>
     <script src="dest/js/directives/hideOnMisclick.js"></script>
+    <script src="dest/js/directives/hideOnScroll.js"></script>
 
 
 
@@ -541,9 +839,6 @@
 
         });
     </script>
-        <script>
-
-        </script>
 
 </body>
 </html>

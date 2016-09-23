@@ -5,6 +5,7 @@
     opacity: 1;
   }
 }
+
 .modal-title {
   font-family: "SegoeUIBold", Verdana, sans-serif;
   text-align: center;
@@ -15,13 +16,20 @@
   background-color: $gray;
 }
 .modal-footer {
-  padding-top: 25px;
+  padding: 25px 32px 32px;
 }
 .modal {
-  font-size: 12px;
+  font-size: 14px;
+}
+.modal-body {
+  padding: 0 32px;
 }
 @media all and (min-width:768px) {
   .modal {
     font-size: 16px;
   }
+}
+.modal-cart__continue-btn {
+  position: relative;
+  top: 0;
 }

@@ -16,7 +16,6 @@
   border-right: 1px solid $gray;
   padding-right: 10px;
   &:last-child {
-    padding-right: 0;
     border-right: none;
   }
 
@@ -37,6 +36,22 @@
   &:last-child {
     margin-right: 0;
   }
+}
+.tools-menu__cart {
+  position: relative;
+}
+.tools-menu__goods {
+  background-color: $orange;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
 }
 @media all and (max-width: $md-size) {
   .tools-menu__list {

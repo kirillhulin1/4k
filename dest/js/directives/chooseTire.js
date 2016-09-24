@@ -66,7 +66,19 @@ app.directive("chooseTire",function($http,$rootScope){
                     }
                 });
                 $(".multiselect_opened").removeClass("multiselect_opened");
-            }
+            };
+            scope.noSwitchingSlider = {
+                minValue: 10,
+                maxValue: 90,
+                options: {
+                    floor: 0,
+                    ceil: 100,
+                    step: 1,
+                    noSwitching: true
+                }
+            };
+            scope.noSwitchingSlider.minValue = 20;
+            scope.noSwitchingSlider.maxValue = 80;
         }
 
    }

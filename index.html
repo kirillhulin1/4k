@@ -9,31 +9,21 @@
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="dest/styles.min.css">
     <link rel="stylesheet" href="dest/rzslider.min.css">
-    <style>
-        body {
-            padding-right: 0 !important;
 
-        }
-        .modal-open {
-            overflow: inherit !important;
-        }
-    </style>
 </head>
 <body ng-app="app" ng-controller="AppCtrl as controller" anchor>
-
-
 
     <header class="panel panel-default">
         <div class="panel-heading header-top">
             <div class="container">
                 <section class="row">
                     <section class="col-xs-4 hidden-sm hidden-sm hidden-md hidden-lg">
-                        <a href="/"><img class="header-top__logo" src="dest/images/prokoleso-logo-base.png"></a>
+                        <a href="/"><img class="header-top__logo" src="dest/images/logo_long.png"></a>
                     </section>
                     <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
                         <small class="header-top__schedule">Работаем с 9-00 до 20-00 без выходных</small>
                     </section>
-                    <section class="col-sm-offset-2 col-sm-5  col-xs-offset-2 col-xs-6">
+                    <section class="col-sm-offset-2 col-sm-5  col-xs-8">
                         <ul class="list-inline header-top__phones">
                             <li class="header-top__phone_main"><img class="header-top__phone-icon" src="dest/images/phone-icon.png"><small><a href="tel:0800303336"><strong>0(800) 303-336</strong></a></small></li>
                             <li class="hidden-sm hidden-md hidden-lg header-top__phone_main"><a data-toggle="modal" data-target="#morePhones" href="#">+</a></li>
@@ -68,31 +58,39 @@
                             </ul>
                         </li>
                     </ul>
-
                 </nav>
                 <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
                 <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
 
                 <menu></menu>
+
                 <nav class="tools-menu">
                     <ul class="tools-menu__list header-bottom__tools">
-                        <li class="tools-menu__item"><a href="#"><i class="glyphicon glyphicon-search tools-menu__icon"></i><span class="hidden-sm hidden-md hidden-xs">Поиск</span></a></li>
                         <li class="tools-menu__item">
-                            <i class="glyphicon glyphicon-user tools-menu__icon"></i>
+                            <a href="#" data-toggle="modal" data-target="#search">
+                                <i class="glyphicon glyphicon-search tools-menu__icon"></i>
+                                <span class="hidden-sm hidden-md hidden-xs">Поиск</span>
+                            </a>
+                        </li>
+                        <li class="tools-menu__item">
+                            <a href="#" class="hidden-lg" data-toggle="modal" data-target="#log-in">
+                                <i class="glyphicon glyphicon-user tools-menu__icon"></i>
+                            </a>
+                            <i class="hidden-sm hidden-md hidden-xs glyphicon glyphicon-user tools-menu__icon"></i>
                             <ul class="hidden-sm hidden-md hidden-xs">
                                 <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
                                 <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
                             </ul>
                         </li>
                         <li class="tools-menu__item tools-menu__cart">
-                            <a ng-hide="cart.items.length" href="#" uib-tooltip="Ваша корзина пуста"
+                            <a ng-cloak ng-hide="cart.items.length" href="#" uib-tooltip="Ваша корзина пуста"
                                tooltip-placement="bottom-right"
                                tooltip-trigger="'mouseenter'">
                                 <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
                             </a>
                             <a ng-show="cart.items.length" href="#" data-toggle="modal" data-target="#cart">
                                 <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
-                                <section  class="tools-menu__goods">{{cart.items.length}}</section>
+                                <section  class="tools-menu__goods" ng-bind="cart.items.length"></section>
                             </a>
                         </li>
                     </ul>
@@ -117,7 +115,8 @@
                     <div class="container tabs-tires__list">
                         <ul ng-repeat = "tab in tabs" class="tabs-tires__tabs">
                             <li class="tabs-tires__tab" ng-class="{active: active === $index}">
-                                <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" style="background-image:url('dest/images/{{$index+1}}.png')">
+                                <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" ng-style="{'background-image':'url(dest/images/'+($index+1)+'.png)'}">
+
                                     <span></span>
                                 </a>
                                 <a href ng-click="changeActive($index)" class="tabs-tires__anchor hidden-xs">{{tab.title}}</a>
@@ -143,33 +142,36 @@
 
         </div>
         <section class="advantages">
-            <div class="container">
-                <ul class="advantages__list list-inline">
-                    <li class="advantages__item col-xs-4">
-                        <img class="advantages__image" src="dest/images/delivery.png">
-                        <div class="advantages__text">
-                            <p class="advantages__title">Оперативная</p>
-                            <small>доставка</small>
-                        </div>
-                    </li>
+            <div class="advantages__wrapper">
+                <div>
+                    <ul class="advantages__list list-inline">
+                        <li class="advantages__item col-xs-4">
+                            <img class="advantages__image" src="dest/images/delivery.png">
+                            <div class="advantages__text">
+                                <p class="advantages__title">Оперативная</p>
+                                <small>доставка</small>
+                            </div>
+                        </li>
 
-                    <li class="advantages__item col-xs-4">
-                        <img class="advantages__image" src="dest/images/warranty.png">
-                        <div class="advantages__text">
-                            <p class="advantages__title">Гарантия</p>
-                            <small>на все шины</small>
-                        </div>
-                    </li>
-                    <li class="advantages__item col-xs-4">
-                        <img class="advantages__image" src="dest/images/map.png">
-                        <div class="advantages__text">
-                            <p class="advantages__title">Доставка</p>
-                            <small>по всей Беларуси</small>
-                        </div>
-                    </li>
-                </ul>
+                        <li class="advantages__item col-xs-4">
+                            <img class="advantages__image" src="dest/images/warranty.png">
+                            <div class="advantages__text">
+                                <p class="advantages__title">Гарантия</p>
+                                <small>на все шины</small>
+                            </div>
+                        </li>
+                        <li class="advantages__item col-xs-4">
+                            <img class="advantages__image" src="dest/images/map.png">
+                            <div class="advantages__text">
+                                <p class="advantages__title">Доставка</p>
+                                <small>по всей Беларуси</small>
+                            </div>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
+
             <div class="clearfix"></div>
         </section>
         <article class="popular-tires container" ng-controller="PopularTiresCtrl">
@@ -384,16 +386,14 @@
 
                 <li class="col-sm-3">
                     <h4 class="footer__subtitle"><a href="#">Мы в социальных сетях</a></h4>
-                    <article>
-                        <rzslider
-                                rz-slider-model="noSwitchingSlider.minValue"
-                                rz-slider-high="noSwitchingSlider.maxValue"
-                                rz-slider-options="noSwitchingSlider.options"
-
-                                ></rzslider>
-                        <input type="text" ng-model="noSwitchingSlider.minValue">
-                        <input type="text" ng-model="noSwitchingSlider.maxValue">
-                    </article>
+                    <ul class="list-inline footer__socials">
+                        <li>
+                            <a href="#" class="footer__social"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__social footer__social_fb"></a>
+                        </li>
+                    </ul>
                 </li>
 
             </ul>
@@ -456,7 +456,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                     <h4 class="modal-title">Заявка на обратный звонок</h4>
                 </div>
                 <div class="modal-body">
@@ -490,7 +490,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                     <h4 class="modal-title">Контакты</h4>
                 </div>
                 <div class="modal-body modal-body_gray">
@@ -512,7 +512,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                     <h4 class="modal-title">Корзина</h4>
                 </div>
                 <div class="modal-body"  cart>
@@ -530,7 +530,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                     <h4 class="modal-title">Вход</h4>
                 </div>
                 <div class="modal-body">
@@ -571,7 +571,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                     <h4 class="modal-title">Регистрация</h4>
                 </div>
                 <div class="modal-body">
@@ -621,7 +621,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                     <h4 class="modal-title">Восстановление пароля</h4>
                 </div>
                 <div class="modal-body">
@@ -640,6 +640,45 @@
                     <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
 
                     <button class="btn btn-warning">Выслать новый пароль</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="search">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                    <h4 class="modal-title">Поиск</h4>
+                </div>
+                <div class="modal-body search-modal">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <input type="text" class="search-modal__input form-control" placeholder="Искать...">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="select__wrapper">
+                                <label class="tab1__label">
+                                    <span class="select__label search-modal__label" ng-hide="search.theme">Где искать?</span>
+                                    <select ng-model="search.theme" class="form-control select search-modal__theme">
+                                        <option>Везде</option>
+                                        <option>Статья</option>
+                                        <option>Обзор</option>
+                                        <option>Типоразмер: диски</option>
+                                        <option>Типоразмер: шины</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-primary search-modal__button form-control">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <span class="hidden-lg hidden-md hidden-sm">Искать</span>
+                            </button>
+                        </div>
+                    </div><!-- /input-group -->
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

@@ -8,6 +8,13 @@
 }
 .tab1__label {
   width: 100%;
+  &.active, &.active:hover {
+    background-color: $mainColor;
+    color: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
 }
 .tab1__results {
 
@@ -61,8 +68,8 @@
 .tab1__paddingBottom {
   padding-bottom: 44px;
 }
-@media all and (max-width: $sm-size) {
-  .tab1__button {
+@media all and (max-width: ($sm-size)-1) {
+  .tab1 .tab1__button {
     margin-top: 35px;
   }
 }

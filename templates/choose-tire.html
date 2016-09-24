@@ -75,13 +75,17 @@
 
         <section class="row">
             <div class="col-xs-4 tab1__paddingBottomSmall ">
-                <label id="test" ng-click="toggleValue($event)" class="btn btn-primary tab1__label" ng-model="season" uib-btn-radio="'Лето'">Лето</label>
+                    <label id="test" ng-click="toggleValue($event)" class="btn-reverse tab1__label" ng-model="season" uib-btn-radio="'Лето'">Лето</label>
+
             </div>
             <div class="col-xs-4 tab1__paddingBottomSmall ">
-                <label ng-click="toggleValue($event)" class="btn btn-primary tab1__label" ng-model="season" uib-btn-radio="'Зима'">Зима</label>
+                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label" ng-model="season" uib-btn-radio="'Зима'">Зима</label>
             </div>
             <div class="col-xs-4 tab1__paddingBottomSmall">
-                <label ng-click="toggleValue($event)" class="btn btn-primary tab1__label" ng-model="season" uib-btn-radio="'Всесезонная'">Всесезонная</label>
+                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label" ng-model="season" uib-btn-radio="'Всесезонная'">
+                    <span class="hidden-sm">Всесезонная</span>
+                    <span class="hidden-xs hidden-md hidden-lg">Всесезон.</span>
+                </label>
 
             </div>
         </section>
@@ -106,10 +110,11 @@
     </section>
 
     <section class="col-sm-6 tab1__right col-lg-5" >
-        <div class="multiselect tab1__paddingBottom" multiselect  ng-show="showMore">
+        <div class="multiselect" multiselect  ng-show="showMore">
             <div class="form-control multiselect__input">
                 Бренды <span ng-show="choosenBrands.length">({{choosenBrands.length}})</span>
             </div>
+
             <div class="multiselect__options tab1__multiselect">
                 <div>
                     <div class="checkbox multiselect__option" ng-repeat="brand in brands">
@@ -125,6 +130,23 @@
                 <span class="close multiselect__close">x</span>
             </div>
         </div>
+        <section ng-show="showMore" class="tab1__range row">
+            <div class="col-sm-2" >
+                <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.minValue">
+            </div>
+            <div class="col-sm-8">
+                <rzslider
+                        rz-slider-model="noSwitchingSlider.minValue"
+                        rz-slider-high="noSwitchingSlider.maxValue"
+                        rz-slider-options="noSwitchingSlider.options"
+                        rz-slider-tpl-url="templates/rz-slider.html"
+
+                ></rzslider>
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.maxValue">
+            </div>
+        </section>
         <a href="#" class="toggle-anchor tab1__more hidden-xs" toggle-anchor ng-click="showMore = !showMore" >Дополнительные параметры</a>
         <button class="btn btn-warning form-control tab1__button">Подобрать</button>
         <p class="tab__section-title tab__section-title_condensed">Задайте вопрос специалисту:</p>

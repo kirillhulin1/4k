@@ -4,6 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  color: black;
 }
 .select__wrapper {
   position: relative;
@@ -12,9 +13,9 @@
 }
 .select__label {
   position: absolute;
-  top: 7px;
+  top: 5px;
   left: 10px;
-  color: #ccc;
+  color: #555;
   font-weight: normal;
   z-index:0;
 }

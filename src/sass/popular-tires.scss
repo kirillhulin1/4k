@@ -39,6 +39,10 @@
 .popular-tires__item-top_active {
   background-color: white;
   color: $mainColor;
+  &:hover {
+    background-color: white;
+
+  }
 }
 .popular-tires__item-top_winter {
    background-image: url("images/winter-white.png");
@@ -47,7 +51,7 @@
   &.popular-tires__item-top_winter {
     background-image: url("images/winter-blue.png");
     &:hover {
-      background-image: url("images/winter-white.png");
+      background-image: url("images/winter-blue.png");
     }
   }
 }
@@ -58,7 +62,7 @@
   &.popular-tires__item-top_summer {
     background-image: url("images/summer-blue.png");
     &:hover {
-      background-image: url("images/summer-white.png");
+      background-image: url("images/summer-blue.png");
     }
   }
 }
@@ -69,7 +73,7 @@
   &.popular-tires__item-top_allseason {
     background-image: url("images/allseason-blue.png");
     &:hover {
-      background-image: url("images/allseason-white.png");
+      background-image: url("images/allseason-blue.png");
     }
   }
 }
@@ -101,6 +105,10 @@
 .popular-tires__item-aside_active {
   background-color: white;
   color: $mainColor;
+  &:hover {
+    background-color: white !important;
+    color: $mainColor !important;
+  }
 }
 .popular-tires__item-aside:hover {
   background-color: $mainColorHover;
@@ -124,5 +132,11 @@
   }
 }
 .popular-tires__preloader {
-  margin-top: 40px;
+  margin-top: 120px;
+}
+@media all and (min-width: $sm-size) {
+  .popular-tires__preloader {
+    margin-top: 40px;
+  }
+
 }

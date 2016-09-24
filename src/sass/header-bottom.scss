@@ -6,6 +6,9 @@
     -webkit-box-shadow: 0 2px 25px -5px rgba(0,0,0,0.4);
     -moz-box-shadow: 0 2px 25px -5px rgba(0,0,0,0.4);
     box-shadow: 0 2px 25px -5px rgba(0,0,0,0.4);
+    .header-bottom__logo-anchor {
+      padding: 5px 0;
+    }
     .header-bottom__tools {
       padding: 5px 0;
       @media all and (max-width: $md-size) {
@@ -34,11 +37,13 @@
   height: 100%;
   display: inline-block;
   box-sizing: border-box;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 @media all and (max-width: $md-size) {
-
+  .header-bottom__logo-anchor {
+    padding: 5px 0;
+  }
   .header-bottom {
     height: 60px !important;
   }
@@ -46,6 +51,6 @@
 @media all and (max-width: $sm-size) {
 
   .header-bottom {
-    height: 36px !important;
+    height: 45px !important;
   }
 }

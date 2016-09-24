@@ -4,7 +4,7 @@ header {
   z-index: 200;
 }
 .header-top {
-  height: 32px;
+  height: 45px;
   position: relative;
   z-index: 100;
 
@@ -17,6 +17,11 @@ header {
     padding-top: 10px;
   }
 
+}
+@media all and (min-width: 992px) {
+  .header-top {
+    height: 36px;
+  }
 }
 
 .header-top__phone-me {
@@ -59,9 +64,18 @@ header {
   }
 
 }
-@media all and (max-width: $sm-size) {
+@media all and (max-width: ($sm-size)-1) {
   .header-top__phone_main a {
-    font-size: 17px;
+    font-size: 25px;
+  }
+}
+@media all and (max-width: 430px) {
+  .header-top__phone_main a {
+    font-size: 20px;
+  }
+  .header-top__phone_main {
+    position: relative;
+    top:5px;
   }
 }
 .header-top__phone {
@@ -74,11 +88,11 @@ header {
   height: 16px;
   margin-right: 5px;
 }
-@media all and (max-width: $sm-size) {
+@media all and (max-width: ($sm-size)-1) {
   .header-top__phone-icon {
-    height: 20px;
+    height: 23px;
     position: relative;
-    top: -2px;
+    top: -5px;
 
   }
 }
@@ -87,7 +101,7 @@ header {
   margin-right: 5px;
 }
 .header-top__logo {
-  height: 25.6px;
+  height: 38px;
 }
 
 

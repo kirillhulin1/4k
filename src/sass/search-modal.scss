@@ -1,0 +1,47 @@
+.search-modal {
+  padding-bottom: 32px;
+  .row {
+    overflow: hidden;
+    div {
+      padding-bottom: 20px;
+    }
+  }
+  div {
+    padding: 0;
+  }
+}
+
+@media all and (min-width: $sm-size) {
+  .search-modal .row div {
+    padding-bottom: 0;
+  }
+
+}
+.search-modal__button {
+  font-size: 18px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 30px;
+  top: -1px;
+}
+.search-modal__input {
+  position: relative;
+  right: 0;
+  z-index: 2;
+}
+@media all and (min-width: $sm-size) {
+  .search-modal__input {
+    right: -1px;
+  }
+
+}
+.search-modal__theme {
+  &:focus, &:hover, &:active {
+    z-index: 3;
+  }
+}
+.search-modal__label {
+  color: #999;
+  font-size: 90%;
+  top: 7px;
+}

@@ -61,11 +61,11 @@
 }
 @media all and (max-width: $sm-size) {
   .tools-menu__list {
-    line-height: 20px;
-    padding: 8px 0;
+    line-height: 29px;
+    padding: 8px 0 5px;
   }
   .tools-menu__icon {
-    font-size: 16px;
+    font-size: 25px;
     top: 2px;
   }
 }

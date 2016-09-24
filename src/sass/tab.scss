@@ -4,7 +4,7 @@
   min-height: 200px;
   color: black;
 }
-@media all and (max-width: $sm-size) {
+@media all and (max-width: ($sm-size)-1) {
   .tab {
     padding-top: 20px;
     padding-bottom: 15px;

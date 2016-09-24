@@ -1,8 +1,13 @@
 .close {
   opacity: 1;
   &:hover {
-    color: red;
+    color: $orange;
     opacity: 1;
+  }
+  &:active, &:focus {
+    border: none;
+    outline: none;
+    color: $orange;
   }
 }
 
@@ -32,4 +37,7 @@
 .modal-cart__continue-btn {
   position: relative;
   top: 0;
+}
+.modal-open {
+  overflow: inherit !important;
 }

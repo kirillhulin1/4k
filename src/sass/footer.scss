@@ -17,3 +17,22 @@
   padding: 10px 30px;
   text-align: center;
 }
+.footer__social {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url("images/vk.png") no-repeat;
+  background-size: 100%
+}
+.footer__social:hover {
+  background-image: url("images/vk-active.png");
+}
+.footer__social_fb {
+  background-image: url("images/fb.png");
+  &:hover {
+    background-image: url("images/fb-active.png");
+  }
+}
+.footer__socials {
+
+}

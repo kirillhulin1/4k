@@ -1,4 +1,4 @@
-header {
+.header {
   position: fixed;
   width: 100%;
   z-index: 200;
@@ -11,10 +11,10 @@ header {
 }
 @media (max-width: 991px) and (min-width: 768px) {
   .header-top {
-    height: 56px;
+    height: 36px;
   }
   .header-top__phone-me {
-    padding-top: 10px;
+    padding-top: 0px;
   }
 
 }
@@ -69,13 +69,38 @@ header {
     font-size: 25px;
   }
 }
-@media all and (max-width: 430px) {
+@media all and (max-width: 450px) {
   .header-top__phone_main a {
     font-size: 20px;
   }
   .header-top__phone_main {
     position: relative;
     top:5px;
+  }
+}
+@media all and (max-width: 400px) {
+  .header-top__phone_main a {
+    font-size: 16px;
+  }
+  .header-top__phone_main {
+    position: relative;
+    top:9px;
+  }
+  .header-top__phone-icon {
+    height: 18px !important;
+    top: -1px !important;
+  }
+}
+@media all and (max-width: 340px) {
+  .header-top__phone_main a {
+    font-size: 14px;
+  }
+  .header-top__phone_main {
+    top:10px;
+  }
+  .header-top__phone-icon {
+    height: 16px !important;
+    top: -1px !important;
   }
 }
 .header-top__phone {

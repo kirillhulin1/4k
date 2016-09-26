@@ -13,7 +13,7 @@
 </head>
 <body ng-app="app" ng-controller="AppCtrl as controller" anchor>
 
-    <header class="panel panel-default">
+    <header class="header panel panel-default">
         <div class="panel-heading header-top">
             <div class="container">
                 <section class="row">
@@ -23,15 +23,14 @@
                     <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
                         <small class="header-top__schedule">Работаем с 9-00 до 20-00 без выходных</small>
                     </section>
-                    <section class="col-sm-offset-2 col-sm-5  col-xs-8">
+                    <section class="col-sm-offset-1 col-sm-5  col-xs-8">
                         <ul class="list-inline header-top__phones">
-                            <li class="header-top__phone_main"><img class="header-top__phone-icon" src="dest/images/phone-icon.png"><small><a href="tel:0800303336"><strong>0(800) 303-336</strong></a></small></li>
+                            <li class="header-top__phone_main"><img class="header-top__phone-icon hidden-lg hidden-md hidden-sm" src="dest/images/phone-icon.png"><img class="header-top__phone-icon hidden-xs" src="dest/images/i-mts.png"><small><a href="tel:{{phoneFirst}}"><strong ng-bind="phoneFirst"></strong></a></small></li>
                             <li class="hidden-sm hidden-md hidden-lg header-top__phone_main"><a data-toggle="modal" data-target="#morePhones" href="#">+</a></li>
-                            <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/kievstar-icon.png"><small>(067) 209-21-12</small></li>
-                            <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/mts-icon.png"><small>(050) 361-91-31</small></li>
+                            <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="phoneSecond"></small></li>
                         </ul>
                     </section>
-                    <section class="col-sm-2 hidden-xs">
+                    <section class="col-sm-3 hidden-xs">
                         <a href = "#" data-toggle = "modal" data-target = "#callBack" class = "header-top__phone-me text-center">
                             <i class="glyphicon glyphicon-menu-right"></i>&nbsp;Позвоните мне
                         </a>
@@ -207,7 +206,7 @@
                 <div class="clearfix"></div>
             </section>
         </article>
-        <article class="news">
+        <article class="news hidden-xs">
             <div class="container">
                 <section class="section-heading section-heading_news">
                     <h2 class="section-heading__title">Самые свежие тесты и обзоры шин</h2>
@@ -327,12 +326,12 @@
             <div class="container">
                 <div class="about__container">
                     <div class="about__content">
-                        <h2>Зимняя и летняя резина, автомобильные литые диски в Украине</h2>
+                        <h2>Зимняя и летняя резина, автомобильные литые диски в Беларуси</h2>
                         <p>На ProKoleso.ua мы предлагаем Вам возможность легко и быстро подобрать и купить летние и зимние шины для легковых автомобилей, внедорожников и минивенов, грузовиков и автобусов, а также для сельскохозяйственной техники. Вне зависимости от того, что Вы ищете, колеса на ВАЗ, Ланос, Тойоту или Мерседес, наш интернет магазин предложит Вам самый лучший вариант, подходящий для Вашего транспортного средства. Широкий ассортимент и лучшие цены на легковые бренды Bridgestone, Kumho, Continental, Cordiant и многие другие позволяют Вам приобрести качественные автошины, а также получить официальную гарантию на них. Например, если Вас интересует продажа зимней резины, то рекомендуем обратить внимание на Bridgestone, серии Blizzak.</p>
                         <p>В предлагаемом нами ассортименте Вы также можете подобрать и приобрести легкосплавные диски известных производителей: MOMO и Racing Wheels (RW).	Если Вы не помните точно размер своих автопокрышек, но знаете, что Вам нужно R15 (R13, R14, R16, R17, R18 и т.д.) - попробуйте наш подбор по авто. Указав правильно марку своего автомобиля, Вы в результате получите все варианты типоразмеров подходящие под Ваш запрос. Если вы хотите взять авторезину для грузовика или автобуса тогда предлагаем рассмотреть предложения от TyRex , Aeolus, Kumho, Continental, Hankook, Voltyre и др. Ну а если Вам нужны автопокрышки для сельскохозяйственной техники – у нас представлены такие производители, как - Alliance, Galaxy, Petlas, Honour, Speedways. Мы постарались сделать так, чтобы процесс подбора был удобен и понятен и Вы самостоятельно могли определиться с выбором и приобрести автоколеса для любого своего автотранспорта.</p>
                         <p>Однако, не стоит забывать, что от правильного выбора зимней или летней резины зависит безопасность. Ведь качество и надежность сцепления, безопасность передвижения, уверенность водителя за рулем – на все эти факторы влияют рисунок протектора, состав резины, а также правильный подбор размера автошин для Вашего автомобиля. Очень важно гармонично подобрать автопокрышки с нужными характеристиками, чтобы в любой ситуации контролировать свое авто и получать удовольствие от управления.</p>
-                        <p>Если у Вас возникают сомнения по поводу выбора, наши специалисты всегда готовы предоставить Вам профессиональную консультацию. Вы можете заказать на сайте обратный звонок или позвонить нам по телефону горячей линии.	Мы осуществляем доставку товара по Украине без комиссий и скрытых процентов. Вы также можете забрать и оплатить автошины с интернет-скидками в наших розничных центрах «Твоя шина – Pole Position» для легковых автомобилей или сервисных станциях «Camion Tyres» для грузового транспорта, где наши специалисты профессионально установят их на авто.</p>
-                        <p>Квалифицированный персонал «Твоя шина – Pole Position» и «Camion Tyres» предоставит Вам весь комплекс услуг, связанных с подбором, установкой , и дальнейшим обслуживанием Ваших колес.	Все знают, что в сезон трудно записаться на шиномонтаж, чтобы переобуть свою машину. Поэтому для Вас на сайте действует онлайн запись на шиномонтаж, позволяющая сэкономить время и получить качественные услуги в наших сервисных центрах. За годы успешной деятельности в шинном бизнесе нам удалось создать крупную сеть сервисно-торговых центров и представительств по всей Украине. Сегодня Вы можете с максимальным удобством приобрести покрышки в Киеве, Днепропетровске, Харькове, Донецке, Одессе, Львове и других населенных пунктах Украины, где расположены наши отделения или центры наших партнеров.</p>
+                        <p>Если у Вас возникают сомнения по поводу выбора, наши специалисты всегда готовы предоставить Вам профессиональную консультацию. Вы можете заказать на сайте обратный звонок или позвонить нам по телефону горячей линии.	Мы осуществляем доставку товара по Беларуси без комиссий и скрытых процентов. Вы также можете забрать и оплатить автошины с интернет-скидками в наших розничных центрах «Твоя шина – Pole Position» для легковых автомобилей или сервисных станциях «Camion Tyres» для грузового транспорта, где наши специалисты профессионально установят их на авто.</p>
+                        <p>Квалифицированный персонал «Твоя шина – Pole Position» и «Camion Tyres» предоставит Вам весь комплекс услуг, связанных с подбором, установкой , и дальнейшим обслуживанием Ваших колес.	Все знают, что в сезон трудно записаться на шиномонтаж, чтобы переобуть свою машину. Поэтому для Вас на сайте действует онлайн запись на шиномонтаж, позволяющая сэкономить время и получить качественные услуги в наших сервисных центрах. За годы успешной деятельности в шинном бизнесе нам удалось создать крупную сеть сервисно-торговых центров и представительств по всей Беларуси. Сегодня Вы можете с максимальным удобством приобрести покрышки в Минске и других населенных пунктах Беларуси, где расположены наши отделения или центры наших партнеров.</p>
                     </div>
 
                 </div>
@@ -341,19 +340,22 @@
                 </a>
             </div>
         </article>
-        <section class="help-us">
+        <section class="help-us hidden-xs">
             <div class="container">
-                <span class="help-us__icon">
-                    <i class="glyphicon glyphicon-warning-sign"></i>
-                </span>
-                <span class="help-us__text">Вы можете нам помочь! Если Вы заметили опечатку или неточность на сайте, пожалуйста, выделите ее и нажмите <strong>Ctrl+Enter</strong></span>
+                <div>
+                    <span class="help-us__icon">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                    </span>
+                    <span class="help-us__text">Вы можете нам помочь! Если Вы заметили опечатку или неточность на сайте, пожалуйста, выделите ее и нажмите <strong>Ctrl+Enter</strong></span>
+                </div>
+
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <span class="footer__text hidden-lg hidden-md hidden-sm"><small>2014-2016 © Интернет-магазин шин и дисков Prokoleso.ua</small></span>
+            <span class="footer__text hidden-lg hidden-md hidden-sm"><small>2010 &ndash; 2016 © Интернет-магазин шин и дисков 4k.by</small></span>
             <ul class="list-inline hidden-xs">
 
                 <li class="col-sm-3">
@@ -495,13 +497,12 @@
                 </div>
                 <div class="modal-body modal-body_gray">
                     <p class="modal-more-phones__title"><strong>Горячая линия</strong></p>
-                    <p class="modal-more-phones__phone">0(800) 303-336</p>
-                    <p>Бесплатно со стационарных и мобильных по Украине</p>
+                    <p class="modal-more-phones__phone" ng-bind="phoneFirst"></p>
+
                 </div>
                 <div class="modal-footer">
                     <ul class="list-inline header-top__phones modal-more-phones__list">
-                        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/kievstar-icon.png"><small>(067) 209-21-12</small></li>
-                        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/mts-icon.png"><small>(050) 361-91-31</small></li>
+                        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="phoneSecond"></small></li>
                     </ul>
                 </div>
             </div><!-- /.modal-content -->

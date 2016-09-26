@@ -10,6 +10,12 @@
   box-shadow: 0 2px 0 $orangeDark;
   background-color: $orange;
 }
+.btn-success {
+  -webkit-box-shadow: 0 2px 0 $greenDark;
+  -moz-box-shadow: 0 2px 0 $greenDark;
+  box-shadow: 0 2px 0 $greenDark;
+  background-color: $green;
+}
 .btn-primary {
   -webkit-box-shadow: 0 2px 0 $mainDark;
   -moz-box-shadow: 0 2px 0 $mainDark;
@@ -20,6 +26,13 @@
   -webkit-box-shadow: 0 2px 0 $orangeDark !important;
   -moz-box-shadow: 0 2px 0 $orangeDark !important;
   box-shadow: 0 2px 0 $orangeDark !important;
+
+}
+.btn-success:hover,  .btn-success:focus, .btn-success:active {
+  background-color: $greenHover !important;
+  -webkit-box-shadow: 0 2px 0 $greenDark !important;
+  -moz-box-shadow: 0 2px 0 $greenDark !important;
+  box-shadow: 0 2px 0 $greenDark !important;
 
 }
 .btn-primary:hover,  .btn-primary:focus, .btn-primary:active {

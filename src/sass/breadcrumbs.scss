@@ -1,0 +1,32 @@
+.breadcrumbs {
+  margin: 1em 0;
+}
+.breadcrumbs__list {
+  margin: 0;
+  .breadcrumbs__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.breadcrumbs__item {
+
+  &:after {
+    content: " >";
+    font-size: 10px;
+  }
+  a {
+    color: #777;
+    font-size: 12px;
+  }
+}
+@media all and (min-width: $lg-size) {
+  .breadcrumbs__item {
+
+    &:after {
+      font-size: 12px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+}

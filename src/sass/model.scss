@@ -1,0 +1,102 @@
+.model {
+  text-align: center;
+  margin-top: 2em;
+}
+.model__left {
+  position: relative;
+  padding: 16px;
+}
+.model__picture {
+  min-width: 140px;
+  width: 70%;
+}
+.model__season {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.model__right {
+  padding: 16px;
+  text-align: left;
+}
+.model__title {
+  font-size: 14px;
+}
+@media all and (min-width: $sm-size) {
+  .model__title {
+    font-size: 21px;
+  }
+}
+@media all and (min-width: $lg-size) {
+  .model__title {
+    font-size: 24px;
+  }
+}
+.model__characteristic {
+  margin-bottom: 0;
+  span {
+    font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  }
+}
+.model__advantages {
+  border-bottom: 1px solid $gray;
+}
+.model__advantage {
+  margin-bottom: 1em;
+  div:first-child {
+    text-align: center;
+    img {
+      width: 100%;
+      max-width: 30px;
+      margin-top: 3px;
+    }
+
+  }
+  p {
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+}
+@media all and (min-width: $md-size) {
+  .model__advantage {
+    div:first-child {
+      img {
+        margin-top: 0px;
+      }
+
+    }
+  }
+}
+@media all and (min-width: $lg-size) {
+  .model__advantage {
+
+    div:first-child {
+
+      img {
+        width: 80%;
+        margin-top: 3px;
+      }
+
+    }
+  }
+}
+.model__buy {
+  margin-top: 1em;
+}
+.model__price {
+
+  text-align: center;
+  font-size: 19px;
+  color: $orange;
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+}
+@media all and (min-width: $sm-size) {
+  .model__price {
+    font-size: 22px;
+  }
+}
+@media all and (min-width: $lg-size) {
+  .model__price {
+    font-size: 26px;
+  }
+}

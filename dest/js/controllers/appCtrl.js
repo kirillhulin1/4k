@@ -54,5 +54,7 @@ app.controller("AppCtrl",function($scope){
 
     ];
 
+    $scope.phoneFirst = "+375 29 3794864";
+    $scope.phoneSecond = "+375 33 3668050";
 
 });

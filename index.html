@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png">
     <title>Title</title>
     <link rel="stylesheet" href="dest/fonts.css">
 
@@ -9,6 +11,10 @@
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="dest/styles.min.css">
     <link rel="stylesheet" href="dest/rzslider.min.css">
+
+    <style>
+
+    </style>
 
 </head>
 <body ng-app="app" ng-controller="AppCtrl as controller" anchor>
@@ -18,16 +24,24 @@
             <div class="container">
                 <section class="row">
                     <section class="col-xs-4 hidden-sm hidden-sm hidden-md hidden-lg">
-                        <a href="/"><img class="header-top__logo" src="dest/images/logo_long.png"></a>
+                        <a href="/tires/index.html"><img class="header-top__logo" src="dest/images/logo_long.png"></a>
                     </section>
                     <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
                         <small class="header-top__schedule">Работаем с 9-00 до 20-00 без выходных</small>
                     </section>
                     <section class="col-sm-offset-1 col-sm-5  col-xs-8">
                         <ul class="list-inline header-top__phones">
-                            <li class="header-top__phone_main"><img class="header-top__phone-icon hidden-lg hidden-md hidden-sm" src="dest/images/phone-icon.png"><img class="header-top__phone-icon hidden-xs" src="dest/images/i-mts.png"><small><a href="tel:{{phoneFirst}}"><strong ng-bind="phoneFirst"></strong></a></small></li>
-                            <li class="hidden-sm hidden-md hidden-lg header-top__phone_main"><a data-toggle="modal" data-target="#morePhones" href="#">+</a></li>
-                            <li class="hidden-xs header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="phoneSecond"></small></li>
+                            <li class="header-top__phone_main">
+                                <img class="header-top__phone-icon hidden-lg hidden-md hidden-sm" src="dest/images/phone-icon.png">
+                                <img class="header-top__phone-icon hidden-xs" src="dest/images/i-mts.png">
+                                <small><a href="tel:{{phoneFirst}}"><strong ng-bind="phoneFirst"></strong></a></small></li>
+                            <li class="hidden-sm hidden-md hidden-lg header-top__phone_main">
+                                <a data-toggle="modal" data-target="#morePhones" href="#">+</a>
+                            </li>
+                            <li class="hidden-xs header-top__phone">
+                                <img class="header-top__phone-icon_small" src="dest/images/i-velc.png">
+                                <small><a href="tel:{{phoneSecond}}"><strong ng-bind="phoneSecond"></strong></small>
+                            </li>
                         </ul>
                     </section>
                     <section class="col-sm-3 hidden-xs">
@@ -40,17 +54,17 @@
         </div>
         <div condense-on-scroll class="panel-body header-bottom">
             <div class="container">
-                <a open-menu-mobile href="#" class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
+                <a open-menu-mobile href="#" do-not-follow class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
                 <nav class="menu-mobile hidden-sm hidden-md hidden-lg">
                     <div class="close menu-mobile__close"  close-menu-mobile><i class="glyphicon glyphicon-remove"></i></div>
                     <ul ng-repeat="section in menu">
-                        <li class="menu-mobile__item"><a href="#">{{section.title}}</a>
+                        <li class="menu-mobile__item"><a href="#" ng-bind="section.title"></a>
                             <ul class="menu-mobile__subsection" ng-show="section.subsections">
                                 <li ng-repeat="subsection in section.subsections">
-                                    <a href="#">{{subsection.title}}</a>
+                                    <a href="#" ng-bind="subsection.title"></a>
                                     <ul class="menu-mobile__subsubsection"  ng-show="subsection.subsections">
                                         <li ng-repeat="subsection in subsection.subsections">
-                                            <a href="#">{{subsection.title}}</a>
+                                            <a href="#" ng-bind="subsection.title"></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -96,7 +110,7 @@
                 </nav>
 
             </div>
-            <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick hide-on-scroll>
+            <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick><!-- hide-on-scroll-->
 
             </div>
         </div>
@@ -335,7 +349,7 @@
                     </div>
 
                 </div>
-                <a class="about__toggle" href="#">
+                <a class="about__toggle" href="#" do-not-follow>
                     <span class="about__anchor">Читать далее</span>
                 </a>
             </div>
@@ -718,6 +732,7 @@
     <script src="dest/js/directives/hideOnMisclick.js"></script>
     <script src="dest/js/directives/hideOnScroll.js"></script>
     <script src="dest/js/directives/cart.js"></script>
+    <script src="dest/js/directives/doNotFollow.js"></script>
 
     <!--Фильтры-->
     <script src="dest/js/filters/goods.js"></script>
@@ -729,7 +744,7 @@
     <script>
 
         $(".about__toggle").click(function(e){
-            e.preventDefault();
+
             if ($(".about .container").hasClass("about__opened")) {
                 $(".about__toggle").removeAttr("style");
                 $(".about .container").animate({height: 440 + "px"},300);

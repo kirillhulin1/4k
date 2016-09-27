@@ -15,9 +15,8 @@
 .rz-bar.rz-selection {
   background-color: $mainColorHover !important;
 }
-.tab1__range {
-  margin: 10px 0 30px;
-}
-.tab1__range-input {
-  position: relative; top: 20px;
+.rzslider .rz-pointer {
+  &:focus {
+    outline: none !important;
+  }
 }

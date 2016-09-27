@@ -18,6 +18,10 @@ body {
   padding-right: 0 !important;
 }
 
+.fade.in {
+  overflow-y: auto;
+}
+
 .wrapper {
   display: table;
   height: 100%;
@@ -1460,6 +1464,7 @@ h1 {
 .about > .container {
   position: relative;
   height: 440px;
+  box-sizing: content-box;
 }
 
 .about__container {
@@ -1478,14 +1483,14 @@ h1 {
   font-size: 1rem;
   position: absolute;
   bottom: 0;
-  height: 7rem;
+  height: 9rem;
   left: 0;
   width: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #fff), to(transparent));
-  background: -webkit-linear-gradient(bottom, #fff 30%, transparent);
-  background: -moz-linear-gradient(bottom, #fff 30%, transparent);
-  background: -o-linear-gradient(bottom, #fff 30%, transparent);
-  background: linear-gradient(to top, #fff 30%, transparent);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #fff), to(transparent));
+  background: -webkit-linear-gradient(bottom, #fff 60%, transparent);
+  background: -moz-linear-gradient(bottom, #fff 60%, transparent);
+  background: -o-linear-gradient(bottom, #fff 60%, transparent);
+  background: linear-gradient(to top, #fff 60%, transparent);
   z-index: 9;
   visibility: visible;
   text-align: right;
@@ -1517,7 +1522,7 @@ h1 {
   min-width: 16rem;
   font-size: 14px;
   position: relative;
-  bottom: 5px;
+  top: 5px;
 }
 
 .about__anchor:hover {
@@ -1708,6 +1713,15 @@ h1 {
 }
 .tab1__button {
   clear: both;
+}
+
+.tab1__range {
+  margin: 10px 0 30px;
+}
+
+.tab1__range-input {
+  position: relative;
+  top: 20px;
 }
 
 .bottom-panel {
@@ -2268,13 +2282,8 @@ h1 {
   background-color: #1e6aca !important;
 }
 
-.tab1__range {
-  margin: 10px 0 30px;
-}
-
-.tab1__range-input {
-  position: relative;
-  top: 20px;
+.rzslider .rz-pointer:focus {
+  outline: none !important;
 }
 
 .breadcrumbs {
@@ -2390,7 +2399,7 @@ h1 {
   }
 }
 .model__buy {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .model__price {
@@ -2398,6 +2407,7 @@ h1 {
   font-size: 19px;
   color: #e8652d;
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  margin-bottom: 0.4em;
 }
 
 @media all and (min-width: 768px) {
@@ -2409,6 +2419,26 @@ h1 {
   .model__price {
     font-size: 26px;
   }
+}
+.model__quantity {
+  float: left;
+  width: 50px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.model__quantity-btn {
+  float: left;
+}
+
+.model__stockpile {
+  font-family: "SegoeUIBold", Verdana, sans-serif;
+}
+
+.model__in-stock {
+  margin-top: 0.7em;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

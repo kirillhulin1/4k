@@ -119,8 +119,8 @@
                 <div>
                     <div class="checkbox multiselect__option" ng-repeat="brand in brands">
 
-                        <input id = "{{brand.id}}" class="checkbox__input" type="checkbox">
-                        <label for="{{brand.id}}" class="checkbox__label">
+                        <input id = "{{brand.id}}" class="checkbox__input" type="checkbox" ng-checked="brand.checked">
+                        <label class="checkbox__label" ng-click="brand.checked = !brand.checked">
                             <span class="checkbox__span">{{brand.brand}}({{brand.quantity}})</span>
                         </label>
                     </div>
@@ -130,7 +130,7 @@
                 <span class="close multiselect__close">x</span>
             </div>
         </div>
-        <section ng-show="showMore" class="tab1__range row">
+        <section ng-show="showMore" class="tab1__range row"><!--ng-show="showMore"-->
             <div class="col-sm-2" >
                 <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.minValue">
             </div>
@@ -147,7 +147,7 @@
                 <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.maxValue">
             </div>
         </section>
-        <a href="#" class="toggle-anchor tab1__more hidden-xs" toggle-anchor ng-click="showMore = !showMore" >Дополнительные параметры</a>
+        <a href="#" class="toggle-anchor tab1__more hidden-xs" do-not-follow toggle-anchor ng-click="showMore = !showMore">Дополнительные параметры</a>
         <button class="btn btn-warning form-control tab1__button">Подобрать</button>
         <p class="tab__section-title tab__section-title_condensed">Задайте вопрос специалисту:</p>
         <a class="tab1__phone" href="tel://{{phoneFirst}}" ng-bind="phoneFirst"></a>

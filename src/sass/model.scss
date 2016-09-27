@@ -81,7 +81,7 @@
   }
 }
 .model__buy {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 .model__price {
 
@@ -89,6 +89,7 @@
   font-size: 19px;
   color: $orange;
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  margin-bottom: 0.4em;
 }
 @media all and (min-width: $sm-size) {
   .model__price {
@@ -99,4 +100,21 @@
   .model__price {
     font-size: 26px;
   }
+}
+.model__quantity {
+  float:left;
+  width: 50px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 3px;
+}
+.model__quantity-btn {
+  float: left;
+}
+.model__stockpile {
+  font-family: "SegoeUIBold", Verdana, sans-serif;
+}
+.model__in-stock {
+  margin-top: 0.7em;
+  text-align: center;
 }

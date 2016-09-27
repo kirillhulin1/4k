@@ -1,4 +1,4 @@
-app.directive("chooseTire",function($http,$rootScope){
+app.directive("chooseTire",function($timeout){
     return {
         "restrict": "E",
         "templateUrl": "templates/choose-tire.html",
@@ -9,33 +9,39 @@ app.directive("chooseTire",function($http,$rootScope){
                 {
                     "brand": "Aeulos",
                     "quantity": "10",
-                    "id": 1112
+                    "id": 1112,
+                    "checked": false
                 },
                 {
                     "brand": "BF Goodrich",
                     "quantity": "2",
-                    "id": 1113
+                    "id": 1113,
+                    "checked": false
                 }
                 ,
                 {
                     "brand": "BF Goodrich",
                     "quantity": "2",
-                    "id": 1114
+                    "id": 1114,
+                    "checked": false
                 }
                 ,
                 {
                     "brand": "BF Goodrich",
                     "quantity": "2",
-                    "id": 1115
+                    "id": 1115,
+                    "checked": false
                 }
                 ,
                 {
                     "brand": "BF Goodrich",
                     "quantity": "2",
-                    "id": 1116
+                    "id": 1116,
+                    "checked": false
                 }
 
             ];
+
             scope.choosenBrands = [];
             scope.deleteBrand =function(id) {
                 var index;
@@ -45,7 +51,14 @@ app.directive("chooseTire",function($http,$rootScope){
                         break;
                     }
                 }
-                scope.choosenBrands.splice(index,1)
+                scope.choosenBrands.splice(index,1);
+                for (var j=0; j<scope.brands.length; j++) {
+                    if (scope.brands[j].id==id) {
+                        scope.brands[j].checked = false;
+
+                        break;
+                    }
+                }
             };
             scope.countBrands = function() {
                 scope.choosenBrands = [];
@@ -69,7 +82,7 @@ app.directive("chooseTire",function($http,$rootScope){
             };
             scope.noSwitchingSlider = {
                 minValue: 10,
-                maxValue: 90,
+                maxValue: 80,
                 options: {
                     floor: 0,
                     ceil: 100,
@@ -77,8 +90,12 @@ app.directive("chooseTire",function($http,$rootScope){
                     noSwitching: true
                 }
             };
-            scope.noSwitchingSlider.minValue = 20;
-            scope.noSwitchingSlider.maxValue = 80;
+
+
+            scope.$watch("showMore",function(){
+                $timeout(function(){scope.$broadcast("reCalcViewDimensions");},50,false)
+
+            })
         }
 
    }

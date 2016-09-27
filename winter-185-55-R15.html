@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="dest/fonts.css">
 
@@ -203,10 +204,24 @@
                             </section>
                             <section class="model__buy">
                                 <section class="model__price">50 р.</section>
-                                <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+                                <section class="row">
+                                    <section class="col-sm-7 col-md-6">
+                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
+                                        <input type="text" class="form-control model__quantity">
+                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                    </section>
+                                    <section class="col-sm-5 col-md-6">
+                                        <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+                                    </section>
+                                </section>
+                                <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
                             </section>
                         </section>
+
                     </div>
+                    <section class="model__reviews">
+
+                    </section>
                 </section>
             </div>
         </article>

@@ -1,6 +1,22 @@
 .model {
   text-align: center;
-  margin-top: 2em;
+  &:first-child {
+    margin-top: 2em;
+  }
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+.model_top {
+  border: 1px solid #d1e5fa;
+  .model__right {
+    background-color: #e0f3fe;
+  }
+}
+.model_new {
+  border: 1px solid #cadeaf;
+  .model__right {
+    background-color: #e6f9cc;
+  }
 }
 .model__left {
   position: relative;
@@ -8,12 +24,17 @@
 }
 .model__picture {
   min-width: 140px;
-  width: 70%;
+  width: 50%;
 }
 .model__season {
   position: absolute;
   top: 16px;
-  right: 16px;
+  right: 26px;
+}
+.model__label {
+  position: absolute;
+  top: -3px;
+  left: -3px;
 }
 .model__right {
   padding: 16px;
@@ -107,6 +128,8 @@
   text-align: center;
   display: inline-block;
   margin: 0 3px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .model__quantity-btn {
   float: left;
@@ -116,5 +139,20 @@
 }
 .model__in-stock {
   margin-top: 0.7em;
+  margin-bottom: 0;
   text-align: center;
+}
+.model__score {
+  display: inline-block;
+  padding: 10px 14px 14px;
+  font-size: 10px;
+  background: url(images/rank-level.png) no-repeat 3px center;
+}
+.model-card_top {
+  border: 1px solid #d1e5fa !important;
+  background-color: #e0f3fe;
+}
+.model-card_new {
+  border: 1px solid #cadeaf !important;
+  background-color: #e6f9cc;
 }

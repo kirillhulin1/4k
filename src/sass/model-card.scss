@@ -1,0 +1,66 @@
+.model-card {
+  padding: 0.7em;
+  border: 1px solid #ddd;
+  h2 {
+    display: inline-block;
+  }
+  li {
+    text-align: left;
+    background-color: white;
+  }
+  .model__score {
+    background: url(images/rank-level_cut.png) no-repeat 3px center;
+    padding: 10px 14px;
+    line-height: 1.2;
+    box-sizing: border-box;
+
+  }
+}
+.model-card__picture {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  height: 100px;
+  border-bottom: 1px solid #ddd;
+  width: calc(100% + 1.4em);
+  margin: 0 -0.7em;
+  margin-top: 0.7em;
+  img:first-child {
+    width: 70%;
+  }
+}
+.model-card__title {
+  font-size: 14px;
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+}
+@media all and (min-width: $sm-size) {
+  .model-card__title {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: $lg-size) {
+  .model-card__title {
+    font-size: 18px;
+  }
+}
+.model-card__scorebox {
+  border-bottom: 1px solid #ddd;
+  width: calc(100% + 1.4em);
+  margin: 0 -0.7em;
+  background-color: white;
+  padding: 0.7em 0.7em;
+}
+.model-card .model__quantity {
+  width: 40px;
+}
+.model-card__reviews {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  box-sizing: border-box;
+  padding: 0 15px;
+}

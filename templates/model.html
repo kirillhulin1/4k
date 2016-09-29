@@ -1,0 +1,72 @@
+<nav class="breadcrumbs">
+    <div class="container">
+        <ul class="breadcrumbs__list list-inline">
+            <li class="breadcrumbs__item"><a href="#">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="#">Легковые шины</a></li>
+        </ul>
+    </div>
+</nav>
+
+<article>
+    <header class="page-title">
+        <div class="container">
+            <h1>Шины 185/55R15</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <uib-tabset active="index" justified="true">
+            <uib-tab index="0" heading="В наличии">Justified content</uib-tab>
+            <uib-tab index="1" heading="Нет в наличии">Short Labeled Justified content</uib-tab>
+            <uib-tab index="2" heading="Описание">
+                <section class="description">
+                    <section class="col-sm-4 col-md-3">
+                        <img class="description__logo" src="dest/images/brand1.png">
+                        <section class="description__image-block">
+                            <img src="dest/images/bridgestone1.png" class="description__image">
+                            <img src="dest/images/season-winter.png" class="description__season">
+                            <img src="dest/images/hot_0.png" class="description__banner">
+                        </section>
+                        <section class="score-block">
+                            <p><strong>Общая оценка пользователей</strong></p>
+                            <section class="score-block__total-score-wrap">
+                                <section class="score-block__total-score"></section>
+                            </section>
+                            <p><small>4.5 из 5 на основании 5 оценок</small></p>
+                            <p class="score-block__parameter">Качество изготовления</p>
+                            <section class="score-block__score-wrap">
+                                <section class="score-block__score"></section>
+                            </section>
+                            <p class="score-block__parameter">Соотношение цена/качество</p>
+                            <section class="score-block__score-wrap">
+                                <section class="score-block__score"></section>
+                            </section>
+                            <p class="score-block__parameter">Удобство эксплуатации</p>
+                            <section class="score-block__score-wrap">
+                                <section class="score-block__score"></section>
+                            </section>
+                            <a class="score-block__anchor" ui-sref="home.catalog.brand.model({brand:brand,model:'her',tab:'comments'})">Показать отзывы</a>
+                        </section>
+                    </section>
+                    <section class="col-sm-8 col-md-9">
+                        <section class="col-sm-4">
+                            <select class="form-control">
+                                <optgroup label="R15">
+                                    <option value="185/85R15">185/85R15</option>
+                                    <option value="185/90R15">185/90R15</option>
+                                </optgroup>
+                                <optgroup label="German Cars">
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                </optgroup>
+                            </select>
+                        </section>
+                        <section class="col-sm-offset-4 col-sm-4"></section>
+                    </section>
+                </section>
+            </uib-tab>
+            <uib-tab index="3" heading="Тесты и обзоры(3)">Long Labeled Justified content</uib-tab>
+            <uib-tab index="4" heading="Отзывы(3)">Long Labeled Justified content</uib-tab>
+        </uib-tabset>
+    </div>
+</article>

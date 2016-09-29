@@ -1,6 +1,22 @@
+@media all and (max-width: $sm-size) {
+  .model-card__wrapper {
+    width: 50%;
+    min-width: 300px;
+    margin: 0 auto;
+  }
+}
+@media all and (max-width: 400px) {
+  .model-card__wrapper {
+    width: 90%;
+    min-width: inherit;
+    margin: 0 auto;
+  }
+}
 .model-card {
   padding: 0.7em;
   border: 1px solid #ddd;
+  margin-top: 1.5em;
+
   h2 {
     display: inline-block;
   }

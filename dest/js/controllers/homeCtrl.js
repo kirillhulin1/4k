@@ -1,4 +1,4 @@
-app.controller('PopularTiresCtrl', function ($scope,$http) {
+app.controller("HomeCtrl",function($scope,$http){
     $scope.season = "Все";
     $scope.diameter = "R13";
     $scope.results = [];
@@ -33,5 +33,4 @@ app.controller('PopularTiresCtrl', function ($scope,$http) {
 
         updateResults($scope.diameter+""+$scope.season);
     });
-
 });

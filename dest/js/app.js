@@ -1,1 +1,1 @@
-var app = angular.module("app",["ui.bootstrap",'ngSanitize','rzModule']);
+var app = angular.module("app",["ui.bootstrap",'ngSanitize','rzModule','ui.router']);

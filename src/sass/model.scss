@@ -127,12 +127,20 @@
   width: 50px;
   text-align: center;
   display: inline-block;
-  margin: 0 3px;
+  margin: 0;
   padding-left: 0;
   padding-right: 0;
+  position: relative;
+  left: -1px;
+  border: 1px solid $mainColor;
+  z-index:2;
 }
 .model__quantity-btn {
   float: left;
+  &:last-child {
+    position: relative;
+    left: -2px;
+  }
 }
 .model__stockpile {
   font-family: "SegoeUIBold", Verdana, sans-serif;

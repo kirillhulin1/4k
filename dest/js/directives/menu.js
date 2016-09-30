@@ -1,4 +1,4 @@
-app.directive("menu",function($http, $rootScope){
+app.directive("menu",["$http", "$rootScope",function($http, $rootScope){
     return {
         "restrict": "E",
         "templateUrl": "templates/menu.html",
@@ -45,4 +45,4 @@ app.directive("menu",function($http, $rootScope){
 
         }
     }
-});
+}]);

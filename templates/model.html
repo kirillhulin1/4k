@@ -1,23 +1,68 @@
-<nav class="breadcrumbs">
-    <div class="container">
-        <ul class="breadcrumbs__list list-inline">
-            <li class="breadcrumbs__item"><a href="#">Главная</a></li>
-            <li class="breadcrumbs__item"><a href="#">Легковые шины</a></li>
-        </ul>
-    </div>
-</nav>
-
 <article>
-    <header class="page-title">
-        <div class="container">
-            <h1>Шины 185/55R15</h1>
-        </div>
-    </header>
+    <page-title></page-title>
 
     <div class="container">
         <uib-tabset active="index" justified="true">
-            <uib-tab index="0" heading="В наличии">Justified content</uib-tab>
-            <uib-tab index="1" heading="Нет в наличии">Short Labeled Justified content</uib-tab>
+            <uib-tab index="0" heading="В наличии">
+                <section class="in-stock">
+                    <div>
+                        <p>Выберите подходящий размер в таблице:</p>
+                        <table>
+                            <tr>
+                                <th></th><th>Типоразмер</th><th class="hidden-xs">Индекс нагрузки</th><th class="hidden-xs">Индекс скорости</th><th><span class="hidden-xs">Кол-во, шт</span><span class="hidden-lg hidden-md hidden-sm">Шт.</span></th><th>Цена, р.</th><th></th>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter">13"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter" rowspan="2">14"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter" rowspan="2">15"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter">16"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </uib-tab>
+            <uib-tab index="1" heading="Нет в наличии">
+                <section class="in-stock">
+                    <div>
+                        <p>Выберите подходящий размер в таблице:</p>
+                        <table>
+                            <tr>
+                                <th></th><th>Типоразмер</th><th class="hidden-xs">Индекс нагрузки</th><th class="hidden-xs">Индекс скорости</th><th>Цена, р.</th><th></th>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter">13"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter" rowspan="2">14"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter" rowspan="2">15"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            </tr>
+                            <tr>
+                                <td class="in-stock__diameter">16"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </uib-tab>
             <uib-tab index="2" heading="Описание">
                 <section class="description">
                     <section class="col-sm-4 col-md-3">
@@ -30,43 +75,166 @@
                         <section class="score-block">
                             <p><strong>Общая оценка пользователей</strong></p>
                             <section class="score-block__total-score-wrap">
-                                <section class="score-block__total-score"></section>
+                                <section class="score-block__total-score" style="width:{{countScoreWidth(score.total)}}%"></section>
                             </section>
                             <p><small>4.5 из 5 на основании 5 оценок</small></p>
                             <p class="score-block__parameter">Качество изготовления</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score"></section>
+                                <section class="score-block__score" style="width:{{countScoreWidth(score.par1)}}%"></section>
                             </section>
                             <p class="score-block__parameter">Соотношение цена/качество</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score"></section>
+                                <section class="score-block__score" style="width:{{countScoreWidth(score.par2)}}%"></section>
                             </section>
                             <p class="score-block__parameter">Удобство эксплуатации</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score"></section>
+                                <section class="score-block__score" style="width:{{countScoreWidth(score.par3)}}%"></section>
                             </section>
                             <a class="score-block__anchor" ui-sref="home.catalog.brand.model({brand:brand,model:'her',tab:'comments'})">Показать отзывы</a>
                         </section>
                     </section>
-                    <section class="col-sm-8 col-md-9">
-                        <section class="col-sm-4">
-                            <select class="form-control">
-                                <optgroup label="R15">
-                                    <option value="185/85R15">185/85R15</option>
-                                    <option value="185/90R15">185/90R15</option>
-                                </optgroup>
-                                <optgroup label="German Cars">
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </optgroup>
-                            </select>
-                        </section>
-                        <section class="col-sm-offset-4 col-sm-4"></section>
+                    <section class="col-sm-8 col-md-9 description__controls">
+                        <div class="row">
+                            <section class="col-sm-4" >
+                                <select class="form-control" ng-model="model">
+                                    <optgroup label="R15">
+                                        <option value="185/85R15">185/85R15</option>
+                                        <option value="185/90R15">185/90R15</option>
+                                    </optgroup>
+                                    <optgroup label="German Cars">
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </optgroup>
+                                </select>
+                            </section>
+                            <section class="col-sm-offset-4 col-sm-4"></section>
+                        </div>
+
                     </section>
                 </section>
             </uib-tab>
             <uib-tab index="3" heading="Тесты и обзоры(3)">Long Labeled Justified content</uib-tab>
-            <uib-tab index="4" heading="Отзывы(3)">Long Labeled Justified content</uib-tab>
+            <uib-tab index="4" heading="Отзывы(3)">
+                <section class="comments">
+                    <div class="container">
+                        <div class="text-right comments__button">
+                            <button class="btn btn-primary" ng-click="test();">Оставить отзыв</button>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <article class="comment">
+                            <div>
+                                <section class="comment__left col-xs-3">
+                                    <p class="comment__user"><strong>Андрей</strong></p>
+                                    <p class="comment__date"><small>22.07.1986</small></p>
+                                </section>
+                                <section class="comment__right col-xs-9">
+                                    <section class="score-block__score-wrap comment__score">
+                                        <section class="score-block__score" style="width:90%"></section>
+                                    </section>
+                                    <section class="comment__text">Мне понравилась, в принципе согласен с отзывом Саши. При торможении ведет себя достойно, 2 раза спасала от "поцелуя" в зад передней машины, оттормаживался со скорости 80 и 110 км/ч, идущий за мной ушел в кувет. Но были проблемы при выезде из ледяной колеи боковина довольно скользкая или ламелей не хватает. Для города, трассы, накатанных дорог отлично, для бездорожья лучше взять с другим протектором.</section>
+
+                                    <p class="comment__ok">
+                                        Отзыв полезен?
+                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
+                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
+                                    </p>
+
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+                        </article>
+                        <article class="comment">
+                            <div>
+                                <section class="comment__left col-xs-3">
+                                    <p class="comment__user"><strong>Саша</strong></p>
+                                    <p class="comment__date"><small>22.07.1986</small></p>
+                                </section>
+                                <section class="comment__right col-xs-9">
+                                    <section class="score-block__score-wrap comment__score">
+                                        <section class="score-block__score" style="width:90%"></section>
+                                    </section>
+                                    <section class="comment__text">Мягкая, совершенно бесшумная, на гололёде при пробуксовке хорошо скребёт, аж пыль снежная летит. При торможении, правда, ожидал другого эфекта, но липа есть липа. В снегу неплохо роется, но в сыром замыливается. Всё-таки больше для шоссе и накатанного снега... Можно поставить 4+.</section>
+
+                                    <p class="comment__ok">
+                                        Отзыв полезен?
+                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
+                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
+                                    </p>
+
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+                        </article>
+                        <article class="comment">
+                            <div>
+                                <section class="comment__left col-xs-3">
+                                    <p class="comment__user"><strong>Вася</strong></p>
+                                    <p class="comment__date"><small>22.07.1986</small></p>
+                                </section>
+                                <section class="comment__right col-xs-9">
+                                    <section class="score-block__score-wrap comment__score">
+                                        <section class="score-block__score" style="width:90%"></section>
+                                    </section>
+                                    <section class="comment__text">
+                                        ранее признавал только нокиан, поездив на DM-V3 на шеви НИВА смело утверждаю что это великолепная шина в сочетании снег+грязь и гололед отлично! есть опыт и примеры. настоящая джиповская шина для комфортной езды по всем дорогам</section>
+
+                                    <p class="comment__ok">
+                                        Отзыв полезен?
+                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
+                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
+                                    </p>
+
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+                        </article>
+                        <article class="comment">
+                            <div>
+                                <section class="comment__left col-xs-3">
+                                    <p class="comment__user"><strong>Петя</strong></p>
+                                    <p class="comment__date"><small>22.07.1986</small></p>
+                                </section>
+                                <section class="comment__right col-xs-9">
+                                    <section class="score-block__score-wrap comment__score">
+                                        <section class="score-block__score" style="width:90%"></section>
+                                    </section>
+                                    <section class="comment__text">до этого стоял континенталь близак супер лучше в несколько раз доволен</section>
+
+                                    <p class="comment__ok">
+                                        Отзыв полезен?
+                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
+                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
+                                    </p>
+
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+                        </article>
+                        <article class="comment">
+                            <div>
+                                <section class="comment__left col-xs-3">
+                                    <p class="comment__user"><strong>Андрей</strong></p>
+                                    <p class="comment__date"><small>22.07.1986</small></p>
+                                </section>
+                                <section class="comment__right col-xs-9">
+                                    <section class="score-block__score-wrap comment__score">
+                                        <section class="score-block__score" style="width:90%"></section>
+                                    </section>
+                                    <section class="comment__text">Мне понравилась, в принципе согласен с отзывом Саши. При торможении ведет себя достойно, 2 раза спасала от "поцелуя" в зад передней машины, оттормаживался со скорости 80 и 110 км/ч, идущий за мной ушел в кувет. Но были проблемы при выезде из ледяной колеи боковина довольно скользкая или ламелей не хватает. Для города, трассы, накатанных дорог отлично, для бездорожья лучше взять с другим протектором.</section>
+
+                                    <p class="comment__ok">
+                                        Отзыв полезен?
+                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
+                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
+                                    </p>
+
+                                </section>
+                                <div class="clearfix"></div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </uib-tab>
         </uib-tabset>
     </div>
 </article>

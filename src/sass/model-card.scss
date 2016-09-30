@@ -45,6 +45,28 @@
     width: 70%;
   }
 }
+.model-card__favourite {
+  cursor: pointer;
+  position: absolute;
+  top: 43px;
+  right: 26px;
+  font-size: 25px !important;
+  line-height: 1 !important;
+  color: $orange;
+  opacity: 0.5;
+  i:last-child {
+    display: none;
+  }
+  &:hover {
+    top: 45px;
+    i:first-child {
+      display: none;
+    }
+    i:last-child {
+      display: block;
+    }
+  }
+}
 .model-card__title {
   font-size: 14px;
   font-family: "SegoeUISemiBold", Verdana, sans-serif;

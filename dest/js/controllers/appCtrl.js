@@ -1,4 +1,4 @@
-app.controller("AppCtrl",function($scope, $rootScope,$log){
+app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootScope,$log){
     $scope.menu = [
         {
             "title": "Шины и диски",
@@ -61,4 +61,4 @@ app.controller("AppCtrl",function($scope, $rootScope,$log){
     $scope.phoneFirst = "+375 29 3794864";
     $scope.phoneSecond = "+375 33 3668050";
 
-});
+}]);

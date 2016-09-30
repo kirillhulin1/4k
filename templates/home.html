@@ -176,7 +176,7 @@
             <div class="clearfix"></div>
         </div>
 
-        <a ui-sref="home.tires({width:180,height:65,diameter:'R15'})" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a><!--({width:180,height:65,diameter:'R15'})-->
+        <a ui-sref="home.tires.size({width:180,height:65,diameter:'R15'})" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a><!--({width:180,height:65,diameter:'R15'})-->
     </section>
 
 </article>
@@ -193,8 +193,11 @@
             </div>
 
         </div>
-        <a class="about__toggle" href="#" do-not-follow>
+        <a class="about__toggle" href="#" do-not-follow ng-click="showMore()">
             <span class="about__anchor">Читать далее</span>
         </a>
     </div>
 </article>
+
+
+

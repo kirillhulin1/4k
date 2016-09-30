@@ -1,37 +1,14 @@
-<nav class="breadcrumbs">
-    <div class="container">
-        <ul class="breadcrumbs__list list-inline">
-            <li class="breadcrumbs__item"><a href="#">Главная</a></li>
-            <li class="breadcrumbs__item"><a href="#">Легковые шины</a></li>
-        </ul>
-    </div>
-</nav>
-
 <article>
-    <header class="page-title">
-        <div class="container">
-            <h1>Легковые шины</h1>
-
-
-        </div>
-    </header>
-
+    <page-title></page-title>
     <div class="container">
         <h2>Подбор шин по бренду</h2>
 
         <section class="brands">
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a ui-sref="home.catalog.brand({brand:'bridgestone'})"><img class="brands__image" src="dest/images/brand1.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand2.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand3.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand4.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand5.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand6.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand7.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand8.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand9.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand10.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand11.png"></a></section>
-            <section class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6"><a href="#"><img class="brands__image" src="dest/images/brand12.png"></a></section>
+            <section ng-repeat="brand in brands" class="brands__item col-lg-2 col-md-3 col-md-4 col-xs-6">
+                <a ui-sref="home.tires.brand({brand:brand.name})">
+                    <img class="brands__image" ng-src="{{brand.logo}}">
+                </a>
+            </section>
         </section>
     </div>
 </article>

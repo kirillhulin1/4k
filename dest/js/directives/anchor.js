@@ -1,4 +1,4 @@
-app.directive("anchor",function(){
+app.directive("anchor",[function(){
     return {
         "restrict": "A",
 
@@ -16,4 +16,4 @@ app.directive("anchor",function(){
             });
         }
     }
-});
+}]);

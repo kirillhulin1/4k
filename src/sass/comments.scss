@@ -1,0 +1,14 @@
+.comments {
+  margin-top: 2em;
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+.comments__button {
+  margin-bottom: 2em;
+  button {
+    position: relative;
+    z-index: 3;
+  }
+}

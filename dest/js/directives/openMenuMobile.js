@@ -1,4 +1,4 @@
-app.directive("openMenuMobile",function(){
+app.directive("openMenuMobile",[function(){
     return {
         "restrict": "A",
 
@@ -12,4 +12,4 @@ app.directive("openMenuMobile",function(){
         }
 
     }
-});
+}]);

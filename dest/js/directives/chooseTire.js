@@ -1,4 +1,4 @@
-app.directive("chooseTire",function($timeout){
+app.directive("chooseTire",["$timeout",function($timeout){
     return {
         "restrict": "E",
         "templateUrl": "templates/choose-tire.html",
@@ -99,4 +99,4 @@ app.directive("chooseTire",function($timeout){
         }
 
    }
-});
+}]);

@@ -1,3 +1,3 @@
-app.controller("TiresCtrl",function($scope, $stateParams){
-    console.log($stateParams);
-});
+app.controller("TiresCtrl",["$scope","$stateParams","$state",function($scope, $stateParams,$state){
+    $state.current.data.displayName = "Шины " + $stateParams.width + "/" + $stateParams.height + $stateParams.diameter;
+}]);

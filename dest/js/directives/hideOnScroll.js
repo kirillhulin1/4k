@@ -1,4 +1,4 @@
-app.directive("hideOnScroll",function(){
+app.directive("hideOnScroll",[function(){
     return {
         "restrict": "A",
 
@@ -11,4 +11,4 @@ app.directive("hideOnScroll",function(){
         }
 
     }
-});
+}]);

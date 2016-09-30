@@ -1,4 +1,4 @@
-app.controller('FooterCtrl', function ($scope) {
+app.controller("FooterCtrl", ["$scope",function ($scope) {
     $scope.hideFixedPanel = function(e){
         e.preventDefault();
         $(".bottom-panel").addClass("bottom-panel_closed");
@@ -9,4 +9,4 @@ app.controller('FooterCtrl', function ($scope) {
         $(".bottom-panel").removeClass("bottom-panel_closed");
         $(".footer").css("paddingBottom","44px");
     };
-});
+}]);

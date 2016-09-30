@@ -1,4 +1,4 @@
-app.directive("condenseOnScroll",function(){
+app.directive("condenseOnScroll",[function(){
     return {
         "restrict": "A",
 
@@ -13,4 +13,4 @@ app.directive("condenseOnScroll",function(){
         }
 
     }
-});
+}]);

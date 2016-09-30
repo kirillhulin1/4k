@@ -1,4 +1,4 @@
-app.controller('TabsCtrl', function ($scope,$sce,$http,$interpolate,$compile) {
+app.controller('TabsCtrl', ["$scope","$sce","$http","$interpolate", function ($scope,$sce,$http,$interpolate) {
     var startContent = '<div class="tabs-tires__start"><img src="dest/images/ajax-loader.gif"></div>';
     var content2loaded = false;
     var content3loaded = false;
@@ -46,4 +46,4 @@ app.controller('TabsCtrl', function ($scope,$sce,$http,$interpolate,$compile) {
 
 
 
-});
+}]);

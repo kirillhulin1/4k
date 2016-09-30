@@ -1,4 +1,4 @@
-app.directive("tiresForCar",function($http){
+app.directive("tiresForCar",["$http",function($http){
     return {
         "restrict": "E",
         "templateUrl": "templates/tires-for-car.html",
@@ -121,4 +121,4 @@ app.directive("tiresForCar",function($http){
         }
 
     }
-});
+}]);

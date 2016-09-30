@@ -1,4 +1,4 @@
-app.directive("doNotFollow",function($rootScope){
+app.directive("doNotFollow",[function(){
     return {
         "restrict": "A",
         "scope": {},
@@ -9,6 +9,6 @@ app.directive("doNotFollow",function($rootScope){
             });
         }
     }
-});
+}]);
 
 

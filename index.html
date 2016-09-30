@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="dest/rzslider.min.css">
 
     <style>
-
+        .about__opened .about__toggle {
+            background: linear-gradient(to top,#fff 30%,transparent) !important;
+        }
+        .model-card__reviews li {
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+            white-space: nowrap !important;
+        }
     </style>
 
 </head>
@@ -154,6 +161,7 @@
 
 
         </div>
+        <ui-breadcrumbs displayname-property="data.displayName" template-url="templates/uiBreadcrumbs.tpl.html"></ui-breadcrumbs>
         <ui-view></ui-view>
         <section class="help-us hidden-xs">
             <div class="container">
@@ -185,7 +193,7 @@
                 <li class="col-sm-3">
                     <h4 class="footer__subtitle"><a href="#">Каталог шин и дисков</a></h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Легковые шины</a></li>
+                        <li><a ui-sref="home.tires">Легковые шины</a></li>
                         <li><a href="#">Легковесные диски</a></li>
                         <li><a href="#">Грузовые шины</a></li>
                     </ul>
@@ -507,6 +515,7 @@
     <script src="dest/build.clean.js"></script>
     <script src="dest/js/lib/rzslider.min.js"></script>
     <script src="dest/js/lib/angular-ui-router.min.js"></script>
+    <script src="dest/js/lib/angular-resource.js"></script>
 
 
     <script src="dest/js/app.js"></script>
@@ -543,6 +552,14 @@
     <script src="dest/js/directives/hideOnScroll.js"></script>
     <script src="dest/js/directives/cart.js"></script>
     <script src="dest/js/directives/doNotFollow.js"></script>
+    <script src="dest/js/directives/uiBreadcrumbs.js"></script>
+    <script src="dest/js/directives/pageTitle.js"></script>
+
+
+
+    <!--Провайдеры-->
+    <script src="dest/js/providers/postBrands.js"></script>
+    <script src="dest/js/providers/postModels.js"></script>
 
     <!--Фильтры-->
     <script src="dest/js/filters/goods.js"></script>
@@ -551,34 +568,9 @@
     <script src="dest/bootstrap/angular/ui-bootstrap-2.1.3.js"></script>
     <script src="dest/bootstrap/angular/ui-bootstrap-tpls-2.1.3.js"></script>
 
-    <script>
-
-        $(".about__toggle").click(function(e){
-
-            if ($(".about .container").hasClass("about__opened")) {
-                $(".about__toggle").removeAttr("style");
-                $(".about .container").animate({height: 440 + "px"},300);
-                $(".about__content").animate({height: 440 + "px"},300,function(){
-
-                    $(".about__content").removeAttr("style");
-                    $(".about .container").removeAttr("style");
-
-                    $(".about .container").toggleClass("about__opened");
-                });
-            }
-            else {
-                $(".about__container").animate({height: $(".about__content").height()+"px"},300);
-                $(".about .container").animate({height: $(".about__content").height()+70+"px"},300,function(){
-                    $(".about .container").toggleClass("about__opened");
-                    $(".about__container").removeAttr("style").css("height","auto");
-                    $(".about .container").removeAttr("style").css("height","auto").css("paddingBottom","40px");
-
-                });
-            }
 
 
-        });
-    </script>
+
 
     <script>
         $("#log-in").on("show.bs.modal",function(){

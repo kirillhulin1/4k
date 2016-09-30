@@ -1,4 +1,4 @@
-app.directive("hideOnMisclick",function($rootScope){
+app.directive("hideOnMisclick",[function(){
     return {
         "restrict": "A",
 
@@ -19,4 +19,4 @@ app.directive("hideOnMisclick",function($rootScope){
         }
 
     }
-});
+}]);

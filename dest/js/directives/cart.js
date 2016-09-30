@@ -1,4 +1,4 @@
-app.directive("cart",function($rootScope){
+app.directive("cart",["$rootScope",function($rootScope){
     return {
         "restrict": "A",
         "scope": {},
@@ -74,5 +74,5 @@ app.directive("cart",function($rootScope){
             }
         }
     }
-});
+}]);
 

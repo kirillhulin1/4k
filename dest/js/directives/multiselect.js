@@ -1,4 +1,4 @@
-app.directive("multiselect",function(){
+app.directive("multiselect",[function(){
     return {
         "restrict": "A",
 
@@ -30,5 +30,5 @@ app.directive("multiselect",function(){
         }
 
     }
-});
+}]);
 

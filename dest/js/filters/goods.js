@@ -1,4 +1,4 @@
-app.filter("goods",function(){
+app.filter("goods",[function(){
     return function(quantity){
         var print = "";
         if (quantity == 1) {
@@ -13,4 +13,4 @@ app.filter("goods",function(){
         else print= "товаров";
         return quantity + " " + print;
     }
-});
+}]);

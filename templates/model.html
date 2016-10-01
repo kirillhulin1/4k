@@ -63,7 +63,7 @@
                     </div>
                 </section>
             </uib-tab>
-            <uib-tab index="2" heading="Описание">
+            <uib-tab index="2" ng-click="changeState('description');" heading="Описание">
                 <section class="description">
                     <section class="col-sm-4 col-md-3">
                         <img class="description__logo" src="dest/images/brand1.png">
@@ -75,22 +75,22 @@
                         <section class="score-block">
                             <p><strong>Общая оценка пользователей</strong></p>
                             <section class="score-block__total-score-wrap">
-                                <section class="score-block__total-score" style="width:{{countScoreWidth(score.total)}}%"></section>
+                                <section class="score-block__total-score" ng-style="{width:countScoreWidth(score.total)+'%'}"></section>
                             </section>
-                            <p><small>4.5 из 5 на основании 5 оценок</small></p>
+                            <p><small><span ng-bind="score.total"></span> из 5 на основании 5 оценок</small></p>
                             <p class="score-block__parameter">Качество изготовления</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score" style="width:{{countScoreWidth(score.par1)}}%"></section>
+                                <section class="score-block__score" ng-style="{width:countScoreWidth(score.par1)+'%'}"></section>
                             </section>
                             <p class="score-block__parameter">Соотношение цена/качество</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score" style="width:{{countScoreWidth(score.par2)}}%"></section>
+                                <section class="score-block__score" ng-style="{width:countScoreWidth(score.par2)+'%'}"></section>
                             </section>
                             <p class="score-block__parameter">Удобство эксплуатации</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score" style="width:{{countScoreWidth(score.par3)}}%"></section>
+                                <section class="score-block__score" ng-style="{width:countScoreWidth(score.par3)+'%'}"></section>
                             </section>
-                            <a class="score-block__anchor" ui-sref="home.catalog.brand.model({brand:brand,model:'her',tab:'comments'})">Показать отзывы</a>
+                            <a class="score-block__anchor" ui-sref="home.tires.brand.model({brand:brand,model:model,tab:'comments'})">Показать отзывы</a>
                         </section>
                     </section>
                     <section class="col-sm-8 col-md-9 description__controls">
@@ -114,124 +114,37 @@
                 </section>
             </uib-tab>
             <uib-tab index="3" heading="Тесты и обзоры(3)">Long Labeled Justified content</uib-tab>
-            <uib-tab index="4" heading="Отзывы(3)">
-                <section class="comments">
-                    <div class="container">
+            <uib-tab index="4" ng-click="showComments()" heading="Отзывы(3)" >
+                <section class="comments" ng-init="showComments()">
+                    <div>
                         <div class="text-right comments__button">
-                            <button class="btn btn-primary" ng-click="test();">Оставить отзыв</button>
+                            <button class="btn btn-primary">Оставить отзыв</button>
                         </div>
                         <div class="clearfix"> </div>
-                        <article class="comment">
+
+                        <article class="comment" ng-repeat="comment in comments">
                             <div>
                                 <section class="comment__left col-xs-3">
-                                    <p class="comment__user"><strong>Андрей</strong></p>
-                                    <p class="comment__date"><small>22.07.1986</small></p>
+                                    <p class="comment__user"><strong ng-bind="comment.user"></strong></p>
+                                    <p class="comment__date"><small ng-bind="comment.date"></small></p>
                                 </section>
                                 <section class="comment__right col-xs-9">
                                     <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" style="width:90%"></section>
+                                        <section class="score-block__score" ng-style="{width:countScoreWidth(comment.score)+'%'}"></section>
                                     </section>
-                                    <section class="comment__text">Мне понравилась, в принципе согласен с отзывом Саши. При торможении ведет себя достойно, 2 раза спасала от "поцелуя" в зад передней машины, оттормаживался со скорости 80 и 110 км/ч, идущий за мной ушел в кувет. Но были проблемы при выезде из ледяной колеи боковина довольно скользкая или ламелей не хватает. Для города, трассы, накатанных дорог отлично, для бездорожья лучше взять с другим протектором.</section>
+                                    <section class="comment__text" ng-bind="comment.text"></section>
 
                                     <p class="comment__ok">
                                         Отзыв полезен?
-                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
-                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
+                                        <a href="#" class="comment__yes" ng-click="commentGood(comment)" do-not-follow>Да</a>: <span ng-bind="comment.yes"></span>
+                                        <a href="#" class="comment__no" ng-click="commentShit(comment)" do-not-follow>Нет</a>: <span ng-bind="comment.no"></span>
                                     </p>
 
                                 </section>
                                 <div class="clearfix"></div>
                             </div>
                         </article>
-                        <article class="comment">
-                            <div>
-                                <section class="comment__left col-xs-3">
-                                    <p class="comment__user"><strong>Саша</strong></p>
-                                    <p class="comment__date"><small>22.07.1986</small></p>
-                                </section>
-                                <section class="comment__right col-xs-9">
-                                    <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" style="width:90%"></section>
-                                    </section>
-                                    <section class="comment__text">Мягкая, совершенно бесшумная, на гололёде при пробуксовке хорошо скребёт, аж пыль снежная летит. При торможении, правда, ожидал другого эфекта, но липа есть липа. В снегу неплохо роется, но в сыром замыливается. Всё-таки больше для шоссе и накатанного снега... Можно поставить 4+.</section>
 
-                                    <p class="comment__ok">
-                                        Отзыв полезен?
-                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
-                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
-                                    </p>
-
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-                        </article>
-                        <article class="comment">
-                            <div>
-                                <section class="comment__left col-xs-3">
-                                    <p class="comment__user"><strong>Вася</strong></p>
-                                    <p class="comment__date"><small>22.07.1986</small></p>
-                                </section>
-                                <section class="comment__right col-xs-9">
-                                    <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" style="width:90%"></section>
-                                    </section>
-                                    <section class="comment__text">
-                                        ранее признавал только нокиан, поездив на DM-V3 на шеви НИВА смело утверждаю что это великолепная шина в сочетании снег+грязь и гололед отлично! есть опыт и примеры. настоящая джиповская шина для комфортной езды по всем дорогам</section>
-
-                                    <p class="comment__ok">
-                                        Отзыв полезен?
-                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
-                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
-                                    </p>
-
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-                        </article>
-                        <article class="comment">
-                            <div>
-                                <section class="comment__left col-xs-3">
-                                    <p class="comment__user"><strong>Петя</strong></p>
-                                    <p class="comment__date"><small>22.07.1986</small></p>
-                                </section>
-                                <section class="comment__right col-xs-9">
-                                    <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" style="width:90%"></section>
-                                    </section>
-                                    <section class="comment__text">до этого стоял континенталь близак супер лучше в несколько раз доволен</section>
-
-                                    <p class="comment__ok">
-                                        Отзыв полезен?
-                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
-                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
-                                    </p>
-
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-                        </article>
-                        <article class="comment">
-                            <div>
-                                <section class="comment__left col-xs-3">
-                                    <p class="comment__user"><strong>Андрей</strong></p>
-                                    <p class="comment__date"><small>22.07.1986</small></p>
-                                </section>
-                                <section class="comment__right col-xs-9">
-                                    <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" style="width:90%"></section>
-                                    </section>
-                                    <section class="comment__text">Мне понравилась, в принципе согласен с отзывом Саши. При торможении ведет себя достойно, 2 раза спасала от "поцелуя" в зад передней машины, оттормаживался со скорости 80 и 110 км/ч, идущий за мной ушел в кувет. Но были проблемы при выезде из ледяной колеи боковина довольно скользкая или ламелей не хватает. Для города, трассы, накатанных дорог отлично, для бездорожья лучше взять с другим протектором.</section>
-
-                                    <p class="comment__ok">
-                                        Отзыв полезен?
-                                        <a href="#" class="comment__yes">Да</a>: <span>0</span>
-                                        <a href="#" class="comment__no">Нет</a>: <span>2</span>
-                                    </p>
-
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-                        </article>
                     </div>
                 </section>
             </uib-tab>

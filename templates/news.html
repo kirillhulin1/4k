@@ -1,0 +1,117 @@
+<page-title></page-title>
+<div class="container">
+    <div class="row">
+        <div class="news_list col-sm-9 col-md-9">
+            <section class="news-list__item col-sm-6 col-md-4" ng-repeat="item in news">
+                <div>
+                    <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
+                        <a class="news-list__comments">
+                            <i class="glyphicon glyphicon-comment"></i>
+                            <span class="news-list__comments-number">23</span>
+                        </a>
+                        <a ui-sref="home.news.detail({name:'aasfs'})" class="news-list__anchor"></a>
+                        <a href="#" class="news-list__heading" ng-bind="item.name"></a>
+                    </section>
+                    <section class="news-list__info">
+                        <h3 class="news-list__title"><a href="#" ng-bind="item.name">Примеряем на себя</a></h3>
+                        <p class="news-list__date" ng-bind="item.date"></p>
+                        <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
+                    </section>
+                    <div class="clearfix"></div>
+                </div>
+
+            </section>
+
+
+
+
+            <div class="clearfix"></div>
+        </div>
+
+
+        <aside class="col-md-3 col-sm-3">
+            <div class="news__menu-block">
+
+                <div class="news__menu-block">
+
+                    <ul class="news__menu">
+
+                        <li class="is-active"> <!-- когда открыта статья активного раздела -->
+                            <a class="news__menu-title"  href="#"> Тесты и обзоры шин  </a>
+                            <ul>
+                                <li> <a href="#">Тесты и обзоры шин  </a></li>
+                                <li> <a class="active-li" href="#">Тесты и обзоры шин  </a></li>
+                                <li> <a href="#">Тесты и обзоры шин  </a></li>
+                                <li> <a href="#">Тесты и обзоры шин  </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="">
+                            <a class="news__menu-title"  href="#">Все о шинах</a>
+                            <ul>
+                                <li>  <a  href="#">Все о шинах</a></li>
+                                <li>  <a  href="#">Все о шинах</a></li>
+                                <li> <a  href="#">Все о шинах</a></li>
+                                <li>  <a  href="#">Все о шинах</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="">
+                            <a class="news__menu-title"  href="#">Новости</a>
+                            <ul>
+                                <li>  <a href="#">Новые автомобили</a></li>
+                                <li>  <a href="#">Награды и достижения </a></li>
+                                <li>  <a href="#">Новости</a></li>
+                                <li>  <a href="#">Новости</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="list-block">
+                <div class="list-block__header">Лента новостей</div>
+                <div class="list-block__content">
+
+                    <div class="list-block__item">
+                        <div class="list-block__item-postdate">  <span> 30.09.2016</span> </div>
+                        <div class="list-block__item-tittle">
+                            <a href="#">
+                                Bridgestone Dueler A/T 001 презентуют в Париже на Auto Show 2016 Источник: https://prokoleso.ua/tests
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-block__item">
+                        <div class="list-block__item-postdate">  <span> 30.09.2016</span> </div>
+                        <div class="list-block__item-tittle">
+                            <a href="#">
+                                Bridgestone Dueler A/T 001 презентуют в Париже на Auto Show 2016 Источник: https://prokoleso.ua/tests
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-block__item">
+                        <div class="list-block__item-postdate"> <span> 30.09.2016</span> </div>
+                        <div class="list-block__item-tittle">
+                            <a href="#">
+                                Bridgestone Dueler A/T 001 презентуют в Париже на Auto Show 2016 Источник: https://prokoleso.ua/tests
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-block__item">
+                        <div class="list-block__item-postdate">  <span> 30.09.2016</span> </div>
+                        <div class="list-block__item-tittle">
+                            <a href="#">
+                                Bridgestone Dueler A/T 001 презентуют в Париже на Auto Show 2016 Источник: https://prokoleso.ua/tests
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </aside>
+
+    </div>
+</div>

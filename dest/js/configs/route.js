@@ -51,7 +51,7 @@ app.config(["$stateProvider",function($stateProvider){
 
         })
         .state("home.tires.brand.model",{
-            url:"/:model?tab",
+            url:"/:model",
             views: {
                 "@":{
                     templateUrl: "templates/model.html",
@@ -59,11 +59,43 @@ app.config(["$stateProvider",function($stateProvider){
                 }
             },
             resolve: {
-                modelData: function(PostModels){
+                modelData: function(PostModels,$stateParams){
                     return PostModels.get({modelName:"her"});
                 }
+            },
+            params: {
+                tab: "in-stock"
             }
-        });
+        })
+        .state("home.news",{
+            url:"/news",
+            views: {
+                "@":{
+                    templateUrl: "templates/news.html",
+                    controller: "NewsCtrl"
+                }
+            },
+            data: {
+                displayName: 'Новости'
+            },
+            resolve: {
+                newsData: function(PostNews){
+                    return PostNews.query();
+                }
+            }
+        })
+        .state("home.news.detail",{
+            url:"/:name",
+            views: {
+                "@":{
+                    templateUrl: "templates/news-detail.html",
+                    controller: "NewsDetailCtrl"
+                }
+            },
+            data: {
+                displayName: ''
+            }
+        })
 
 }]);
 

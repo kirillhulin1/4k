@@ -1,4 +1,4 @@
-app.directive("menu",["$http", "$rootScope",function($http, $rootScope){
+app.directive("menu",["$http", "$rootScope", "$interpolate",function($http, $rootScope, $interpolate){
     return {
         "restrict": "E",
         "templateUrl": "templates/menu.html",
@@ -28,8 +28,8 @@ app.directive("menu",["$http", "$rootScope",function($http, $rootScope){
                             method: 'GET',
                             url: template
                         }).then(function successCallback(response) {
-                            $rootScope.subMenuContent = response.data;
-                            $rootScope.submenus[template] = response.data;
+                            $rootScope.subMenuContent = $interpolate(response.data)(scope);
+                            $rootScope.submenus[template] = $interpolate(response.data)(scope);
                         }, function errorCallback(response) {
                             console.log("Возникла ошибка при загрузуке подменю");
                         });

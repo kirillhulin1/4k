@@ -11,7 +11,69 @@ var brands = [
     {
         id: 0,
         logo: "dest/images/brand1.png",
-        name: "bridgestone"
+        name: "bridgestone",
+        models: [
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "score": "4",
+                "picture": "dest/images/bridgestone1.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX1",
+                "score": "4.2",
+                "picture": "dest/images/bridgestone2.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX2",
+                "score": "4.8",
+                "picture": "dest/images/bridgestone3.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX3",
+                "score": "3.5",
+                "picture": "dest/images/bridgestone4.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX4",
+                "score": "5",
+                "picture": "dest/images/bridgestone5.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX5",
+                "score": "2",
+                "picture": "dest/images/bridgestone6.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX4",
+                "score": "5",
+                "picture": "dest/images/bridgestone5.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX5",
+                "score": "2",
+                "picture": "dest/images/bridgestone6.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX4 lizzak VRX4",
+                "score": "5",
+                "picture": "dest/images/bridgestone5.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX5",
+                "score": "2",
+                "picture": "dest/images/bridgestone6.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX4",
+                "score": "5",
+                "picture": "dest/images/bridgestone5.png"
+            },
+            {
+                "name": "Bridgestone Blizzak VRX5",
+                "score": "2",
+                "picture": "dest/images/bridgestone6.png"
+            }
+        ]
     },
     {
         id: 1,
@@ -72,7 +134,7 @@ var brands = [
 
 var models = [
     {
-        name: "her",
+        name: "Bridgestone Blizzak VRX",
         score: {
             total: 4.5,
             par1: 4,
@@ -164,6 +226,15 @@ app.get("/brands",function(req,res){
 });
 app.get("/news",function(req,res){
     res.send(news);
+});
+app.get("/brands/:name",function(req,res){
+    console.log(req.params.name);
+    brands.forEach(function(el, i){
+        if (el.name === req.params.name) {
+            console.log(1);
+            res.send(brands[i]);
+        }
+    });
 });
 app.get("/models/:name",function(req,res){
     console.log(req.params.name);

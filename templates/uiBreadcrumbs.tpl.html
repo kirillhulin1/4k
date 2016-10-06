@@ -1,9 +1,8 @@
 <nav class="breadcrumbs" ng-show="breadcrumbs.length > 1">
     <div class="container">
         <ul class="breadcrumbs__list list-inline">
-            <li ng-repeat="crumb in breadcrumbs" class="breadcrumbs__item">
-                <a ui-sref="{{ crumb.route }}" ng-if="!$last">{{ crumb.displayName}}&nbsp;</a>
-                <span ng-show="$last">{{crumb.displayName}}</span>
+            <li ng-repeat="crumb in breadcrumbs" class="breadcrumbs__item" ng-if="!$last">
+                <a ui-sref="{{ crumb.route }}" >{{ crumb.displayName}}&nbsp;</a>
             </li>
         </ul>
     </div>

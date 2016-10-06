@@ -4,6 +4,7 @@ app.config(["$stateProvider",function($stateProvider){
             url: "",
             templateUrl: "templates/home.html",
             controller: "HomeCtrl",
+            
             data: {
                 displayName: 'Главная'
             }
@@ -45,8 +46,10 @@ app.config(["$stateProvider",function($stateProvider){
                     controller: "BrandCtrl"
                 }
             },
-            data: {
-                displayName: ""
+            resolve: {
+                brandData: function(PostBrands,$stateParams){
+                    return PostBrands.get({brandId:$stateParams.brand});
+                }
             }
 
         })
@@ -60,7 +63,7 @@ app.config(["$stateProvider",function($stateProvider){
             },
             resolve: {
                 modelData: function(PostModels,$stateParams){
-                    return PostModels.get({modelName:"her"});
+                    return PostModels.get({modelName:$stateParams.model});
                 }
             },
             params: {

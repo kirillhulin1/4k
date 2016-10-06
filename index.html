@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="dest/styles.min.css">
     <link rel="stylesheet" href="dest/rzslider.min.css">
+    <link rel="stylesheet" href="dest/carousel.css">
 
     <style>
         .about__opened .about__toggle {
@@ -103,12 +104,12 @@
                             </ul>
                         </li>
                         <li class="tools-menu__item tools-menu__cart">
-                            <a ng-cloak ng-hide="cart.items.length" href="#" uib-tooltip="Ваша корзина пуста"
+                            <a ng-cloak ng-hide="cart.items.length" href="" uib-tooltip="Ваша корзина пуста"
                                tooltip-placement="bottom-right"
                                tooltip-trigger="'mouseenter'">
                                 <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
                             </a>
-                            <a ng-show="cart.items.length" href="#" data-toggle="modal" data-target="#cart">
+                            <a ng-show="cart.items.length" href="" data-toggle="modal" data-target="#cart">
                                 <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
                                 <section  class="tools-menu__goods" ng-bind="cart.items.length"></section>
                             </a>
@@ -556,6 +557,7 @@
     <script src="dest/js/directives/doNotFollow.js"></script>
     <script src="dest/js/directives/uiBreadcrumbs.js"></script>
     <script src="dest/js/directives/pageTitle.js"></script>
+    <script src="dest/js/directives/carousel.js"></script>
 
 
 

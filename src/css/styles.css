@@ -2299,6 +2299,9 @@ h1 {
   padding-right: 0;
 }
 
+.breadcrumbs__item {
+  margin-right: 10px;
+}
 .breadcrumbs__item:after {
   content: " >";
   font-size: 10px;
@@ -3172,6 +3175,139 @@ h1 {
 
   .list-block {
     display: none;
+  }
+}
+.brand__wrapper {
+  border-top: 1px solid #e2e2e2;
+  margin-top: 2em;
+}
+
+.brand {
+  border: 1px solid white;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.brand:hover {
+  border-color: #e2e2e2;
+}
+.brand:hover .brand__button {
+  display: block;
+}
+.brand:before {
+  content: "";
+  display: block;
+  padding-top: 230%;
+}
+
+.brand__picture-wrap {
+  height: 50%;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.brand__picture {
+  height: 100%;
+}
+
+.brand__title {
+  position: absolute;
+  height: 20%;
+  left: 0;
+  width: 100%;
+  top: 60%;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.brand__score {
+  top: 80%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.brand__button {
+  bottom: 15px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  display: none;
+}
+
+.brand__season {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+@media all and (max-width: 600px) {
+  .brand__wrapper .col-xs-4 {
+    width: 50%;
+  }
+}
+@media all and (max-width: 400px) {
+  .brand__wrapper .col-xs-4 {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media all and (max-width: 340px) {
+  .brand__wrapper .col-xs-4 {
+    width: 65%;
+    margin-left: 17.5%;
+  }
+}
+@media all and (min-width: 320px) {
+  .brand:before {
+    padding-top: 190%;
+  }
+  .brand .brand__score {
+    top: 75%;
+  }
+}
+@media all and (min-width: 340px) {
+  .brand:before {
+    padding-top: 190%;
+  }
+}
+@media all and (max-width: 768px) {
+  .brand__button {
+    display: block;
+  }
+}
+@media all and (min-width: 500px) {
+  .brand:before {
+    padding-top: 160%;
+  }
+}
+@media all and (min-width: 601px) {
+  .brand:before {
+    padding-top: 270%;
+  }
+}
+@media all and (min-width: 700px) {
+  .brand:before {
+    padding-top: 220%;
+  }
+}
+@media all and (min-width: 992px) {
+  .brand:before {
+    padding-top: 180%;
+  }
+}
+@media all and (min-width: 1200px) {
+  .brand:before {
+    padding-top: 230%;
   }
 }
 

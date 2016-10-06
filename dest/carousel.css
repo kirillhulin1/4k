@@ -1,0 +1,38 @@
+.carousel {
+    overflow: hidden;
+}
+.carousel__wrapper {
+
+}
+.carousel__content {
+    text-align: left;
+    width: 10000px;
+}
+.carousel__item {
+    position: relative;
+    width: 100px;
+}
+.carousel__arrow {
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    line-height: 36px;
+    text-align: center;
+    top: 0;
+    width: 15px;
+    cursor: pointer;
+
+}
+.carousel__arrow i {
+    font-size: 100%;
+}
+.carousel__arrow_left {
+    left: 0;
+}
+.carousel__arrow_right {
+    right: 0;
+}
+.carousel__arrow_hidden .carousel__arrow {
+    cursor: default;
+    color: white;
+}

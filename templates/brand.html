@@ -1,2 +1,91 @@
 <page-title></page-title>
-<h1>{{brand}}</h1> <a ui-sref="home.tires.brand.model({brand:brand,model:'her',tab:'description'})" ui-sref-opts = "{notify:false,reload:false}">Перейти</a>
+
+<section class="container">
+    <img src="dest/images/brand1.png">
+    <section class="brand__wrapper">
+        <h2>Зимние шины {{brand.name}}</h2>
+
+        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in brand.models" >
+
+            <section class="brand__picture-wrap">
+                <img class="brand__picture" ng-src="{{model.picture}}">
+                <img class="brand__season" src="dest/images/season-winter.png">
+            </section>
+            <section class="brand__title">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>
+            </section>
+            <section class="brand__score">
+                <section class="score-block__score-wrap">
+                    <section class="score-block__score" ng-style="{width:countScoreWidth(model.score)+'%'}"></section>
+                </section>
+            </section>
+            <section class="brand__button">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})" class="btn btn-primary">Подробнее</a>
+            </section>
+        </article>
+
+        <div class="clearfix"></div>
+
+    </section>
+
+    <section class="brand__wrapper">
+        <h2>Зимние шины {{brand.name}}</h2>
+
+        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in brand.models" >
+
+            <section class="brand__picture-wrap">
+                <img class="brand__picture" ng-src="{{model.picture}}">
+                <img class="brand__season" src="dest/images/season-winter.png">
+            </section>
+            <section class="brand__title">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>
+            </section>
+            <section class="brand__score">
+                <section class="score-block__score-wrap">
+                    <section class="score-block__score" ng-style="{width:countScoreWidth(model.score)+'%'}"></section>
+                </section>
+            </section>
+            <section class="brand__button">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})" class="btn btn-primary">Подробнее</a>
+            </section>
+        </article>
+
+        <div class="clearfix"></div>
+    </section>
+
+    <section class="brand__wrapper">
+        <h2>Зимние шины {{brand.name}}</h2>
+
+        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in brand.models" >
+
+            <section class="brand__picture-wrap">
+                <img class="brand__picture" ng-src="{{model.picture}}">
+                <img class="brand__season" src="dest/images/season-winter.png">
+            </section>
+            <section class="brand__title">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>
+            </section>
+            <section class="brand__score">
+                <section class="score-block__score-wrap">
+                    <section class="score-block__score" ng-style="{width:countScoreWidth(model.score)+'%'}"></section>
+                </section>
+            </section>
+            <section class="brand__button">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})" class="btn btn-primary">Подробнее</a>
+            </section>
+        </article>
+
+        <div class="clearfix"></div>
+    </section>
+
+    <article class="brand__wrapper">
+        <h2>Купить летние или зимние шины Bridgestone</h2>
+
+        <section class="brand__descrition">
+            <p>Bridgestone – это мировой лидер по производству покрышек, который уже более восьмидесяти лет радует водителей во всем мире неизменно высоким качеством своих продуктов. Летние и зимние автошины — это, прежде всего высокий уровень надежности. Инженеры японского «шинного гиганта» разрабатывают модели покрышек рассчитанные специально для эксплуатации на дорогах СНГ, поэтому среди украинских водителей эти автопокрышки заслужили репутацию прочных и износостойких.</p>
+            <p>Японская авторезина в широком ассортименте, как в зимней, так и в летней линейке, позволит вам купить такую модель, которая будет подходить непосредственно под Вашу манеру вождения и соответствовать Вашим требованиям к безопасности и комфорту. Любителям активной езды со спортивным уклоном без сомнения придется по вкусу серия Potenza, владельцы внедорожников и автомобилей класса SUV смогут по достоинству оценить резину серии Dueler, а всемирно известная линейка Blizzak обеспечит надежное сцепление с дорогой в суровую снежную зиму.</p>
+            <p>Купить шины Бриджстоун и заказать доставку в Ваш город можно в интернет магазине prokoleso.ua. Мы поставляем нашу продукцию непосредственно со склада официального представителя данного премиум бренда в Украине — компании «Технооптторг-Трейд»</p>
+        </section>
+    </article>
+
+</section>

@@ -42,8 +42,4 @@ app.controller('TabsCtrl', ["$scope","$sce","$http","$interpolate", function ($s
     $scope.current = "Подбор шин по параметрам"; //$scope.tabs[0].title;
 
 
-
-
-
-
 }]);

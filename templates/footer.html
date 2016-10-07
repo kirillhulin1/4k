@@ -1,0 +1,98 @@
+<footer class="footer">
+    <div class="container">
+        <span class="footer__text hidden-lg hidden-md hidden-sm"><small>2010 &ndash; 2016 © Интернет-магазин шин и дисков 4k.by</small></span>
+        <ul class="list-inline hidden-xs">
+
+            <li class="col-sm-3">
+                <h4 class="footer__subtitle"><a href="#">Для покупателя</a></h4>
+                <ul class="list-unstyled">
+                    <li><a href="#">Оплата и доставка</a></li>
+                    <li><a href="#">Гарантия и шины</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-3">
+                <h4 class="footer__subtitle"><a href="#">Каталог шин и дисков</a></h4>
+                <ul class="list-unstyled">
+                    <li><a ui-sref="home.tires">Легковые шины</a></li>
+                    <li><a href="#">Легковесные диски</a></li>
+                    <li><a href="#">Грузовые шины</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-3">
+                <h4 class="footer__subtitle"><a href="#">Услуги и сервис</a></h4>
+                <ul class="list-unstyled">
+                    <li><a href="#">Шинные центры</a></li>
+                    <li><a href="#">Запись на шиномонтаж</a></li>
+                    <li><a href="#">Онлайн подбор шин</a></li>
+                    <li><a href="#">Онлайн подбор дисков</a></li>
+                    <li><a href="#">Подбор шин по авто</a></li>
+                </ul>
+            </li>
+
+            <li class="col-sm-3">
+                <h4 class="footer__subtitle"><a href="#">Мы в социальных сетях</a></h4>
+                <ul class="list-inline footer__socials">
+                    <li>
+                        <a href="#" class="footer__social"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__social footer__social_fb"></a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <section class="bottom-panel" ng-controller="FooterCtrl">
+        <div class="bottom-panel__open" ng-click = "showFixedPanel($event)"><i class="glyphicon glyphicon-plus"></i></div>
+        <ul class="bottom-panel__list list-inline">
+            <li class="bottom-panel__item">
+                <a href="#" uib-tooltip="Задать вопрос on-line"
+                   tooltip-placement="top"
+                   tooltip-trigger="'mouseenter'">
+                    <img class="bottom-panel__image" src="dest/images/sh.png">
+                    <span class="bottom-panel__text hidden-xs">Задать вопрос</span>
+                </a>
+            </li>
+            <li class="bottom-panel__item">
+                <a href="#" uib-tooltip="Недавно просмотренные товары!"
+                   tooltip-placement="top"
+                   tooltip-trigger="'mouseenter'">
+                    <img class="bottom-panel__image" src="dest/images/viewed.png">
+                    <span class="hidden-xs bottom-panel__text">Недавно просмотенные</span>
+                </a>
+            </li>
+            <li class="bottom-panel__item">
+                <a href="#" uib-tooltip="Избранные товары"
+                   tooltip-placement="top"
+                   tooltip-trigger="'mouseenter'">
+                    <img  class="bottom-panel__image " src="dest/images/favorites.png">
+                </a>
+            </li>
+            <li class="bottom-panel__item">
+                <a href="#"
+                   uib-tooltip="Нажмите, чтобы открыть окно поиска."
+                   tooltip-placement="top"
+                   tooltip-trigger="'mouseenter'">
+                    <img class="bottom-panel__image" src="dest/images/search.png">
+                </a>
+            </li>
+            <li class="bottom-panel__item">
+                <a href="#" uib-tooltip="Нажмите чтобы скрыть панель"
+                   tooltip-placement="top"
+                   tooltip-trigger="'mouseenter'"
+                   ng-click = "hideFixedPanel($event)"
+                >
+                    <i class="glyphicon glyphicon-minus"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+</footer>
+
+
+<div class="scroll-up">
+    <img class="scroll-up__image" src="dest/images/anchor.png" anchor>
+</div>

@@ -1,0 +1,329 @@
+<header class="header panel panel-default">
+    <div class="panel-heading header-top">
+        <div class="container">
+            <section class="row">
+                <section class="col-xs-4 hidden-sm hidden-sm hidden-md hidden-lg">
+                    <a href="/tires/index.html"><img class="header-top__logo" src="dest/images/logo_long.png"></a>
+                </section>
+                <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
+                    <small class="header-top__schedule">Работаем с 9-00 до 20-00 без выходных</small>
+                </section>
+                <section class="col-sm-offset-1 col-sm-5  col-xs-8">
+                    <ul class="list-inline header-top__phones">
+                        <li class="header-top__phone_main">
+                            <img class="header-top__phone-icon hidden-lg hidden-md hidden-sm" src="dest/images/phone-icon.png">
+                            <img class="header-top__phone-icon hidden-xs" src="dest/images/i-mts.png">
+                            <small><a href="tel:{{phoneFirst}}"><strong ng-bind="phoneFirst"></strong></a></small></li>
+                        <li class="hidden-sm hidden-md hidden-lg header-top__phone_main">
+                            <a data-toggle="modal" data-target="#morePhones" href="#">+</a>
+                        </li>
+                        <li class="hidden-xs header-top__phone">
+                            <img class="header-top__phone-icon_small" src="dest/images/i-velc.png">
+                            <small><a href="tel:{{phoneSecond}}"><strong ng-bind="phoneSecond"></strong></a></small>
+                        </li>
+                    </ul>
+                </section>
+                <section class="col-sm-3 hidden-xs">
+                    <a href = "#" data-toggle = "modal" data-target = "#callBack" class = "header-top__phone-me text-center">
+                        <i class="glyphicon glyphicon-menu-right"></i>&nbsp;Позвоните мне
+                    </a>
+                </section>
+            </section>
+        </div>
+    </div>
+    <div condense-on-scroll class="panel-body header-bottom">
+        <div class="container">
+            <a open-menu-mobile href="#" do-not-follow class="mobile-menu__icon hidden-sm hidden-md hidden-lg"></a>
+            <nav class="menu-mobile hidden-sm hidden-md hidden-lg">
+                <div class="close menu-mobile__close"  close-menu-mobile><i class="glyphicon glyphicon-remove"></i></div>
+                <ul ng-repeat="section in menu">
+                    <li class="menu-mobile__item"><a href="#" ng-bind="section.title"></a>
+                        <ul class="menu-mobile__subsection" ng-show="section.subsections">
+                            <li ng-repeat="subsection in section.subsections">
+                                <a href="#" ng-bind="subsection.title"></a>
+                                <ul class="menu-mobile__subsubsection"  ng-show="subsection.subsections">
+                                    <li ng-repeat="subsection in subsection.subsections">
+                                        <a href="#" ng-bind="subsection.title"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
+            <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
+
+            <menu></menu>
+
+            <nav class="tools-menu">
+                <ul class="tools-menu__list header-bottom__tools">
+                    <li class="tools-menu__item">
+                        <a href="#" data-toggle="modal" data-target="#search">
+                            <i class="glyphicon glyphicon-search tools-menu__icon"></i>
+                            <span class="hidden-sm hidden-md hidden-xs">Поиск</span>
+                        </a>
+                    </li>
+                    <li class="tools-menu__item">
+                        <a href="#" class="hidden-lg" data-toggle="modal" data-target="#log-in">
+                            <i class="glyphicon glyphicon-user tools-menu__icon"></i>
+                        </a>
+                        <i class="hidden-sm hidden-md hidden-xs glyphicon glyphicon-user tools-menu__icon"></i>
+                        <ul class="hidden-sm hidden-md hidden-xs">
+                            <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
+                            <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="tools-menu__item tools-menu__cart">
+                        <a ng-cloak ng-hide="cart.items.length" href="" uib-tooltip="Ваша корзина пуста"
+                           tooltip-placement="bottom-right"
+                           tooltip-trigger="'mouseenter'">
+                            <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
+                        </a>
+                        <a ng-show="cart.items.length" href="" data-toggle="modal" data-target="#cart">
+                            <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
+                            <section  class="tools-menu__goods" ng-bind="cart.items.length"></section>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="submenu" ng-show="subMenuContent" ng-bind-html="subMenuContent"  hide-on-misclick><!-- hide-on-scroll-->
+
+        </div>
+    </div>
+</header>
+
+
+
+<div class="modal fade modal-phone-me" tabindex="-1" role="dialog" id="callBack">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Заявка на обратный звонок</h4>
+            </div>
+            <div class="modal-body">
+                <p>Для того что бы оставить заявку на обратный звонок, пожалуйста, заполните форму ниже:</p>
+                <form>
+                    <div class="form-group modal-phone-me__half modal-phone-me__half_left">
+                        <input type="text" class="form-control" placeholder="ФИО *">
+                    </div>
+                    <div class="form-group modal-phone-me__half modal-phone-me__half_right">
+                        <input type="text" class="form-control" placeholder="Телефон *">
+                    </div>
+                    <select class="form-control modal-phone-me__select">
+                        <option selected>Выберите тему</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <textarea placeholder="Комментарий" class="form-control" rows="3"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning">Отправить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-more-phones" tabindex="-1" role="dialog" id="morePhones">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Контакты</h4>
+            </div>
+            <div class="modal-body modal-body_gray">
+                <p class="modal-more-phones__title"><strong>Горячая линия</strong></p>
+                <p class="modal-more-phones__phone" ng-bind="phoneFirst"></p>
+
+            </div>
+            <div class="modal-footer">
+                <ul class="list-inline header-top__phones modal-more-phones__list">
+                    <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="phoneSecond"></small></li>
+                </ul>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-cart" tabindex="-1" role="dialog" id="cart">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Корзина</h4>
+            </div>
+            <div class="modal-body"  cart>
+
+            </div>
+            <div class="modal-footer">
+                <span class="about__anchor modal-cart__continue-btn pull-left">Продолжить покупки</span>
+                <button class="btn btn-warning">Оформить заказ</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="log-in">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Вход</h4>
+            </div>
+            <div class="modal-body">
+                <p class="hidden-lg hidden-md hidden-sm">
+                    <a href="#"  data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                    <a href="#" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                </p>
+                <ul class="log-in__socials row list-unstyled">
+                    <li class="col-sm-4">
+                        <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
+                    </li>
+                    <li class="col-sm-4">
+                        <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
+                    </li>
+                    <li class="col-sm-4">
+                        <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
+                    </li>
+                    <li class="log-in__or">или</li>
+                </ul>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ваше имя, номер телефона или email">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Пароль">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                <button class="btn btn-warning">Отправить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="register">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Регистрация</h4>
+            </div>
+            <div class="modal-body">
+                <p class="hidden-lg hidden-md hidden-sm">
+                    <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
+                    <a href="#" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                </p>
+                <ul class="log-in__socials row list-unstyled">
+                    <li class="col-sm-4">
+                        <a href="#"><span class="log-in__social log-in__facebook">FACEBOOK</span></a>
+                    </li>
+                    <li class="col-sm-4">
+                        <a href="#"><span class="log-in__social log-in__google">GOOGLE</span></a>
+                    </li>
+                    <li class="col-sm-4">
+                        <a href="#"><span class="log-in__social log-in__vkontakte">ВКОНТАКТЕ</span></a>
+                    </li>
+                    <li class="log-in__or">или</li>
+                </ul>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ваш E-mail*">
+                </div>
+                <p class="log-in__explain">Существующий адрес электронной почты. Все почтовые сообщения с сайта будут отсылаться на этот адрес. Адрес электронной почты не будет публиковаться и будет использован только по вашему желанию: для восстановления пароля или для получения новостей и уведомлений по электронной почте.</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ваш логин*">
+                </div>
+                <p class="log-in__explain">Пробелы разрешены; знаки пунктуации запрещены, за исключением точек, тире, апострофов и знаков подчеркивания.</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Пароль*">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Повторите пароль*">
+                </div>
+                <p class="log-in__explain">Укажите пароль для новой учетной записи в обоих полях.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                <button class="btn btn-warning">Отправить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="forget">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Восстановление пароля</h4>
+            </div>
+            <div class="modal-body">
+                <p class="hidden-lg hidden-md hidden-sm">
+                    <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
+                    <a href="#" class="log-in__forget" data-toggle="modal" data-target="#register">Регистрация</a>
+                </p>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Логин, e-mail или номер телефона">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
+
+                <button class="btn btn-warning">Выслать новый пароль</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="search">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Поиск</h4>
+            </div>
+            <div class="modal-body search-modal">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <input type="text" class="search-modal__input form-control" placeholder="Искать...">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="select__wrapper">
+                            <label class="tab1__label">
+                                <span class="select__label search-modal__label" ng-hide="search.theme">Где искать?</span>
+                                <select ng-model="search.theme" class="form-control select search-modal__theme">
+                                    <option>Везде</option>
+                                    <option>Статья</option>
+                                    <option>Обзор</option>
+                                    <option>Типоразмер: диски</option>
+                                    <option>Типоразмер: шины</option>
+                                </select>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-primary search-modal__button form-control">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <span class="hidden-lg hidden-md hidden-sm">Искать</span>
+                        </button>
+                    </div>
+                </div><!-- /input-group -->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

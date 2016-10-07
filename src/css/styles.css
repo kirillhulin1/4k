@@ -1534,6 +1534,10 @@ h1 {
   box-shadow: none;
 }
 
+.about__opened .about__toggle {
+  background: linear-gradient(to top, #fff 30%, transparent) !important;
+}
+
 .help-us > .container {
   display: table;
 }
@@ -2615,6 +2619,12 @@ h1 {
   padding: 0 15px;
 }
 
+.model-card__reviews li {
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
 .brands {
   margin-top: 2em;
 }
@@ -3309,6 +3319,32 @@ h1 {
   .brand:before {
     padding-top: 230%;
   }
+}
+.banner {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .banner {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 17rem;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+  }
+
+  .banner_calculator {
+    background-image: url(images/calculator_banner.jpg);
+  }
+}
+.calculator__scheme {
+  text-align: center;
+}
+.calculator__scheme img {
+  width: 300px;
+  height: 228px;
 }
 
 /*# sourceMappingURL=styles.css.map */

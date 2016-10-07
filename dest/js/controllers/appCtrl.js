@@ -27,7 +27,7 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
                     "title": "Легковые шины",
                     "subsections": [
                         {
-                            "title": "Легковые шины"
+                            "title": "Легковые шины1"
                         },
                         {
                             "title": "Литые диски"

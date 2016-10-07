@@ -1,0 +1,19 @@
+
+.banner {
+  display: none;
+
+}
+@media all and (min-width: $sm-size) {
+  .banner {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 17rem;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+  }
+  .banner_calculator {
+    background-image: url(images/calculator_banner.jpg);
+  }
+}

@@ -2,17 +2,33 @@ app.config(["$stateProvider",function($stateProvider){
 
     $stateProvider.state("home",{
             url: "",
-            templateUrl: "templates/home.html",
-            controller: "HomeCtrl",
-            
+            views: {
+                'header': {
+                    templateUrl: 'templates/header.html'
+                },
+                'main-top': {
+                    templateUrl: 'templates/tabs.html',
+                    controller: "TabsCtrl"
+                },
+                'main': {
+                    templateUrl: "templates/home.html",
+                    controller: "HomeCtrl"
+                },
+                'main-bottom': {
+                    templateUrl: "templates/help-us.html"
+                },
+                'footer': {
+                    templateUrl: 'templates/footer.html'
+                }
+            },
             data: {
                 displayName: 'Главная'
             }
         })
         .state("home.tires.size",{
-            url:"/:width-:height-:diameter",/*/:width/:height/:diameter*/
+            url:"/:width-:height-:diameter",
             views: {
-                "@":{
+                "main@":{
                     templateUrl: "templates/tires.html",
                     controller: "TiresCtrl"
                 }
@@ -24,7 +40,7 @@ app.config(["$stateProvider",function($stateProvider){
         .state("home.tires",{
             url:"/tires",
             views: {
-                "@":{
+                "main@":{
                     templateUrl: "templates/catalog.html",
                     controller: "CatalogCtrl"
                 }
@@ -41,7 +57,7 @@ app.config(["$stateProvider",function($stateProvider){
         .state("home.tires.brand",{
             url:"/:brand",
             views: {
-                "@":{
+                "main@":{
                     templateUrl: "templates/brand.html",
                     controller: "BrandCtrl"
                 }
@@ -56,7 +72,7 @@ app.config(["$stateProvider",function($stateProvider){
         .state("home.tires.brand.model",{
             url:"/:model",
             views: {
-                "@":{
+                "main@":{
                     templateUrl: "templates/model.html",
                     controller: "ModelCtrl"
                 }
@@ -73,7 +89,7 @@ app.config(["$stateProvider",function($stateProvider){
         .state("home.news",{
             url:"/news",
             views: {
-                "@":{
+                "main@":{
                     templateUrl: "templates/news.html",
                     controller: "NewsCtrl"
                 }
@@ -90,13 +106,28 @@ app.config(["$stateProvider",function($stateProvider){
         .state("home.news.detail",{
             url:"/:name",
             views: {
-                "@":{
+                "main@":{
                     templateUrl: "templates/news-detail.html",
                     controller: "NewsDetailCtrl"
                 }
             },
             data: {
                 displayName: ''
+            }
+        })
+        .state("home.calculator", {
+            url:"/calculator",
+            views: {
+                "main@":{
+                    templateUrl: "templates/calculator.html",
+                    controller: "CalculatorCtrl"
+                },
+                "main-top@": {
+                    templateUrl: "templates/calculator-banner.html"
+                }
+            },
+            data: {
+                displayName: 'Шинный калькулятор'
             }
         })
 

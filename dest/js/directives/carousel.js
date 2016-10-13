@@ -3,7 +3,7 @@ app.directive("carousel",["$window",function($window){
         restrict: "A",
         scope: {},
 
-        "link": function(scope, element, attrs){
+        "link": function(scope, element){
             var wrapper = element.children().eq(0);
             var width = wrapper[0].getBoundingClientRect().right - wrapper[0].getBoundingClientRect().left;
             var arrowLeft = element.children().eq(0).children().eq(1);
@@ -17,10 +17,8 @@ app.directive("carousel",["$window",function($window){
                 item.style.width = width/2 + "px";
             });
 
-
-
-
             if (itemsLength > 2) {
+
                 element.removeClass("carousel__arrow_hidden");
                 arrowLeft.on("click",function(e){
                     e.preventDefault();
@@ -76,6 +74,27 @@ app.directive("carousel",["$window",function($window){
                     }
 
                 });
+
+                //Далее идет отмена выделения текста при клике
+                arrowLeft.on("selectstart",function(e){
+                    e.preventDefault();
+                });
+                arrowLeft.on("mousedown",function(e){
+                    e.preventDefault();
+                });
+                arrowRight.on("selectstart",function(e){
+                    e.preventDefault();
+                });
+                arrowRight.on("mousedown",function(e){
+                    e.preventDefault();
+                });
+
+                angular.element($window).on("resize",function(){
+                    width = wrapper[0].getBoundingClientRect().right - wrapper[0].getBoundingClientRect().left;
+                    Array.prototype.forEach.call(items,function(item){
+                        item.style.width = width/2 + "px";
+                    });
+                })
             }
 
 

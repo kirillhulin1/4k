@@ -1,158 +1,222 @@
-<page-title></page-title>
-
 <article class="container">
-    <section class="col-sm-6">
+    <section class="col-md-6">
         <section class="calculator__scheme">
             <img src="dest/images/calculator.jpg">
         </section>
-        <h2>Старый размер</h2>
-        <section class="col-xs-4">
-            <label class="tab1__select">
-                <span class="select__label" ng-show="!width">Ширина*</span>
-                <select id="widthSelect" ng-model="width" class="form-control select">
-                    <option>145</option>
-                    <option>155</option>
-                    <option>165</option>
-                    <option>175</option>
-                    <option>185</option>
-                    <option>195</option>
-                    <option>205</option>
-                    <option>215</option>
-                    <option>225</option>
-                    <option>235</option>
-                    <option>245</option>
-                    <option>255</option>
-                    <option>265</option>
-                </select>
-            </label>
-        </section>
-        <section class="col-xs-4">
-            <label class="tab1__select">
-                <span class="select__label" ng-show="!width">Ширина*</span>
-                <select id="widthSelect" ng-model="width" class="form-control select">
-                    <option>145</option>
-                    <option>155</option>
-                    <option>165</option>
-                    <option>175</option>
-                    <option>185</option>
-                    <option>195</option>
-                    <option>205</option>
-                    <option>215</option>
-                    <option>225</option>
-                    <option>235</option>
-                    <option>245</option>
-                    <option>255</option>
-                    <option>265</option>
-                </select>
-            </label>
-        </section>
-        <section class="col-xs-4">
-            <div>
-                <label class="tab1__select">
-                    <span class="select__label" ng-show="!width">Ширина*</span>
-                    <select id="widthSelect" ng-model="width" class="form-control select">
-                        <option>145</option>
-                        <option>155</option>
-                        <option>165</option>
-                        <option>175</option>
-                        <option>185</option>
-                        <option>195</option>
-                        <option>205</option>
-                        <option>215</option>
-                        <option>225</option>
-                        <option>235</option>
-                        <option>245</option>
-                        <option>255</option>
-                        <option>265</option>
-                    </select>
-                </label>
-            </div>
-        </section>
-        <h2 class="clearfix">Новый размер</h2>
-        <section class="col-xs-4">
-            <label class="tab1__select">
-                <span class="select__label" ng-show="!width">Ширина*</span>
-                <select id="widthSelect" ng-model="width" class="form-control select">
-                    <option>145</option>
-                    <option>155</option>
-                    <option>165</option>
-                    <option>175</option>
-                    <option>185</option>
-                    <option>195</option>
-                    <option>205</option>
-                    <option>215</option>
-                    <option>225</option>
-                    <option>235</option>
-                    <option>245</option>
-                    <option>255</option>
-                    <option>265</option>
-                </select>
-            </label>
-        </section>
-        <section class="col-xs-4">
-            <label class="tab1__select">
-                <span class="select__label" ng-show="!width">Ширина*</span>
-                <select id="widthSelect" ng-model="width" class="form-control select">
-                    <option>145</option>
-                    <option>155</option>
-                    <option>165</option>
-                    <option>175</option>
-                    <option>185</option>
-                    <option>195</option>
-                    <option>205</option>
-                    <option>215</option>
-                    <option>225</option>
-                    <option>235</option>
-                    <option>245</option>
-                    <option>255</option>
-                    <option>265</option>
-                </select>
-            </label>
-        </section>
-        <section class="col-xs-4">
-            <label class="tab1__select">
-                <span class="select__label" ng-show="!width">Ширина*</span>
-                <select id="widthSelect" ng-model="width" class="form-control select">
-                    <option>145</option>
-                    <option>155</option>
-                    <option>165</option>
-                    <option>175</option>
-                    <option>185</option>
-                    <option>195</option>
-                    <option>205</option>
-                    <option>215</option>
-                    <option>225</option>
-                    <option>235</option>
-                    <option>245</option>
-                    <option>255</option>
-                    <option>265</option>
-                </select>
-            </label>
+        <section class="calculator__inputs">
+            <h2>Старый размер</h2>
+            <section class="col-xs-4">
+                <div class="calculator__input">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!widthOld">Ширина*</span>
+                        <select id="widthOld" ng-model="widthOld" class="form-control select" ng-change="recount()">
+                            <option ng-value=145>145</option>
+                            <option ng-value=155>155</option>
+                            <option ng-value=165>165</option>
+                            <option ng-value=175>175</option>
+                            <option ng-value=185>185</option>
+                            <option ng-value=195>195</option>
+                            <option ng-value=205>205</option>
+                            <option ng-value=215>215</option>
+                            <option ng-value=225>225</option>
+                            <option ng-value=235>235</option>
+                            <option ng-value=245>245</option>
+                            <option ng-value=255>255</option>
+                            <option ng-value=265>265</option>
+                            <option ng-value=275>275</option>
+                            <option ng-value=285>285</option>
+                            <option ng-value=295>295</option>
+                            <option ng-value=305>305</option>
+                            <option ng-value=315>315</option>
+                            <option ng-value=325>325</option>
+                            <option ng-value=335>335</option>
+                            <option ng-value=345>345</option>
+                            <option ng-value=355>355</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+            <section class="col-xs-4">
+                <div class="calculator__input">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!heightOld">Высота*</span>
+                        <select id="heightOld" ng-model="heightOld" class="form-control select" ng-change="recount()">
+                            <option ng-value=0.35>35</option>
+                            <option ng-value=0.40>40</option>
+                            <option ng-value=0.45>45</option>
+                            <option ng-value=0.50>50</option>
+                            <option ng-value=0.55>55</option>
+                            <option ng-value=0.60>60</option>
+                            <option ng-value=0.65>65</option>
+                            <option ng-value=0.70>70</option>
+                            <option ng-value=0.75>75</option>
+                            <option ng-value=0.80>80</option>
+                            <option ng-value=1>-</option>
+                        </select>
+                    </label>
+                </div>
+
+            </section>
+            <section class="col-xs-4">
+                <div class="calculator__input">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!diameterOld">Диаметр*</span>
+                        <select id="diameterOld" ng-model="diameterOld" class="form-control select" ng-change="recount()">
+                            <option ng-value=12>R12</option>
+                            <option ng-value=13>R13</option>
+                            <option ng-value=14>R14</option>
+                            <option ng-value=15>R15</option>
+                            <option ng-value=16>R16</option>
+                            <option ng-value=17>R17</option>
+                            <option ng-value=18>R18</option>
+                            <option ng-value=19>R19</option>
+                            <option ng-value=20>R20</option>
+                            <option ng-value=21>R21</option>
+                            <option ng-value=22>R22</option>
+                            <option ng-value=23>R23</option>
+                            <option ng-value=24>R24</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+            <section  class="clearfix"></section>
         </section>
 
-        <p class="clearfix">Разница в показаниях спидометра и реальной скоростью зависит от скорости автомобиля - чем больше скорость, тем больше разница</p>
+        <section class="calculator__inputs">
+            <h2>Новый размер</h2>
+            <section class="col-xs-4">
+                <div class="calculator__input">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!widthNew">Ширина*</span>
+                        <select id="widthNew" ng-model="widthNew" class="form-control select">
+                            <option ng-value="145">145</option>
+                            <option ng-value="155">155</option>
+                            <option ng-value="165">165</option>
+                            <option ng-value="175">175</option>
+                            <option ng-value="185">185</option>
+                            <option ng-value="195">195</option>
+                            <option ng-value="205">205</option>
+                            <option ng-value="215">215</option>
+                            <option ng-value="225">225</option>
+                            <option ng-value="235">235</option>
+                            <option ng-value="245">245</option>
+                            <option ng-value="255">255</option>
+                            <option ng-value="265">265</option>
+                            <option ng-value="275">275</option>
+                            <option ng-value="285">285</option>
+                            <option ng-value="295">295</option>
+                            <option ng-value="305">305</option>
+                            <option ng-value="315">315</option>
+                            <option ng-value="325">325</option>
+                            <option ng-value="335">335</option>
+                            <option ng-value="345">345</option>
+                            <option ng-value="355">355</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+            <section class="col-xs-4">
+                <div class="calculator__input">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!heightNew">Высота*</span>
+                        <select id="heightNew" ng-model="heightNew" class="form-control select">
+                            <option ng-value="0.35">35</option>
+                            <option ng-value="0.40">40</option>
+                            <option ng-value="0.45">45</option>
+                            <option ng-value="0.50">50</option>
+                            <option ng-value="0.55">55</option>
+                            <option ng-value="0.60">60</option>
+                            <option ng-value="0.65">65</option>
+                            <option ng-value="0.70" selected="selected">70</option>
+                            <option ng-value="0.75">75</option>
+                            <option ng-value="0.80">80</option>
+                            <option ng-value="1">-</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+            <section class="col-xs-4">
+                <div class="calculator__input">
+                    <label class="tab1__select">
+                        <span class="select__label" ng-show="!diameterNew">Диаметр*</span>
+                        <select id="diameterNew" ng-model="diameterNew" class="form-control select">
+                            <option ng-value="12">R12</option>
+                            <option ng-value="13">R13</option>
+                            <option ng-value="14">R14</option>
+                            <option ng-value="15">R15</option>
+                            <option ng-value="16">R16</option>
+                            <option ng-value="17">R17</option>
+                            <option ng-value="18">R18</option>
+                            <option ng-value="19">R19</option>
+                            <option ng-value="20">R20</option>
+                            <option ng-value="21">R21</option>
+                            <option ng-value="22">R22</option>
+                            <option ng-value="23">R23</option>
+                            <option ng-value="24">R24</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+            <section  class="clearfix"></section>
+        </section>
+
+
+        <p class="calculator__info">Разница в показаниях спидометра и реальной скоростью зависит от скорости автомобиля - чем больше скорость, тем больше разница</p>
     </section>
-    <section class="col-sm-6">
-        <table class="table">
+    <section class="col-md-6">
+        <table class="table calculator__table">
             <thead>
-                <tr><th>Внешние размеры</th><th>Старый</th><th>Новый</th><th>Размеры</th></tr>
+                <tr><th>Внешние размеры</th><th>Старый</th><th>Новый</th><th>Разница</th></tr>
             </thead>
             <tbody>
-                <tr><td>Ширина шины, мм (A)</td><td></td><td></td><td></td></tr>
-                <tr><td>Высота профиля, мм (B)</td><td></td><td></td><td></td></tr>
-                <tr><td>Внутренний диаметр, мм (C)</td><td></td><td></td><td></td></tr>
-                <tr><td>Внешний диаметр, мм (D)</td><td></td><td></td><td></td></tr>
-                <tr><td>Изменение дорожного просвета, мм</td><td></td><td></td><td></td></tr>
+                <tr>
+                    <td>Ширина шины, мм (A)</td>
+                    <td ng-bind="widthOld"></td>
+                    <td ng-bind="widthNew"></td>
+                    <td><span ng-bind="widthNew - widthOld" ng-show="widthNew && widthOld"></span></td>
+                </tr>
+                <tr>
+                    <td>Высота профиля, мм (B)</td>
+                    <td><span ng-bind="widthOld*heightOld | round" ng-show="widthOld && heightOld"></span></td>
+                    <td><span ng-bind="widthNew*heightNew | round" ng-show="widthNew && heightNew"></span></td>
+                    <td><span ng-bind="(widthNew*heightNew - widthOld*heightOld) | round" ng-show="widthNew && heightNew && widthOld && heightOld"></span></td>
+                </tr>
+                <tr>
+                    <td>Внутренний диаметр, мм (C)</td>
+                    <td><span ng-bind="diameterOld | inchesToMillimeters | round" ng-show="diameterOld"></span></td>
+                    <td><span ng-bind="diameterNew | inchesToMillimeters | round" ng-show="diameterNew"></span></td>
+                    <td><span ng-bind="(diameterNew | inchesToMillimeters | round) - (diameterOld | inchesToMillimeters | round)" ng-show="diameterOld && diameterNew"></span></td>
+                </tr>
+                <tr>
+                    <td>Внешний диаметр, мм (D)</td>
+                    <td><span ng-bind="(widthOld*heightOld*2 | round) + (diameterOld | inchesToMillimeters | round)" ng-show="diameterOld && widthOld && heightOld"></span></td>
+                    <td><span ng-bind="(widthNew*heightNew*2 | round) + (diameterNew | inchesToMillimeters | round)" ng-show="diameterNew && widthNew && heightNew"></span></td>
+                    <td><span ng-bind="(widthNew*heightNew*2 | round) + (diameterNew | inchesToMillimeters | round) - (widthOld*heightOld*2 | round) - (diameterOld | inchesToMillimeters | round)" ng-show="diameterNew && widthNew && heightNew && diameterOld && widthOld && heightOld"></span></td>
+                </tr>
+                <tr>
+                    <td>Изменение дорожного просвета, мм</td>
+                    <td></td>
+                    <td></td>
+                    <td><span ng-bind="((widthNew*heightNew*2 | round) + (diameterNew | inchesToMillimeters | round) - (widthOld*heightOld*2 | round) - (diameterOld | inchesToMillimeters | round))/2" ng-show="diameterNew && widthNew && heightNew && diameterOld && widthOld && heightOld"></span></td>
+
+                </tr>
             </tbody>
         </table>
-        <table class="table">
+        <table class="table calculator__table">
             <thead>
             <tr><th>Показания спидометра</th><th></th></tr>
             </thead>
             <tbody>
-            <tr><td>Показания спидометра, км/ч</td><td><input type="text"></td></tr>
-            <tr><td>Реальная скорость, км/ч</td><td></td></tr>
-            <tr><td>Разница, км/ч</td><td></td></tr>
+            <tr><td>Показания спидометра, км/ч</td><td><input type="text"  ng-model = "speed"></td></tr>
+            <tr>
+                <td>Реальная скорость, км/ч</td>
+                <td><span ng-bind="(widthNew*heightNew*2 + (diameterNew | inchesToMillimeters))/(widthOld*heightOld*2 + (diameterOld | inchesToMillimeters))*speed | toFixed2" ng-show="diameterNew && widthNew && heightNew && diameterOld && widthOld && heightOld"></span></td>
+            </tr>
+            <tr>
+                <td>Разница, км/ч</td>
+                <td><span ng-bind="((widthNew*heightNew*2 + (diameterNew | inchesToMillimeters))/(widthOld*heightOld*2 + (diameterOld | inchesToMillimeters))*speed - speed) | toFixed2" ng-show="diameterNew && widthNew && heightNew && diameterOld && widthOld && heightOld"></span></td>
+
+            </tr>
             </tbody>
         </table>
 

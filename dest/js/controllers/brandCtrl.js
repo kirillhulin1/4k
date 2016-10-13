@@ -4,12 +4,19 @@ app.controller("BrandCtrl",["$scope", "$stateParams","$state","brandData",functi
 
     $scope.brand = brandData;
 
-    $scope.countScoreWidth = function(score){
-        var starWidth = 27.4;
-        var gapWidth = 4;
-        var length = 153;
-        var percent = score/5*100;
-        return ((percent%20)/20*starWidth + Math.floor(percent/20)*(starWidth+gapWidth))*100/length;
-    };
+    $scope.summerModels = [];
+    $scope.winterModels = [];
+    $scope.allseasonModels = [];
+    angular.forEach(brandData.models, function(model){
+        if (model.season == "summer") {
+            $scope.summerModels.push(model);
+        }
+        else if (model.season == "winter") {
+            $scope.winterModels.push(model);
+        }
+        else $scope.allseasonModels.push(model);
+    });
+
+
 }]);
 

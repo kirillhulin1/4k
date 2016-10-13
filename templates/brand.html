@@ -1,15 +1,39 @@
-<page-title></page-title>
-
 <section class="container">
     <img src="dest/images/brand1.png">
-    <section class="brand__wrapper">
+    <section class="brand__wrapper" ng-show = "winterModels.length">
         <h2>Зимние шины {{brand.name}}</h2>
 
-        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in brand.models" >
+        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in winterModels">
 
             <section class="brand__picture-wrap">
                 <img class="brand__picture" ng-src="{{model.picture}}">
                 <img class="brand__season" src="dest/images/season-winter.png">
+            </section>
+            <section class="brand__title">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>
+            </section>
+            <section class="brand__score">
+                <section class="score-block__score-wrap">
+                    <section class="score-block__score" ng-style="{width:(model.score | score)}"></section>
+                </section>
+            </section>
+            <section class="brand__button">
+                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})" class="btn btn-primary">Подробнее</a>
+            </section>
+        </article>
+
+        <div class="clearfix"></div>
+
+    </section>
+
+    <section class="brand__wrapper" ng-show = "summerModels.length">
+        <h2>Летние шины {{brand.name}}</h2>
+
+        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in summerModels" >
+
+            <section class="brand__picture-wrap">
+                <img class="brand__picture" ng-src="{{model.picture}}">
+                <img class="brand__season" src="dest/images/season-summer.png">
             </section>
             <section class="brand__title">
                 <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>
@@ -25,42 +49,16 @@
         </article>
 
         <div class="clearfix"></div>
-
     </section>
 
-    <section class="brand__wrapper">
-        <h2>Зимние шины {{brand.name}}</h2>
+    <section class="brand__wrapper" ng-show = "allseasonModels.length">
+        <h2>Всесезонные шины {{brand.name}}</h2>
 
-        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in brand.models" >
+        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in allseasonModels" >
 
             <section class="brand__picture-wrap">
                 <img class="brand__picture" ng-src="{{model.picture}}">
-                <img class="brand__season" src="dest/images/season-winter.png">
-            </section>
-            <section class="brand__title">
-                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>
-            </section>
-            <section class="brand__score">
-                <section class="score-block__score-wrap">
-                    <section class="score-block__score" ng-style="{width:countScoreWidth(model.score)+'%'}"></section>
-                </section>
-            </section>
-            <section class="brand__button">
-                <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})" class="btn btn-primary">Подробнее</a>
-            </section>
-        </article>
-
-        <div class="clearfix"></div>
-    </section>
-
-    <section class="brand__wrapper">
-        <h2>Зимние шины {{brand.name}}</h2>
-
-        <article class="col-lg-2 col-sm-3 col-xs-4 brand" ng-repeat="model in brand.models" >
-
-            <section class="brand__picture-wrap">
-                <img class="brand__picture" ng-src="{{model.picture}}">
-                <img class="brand__season" src="dest/images/season-winter.png">
+                <img class="brand__season" src="dest/images/season-all.png">
             </section>
             <section class="brand__title">
                 <a ui-sref="home.tires.brand.model({model:model.name,brand:brandName,tab:'description'})"><strong ng-bind="model.name"></strong></a>

@@ -1,6 +1,6 @@
-<p>В вашей корзине {{cart.items.length|goods}}</p>
+<p>В вашей корзине {{items.length|goods}}</p>
 <section class="modal-cart__items">
-    <article class="modal-cart__item" ng-repeat="item in cart.items">
+    <article class="modal-cart__item" ng-repeat="item in items">
         <section class="modal-cart__description">
             <section class="col-xs-4 modal-cart__left">
                 <img ng-src="dest/images/{{item.picture}}" class="modal-cart__image">

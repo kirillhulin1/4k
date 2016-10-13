@@ -1,6 +1,4 @@
 <article>
-    <page-title></page-title>
-
     <div class="container">
         <uib-tabset active="index" justified="true">
             <uib-tab index="0" heading="В наличии">
@@ -75,28 +73,28 @@
                         <section class="score-block">
                             <p><strong>Общая оценка пользователей</strong></p>
                             <section class="score-block__total-score-wrap">
-                                <section class="score-block__total-score" ng-style="{width:countScoreWidth(score.total)+'%'}"></section>
+                                <section class="score-block__total-score" ng-style="{width:(score.total | score)}"></section>
                             </section>
                             <p><small><span ng-bind="score.total"></span> из 5 на основании 5 оценок</small></p>
                             <p class="score-block__parameter">Качество изготовления</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score" ng-style="{width:countScoreWidth(score.par1)+'%'}"></section>
+                                <section class="score-block__score" ng-style="{width:(score.par1 | score)}"></section>
                             </section>
                             <p class="score-block__parameter">Соотношение цена/качество</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score" ng-style="{width:countScoreWidth(score.par2)+'%'}"></section>
+                                <section class="score-block__score" ng-style="{width:(score.par2 | score)}"></section>
                             </section>
                             <p class="score-block__parameter">Удобство эксплуатации</p>
                             <section class="score-block__score-wrap">
-                                <section class="score-block__score" ng-style="{width:countScoreWidth(score.par3)+'%'}"></section>
+                                <section class="score-block__score" ng-style="{width:(score.par3 | score)}"></section>
                             </section>
                             <a class="score-block__anchor" ui-sref="home.tires.brand.model({brand:brand,model:model,tab:'comments'})">Показать отзывы</a>
                         </section>
                     </section>
-                    <section class="col-sm-8 col-md-9 description__controls">
-                        <div class="row">
+                    <section class="col-sm-8 col-md-9">
+                        <div class="description__controls" >
                             <section class="col-sm-4" >
-                                <select class="form-control" ng-model="model">
+                                <select class="form-control" ng-model="data.model" ng-change="showModelInfo();">
                                     <optgroup label="R15">
                                         <option value="185/85R15">185/85R15</option>
                                         <option value="185/90R15">185/90R15</option>
@@ -108,8 +106,87 @@
                                 </select>
                             </section>
                             <section class="col-sm-offset-4 col-sm-4"></section>
+                            <section class="clearfix"></section>
                         </div>
+                        <section ng-show="data.model" class="model__right  description__controls">
+                            <div class="row">
+                                <section class="col-sm-6">
+                                    <h2 class="model__title model__title_top"><a href="#">Bridgestone Blizzak VRX</a></h2>
+                                    <p class="model__characteristic">Размер: <span>185/55R15</span></p>
+                                    <p class="model__characteristic">Индекс нагрузки: <span>82 (475 кг)</span></p>
+                                    <p class="model__characteristic">Индекс скорости: <span>S (180 км/ч)</span></p>
+                                    <p class="model__characteristic">Шипованная: <span>шип.</span></p>
+                                    <p class="model__characteristic">Страна производства: <span>Япония</span></p>
+                                </section>
+                                <section class="col-sm-6">
+                                    <section class="model__advantages">
+                                        <div class="row model__advantage">
+                                            <div class="col-sm-3 col-md-2" >
+                                                <img src="dest/images/adv1.png">
+                                            </div>
+                                            <div class="col-sm-9 col-md-10">
+                                                <p><strong>Полная гарантия от Bridgestone</strong></p>
+                                                <p>при покупке от двух шин</p>
+                                            </div>
+                                        </div>
+                                        <div class="row model__advantage">
+                                            <div class="col-sm-3 col-md-2" >
+                                                <img src="dest/images/adv2.png">
+                                            </div>
+                                            <div class="col-sm-9 col-md-10">
+                                                <p><strong>Гарантия производителя</strong></p>
+                                                <p>заводская гарантия 5 лет</p>
+                                            </div>
+                                        </div>
+                                        <div class="row model__advantage">
+                                            <div class="col-sm-3 col-md-2">
+                                                <img src="dest/images/adv3.png">
+                                            </div>
+                                            <div class="col-sm-9 col-md-10">
+                                                <p><strong>Отправка в течение 24 часов</strong></p>
+                                                <p>с собственного склада</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="model__buy">
+                                        <section class="model__price">50 р.</section>
+                                        <section class="row">
+                                            <section class="col-sm-7 col-md-6">
+                                                <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
+                                                <input type="text" class="form-control model__quantity">
+                                                <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                            </section>
+                                            <section class="col-sm-5 col-md-6">
+                                                <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+                                            </section>
+                                        </section>
+                                        <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
+                                    </section>
+                                </section>
 
+                            </div>
+
+                        </section>
+                        <section class="description__controls">
+                            <p>
+                                Зимняя фрикционная шина <strong>Bridgestone Blizzak VRX</strong> c асимметричным рисунком протектора для легковых автомобилей. Разработана с применением ультрасовременных технологий Bridgestone. В составе резиновой смеси использован новый Multicell Compound, увеличен ресурс шины, улучшены сцепные свойства на снегу и льду.
+                            </p>
+
+                            <ul>
+                                <strong>Преимущества:</strong>
+                                <li>Короткий тормозной путь на льду.</li>
+                                <li>Короткий тормозной путь на льду.</li>
+                                <li>Короткий тормозной путь на льду.</li>
+                            </ul>
+
+                            <ul>
+                                <strong>Выгоды:</strong>
+                                <li>Безопасность на льду и снегу</li>
+                                <li>Безопасность на льду и снегу</li>
+                                <li>Сохранение высоких эксплуатационных характеристик на протяжении всего срока эксплуатации шины.</li>
+                            </ul>
+
+                        </section>
                     </section>
                 </section>
             </uib-tab>
@@ -130,7 +207,7 @@
                                 </section>
                                 <section class="comment__right col-xs-9">
                                     <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" ng-style="{width:countScoreWidth(comment.score)+'%'}"></section>
+                                        <section class="score-block__score" ng-style="{width:(comment.score | score)}"></section>
                                     </section>
                                     <section class="comment__text" ng-bind="comment.text"></section>
 

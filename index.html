@@ -34,6 +34,7 @@
 
     <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
     <script src="dest/js/lib/angular.min.js"></script>
+    <script src="dest/js/lib/angular-animate.min.js"></script>
     <script src="dest/js/lib/angular-sanitize.js"></script>
     <script src="dest/bootstrap/js/bootstrap.min.js"></script>
     <script src="dest/build.clean.js"></script>
@@ -61,6 +62,10 @@
     <script src="dest/js/controllers/newsCtrl.js"></script>
     <script src="dest/js/controllers/newsDetailCtrl.js"></script>
     <script src="dest/js/controllers/calculatorCtrl.js"></script>
+    <script src="dest/js/controllers/contactsCtrl.js"></script>
+    <script src="dest/js/controllers/oplataCtrl.js"></script>
+    <script src="dest/js/controllers/akziiCtrl.js"></script>
+    <script src="dest/js/controllers/modelInfoCtrl.js"></script>
 
 
 
@@ -93,6 +98,10 @@
 
     <!--Фильтры-->
     <script src="dest/js/filters/goods.js"></script>
+    <script src="dest/js/filters/inchesToMillimeters.js"></script>
+    <script src="dest/js/filters/round.js"></script>
+    <script src="dest/js/filters/toFixed2.js"></script>
+    <script src="dest/js/filters/score.js"></script>
 
 
     <script src="dest/bootstrap/angular/ui-bootstrap-2.1.3.js"></script>
@@ -102,22 +111,7 @@
 
 
 
-    <script>
-        $("#log-in").on("show.bs.modal",function(){
-            $("#register").modal("hide");
-            $("#forget").modal("hide");
-        });
-        $("#register").on("show.bs.modal",function(){
-            $("#log-in").modal("hide");
-            $("#forget").modal("hide");
-        });
-        $("#forget").on("show.bs.modal",function(){
-            $("#log-in").modal("hide");
-            $("#register").modal("hide");
-        });
 
-
-    </script>
 
 </body>
 </html>

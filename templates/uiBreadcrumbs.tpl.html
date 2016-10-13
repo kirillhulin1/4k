@@ -1,9 +1,16 @@
 <nav class="breadcrumbs" ng-show="breadcrumbs.length > 1">
-    <div class="container">
+    <div class="container" style="margin-bottom: 1em;" ng-show="breadcrumbs.length > 2">
         <ul class="breadcrumbs__list list-inline">
             <li ng-repeat="crumb in breadcrumbs" class="breadcrumbs__item" ng-if="!$last">
-                <a ui-sref="{{ crumb.route }}" >{{ crumb.displayName}}&nbsp;</a>
+                <a ng-if="!$last" ui-sref="{{ crumb.route }}" >{{ crumb.displayName}}&nbsp;</a>
+
             </li>
         </ul>
     </div>
+    <header ng-repeat="crumb in breadcrumbs" class="page-title" ng-if="$last">
+        <div class="container">
+            <h1 ng-bind="crumb.displayName"></h1>
+        </div>
+    </header>
+
 </nav>

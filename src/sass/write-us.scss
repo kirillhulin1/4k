@@ -1,0 +1,97 @@
+.write-us {
+  font-size: 16px;
+  margin-bottom: 2em;
+}
+.write-us__header {
+  font-size: 2em;
+  margin-bottom: 1em;
+  line-height: 1.1;
+  text-align: center;
+}
+.write-us__border {
+  border-top: 1px solid rgba(0,0,0,.1);
+  margin-top: 1.5rem!important;
+  margin-bottom: 1.5rem!important;
+}
+.write-us__input-wrapper {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+.write-us__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3em;
+  font-size: 2em;
+  -webkit-transition: color .2s;
+  -moz-transition: color .2s;
+  -o-transition: color .2s;
+  -ms-transition: color .2s;
+  transition: color .2s;
+  display: inline-block;
+}
+.write-us__input {
+  display: block;
+  width: 100%;
+  color: #55595c;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  padding: .5em 0 .6rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: transparent;
+  background-image: none;
+  border-radius: 0;
+  margin-top: .2em;
+  margin-bottom: 1em;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  outline: 0;
+  height: 2.1em;
+  font-size: 1em;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s;
+  margin-left: 3.2em;
+  width: 92%;
+  width: calc(100% - 3.2em);
+}
+.write-us__label {
+  color: #757575;
+  position: absolute;
+  top: .8em;
+  left: 0;
+  font-size: 1em;
+  cursor: text;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  transition: .2s ease-out;
+  margin-left: 3.2em;
+  margin-bottom: .5em;
+  display: inline-block;
+}
+.write-us__input:focus~.write-us__icon {
+  color: $mainColorHover;
+}
+.write-us__input:focus~.write-us__label {
+  font-size: 0.8em;
+  margin-left: 4em;
+  color: $mainColorHover;
+  transform: translateY(-140%);
+}
+.write-us__input:focus {
+  border-bottom: 1px solid $mainColorHover;
+  box-shadow: 0 1px 0 0 $mainColorHover;
+}
+textarea.write-us__input {
+  min-height: 3em;
+}
+.write-us__footer {
+  text-align: center;
+}

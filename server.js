@@ -16,62 +16,74 @@ var brands = [
             {
                 "name": "Bridgestone Blizzak VRX",
                 "score": "4",
-                "picture": "dest/images/bridgestone1.png"
+                "picture": "dest/images/bridgestone1.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX1",
                 "score": "4.2",
-                "picture": "dest/images/bridgestone2.png"
+                "picture": "dest/images/bridgestone2.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX2",
                 "score": "4.8",
-                "picture": "dest/images/bridgestone3.png"
+                "picture": "dest/images/bridgestone3.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX3",
                 "score": "3.5",
-                "picture": "dest/images/bridgestone4.png"
+                "picture": "dest/images/bridgestone4.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX4",
                 "score": "5",
-                "picture": "dest/images/bridgestone5.png"
+                "picture": "dest/images/bridgestone5.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX5",
                 "score": "2",
-                "picture": "dest/images/bridgestone6.png"
+                "picture": "dest/images/bridgestone6.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX4",
                 "score": "5",
-                "picture": "dest/images/bridgestone5.png"
+                "picture": "dest/images/bridgestone5.png",
+                "season": "summer"
             },
             {
                 "name": "Bridgestone Blizzak VRX5",
                 "score": "2",
-                "picture": "dest/images/bridgestone6.png"
+                "picture": "dest/images/bridgestone6.png",
+                "season": "winter"
             },
             {
                 "name": "Bridgestone Blizzak VRX4 lizzak VRX4",
                 "score": "5",
-                "picture": "dest/images/bridgestone5.png"
+                "picture": "dest/images/bridgestone5.png",
+                "season": "winter"
             },
             {
                 "name": "Bridgestone Blizzak VRX5",
                 "score": "2",
-                "picture": "dest/images/bridgestone6.png"
+                "picture": "dest/images/bridgestone6.png",
+                "season": "winter"
             },
             {
                 "name": "Bridgestone Blizzak VRX4",
                 "score": "5",
-                "picture": "dest/images/bridgestone5.png"
+                "picture": "dest/images/bridgestone5.png",
+                "season": "winter"
             },
             {
                 "name": "Bridgestone Blizzak VRX5",
                 "score": "2",
-                "picture": "dest/images/bridgestone6.png"
+                "picture": "dest/images/bridgestone6.png",
+                "season": "all"
             }
         ]
     },

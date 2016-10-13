@@ -64,8 +64,11 @@ app.config(["$stateProvider",function($stateProvider){
             },
             resolve: {
                 brandData: function(PostBrands,$stateParams){
-                    return PostBrands.get({brandId:$stateParams.brand});
+                    return PostBrands.get({brandId:$stateParams.brand}).$promise;
                 }
+            },
+            data: {
+                displayName: 'Брэнд'
             }
 
         })
@@ -79,11 +82,15 @@ app.config(["$stateProvider",function($stateProvider){
             },
             resolve: {
                 modelData: function(PostModels,$stateParams){
-                    return PostModels.get({modelName:$stateParams.model});
+                    return PostModels.get({modelName:$stateParams.model}).$promise;
                 }
             },
             params: {
-                tab: "in-stock"
+                tab: "description",
+                modelSize: ""
+            },
+            data: {
+                displayName: 'Модель'
             }
         })
         .state("home.news",{
@@ -124,10 +131,52 @@ app.config(["$stateProvider",function($stateProvider){
                 },
                 "main-top@": {
                     templateUrl: "templates/calculator-banner.html"
+                },
+                "main-bottom@": {
+                    templateUrl: "templates/calculator-info.html"
                 }
             },
             data: {
                 displayName: 'Шинный калькулятор'
+            }
+        })
+        .state("home.contacts", {
+            url:"/contacts",
+            views: {
+                "main@":{
+                    templateUrl: "templates/contacts.html",
+                    controller: "ContactsCtrl"
+                },
+                "main-top@": {
+                    templateUrl: "templates/contacts-banner.html"
+                }
+            },
+            data: {
+                displayName: "Контакты"
+            }
+        })
+        .state("home.oplata-i-dostavka", {
+            url:"/oplata-i-dostavka",
+            views: {
+                "main@":{
+                    templateUrl: "templates/oplata-i-dostavka.html",
+                    controller: "OplataCtrl"
+                }
+            },
+            data: {
+                displayName: "Оплата и доставка"
+            }
+        })
+        .state("home.akzii", {
+            url:"/akzii",
+            views: {
+                "main@":{
+                    templateUrl: "templates/akzii.html",
+                    controller: "AkziiCtrl"
+                }
+            },
+            data: {
+                displayName: "Акции"
             }
         })
 

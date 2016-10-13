@@ -15,7 +15,7 @@
                             <img class="header-top__phone-icon hidden-xs" src="dest/images/i-mts.png">
                             <small><a href="tel:{{phoneFirst}}"><strong ng-bind="phoneFirst"></strong></a></small></li>
                         <li class="hidden-sm hidden-md hidden-lg header-top__phone_main">
-                            <a data-toggle="modal" data-target="#morePhones" href="#">+</a>
+                            <a data-toggle="modal" data-target="#morePhones" href="">+</a>
                         </li>
                         <li class="hidden-xs header-top__phone">
                             <img class="header-top__phone-icon_small" src="dest/images/i-velc.png">
@@ -24,7 +24,7 @@
                     </ul>
                 </section>
                 <section class="col-sm-3 hidden-xs">
-                    <a href = "#" data-toggle = "modal" data-target = "#callBack" class = "header-top__phone-me text-center">
+                    <a href = "" data-toggle = "modal" data-target = "#callBack" class = "header-top__phone-me text-center">
                         <i class="glyphicon glyphicon-menu-right"></i>&nbsp;Позвоните мне
                     </a>
                 </section>
@@ -59,30 +59,30 @@
             <nav class="tools-menu">
                 <ul class="tools-menu__list header-bottom__tools">
                     <li class="tools-menu__item">
-                        <a href="#" data-toggle="modal" data-target="#search">
+                        <a href="" data-toggle="modal" data-target="#search">
                             <i class="glyphicon glyphicon-search tools-menu__icon"></i>
                             <span class="hidden-sm hidden-md hidden-xs">Поиск</span>
                         </a>
                     </li>
                     <li class="tools-menu__item">
-                        <a href="#" class="hidden-lg" data-toggle="modal" data-target="#log-in">
+                        <a href="" class="hidden-lg" data-toggle="modal" data-target="#log-in">
                             <i class="glyphicon glyphicon-user tools-menu__icon"></i>
                         </a>
                         <i class="hidden-sm hidden-md hidden-xs glyphicon glyphicon-user tools-menu__icon"></i>
                         <ul class="hidden-sm hidden-md hidden-xs">
-                            <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
-                            <li><a href="#"><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
+                            <li><a href=""><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
+                            <li><a href=""><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
                         </ul>
                     </li>
                     <li class="tools-menu__item tools-menu__cart">
-                        <a ng-cloak ng-hide="cart.items.length" href="" uib-tooltip="Ваша корзина пуста"
+                        <a ng-cloak ng-hide="user.cartItems.length" href="" uib-tooltip="Ваша корзина пуста"
                            tooltip-placement="bottom-right"
                            tooltip-trigger="'mouseenter'">
                             <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
                         </a>
-                        <a ng-show="cart.items.length" href="" data-toggle="modal" data-target="#cart">
+                        <a ng-show="user.cartItems.length" href="" data-toggle="modal" data-target="#cart">
                             <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
-                            <section  class="tools-menu__goods" ng-bind="cart.items.length"></section>
+                            <section  class="tools-menu__goods" ng-bind="user.cartItems.length"></section>
                         </a>
                     </li>
                 </ul>
@@ -159,7 +159,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                 <h4 class="modal-title">Корзина</h4>
             </div>
-            <div class="modal-body"  cart>
+            <div class="modal-body"  cart items="user.cartItems">
 
             </div>
             <div class="modal-footer">
@@ -179,8 +179,8 @@
             </div>
             <div class="modal-body">
                 <p class="hidden-lg hidden-md hidden-sm">
-                    <a href="#"  data-toggle="modal" data-target="#register">Зарегистрироваться</a>
-                    <a href="#" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                    <a href=""  data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                    <a href="" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
                 </p>
                 <ul class="log-in__socials row list-unstyled">
                     <li class="col-sm-4">
@@ -203,8 +203,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#register">Зарегистрироваться</a>
-                <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                <a href="" class="pull-left hidden-xs" data-toggle="modal" data-target="#register">Зарегистрироваться</a>
+                <a href="" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
                 <button class="btn btn-warning">Отправить</button>
             </div>
         </div><!-- /.modal-content -->
@@ -220,8 +220,8 @@
             </div>
             <div class="modal-body">
                 <p class="hidden-lg hidden-md hidden-sm">
-                    <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
-                    <a href="#" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                    <a href=""  data-toggle="modal" data-target="#log-in">Войти</a>
+                    <a href="" class="log-in__forget" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
                 </p>
                 <ul class="log-in__socials row list-unstyled">
                     <li class="col-sm-4">
@@ -253,8 +253,8 @@
                 <p class="log-in__explain">Укажите пароль для новой учетной записи в обоих полях.</p>
             </div>
             <div class="modal-footer">
-                <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
-                <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
+                <a href="" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                <a href="" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#forget">Забыли пароль?</a>
                 <button class="btn btn-warning">Отправить</button>
             </div>
         </div><!-- /.modal-content -->
@@ -270,8 +270,8 @@
             </div>
             <div class="modal-body">
                 <p class="hidden-lg hidden-md hidden-sm">
-                    <a href="#"  data-toggle="modal" data-target="#log-in">Войти</a>
-                    <a href="#" class="log-in__forget" data-toggle="modal" data-target="#register">Регистрация</a>
+                    <a href=""  data-toggle="modal" data-target="#log-in">Войти</a>
+                    <a href="" class="log-in__forget" data-toggle="modal" data-target="#register">Регистрация</a>
                 </p>
 
                 <div class="form-group">
@@ -280,8 +280,8 @@
 
             </div>
             <div class="modal-footer">
-                <a href="#" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
-                <a href="#" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
+                <a href="" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                <a href="" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
 
                 <button class="btn btn-warning">Выслать новый пароль</button>
             </div>
@@ -327,3 +327,21 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<script>
+    $("#log-in").on("show.bs.modal",function(){
+        $("#register").modal("hide");
+        $("#forget").modal("hide");
+    });
+    $("#register").on("show.bs.modal",function(){
+        $("#log-in").modal("hide");
+        $("#forget").modal("hide");
+    });
+    $("#forget").on("show.bs.modal",function(){
+        $("#log-in").modal("hide");
+        $("#register").modal("hide");
+    });
+
+
+</script>

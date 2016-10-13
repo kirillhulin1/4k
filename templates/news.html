@@ -1,25 +1,93 @@
-<page-title></page-title>
 <div class="container">
     <div class="row">
-        <div class="news_list col-sm-9 col-md-9">
-            <section class="news-list__item col-sm-6 col-md-4" ng-repeat="item in news">
-                <div>
-                    <section class="news-list__image" style= " background-image: url('dest/images/news_image_1.jpg')">
-                        <a class="news-list__comments">
-                            <i class="glyphicon glyphicon-comment"></i>
-                            <span class="news-list__comments-number">23</span>
-                        </a>
-                        <a ui-sref="home.news.detail({name:'aasfs'})" class="news-list__anchor"></a>
-                        <a href="#" class="news-list__heading" ng-bind="item.name"></a>
-                    </section>
-                    <section class="news-list__info">
-                        <h3 class="news-list__title"><a href="#" ng-bind="item.name">Примеряем на себя</a></h3>
-                        <p class="news-list__date" ng-bind="item.date"></p>
-                        <p class="news-list__description">Мы обновили рейтинг ARCAP и добавили новый раздел. Почему в России недействительны звезды Euro NCAP? </p>
-                    </section>
+        <div class="news_list col-sm-8 col-md-9">
+            <section class="news-list">
+                <div class="news-list__list">
+
+                    <article class="col-md-4 col-sm-6 news-list__item">
+                        <div class="news-list__teaser">
+                            <div class="news-list__picture">
+                                <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
+                                <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
+                                <a class="news-list__cover" href="#"></a>
+                            </div>
+                            <div class="news-list__content">
+                                <span class="news-list__theme">Обзоры</span>
+                                <h3 class="news-list__title"><a href="#">Inside look</a></h3>
+                                <p class="news-list__text">Lorem ipsum dolor sit amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
+                                <p class="news-list__arrow">
+                                    <a href=""><img src="dest/images/news-arrow.png"></a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <article class="col-md-4 col-sm-6 news-list__item news-list__item_test news-list__item_reverse">
+
+                        <div class="news-list__teaser">
+                            <div class="news-list__picture">
+                                <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
+                                <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
+                                <a class="news-list__cover" href="#"></a>
+                            </div>
+                            <div class="news-list__content">
+                                <span class="news-list__theme">Тесты</span>
+                                <h3 class="news-list__title"><a href="#">Inside look</a></h3>
+                                <p class="news-list__text">Lorem ipsum dolor sit an massa. Cum natoq amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
+                                <p class="news-list__arrow">
+                                    <a href=""><img src="dest/images/news-arrow.png"></a>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="col-md-4 col-sm-6 news-list__item news-list__item_news">
+                        <div class="news-list__teaser">
+                            <div class="news-list__picture">
+                                <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
+                                <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
+                                <a class="news-list__cover" href="#"></a>
+                            </div>
+                            <div class="news-list__content">
+                                <span class="news-list__theme">Новости</span>
+                                <h3 class="news-list__title"><a href="#">Inside look</a></h3>
+                                <p class="news-list__text">Lorem ipsum dolor sit amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
+                                <p class="news-list__arrow">
+                                    <a href=""><img src="dest/images/news-arrow.png"></a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <article class="col-md-4 col-sm-6 news-list__item news-list__item_info news-list__item_reverse">
+
+                        <div class="news-list__teaser">
+                            <div class="news-list__picture">
+                                <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
+                                <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
+                                <a class="news-list__cover" href="#"></a>
+                            </div>
+                            <div class="news-list__content">
+                                <span class="news-list__theme">Все о шинах</span>
+                                <h3 class="news-list__title"><a href="#">Inside look</a></h3>
+                                <p class="news-list__text">Lorem ipsum dolor sit amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
+                                <p class="news-list__arrow">
+                                    <a href=""><img src="dest/images/news-arrow.png"></a>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </article >
+
                     <div class="clearfix"></div>
                 </div>
 
+                <a ui-sref="home.news" class="news-list__all btn btn-primary pull-right">Смотреть все тесты и обзоры</a><!--({width:180,height:65,diameter:'R15'})-->
             </section>
 
 
@@ -29,14 +97,115 @@
         </div>
 
 
-        <aside class="col-md-3 col-sm-3">
-            <div class="news__menu-block">
+        <aside class="col-md-3 col-sm-4">
+            <div>
+                <script type="text/ng-template" id="group-template.html">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="color:#fa39c3">
+                                <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+                                    <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+                                      {{heading}}
+                                    </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" uib-collapse="!isOpen">
+                            <div class="panel-body" style="text-align: right" ng-transclude></div>
+                        </div>
+                    </div>
+                </script>
+                <uib-accordion close-others="oneAtATime">
+                    <div uib-accordion-group class="panel-default" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                        This content is straight in the template.
+                    </div>
+                    <div uib-accordion-group class="panel-default" heading="{{group.title}}" ng-repeat="group in groups">
+                        {{group.content}}
+                    </div>
+                    <div uib-accordion-group class="panel-default" heading="Custom template" template-url="group-template.html">
+                        Hello
+                    </div>
+                    <div uib-accordion-group class="panel-default" is-open="status.isCustomHeaderOpen" template-url="group-template.html">
+                        <uib-accordion-heading>
+                            Custom template with custom header template <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isCustomHeaderOpen, 'glyphicon-chevron-right': !status.isCustomHeaderOpen}"></i>
+                        </uib-accordion-heading>
+                        World
+                    </div>
+                    <div uib-accordion-group class="panel-danger" heading="Delete account">
+                        <p>Please, to delete your account, click the button below</p>
+                        <button class="btn btn-danger">Delete</button>
+                    </div>
+                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                        <uib-accordion-heading>
+                            I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        </uib-accordion-heading>
+                        This is just some content to illustrate fancy headings.
+                    </div>
+                </uib-accordion>
+
+            </div>
+
+            <article class="news-last">
+                <header class="news-last__title">Последние новости</header>
+                <ul class="news-last__list list-unstyled">
+                    <li class="news-last__item">
+                        <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme">Обзор</p>
+                            <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                        </div>
+                        <a href="#" class="news-last__cover"></a>
+                    </li>
+                    <li class="news-last__item">
+                        <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme">Обзор</p>
+                            <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                        </div>
+                        <a href="#" class="news-last__cover"></a>
+                    </li>
+                    <li class="news-last__item news-last__item_info">
+                        <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme">Все о шинах</p>
+                            <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                        </div>
+                        <a href="#" class="news-last__cover"></a>
+                    </li>
+                    <li class="news-last__item">
+                        <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme">Обзор</p>
+                            <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                        </div>
+                        <a href="#" class="news-last__cover"></a>
+                    </li>
+                    <li class="news-last__item news-last__item_test">
+                        <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme">Тест</p>
+                            <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                        </div>
+                        <a href="#" class="news-last__cover"></a>
+                    </li>
+                    <li class="news-last__item news-last__item_news">
+                        <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme">Новости</p>
+                            <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                        </div>
+                        <a href="#" class="news-last__cover"></a>
+                    </li>
+                </ul>
+            </article>
+
+            <!--<div class="news__menu-block">
 
                 <div class="news__menu-block">
 
                     <ul class="news__menu">
 
-                        <li class="is-active"> <!-- когда открыта статья активного раздела -->
+                        <li class="is-active"> &lt;!&ndash; когда открыта статья активного раздела &ndash;&gt;
                             <a class="news__menu-title"  href="#"> Тесты и обзоры шин  </a>
                             <ul>
                                 <li> <a href="#">Тесты и обзоры шин  </a></li>
@@ -69,9 +238,9 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
 
-            <div class="list-block">
+            <!--<div class="list-block">
                 <div class="list-block__header">Лента новостей</div>
                 <div class="list-block__content">
 
@@ -108,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
 
         </aside>

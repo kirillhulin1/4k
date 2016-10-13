@@ -45,8 +45,9 @@ app.directive("chooseTire",["$timeout",function($timeout){
             scope.choosenBrands = [];
             scope.deleteBrand =function(id) {
                 var index;
+
                 for (var i = 0; i < scope.choosenBrands.length; i++) {
-                    if (id == scope.choosenBrands[i]) {
+                    if (id == scope.choosenBrands[i].id) {
                         index = i;
                         break;
                     }
@@ -54,11 +55,13 @@ app.directive("chooseTire",["$timeout",function($timeout){
                 scope.choosenBrands.splice(index,1);
                 for (var j=0; j<scope.brands.length; j++) {
                     if (scope.brands[j].id==id) {
+                        console.log(id);
                         scope.brands[j].checked = false;
 
                         break;
                     }
                 }
+                console.log(scope.choosenBrands);
             };
             scope.countBrands = function() {
                 scope.choosenBrands = [];

@@ -1,10 +1,14 @@
-
-.banner {
+.banner, .banner__wrapper {
   display: none;
 
 }
 @media all and (min-width: $sm-size) {
+  .banner__wrapper {
+    display: block;
+    background-image: linear-gradient(90deg, #e0e8eb, #e0e8eb 40%, #ebf0f4 41%, #ebf0f4);
+  }
   .banner {
+    margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
     height: 17rem;
@@ -15,5 +19,26 @@
   }
   .banner_calculator {
     background-image: url(images/calculator_banner.jpg);
+  }
+  .banner_contacts {
+    background-image: url(images/banner-contacts.jpg);
+    max-width: 1600px;
+
+  }
+  .banner__text {
+    font-size: 180%;
+    padding-top: 4rem;
+    padding-left: 30%;
+  }
+
+}
+@media all and (min-width: 980px) {
+  .banner__text {
+    padding-left: 35%;
+  }
+}
+@media all and (min-width: 1440px) {
+  .banner__text {
+    padding-left: 28%;
   }
 }

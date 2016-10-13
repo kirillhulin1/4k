@@ -1,0 +1,99 @@
+<section class="container contacts">
+    <p>
+        Мы всегда рады помочь Вам при выборе шин и дисков на автомобиль. Вся информация о товаре расположена на нашем сайте, а если у Вас остались вопросы или Вы хотите онлайн консультацию с квалифицированным специалистом, к Вашим услугам контактные номера и адрес электронной почты.
+    </p>
+    <section class="contacts__list">
+        <section class="col-sm-4">
+            <div class="contacts__item">
+                <img src="dest/images/contacts_schedule.png">
+                <h2>Пн-Вс: 9:00-20:00.<br>Без перерывов и выходных</h2>
+                <p>Обработка онлайн заказов<br>осуществляется до 19:30</p>
+            </div>
+        </section>
+        <section class="col-sm-4">
+            <div class="contacts__item">
+                <img src="dest/images/contacts_phone.png">
+                <h2>
+                    <a href="tel:+375 29 3794864">+375 29 3794864</a><br>
+                    <a href="tel:+375 33 3668050">+375 33 3668050</a>
+                </h2>
+            </div>
+        </section>
+        <section class="col-sm-4">
+            <div class="contacts__item">
+                <img src="dest/images/contacts_map.png">
+                <h2>
+                    Лондон,<br>Даунинг-стрит, 10
+                </h2>
+                <p><a href="" data-toggle="modal" data-target="#map">Схема проезда</a></p>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+    </section>
+    <section>
+        <section class="col-sm-offset-3 col-sm-6">
+            <h3 class="write-us__header"><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;Напишите нам</h3>
+            <hr class="write-us__border">
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsUser">
+                <i class="glyphicon glyphicon-user write-us__icon"></i>
+                <label class="write-us__label" for="writeUsUser">Имя</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsPhone">
+                <i class="glyphicon glyphicon-earphone write-us__icon"></i>
+                <label class="write-us__label" for="writeUsPhone">Телефон</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsMail">
+                <i class="glyphicon glyphicon-envelope write-us__icon"></i>
+                <label class="write-us__label" for="writeUsMail">Ваш email</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <textarea class="write-us__input" id="writeUsMessage"></textarea>
+                <i class="glyphicon glyphicon-user write-us__icon"></i>
+                <label class="write-us__label" for="writeUsMessage">Сообщение</label>
+            </section>
+            <div class="write-us__footer">
+                <button class="btn btn-warning">Отправить</button>
+            </div>
+
+        </section>
+        <div class="clearfix" style="margin-bottom: 2em"></div>
+    </section>
+</section>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="map">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Карта проезда</h4>
+            </div>
+            <div class="modal-body">
+                <article class="map-wrap">
+                    <section class="map" id="map_"></section>
+                </article>
+            </div>
+            <div class="modal-footer"><p>Лондон. Даунинг стрит, 10</p></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7oV6j6eW6oAtZ_7An8iu7lihGFBJCXBw"></script>
+<script>
+
+$("#map").on("shown.bs.modal",function(){
+    var mapGoogle = new google.maps.Map(document.getElementById('map_'), {
+        center: {lat: 53.906937, lng: 27.6237696},
+        zoom: 15
+    });
+    var image = 'dest/images/map_logo.png';
+    new google.maps.Marker({
+        position: {lat: 53.909937, lng: 27.6237696},
+        map: mapGoogle,
+        icon: image
+    });
+
+});
+</script>

@@ -1,0 +1,22 @@
+.contacts p {
+  text-align: justify;
+}
+.contacts__list {
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+.contacts__item {
+  text-align: center;
+  img {
+    width: 114px;
+    height: 114px;
+  }
+  h2 {
+    color: $mainColor;
+    font-size: 130%;
+    line-height: 1.3;
+  }
+  p {
+    text-align: center;
+  }
+}

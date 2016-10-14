@@ -1,30 +1,62 @@
-app.controller("NewsCtrl", ["$scope","newsData",function ($scope,newsData) {
-    $scope.news = newsData;
+app.controller("NewsCtrl", ["$scope","newsData","localStorageService",function ($scope,newsData,localStorageService) {
+
+    if (localStorageService.get("news_page_number")) {
+        $scope.pageIndex = localStorageService.get("news_page_number");
+    }
+    else {
+        $scope.pageIndex = 1;
+    }
+
+    $scope.savePageIndex = function(newPageNumber) {
+        localStorageService.set("news_page_number", newPageNumber);
+    };
 
 
-    $scope.oneAtATime = true;
+    $scope.news = [];
 
-    $scope.groups = [
-        {
-            title: 'Dynamic Group Header - 1',
-            content: 'Dynamic Group Body - 1'
-        },
-        {
-            title: 'Dynamic Group Header - 2',
-            content: 'Dynamic Group Body - 2'
+    angular.forEach(newsData,function(section){
+        var sectionName = section.name;
+        var sectionNameEn = section.nameEn;
+        angular.forEach(section.subsections,function(subsection){
+            var subsectionName = subsection.name;
+            var subsectionNameEn = subsection.nameEn;
+            angular.forEach(subsection.news,function(news){
+                var article={};
+                article.title = news.title;
+                article.titleEn = news.titleEn;
+                article.date = news.date;
+                article.previewText = news.previewText;
+                article.previewPicture = news.previewPicture;
+                article.commentsNumber = news.commentsNumber;
+                article.id = news.id;
+                article.subsectionName = subsectionName;
+                article.subsectionNameEn = subsectionNameEn;
+                article.sectionName = sectionName;
+                article.sectionNameEn = sectionNameEn;
+                $scope.news.push(article);
+            })
+        })
+    });
+
+    $scope.insertClass = function(name) {
+        var className = "";
+
+        switch (name) {
+            case "Все о шинах": {
+                className = "news-list__item_info";
+                break;
+            }
+            case "Новости": {
+                className =  "news-list__item_news";
+                break;
+            }
+            case "Тесты шин": {
+                className =  "news-list__item_test";
+                break;
+            }
         }
-    ];
 
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+        return className;
+    }
 
-    $scope.addItem = function() {
-        var newItemNo = $scope.items.length + 1;
-        $scope.items.push('Item ' + newItemNo);
-    };
-
-    $scope.status = {
-        isCustomHeaderOpen: false,
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
 }]);

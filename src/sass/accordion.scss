@@ -1,0 +1,15 @@
+.accordion .panel-group{
+  margin-top: 20px;
+}
+.accordion .panel-heading{
+  background-color: #f8f9fb !important;
+  border-radius: 0;
+  padding: 15px 30px;
+  background-image: none;
+}
+.accordion .panel>.panel {
+  border: none;
+}
+.accordion .panel-body {
+  padding: 15px 30px;
+}

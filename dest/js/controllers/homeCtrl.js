@@ -5,6 +5,8 @@ app.controller("HomeCtrl",["$scope","$http",function($scope,$http){
     $scope.search = "R13Все";
     var results = {};
 
+
+
     function updateResults(search) {
         $scope.search = search;
         if (search in results) {

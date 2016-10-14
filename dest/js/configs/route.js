@@ -4,7 +4,8 @@ app.config(["$stateProvider",function($stateProvider){
             url: "",
             views: {
                 'header': {
-                    templateUrl: 'templates/header.html'
+                    templateUrl: 'templates/header.html',
+                    controller: 'HeaderCtrl'
                 },
                 'main-top': {
                     templateUrl: 'templates/tabs.html',
@@ -23,6 +24,11 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: 'Главная'
+            },
+            resolve: {
+                newsStructure: function(NewsStructureResource){
+                    return NewsStructureResource.query().$promise;
+                }
             }
         })
         .state("home.tires.size",{
@@ -108,6 +114,42 @@ app.config(["$stateProvider",function($stateProvider){
                 newsData: function(PostNews){
                     return PostNews.query();
                 }
+            }
+        })
+        .state("home.news.section",{
+            url:"/:section",
+            views: {
+                "main@":{
+                    templateUrl: "templates/news.html",
+                    controller: "NewsSectionCtrl"
+                }
+            },
+            data: {
+                displayName: 'Раздел'
+            }
+        })
+        .state("home.news.section.subsection",{
+            url:"/:subsection",
+            views: {
+                "main@":{
+                    template: "<h1>Тест2</h1>",
+                    controller: "NewsSubsectionCtrl"
+                }
+            },
+            data: {
+                displayName: 'Подраздел'
+            }
+        })
+        .state("home.news.section.subsection.article", {
+            url:"/:article",
+            views: {
+                "main@":{
+                    templateUrl: "templates/news-detail.html",
+                    controller: "ArticleCtrl"
+                }
+            },
+            data: {
+                displayName: 'Новость'
             }
         })
         .state("home.news.detail",{

@@ -1,0 +1,16 @@
+<ul class="pagination big-table__pagination" ng-if="1 < pages.length || !autoHide">
+
+    <li class="pagination__item pagination__previous" ng-if="directionLinks" ng-class="{ pagination__item_disabled : pagination.current == 1 }">
+        <a class="pagination__anchor" href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+    </li>
+    <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" class="pagination__item" ng-class="{ pagination__item_active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+        <a class="pagination__anchor" href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+    </li>
+
+    <li class="pagination__item  pagination__next" ng-if="directionLinks" ng-class="{ pagination__item_disabled : pagination.current == pagination.last }">
+        <a class="pagination__anchor" href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+    </li>
+<!--    <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+        <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+    </li>-->
+</ul>

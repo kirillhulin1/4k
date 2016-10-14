@@ -1,4 +1,4 @@
-app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootScope,$log){
+app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootScope, $log){
     $scope.menu = [
         {
             "title": "Шины и диски",
@@ -55,6 +55,14 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
     ];
     $scope.phoneFirst = "+375 33 3668050";
     $scope.phoneSecond = "+375 29 3794864";
+
+    $scope.newsStructure = {};
+
+    $scope.setNewsStructure = function(data){
+        $scope.newsStructure = data;
+    };
+
+
 
     $scope.user = {
         cartItems: [

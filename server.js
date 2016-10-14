@@ -210,27 +210,307 @@ var models = [
 
 var news = [
     {
-        name: "Новость 1",
-        date: "19.05.2016"
+        "name": "Тесты шин",
+        "nameEn": "tires_tests",
+        "subsections": [
+            {
+                "name": "Тесты зимних шин",
+                "news": [
+                    {
+                        "title": "Ух ты!",
+                        "titleEn": "uh_ty",
+                        "date": "22.07.1986",
+                        "previewText": "В Лондоне идут дожди",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 3
+                    },
+                    {
+                        "title": "Тест супершин Дабл-трабл",
+                        "date": "31.07.2010",
+                        "previewText": "Хотите жить, харэ тормозить. С дабл-трабл по льду, как по наждачке.",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 4
+                    }
+                ]
+            },
+            {
+                "name": "Тесты летних шин",
+                "news": [
+                    {
+                        "title": "Шины от журнала Мурзилка",
+                        "date": "22.06.2016",
+                        "previewText": "Кто делает качественно, делает это во всем",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 4
+                    }
+                ]
+            }
+
+        ]
     },
     {
-        name: "Новость 2",
-        date: "19.061.2016"
+        "name": "Обзоры шин",
+        "nameEn": "tires_reviews",
+        "subsections": [
+            {
+                "name": "Обзоры зимних шин",
+                "nameEn": "winter_tires_reviews",
+                "news": [
+                    {
+                        "title": "Шумахер в гостях у 4k.by",
+                        "date": "17.05.2016",
+                        "previewText": "Миша тоже выбирает наш сайт",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 4
+                    },
+                    {
+                        "title": "Лысая резина - веселье на дорогах",
+
+                        "date": "22.08.2016",
+                        "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 4
+                    },
+                    {
+                        "title": "Bridgestone ничто - БЕЛШИНА все",
+                        "date": "17.05.2016",
+                        "previewText": "Мы предлогаем качество, проверенное временем...",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 0
+                    },
+                    {
+                        "title": "Шок! 19 шин по цене двадцати",
+                        "date": "05.11.2016",
+                        "previewText": "Безприцидентная акция. Спеши. Налетай. Торопись в шинный рай.",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 1
+                    },
+                    {
+                        "title": "Компания 'ШиноМозг' установит вам на автомобиль велосибедный шины",
+                        "date": "05.06.2016",
+                        "previewText": "Пора идти в ногу со временем. Так делают уже во всем мире. Экономия бешенная.",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 0
+                    },
+                    {
+                        "title": "Шины из резины",
+                        "date": "05.04.2016",
+                        "previewText": "Великолепное качество наших шин говорит само за себя. 'Я великолепное' - говорит оно",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 25
+                    },
+                    {
+                        "title": "Доколе?",
+                        "date": "21.03.2016",
+                        "previewText": "Вывывывывывыкуси.",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 0
+                    }
+                ]
+            },
+            {
+                "name": "Обзоры летних шин",
+                "nameEn": "summer_tires_reviews",
+                "news": [
+
+                ]
+            }
+        ]
     },
     {
-        name: "Новость 3",
-        date: "12.05.2016"
+        "section": "Все о шинах",
+        "nameEn": "all_about_tires",
+        "subsections": [
+            {
+                "name": "Справочная информация",
+                "nameEn": "for_info",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Технологии и инновации",
+                "nameEn": "technology_and_innovation",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Аналитика и статистика",
+                "nameEn": "statistics",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Рекомендации и советы",
+                "nameEn": "recommendations",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Истории создания брендов",
+                "nameEn": "history_of_brands",
+                "news": [
+
+                ]
+            }
+        ]
     },
     {
-        name: "Новость 4",
-        date: "09.05.2016"
-    },
-    {
-        name: "Новость 5",
-        date: "19.05.2012"
+        "section": "Новости",
+        "nameEn": "tires_news",
+        "subsections": [
+            {
+                "name": "Новинки шинного рынка",
+                "nameEn": "novelties_at_market",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Новые автомобили",
+                "nameEn": "new_cars",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Происшествия и события",
+                "nameEn": "accidents",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "В мире спорта",
+                "nameEn": "sport",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Акции и PR-компании",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Награды и достижения",
+                "news": [
+
+                ]
+            },
+            {
+                "name": "Кадровые изменения",
+                "news": [
+
+                ]
+            }
+        ]
     }
 ];
 
+var newsStructure = [
+    {
+        "section": "Тесты шин",
+        "nameEn": "tires_tests",
+        "subsections": [
+            {
+                "name": "Тесты зимних шин",
+                "nameEn": "winter_tires_tests"
+
+            },
+            {
+                "name": "Тесты летних шин",
+                "nameEn": "summer_tires_tests"
+            }
+
+        ]
+    },
+    {
+        "section": "Обзоры шин",
+        "nameEn": "tires_reviews",
+        "subsections": [
+            {
+                "name": "Обзоры зимних шин",
+                "nameEn": "winter_tires_reviews"
+            },
+            {
+                "name": "Обзоры летних шин",
+                "nameEn": "summer_tires_reviews"
+            }
+        ]
+    },
+    {
+        "section": "Все о шинах",
+        "nameEn": "all_about_tires",
+        "subsections": [
+            {
+                "name": "Справочная информация",
+                "nameEn": "for_info"
+            },
+            {
+                "name": "Технологии и инновации",
+                "nameEn": "technology_and_innovation"
+            },
+            {
+                "name": "Аналитика и статистика",
+                "nameEn": "statistics"
+            },
+            {
+                "name": "Рекомендации и советы",
+                "nameEn": "recommendations"
+            },
+            {
+                "name": "Истории создания брендов",
+                "nameEn": "history_of_brands"
+            }
+        ]
+    },
+    {
+        "section": "Новости",
+        "nameEn": "tires_news",
+        "subsections": [
+            {
+                "name": "Новинки шинного рынка",
+                "nameEn": "novelties_at_market"
+            },
+            {
+                "name": "Новые автомобили",
+                "nameEn": "new_cars"
+            },
+            {
+                "name": "Происшествия и события",
+                "nameEn": "accidents"
+            },
+            {
+                "name": "В мире спорта",
+                "nameEn": "sport"
+            },
+            {
+                "name": "Акции и PR-компании"
+            },
+            {
+                "name": "Награды и достижения"
+            },
+            {
+                "name": "Кадровые изменения"
+            }
+        ]
+    }
+];
 
 
 app.get("/brands",function(req,res){
@@ -238,6 +518,9 @@ app.get("/brands",function(req,res){
 });
 app.get("/news",function(req,res){
     res.send(news);
+});
+app.get("/newsStructure",function(req,res){
+    res.send(newsStructure);
 });
 app.get("/brands/:name",function(req,res){
     console.log(req.params.name);

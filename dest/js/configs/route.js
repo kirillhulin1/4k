@@ -227,7 +227,6 @@ app.config(["$stateProvider",function($stateProvider){
                 displayName: "Акции"
             }
         })
-
 }]);
 
 

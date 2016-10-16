@@ -206,6 +206,9 @@ app.config(["$stateProvider",function($stateProvider){
                 "main@":{
                     templateUrl: "templates/oplata-i-dostavka.html",
                     controller: "OplataCtrl"
+                },
+                "main-top@": {
+                    templateUrl: "templates/oplata-banner.html"
                 }
             },
             data: {

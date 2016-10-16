@@ -1,19 +1,45 @@
 app.controller("NewsSectionCtrl",["$scope", "$stateParams","$state","newsData",function ($scope, $stateParams, $state, newsData) {
-    $state.current.data.displayName = $stateParams.section;
-    $scope.news = [];
 
-    angular.forEach(newsData,function(sect){
-        if (sect.nameEn == $stateParams.section) {
-            console.log(1);
-            $state.current.data.displayName = sect.name;
-            angular.forEach(sect.subsections,function(subsect){
-                angular.forEach(subsect.news,function(article){
-                    $scope.news.push(article);
-                });
-
-            });
+    for (var i=0; i < newsData.length; i++) {
+        if (newsData[i].nameEn == $stateParams.section) {
+            $state.current.data.displayName = newsData[i].name;
+            $scope.currentSection = newsData[i].name;
+            break;
         }
+    }
+
+
+    $scope.news = [];
+    angular.forEach(newsData,function(section){
+        var sectionName = section.name;
+        var sectionNameEn = section.nameEn;
+        angular.forEach(section.subsections,function(subsection){
+            var subsectionName = subsection.name;
+            var subsectionNameEn = subsection.nameEn;
+            angular.forEach(subsection.news,function(news){
+                var article={};
+                article.title = news.title;
+                article.titleEn = news.titleEn;
+                article.date = news.date;
+                article.previewText = news.previewText;
+                article.previewPicture = news.previewPicture;
+                article.commentsNumber = news.commentsNumber;
+                article.id = news.id;
+                article.subsectionName = subsectionName;
+                article.subsectionNameEn = subsectionNameEn;
+                article.sectionName = sectionName;
+                article.sectionNameEn = sectionNameEn;
+                $scope.news.push(article);
+            })
+        })
+
     });
+
+
+    $scope.search = {
+        sectionNameEn: $stateParams.section
+    };
+
 
 }]);
 

@@ -5,10 +5,11 @@
                 <div class="row news-list__list">
 
                     <article class="col-md-4 col-sm-6 news-list__item {{insertClass(article.sectionName)}}"
-                             dir-paginate = "article in news | itemsPerPage: 6"
+                             dir-paginate = "article in news | filter: search | itemsPerPage:6"
                              ng-class="{'news-list__item_reverse': $index%2==1}"
-                             current-page = pageIndex
+
                     >
+
                         <div class="news-list__teaser">
                             <div class="news-list__picture">
                                 <img  class="news-list__image" ng-src="{{article.previewPicture}}">
@@ -16,7 +17,7 @@
                                 <a class="news-list__cover" ui-sref="home.news.section.subsection.article({section:article.sectionNameEn,subsection:article.subsectionNameEn,article: article.title})"></a>
                             </div>
                             <div class="news-list__content">
-                                <span class="news-list__theme" ng-bind="article.sectionName"></span>
+                                <span ng-hide="search.sectionNameEn" class="news-list__theme" ng-bind="article.sectionName"></span>
                                 <h3 class="news-list__title"><a ui-sref="home.news.section.subsection.article({section:article.sectionNameEn,subsection:article.subsectionNameEn,article: article.title})" ng-bind="article.title"></a></h3>
                                 <p class="news-list__text" ng-bind="article.previewText"></p>
                                 <p class="news-list__arrow">

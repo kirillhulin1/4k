@@ -73,81 +73,27 @@
     <section class="news-list container">
         <div class="news-list__list">
 
-            <article class="col-md-3 col-sm-4 news-list__item">
+            <article class="col-md-3 col-sm-4 news-list__item {{insertClass(article.sectionName)}}"
+                     ng-repeat="article in lastNews | limitTo : 4"
+                     ng-class="{'hidden-sm': $index==3}"
+            >
                 <div class="news-list__teaser">
                     <div class="news-list__picture">
-                        <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
+                        <img  class="news-list__image" ng-src="{{article.previewPicture}}">
                         <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
-                        <a class="news-list__cover" href="#"></a>
+                        <a class="news-list__cover" ui-sref="home.news.section.subsection.article({section: article.sectionNameEn, subsection: article.subsectionNameEn, article: article.title})"></a>
                     </div>
                     <div class="news-list__content">
-                        <span class="news-list__theme">Обзоры</span>
-                        <h3 class="news-list__title"><a href="#">Inside look</a></h3>
-                        <p class="news-list__text">Lorem ipsum dolor sit amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
+                        <span class="news-list__theme" ng-bind="article.sectionName"></span>
+                        <h3 class="news-list__title"><a ui-sref="home.news.section.subsection.article({section: article.sectionNameEn, subsection: article.subsectionNameEn, article: article.title})" ng-bind="article.title"></a></h3>
+                        <p class="news-list__text" ng-bind="article.previewText"></p>
                         <p class="news-list__arrow">
-                            <a href=""><img src="dest/images/news-arrow.png"></a>
+                            <a ui-sref="home.news.section.subsection.article({section: article.sectionNameEn, subsection: article.subsectionNameEn, article: article.title})"><img src="dest/images/news-arrow.png"></a>
                         </p>
                     </div>
                 </div>
 
             </article>
-
-            <article class="col-md-3 col-sm-4 news-list__item news-list__item_test">
-                <div class="news-list__teaser">
-                    <div class="news-list__picture">
-                        <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
-                        <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
-                        <a class="news-list__cover" href="#"></a>
-                    </div>
-                    <div class="news-list__content">
-                        <span class="news-list__theme">Тесты</span>
-                        <h3 class="news-list__title"><a href="#">Inside look</a></h3>
-                        <p class="news-list__text">Lorem ipsum dolor sit an massa. Cum natoq amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
-                        <p class="news-list__arrow">
-                            <a href=""><img src="dest/images/news-arrow.png"></a>
-                        </p>
-                    </div>
-                </div>
-
-            </article>
-
-            <article class="col-md-3 col-sm-4 news-list__item news-list__item_news">
-                <div class="news-list__teaser">
-                    <div class="news-list__picture">
-                        <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
-                        <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
-                        <a class="news-list__cover" href="#"></a>
-                    </div>
-                    <div class="news-list__content">
-                        <span class="news-list__theme">Новости</span>
-                        <h3 class="news-list__title"><a href="#">Inside look</a></h3>
-                        <p class="news-list__text">Lorem ipsum dolor sit amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
-                        <p class="news-list__arrow">
-                            <a href=""><img src="dest/images/news-arrow.png"></a>
-                        </p>
-                    </div>
-                </div>
-
-            </article>
-
-            <article class="col-md-3 col-sm-4 news-list__item hidden-sm">
-                <div class="news-list__teaser">
-                    <div class="news-list__picture">
-                        <img  class="news-list__image" src="dest/images/home-grid-01.jpg">
-                        <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
-                        <a class="news-list__cover" href="#"></a>
-                    </div>
-                    <div class="news-list__content">
-                        <span class="news-list__theme">Обзоры</span>
-                        <h3 class="news-list__title"><a href="#">Inside look</a></h3>
-                        <p class="news-list__text">Lorem ipsum dolor sit amet, Aenean massa. Cum natoque penatibus et magnis dis.</p>
-                        <p class="news-list__arrow">
-                            <a href=""><img src="dest/images/news-arrow.png"></a>
-                        </p>
-                    </div>
-                </div>
-
-            </article >
 
             <div class="clearfix"></div>
         </div>

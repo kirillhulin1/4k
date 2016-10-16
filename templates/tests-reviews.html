@@ -1,11 +1,10 @@
 <div class="container" >
     <section class="submenu__content">
-
         <ul class="list-inline hidden-xs" >
             <li class="col-sm-3" ng-repeat="section in newsStructure">
                 <h4 class="footer__subtitle"><a ui-sref="home.news.section({section:section.nameEn})" ng-bind="section.section"></a></h4>
                 <ul class="list-unstyled" style="text-align: center">
-                    <li ng-repeat="subsection in section.subsections"><a ui.sref="home.news.section.subsection({section:section.nameEn,subsection:subsection.nameEn})" ng-bind="subsection.name"></a></li>
+                    <li ng-repeat="subsection in section.subsections"><a ui-sref="home.news.section.subsection({section:section.nameEn,subsection:subsection.nameEn})" ng-bind="subsection.name"></a></li>
                 </ul>
             </li>
         </ul>

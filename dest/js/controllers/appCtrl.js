@@ -62,6 +62,12 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
         $scope.newsStructure = data;
     };
 
+    $scope.lastNews = {};
+
+    $scope.setLastNews = function(lastNews){
+        $scope.lastNews = lastNews;
+    };
+
 
 
     $scope.user = {
@@ -111,8 +117,46 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
         selectedItems: []
     };
 
+    $scope.insertClass = function(name) {
+        var className = "";
 
+        switch (name) {
+            case "Все о шинах": {
+                className = "news-list__item_info";
+                break;
+            }
+            case "Новости": {
+                className =  "news-list__item_news";
+                break;
+            }
+            case "Тесты шин": {
+                className =  "news-list__item_test";
+                break;
+            }
+        }
 
+        return className;
+    }
+    $scope.insertClassInLastNews = function(name) {
+        var className = "";
+
+        switch (name) {
+            case "Все о шинах": {
+                className = "news-last__item_info";
+                break;
+            }
+            case "Новости": {
+                className =  "news-last__item_news";
+                break;
+            }
+            case "Тесты шин": {
+                className =  "news-last__item_test";
+                break;
+            }
+        }
+
+        return className;
+    }
 
 
 }]);

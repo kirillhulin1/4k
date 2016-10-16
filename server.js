@@ -215,6 +215,7 @@ var news = [
         "subsections": [
             {
                 "name": "Тесты зимних шин",
+                "nameEn": "winter_tires_tests",
                 "news": [
                     {
                         "title": "Ух ты!",
@@ -237,11 +238,21 @@ var news = [
             },
             {
                 "name": "Тесты летних шин",
+                "nameEn": "summer_tires_tests",
                 "news": [
                     {
                         "title": "Шины от журнала Мурзилка",
                         "date": "22.06.2016",
                         "previewText": "Кто делает качественно, делает это во всем",
+                        "previewPicture": "dest/images/home-grid-01.jpg",
+                        "id": 19817230182,
+                        "commentsNumber": 4
+
+                    },
+                    {
+                        "title": "Тест супершин Дабл-трабл",
+                        "date": "31.07.2010",
+                        "previewText": "Хотите жить, харэ тормозить. С дабл-трабл по льду, как по наждачке.",
                         "previewPicture": "dest/images/home-grid-01.jpg",
                         "id": 19817230182,
                         "commentsNumber": 4
@@ -269,7 +280,6 @@ var news = [
                     },
                     {
                         "title": "Лысая резина - веселье на дорогах",
-
                         "date": "22.08.2016",
                         "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
                         "previewPicture": "dest/images/home-grid-01.jpg",
@@ -328,7 +338,7 @@ var news = [
         ]
     },
     {
-        "section": "Все о шинах",
+        "name": "Все о шинах",
         "nameEn": "all_about_tires",
         "subsections": [
             {
@@ -369,7 +379,7 @@ var news = [
         ]
     },
     {
-        "section": "Новости",
+        "name": "Новости",
         "nameEn": "tires_news",
         "subsections": [
             {
@@ -512,6 +522,107 @@ var newsStructure = [
     }
 ];
 
+var lastNews = [
+    {
+        "title": "Ух ты!",
+        "titleEn": "uh_ty",
+        "date": "22.07.1986",
+        "previewText": "В Лондоне идут дожди",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230180,
+        "commentsNumber": 3,
+        "sectionName": "Тесты шин",
+        "sectionNameEn": "tires_tests",
+        "subsectionName": "Тесты зимних шин",
+        "subsectionNameEn": "winter_tires_tests"
+    },
+    {
+        "title": "Тест супершин Дабл-трабл",
+        "date": "31.07.2010",
+        "previewText": "Хотите жить, харэ тормозить. С дабл-трабл по льду, как по наждачке.",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230180,
+        "commentsNumber": 4,
+        "sectionName": "Тесты шин",
+        "sectionNameEn": "tires_tests",
+        "subsectionName": "Тесты зимних шин",
+        "subsectionNameEn": "winter_tires_tests"
+    },
+    {
+        "title": "Шумахер в гостях у 4k.by",
+        "date": "17.05.2016",
+        "previewText": "Миша тоже выбирает наш сайт",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230181,
+        "commentsNumber": 4,
+        "sectionName": "Обзоры шин",
+        "sectionNameEn": "tires_reviews",
+        "subsectionName": "Обзоры зимних шин",
+        "subsectionNameEn": "winter_tires_reviews"
+    },
+    {
+        "title": "Лысая резина - веселье на дорогах",
+        "date": "22.08.2016",
+        "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230185,
+        "commentsNumber": 4,
+        "sectionName": "Обзоры шин",
+        "sectionNameEn": "tires_reviews",
+        "subsectionName": "Обзоры зимних шин",
+        "subsectionNameEn": "winter_tires_reviews"
+    },
+    {
+        "title": "Лысая резина - веселье на дорогах",
+        "date": "22.08.2016",
+        "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230185,
+        "commentsNumber": 4,
+        "sectionName": "Обзоры шин",
+        "sectionNameEn": "tires_reviews",
+        "subsectionName": "Обзоры зимних шин",
+        "subsectionNameEn": "winter_tires_reviews"
+    },
+    {
+        "title": "Лысая резина - веселье на дорогах",
+        "date": "22.08.2016",
+        "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230185,
+        "commentsNumber": 4,
+        "sectionName": "Обзоры шин",
+        "sectionNameEn": "tires_reviews",
+        "subsectionName": "Обзоры зимних шин",
+        "subsectionNameEn": "winter_tires_reviews"
+    },
+    {
+        "title": "Лысая резина - веселье на дорогах",
+        "date": "22.08.2016",
+        "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230185,
+        "commentsNumber": 4,
+        "sectionName": "Обзоры шин",
+        "sectionNameEn": "tires_reviews",
+        "subsectionName": "Обзоры зимних шин",
+        "subsectionNameEn": "winter_tires_reviews"
+    },
+    {
+        "title": "Лысая резина - веселье на дорогах",
+        "date": "22.08.2016",
+        "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230186,
+        "commentsNumber": 4,
+        "sectionName": "Обзоры шин",
+        "sectionNameEn": "tires_reviews",
+        "subsectionName": "Обзоры зимних шин",
+        "subsectionNameEn": "winter_tires_reviews"
+    }
+
+];
+
 
 app.get("/brands",function(req,res){
     res.send(brands);
@@ -521,6 +632,9 @@ app.get("/news",function(req,res){
 });
 app.get("/newsStructure",function(req,res){
     res.send(newsStructure);
+});
+app.get("/lastNews",function(req,res){
+    res.send(lastNews);
 });
 app.get("/brands/:name",function(req,res){
     console.log(req.params.name);
@@ -540,18 +654,5 @@ app.get("/models/:name",function(req,res){
         }
     });
 });
-/*app.get("/pages",function(req,res){
-    res.send(pages);
-});
-
-app.get("/users/:id",function(req,res){
-    users.forEach(function(el, i){
-        if (el.id == req.params.id) {
-            console.log(users[i]);
-            res.send(users[i]);
-        }
-    });
-
-});*/
 
 console.log("Server running on port 3000...");

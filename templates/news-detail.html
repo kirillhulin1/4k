@@ -1,8 +1,8 @@
+
+
 <div class="container">
-
     <div class="row">
-        <section class="news-review__content col-sm-9 col-md-9">
-
+        <div class="news_list col-sm-8 col-md-9">
             <div class="news-review__postdate">
                 19.06.2016
             </div>
@@ -96,54 +96,40 @@
 
                 </div>
             </div>
+        </div>
+        <section class="col-md-3 col-sm-4">
+            <uib-accordion class="accordion">
 
+                <div uib-accordion-group
+                     ng-repeat = "section in newsStructure"
+                     class="panel-default"
 
+                     template-url="templates/group-template.html">
+                    <uib-accordion-heading>
+                        {{section.section}}
+                    </uib-accordion-heading>
+                    <ul class="list-unstyled">
+                        <li  ng-repeat="item in section.subsections">
+                            <a ui-sref="home.news.section.subsection({section: section.nameEn, subsection: item.nameEn})" ng-bind="item.name"></a>
+                        </li>
+                    </ul>
+                </div>
 
-        </section>
-        <aside class="col-md-3 col-sm-3">
-            <div class="news__menu-block">
+            </uib-accordion>
+            <article class="news-last">
+                <header class="news-last__title">Последние новости</header>
+                <ul class="news-last__list list-unstyled">
+                    <li class="news-last__item {{insertClassInLastNews(article.sectionName)}}" ng-repeat="article in lastNews | limitTo : 6">
 
-                <ul class="news__menu">
-
-                    <li class="is-active"> <!-- когда открыта статья активного раздела -->
-                        <a class="news__menu-title"  href="#"> Тесты и обзоры шин  </a>
-                        <ul>
-                            <li> <a href="#">Тесты и обзоры шин  </a></li>
-                            <li> <a class="active-li" href="#">Тесты и обзоры шин  </a></li>
-                            <li> <a href="#">Тесты и обзоры шин  </a></li>
-                            <li> <a href="#">Тесты и обзоры шин  </a></li>
-                        </ul>
-                    </li>
-
-
-                    <li class="">
-                        <a class="news__menu-title"  href="#">Все о шинах</a>
-                        <ul>
-                            <li>  <a  href="#">Все о шинах</a></li>
-                            <li>  <a  href="#">Все о шинах</a></li>
-                            <li> <a  href="#">Все о шинах</a></li>
-                            <li>  <a  href="#">Все о шинах</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li class="">
-                        <a class="news__menu-title"  href="#">Новости</a>
-                        <ul>
-                            <li>  <a href="#">Новые автомобили</a></li>
-                            <li>  <a href="#">Награды и достижения </a></li>
-                            <li>  <a href="#">Новости</a></li>
-                            <li>  <a href="#">Новости</a></li>
-                        </ul>
+                        <div class="news-last__picture" ng-style="{'background-image':'url('+article.previewPicture+')'}"></div>
+                        <div class="news-last__text">
+                            <p class="news-last__theme" ng-bind="article.sectionName"></p>
+                            <h5 class="news-last__name" ng-bind="article.title"></h5>
+                        </div>
+                        <a  ui-sref="home.news.section.subsection.article({section: article.sectionNameEn, subsection: article.subsectionNameEn, article: article.title})" class="news-last__cover"></a>
                     </li>
                 </ul>
-            </div>
-
-
-        </aside>
-
+            </article>
+        </section>
     </div>
-
-
-
 </div>

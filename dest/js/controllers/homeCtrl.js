@@ -1,8 +1,10 @@
-app.controller("HomeCtrl",["$scope","$http",function($scope,$http){
+app.controller("HomeCtrl",["$scope","$http","lastNews",function($scope,$http,lastNews){
+
     $scope.season = "Все";
     $scope.diameter = "R13";
     $scope.results = [];
     $scope.search = "R13Все";
+
     var results = {};
 
 
@@ -59,4 +61,6 @@ app.controller("HomeCtrl",["$scope","$http",function($scope,$http){
             });
         }
     }
+
+
 }]);

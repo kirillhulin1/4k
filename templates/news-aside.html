@@ -1,0 +1,74 @@
+<!--<aside class="col-md-3 col-sm-4">-->
+    <uib-accordion class="accordion">
+
+        <div uib-accordion-group
+             ng-repeat = "section in newsStructure"
+             class="panel-default"
+
+             template-url="templates/group-template.html">
+            <uib-accordion-heading>
+                {{section.section}}
+            </uib-accordion-heading>
+            <ul class="list-unstyled">
+                <li  ng-repeat="item in section.subsections">
+                    <a ui-sref="home.news.section.subsection({section: section.nameEn, subsection: item.nameEn})" ng-bind="item.name"></a>
+                </li>
+            </ul>
+        </div>
+
+    </uib-accordion>
+    <article class="news-last">
+        <header class="news-last__title">Последние новости</header>
+        <ul class="news-last__list list-unstyled">
+            <li class="news-last__item">
+                <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                <div class="news-last__text">
+                    <p class="news-last__theme">Обзор</p>
+                    <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                </div>
+                <a href="#" class="news-last__cover"></a>
+            </li>
+            <li class="news-last__item">
+                <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                <div class="news-last__text">
+                    <p class="news-last__theme">Обзор</p>
+                    <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                </div>
+                <a href="#" class="news-last__cover"></a>
+            </li>
+            <li class="news-last__item news-last__item_info">
+                <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                <div class="news-last__text">
+                    <p class="news-last__theme">Все о шинах</p>
+                    <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                </div>
+                <a href="#" class="news-last__cover"></a>
+            </li>
+            <li class="news-last__item">
+                <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                <div class="news-last__text">
+                    <p class="news-last__theme">Обзор</p>
+                    <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                </div>
+                <a href="#" class="news-last__cover"></a>
+            </li>
+            <li class="news-last__item news-last__item_test">
+                <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                <div class="news-last__text">
+                    <p class="news-last__theme">Тест</p>
+                    <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                </div>
+                <a href="#" class="news-last__cover"></a>
+            </li>
+            <li class="news-last__item news-last__item_news">
+                <div class="news-last__picture" style="background-image: url(dest/images/home-grid-01.jpg)"></div>
+                <div class="news-last__text">
+                    <p class="news-last__theme">Новости</p>
+                    <h5 class="news-last__name">Какой дефицит префицита?</h5>
+                </div>
+                <a href="#" class="news-last__cover"></a>
+            </li>
+        </ul>
+    </article>
+<!--
+</aside>-->

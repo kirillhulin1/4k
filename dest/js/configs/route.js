@@ -28,6 +28,9 @@ app.config(["$stateProvider",function($stateProvider){
             resolve: {
                 newsStructure: function(NewsStructureResource){
                     return NewsStructureResource.query().$promise;
+                },
+                lastNews: function(LastNewsResource){
+                    return LastNewsResource.query().$promise;
                 }
             }
         })
@@ -102,25 +105,25 @@ app.config(["$stateProvider",function($stateProvider){
         .state("home.news",{
             url:"/news",
             views: {
-                "main@":{
+                "main@": {
                     templateUrl: "templates/news.html",
                     controller: "NewsCtrl"
                 }
             },
             data: {
-                displayName: 'Новости'
+                displayName: 'Все статьи'
             },
             resolve: {
                 newsData: function(PostNews){
-                    return PostNews.query();
+                    return PostNews.query().$promise;
                 }
             }
         })
         .state("home.news.section",{
             url:"/:section",
             views: {
-                "main@":{
-                    templateUrl: "templates/news.html",
+                "main@": {
+                    templateUrl: "templates/news-section.html",
                     controller: "NewsSectionCtrl"
                 }
             },
@@ -132,7 +135,7 @@ app.config(["$stateProvider",function($stateProvider){
             url:"/:subsection",
             views: {
                 "main@":{
-                    template: "<h1>Тест2</h1>",
+                    templateUrl: "templates/news-section.html",
                     controller: "NewsSubsectionCtrl"
                 }
             },

@@ -1,8 +1,18 @@
 .oplata {
   margin-top: 2em;
   text-align: center;
-  p {
-    text-align: justify;
+  padding-bottom: 2em;
+  p, ul {
+    text-align: left;
+
+  }
+  ul {
+    padding: 0;
+    list-style-image: url(images/arrow.png);
+  }
+  li {
+    padding: 0;
+    margin-left: 25px;
   }
 }
 .oplata__image {

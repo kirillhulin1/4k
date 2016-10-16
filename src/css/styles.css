@@ -3418,9 +3418,18 @@ textarea.write-us__input {
 .oplata {
   margin-top: 2em;
   text-align: center;
+  padding-bottom: 2em;
 }
-.oplata p {
-  text-align: justify;
+.oplata p, .oplata ul {
+  text-align: left;
+}
+.oplata ul {
+  padding: 0;
+  list-style-image: url(images/arrow.png);
+}
+.oplata li {
+  padding: 0;
+  margin-left: 25px;
 }
 
 .oplata__image {

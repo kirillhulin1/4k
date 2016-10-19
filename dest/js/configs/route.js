@@ -221,10 +221,40 @@ app.config(["$stateProvider",function($stateProvider){
                 "main@":{
                     templateUrl: "templates/akzii.html",
                     controller: "AkziiCtrl"
+                },
+                "main-top@": {
+                    templateUrl: "templates/akzii-banner.html"
                 }
             },
             data: {
                 displayName: "Акции"
+            }
+        })
+        .state("home.company", {
+            url:"/company",
+            views: {
+                "main@":{
+                    templateUrl: "templates/company.html",
+                    controller: "CompanyCtrl"
+                }
+            },
+            data: {
+                displayName: "Интернет-магазин 4k.by"
+            }
+        })
+        .state("home.search", {
+            url:"/search?searchText&searchSection",
+            views: {
+                "main-top@":{
+                    template: ""
+                },
+                "main@":{
+                    templateUrl: "templates/search.html",
+                    controller: "SearchCtrl"
+                }
+            },
+            data: {
+                displayName: "Поиск"
             }
         })
 }]);

@@ -3159,6 +3159,16 @@ h1 {
     padding-top: 230%;
   }
 }
+.brand_modal {
+  width: 250px !important;
+  margin: 0 auto !important;
+  margin-bottom: 2em !important;
+}
+
+.brand:before {
+  padding-top: 350px !important;
+}
+
 .banner, .banner__wrapper {
   display: none;
 }
@@ -3191,6 +3201,10 @@ h1 {
   .banner_contacts {
     background-image: url(images/banner-contacts.jpg);
     max-width: 1600px;
+  }
+
+  .banner_akzii {
+    background-image: url(images/banner-akzii.png);
   }
 
   .banner__text {
@@ -3762,6 +3776,137 @@ textarea.write-us__input {
 
 .accordion .panel-body {
   padding: 15px 30px;
+}
+
+.company__section {
+  text-align: justify;
+  padding: 1em 0 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.company__section:last-child {
+  border-bottom: none;
+}
+
+.stuff__item {
+  margin: 0 auto;
+  max-width: 250px;
+  border: 1px solid #ececec;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.stuff__item:before {
+  content: "";
+  display: block;
+  padding-top: 166%;
+}
+
+.stuff__picture-wrap {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.stuff__picture-wrap > img {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+.stuff__picture-wrap:hover > img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.stuff__overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.5s;
+  background: #fff;
+}
+
+.stuff__picture-wrap:hover .stuff__overlay {
+  opacity: 1;
+}
+
+.stuff__socials {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.stuff__text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1em;
+}
+.stuff__text h3 {
+  font-family: "SegoeUIRegular", Helvetica, Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+  font-size: 120%;
+}
+.stuff__text p {
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.search {
+  min-height: 400px;
+  padding-top: 1em;
+}
+.search .search-modal {
+  padding-bottom: 0;
+}
+.search h3 {
+  margin-top: 0;
+}
+
+.search .col-sm-1 {
+  overflow: hidden;
+}
+
+.search > .search-modal > div {
+  margin-bottom: 20px;
+}
+
+.search__results {
+  border-top: 1px solid #ddd;
+}
+
+.search__picture {
+  width: 100%;
+}
+
+.search__item {
+  margin: 1.5em 0;
+}
+
+.search__section {
+  color: #e8652d;
+  margin-top: 0;
+}
+
+@media all and (min-width: 768px) {
+  .search__section {
+    float: right;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

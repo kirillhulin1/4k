@@ -1,0 +1,35 @@
+.search {
+  min-height: 400px;
+  padding-top: 1em;
+  .search-modal {
+    padding-bottom: 0;
+  }
+  h3 {
+    margin-top: 0;
+  }
+}
+.search .col-sm-1 {
+  overflow: hidden;
+}
+.search>.search-modal>div {
+  margin-bottom: 20px;
+}
+.search__results {
+  border-top: 1px solid #ddd;
+}
+.search__picture {
+  width: 100%;
+}
+.search__item {
+  margin: 1.5em 0;
+}
+.search__section {
+  color: $orange;
+  margin-top: 0;
+}
+@media all and (min-width: $sm-size) {
+
+    .search__section {
+      float: right;
+    }
+}

@@ -151,3 +151,13 @@
   }
 
 }
+.brand_modal {
+  width: 250px !important;
+  margin: 0 auto !important;
+  margin-bottom: 2em !important;
+}
+.brand {
+  &:before {
+    padding-top: 350px !important;
+  }
+}

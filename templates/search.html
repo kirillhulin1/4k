@@ -1,0 +1,62 @@
+<section class="container search">
+    <div class="search-modal">
+        <div class="col-sm-7">
+            <input type="text" class="search-modal__input form-control" placeholder="Искать...">
+        </div>
+        <div class="col-sm-4">
+            <div class="select__wrapper">
+                <label class="tab1__label">
+                    <span class="select__label search-modal__label" ng-hide="search.theme">Где искать?</span>
+                    <select ng-model="search.theme" class="form-control select search-modal__theme">
+                        <option>Везде</option>
+                        <option>Статья</option>
+                        <option>Обзор</option>
+                        <option>Типоразмер: диски</option>
+                        <option>Типоразмер: шины</option>
+                    </select>
+                </label>
+            </div>
+
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-primary search-modal__button form-control">
+                <i class="glyphicon glyphicon-search"></i>
+                <span class="hidden-lg hidden-md hidden-sm">Искать</span>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <section class="search__results">
+        <article class="search__item">
+            <section class="row">
+                <section class="col-xs-3 col-sm-2"><img class="search__picture" src="dest/images/bridgestone1.png"></section>
+                <section class="col-xs-9 col-sm-10">
+                    <p class="search__section">Легковые шины</p>
+                    <h3 class="#"><a href="">Michelin Latitude Sport AO</a></h3>
+                    <p style="clear:both">... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.</p>
+                </section>
+            </section>
+        </article>
+        <article class="search__item">
+            <section class="row">
+                <section class="col-xs-3 col-sm-2"><img class="search__picture" src="dest/images/bridgestone1.png"></section>
+                <section class="col-xs-9 col-sm-10">
+                    <p class="search__section">Легковые шины</p>
+                    <h3 class="#"><a href="">Michelin Latitude Sport AO</a></h3>
+                    <p style="clear:both">... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.</p>
+                </section>
+            </section>
+        </article>
+        <article class="search__item">
+            <section class="row">
+                <section class="col-xs-3 col-sm-2"><img class="search__picture" src="dest/images/bridgestone1.png"></section>
+                <section class="col-xs-9 col-sm-10">
+                    <p class="search__section">Легковые шины</p>
+                    <h3 class="#"><a href="">Michelin Latitude Sport AO</a></h3>
+                    <p style="clear:both">... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.</p>
+                </section>
+            </section>
+        </article>
+        <div class="clearfix"></div>
+    </section>
+</section>

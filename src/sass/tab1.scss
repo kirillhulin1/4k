@@ -1,13 +1,58 @@
 .tab1 {
 
 }
+
+
+
+.tab1__label {
+  overflow:hidden;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  position:relative;
+
+  &:before {
+    content:"";
+    position:absolute;
+    height:100%;
+    background-color:$mainColor;
+    background-image:url(images/winter-white.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:100%;
+    left:0;
+    top:-100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  /*
+  &:hover:before {
+    top:0;
+  }
+  */
+
+  &:after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+
+
 @media all and (min-width: $lg-size) {
   .tab1 {
-    background: url("images/test2_bg.jpg") no-repeat left 10px;
+    background: url("images/test2_bg.png") no-repeat left 10px;
   }
 }
 .tab1__label {
   width: 100%;
+  height: 100%;
   &.active, &.active:hover {
     background-color: $mainColor;
     color: #fff;
@@ -17,10 +62,10 @@
   }
 }
 .tab1__results {
-
+  background-color: $grayDark;
   line-height: 30px;
   margin-top: 20px;
-  background-color: #aaa;
+  
 }
 .tab1__form {
   position: relative;
@@ -55,6 +100,7 @@
 .tab1__more {
   position: absolute;
   top: -40px;
+  right:10px;
 
 }
 .tab1__phone {

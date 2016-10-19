@@ -623,6 +623,11 @@ var lastNews = [
 
 ];
 
+var searchTire = [{},{},{},{}];
+var searchCar = [{},{},{},{}];
+var searchArticle = [{},{},{},{},{},{},{},{},{},{},{}];
+var searchSize = [{},{},{}];
+
 
 app.get("/brands",function(req,res){
     res.send(brands);
@@ -653,6 +658,48 @@ app.get("/models/:name",function(req,res){
             res.send(models[i]);
         }
     });
+});
+app.get("/search",function(req,res){
+    console.log(req.query);
+    var searchSection = req.query.searchSection;
+    var searchText = req.query.searchText;
+    if (searchSection) {
+        switch (searchSection) {
+            case "tire": {
+                res.send(searchTire);
+                break;
+            }
+            case "car": {
+                res.send(searchCar);
+                break;
+            }
+            case "size": {
+                res.send(searchSize);
+                break;
+            }
+            case "article": {
+                res.send(searchArticle);
+                break;
+            }
+            case "all": {
+                res.send([{
+                    tire: searchTire,
+                    car: searchCar,
+                    size: searchSize,
+                    article: searchArticle
+                }]);
+                break;
+            }
+        }
+    }
+    else {
+        res.send([{
+            tire: searchTire,
+            car: searchCar,
+            size: searchSize,
+            article: searchArticle
+        }]);
+    }
 });
 
 console.log("Server running on port 3000...");

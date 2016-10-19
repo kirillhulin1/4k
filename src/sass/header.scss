@@ -7,7 +7,7 @@
   height: 45px;
   position: relative;
   z-index: 100;
-
+  background-image: none !important;
 }
 @media (max-width: 991px) and (min-width: 768px) {
   .header-top {
@@ -25,7 +25,7 @@
 }
 
 .header-top__phone-me {
-  line-height: 1;
+  line-height: 1.5;
   vertical-align: baseline;
   color: $mainColor;
   font-family: "SegoeUISemiBold";
@@ -33,6 +33,10 @@
     outline: none !important;
   }
   display: inline-block;
+  img {
+    margin-top: -3px;
+    margin-right: 5px;
+  }
 }
 .header-top__phones {
   float: right;
@@ -45,13 +49,18 @@
 
 }
 .header-top__schedule {
-  vertical-align: top;
   position: relative;
-  top: -3px;
 
 }
 .header-top__schedule-wrapper {
-  line-height: 1;
+  line-height: 1.5;
+  img {
+    margin-top: -3px;
+    margin-right: 5px;
+  }
+  small {
+
+  }
 }
 .header-top__phone_main {
   font-size: 110%;
@@ -60,7 +69,6 @@
 @media all and (min-width: 756px) {
   .header-top__phone_main {
     position: relative;
-    top: -2px;
   }
 
 }
@@ -106,7 +114,9 @@
 .header-top__phone {
   font-size: 110%;
   position: relative;
-  top: -2px;
+  img {
+    top: -3px;
+  }
 }
 
 .header-top__phone-icon {

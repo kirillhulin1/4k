@@ -1,5 +1,7 @@
 .help-us {
-
+  .glyphicon {
+    color: #999;
+  }
 
   &>.container {
     display: table;
@@ -7,20 +9,24 @@
 
     &>div {
       padding: 0.5em 0;
-      margin: 1.5em 0 0.5em;
       line-height: 1.2;
-      background-color: $grayDark;
+      border-left:10px solid #ccc;
+      background-color: white;
+      margin: 2.5em 0;
     }
   }
 }
+.help-us__text>strong{
+  color: $mainColor;
+}
 .help-us__icon {
-  padding-left: 10px;
-  padding-right: 15px;
   display: inline-block;
   font-size: 150%;
   float: left;
   position: relative;
   top: -5px;
+  padding-left:15px;
+  padding-right:5px;
 }
 .help-us__text {
   display: table-cell;

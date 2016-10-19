@@ -25,6 +25,12 @@ body {
 //Конец прижатия футера
 
 
+a, button, .btn {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .glyphicon {
   font-size: 85%;
 }

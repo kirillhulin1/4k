@@ -17,6 +17,7 @@
 }
 .oplata__image {
   float: left;
+  margin-bottom: 1.5em;
 }
 .oplata__description {
   padding-top: 0.5em;
@@ -28,6 +29,9 @@
   min-height: 70px;
   box-sizing: border-box;
 
+}
+h4.oplata__description {
+  margin-bottom: 1.5em;
 }
 @media all and (min-width: $sm-size) {
   .oplata__image {

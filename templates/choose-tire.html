@@ -127,7 +127,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <button class="multiselect__button btn btn-warning" ng-click="countBrands()">Выбор сделан</button>
-                <span class="close multiselect__close">x</span>
+                <span class="close multiselect__close"><img src="dest/images/cross-close.png"></span>
             </div>
         </div>
         <section ng-show="showMore" class="tab1__range row"><!--ng-show="showMore"-->
@@ -147,7 +147,7 @@
                 <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.maxValue">
             </div>
         </section>
-        <a href="#" class="toggle-anchor tab1__more hidden-xs" do-not-follow toggle-anchor ng-click="showMore = !showMore">Дополнительные параметры</a>
+        <a href="#" class="toggle-anchor tab1__more hidden-xs" do-not-follow toggle-anchor ng-click="showMore = !showMore">дополнительные параметры</a>
         <button class="btn btn-warning form-control tab1__button">Подобрать</button>
         <p class="tab__section-title tab__section-title_condensed">Задайте вопрос специалисту:</p>
         <a class="tab1__phone" href="tel://{{phoneFirst}}" ng-bind="phoneFirst"></a>

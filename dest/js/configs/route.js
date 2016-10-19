@@ -255,6 +255,11 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: "Поиск"
+            },
+            resolve: {
+                searchData: function(SearchResource,$stateParams){
+                    return SearchResource.query({searchText:$stateParams.searchText,searchSection: $stateParams.searchSection}).$promise;
+                }
             }
         })
 }]);

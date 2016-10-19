@@ -1,23 +1,14 @@
 .section-heading_news {
-  /*background: url(images/news_bg.jpg) no-repeat;*/
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 19%, #0157a0 100%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 19%,#0157a0 100%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #ffffff 0%,#ffffff 19%,#0157a0 100%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  @if ($theme == turquoise-theme) {
-    background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 19%, #00acc1 100%, #ffffff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 19%,#00acc1 100%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #ffffff 0%,#ffffff 19%,#00acc1 100%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  }
 
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+  background: #ffffff;
+
 }
 .section-heading {
   line-height: 40px;
   height: 40px;
   margin: 2em 0 1em;
-  background-color: $gray;
-  padding: 0 0 0 2rem;
+
+
 
   background-size: cover;
 }
@@ -26,6 +17,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border-top: 1px solid #ddd;
 }
 @media all and (min-width: $sm-size) {
   .section-heading {

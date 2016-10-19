@@ -16,6 +16,9 @@
     border:none !important;
     box-sizing: border-box;
     text-align: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
     a {
       padding: 1em 0;
       display: inline-block;
@@ -41,6 +44,7 @@
   }
 
 }
+
 .tabs-tires__tabs {
   width: 48px;
   list-style-type: none;

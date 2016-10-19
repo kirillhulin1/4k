@@ -1,6 +1,11 @@
 .popular-tires {
   margin-top: 2em;
 }
+.popular-tires__item-aside, .popular-tires__item-top{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
 .popular-tires__title {
   display: inline-block;
   width: 21%;

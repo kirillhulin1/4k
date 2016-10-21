@@ -3,6 +3,22 @@
 }
 
 
+// добавить ховер на кнопки                           ОБЕРНУТЬ ЛЕТО И ЗИМА В SPAN В ФАЙЛЕ CHOOSE-TERI.HTML
+
+.tab1_summer:before {
+  background-image:url(images/summer-blue.png) ;
+}
+
+.tab1_winter:before {
+  background-image:url(images/winter-blue.png) ;
+}
+
+.tab1_allseasons:before {
+  background-image:url(images/allseason-blue.png) ;
+}
+
+
+
 
 .tab1__label {
   overflow:hidden;
@@ -11,12 +27,14 @@
   transition: all 0.3s;
   position:relative;
 
+  &:hover {
+    background-color:#fff !important;
+  }
+
   &:before {
     content:"";
     position:absolute;
     height:100%;
-    background-color:$mainColor;
-    background-image:url(images/winter-white.png) ;
     background-repeat: no-repeat;
     background-position: center;
     width:100%;
@@ -27,11 +45,9 @@
     transition: all 0.3s;
   }
 
-  /*
   &:hover:before {
     top:0;
   }
-  */
 
   &:after{
     content: '';
@@ -41,7 +57,41 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
+  & span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+    -moz-transition: all 0.3s;
+    -moz-backface-visibility: hidden;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+  }
+  &:hover span {
+    -webkit-transform: translateY(300%);
+    -moz-transform: translateY(300%);
+    -ms-transform: translateY(300%);
+    transform: translateY(300%);
+  }
 }
+
+
+
+///////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -65,7 +115,7 @@
   background-color: $grayDark;
   line-height: 30px;
   margin-top: 20px;
-  
+
 }
 .tab1__form {
   position: relative;

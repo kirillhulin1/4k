@@ -80,3 +80,12 @@
     margin: 10px 0 0;
   }
 }
+.stuff__social {
+  display: inline-block;
+  margin: 0 0.1em;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.stuff__social:hover {
+  opacity: 1;
+}

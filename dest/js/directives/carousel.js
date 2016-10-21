@@ -13,6 +13,7 @@ app.directive("carousel",["$window",function($window){
             var animationGoing = false;
             var currentItem = 0;
 
+
             Array.prototype.forEach.call(items,function(item){
                 item.style.width = width/2 + "px";
             });

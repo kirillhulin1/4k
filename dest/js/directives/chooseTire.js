@@ -98,7 +98,11 @@ app.directive("chooseTire",["$timeout",function($timeout){
             scope.$watch("showMore",function(){
                 $timeout(function(){scope.$broadcast("reCalcViewDimensions");},50,false)
 
-            })
+
+            });
+
+
+
         }
 
    }

@@ -36,3 +36,12 @@
 .footer__socials {
 
 }
+
+.footer .list-unstyled >li :hover {
+  padding-left:15px;
+  text-decoration: none;
+}
+.footer .list-inline>li h4 :hover {
+  padding-left:15px;
+  text-decoration: none;
+}

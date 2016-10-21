@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.close();" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+    <h4 class="modal-title">Контакты</h4>
+</div>
+<div class="modal-body modal-body_gray">
+    <p class="modal-more-phones__title"><strong>Горячая линия</strong></p>
+    <p class="modal-more-phones__phone" ng-bind="phoneFirst"></p>
+
+</div>
+<div class="modal-footer">
+    <ul class="list-inline header-top__phones modal-more-phones__list">
+        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="phoneSecond"></small></li>
+    </ul>
+</div>

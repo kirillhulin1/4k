@@ -39,7 +39,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
 }
 
 .about__anchor {
@@ -53,7 +52,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-
   background-repeat: no-repeat;
   line-height: 1.5;
   background-color: transparent;
@@ -66,6 +64,9 @@
   font-size: 14px;
   position: relative;
   top: 5px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .about__anchor:hover {
   background-color: $mainColorHover;

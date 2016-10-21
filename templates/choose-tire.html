@@ -75,14 +75,14 @@
 
         <section class="row">
             <div class="col-xs-4 tab1__paddingBottomSmall ">
-                    <label id="test" ng-click="toggleValue($event)" class="btn-reverse tab1__label" ng-model="season" uib-btn-radio="'Лето'">Лето</label>
+                    <label id="test" ng-click="toggleValue($event)" class="btn-reverse tab1__label tab1_summer" ng-model="season" uib-btn-radio="'Лето'"><span>Лето</span></label>
 
             </div>
             <div class="col-xs-4 tab1__paddingBottomSmall ">
-                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label" ng-model="season" uib-btn-radio="'Зима'">Зима</label>
+                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label tab1_winter" ng-model="season" uib-btn-radio="'Зима'"><span>Зима</span></label>
             </div>
             <div class="col-xs-4 tab1__paddingBottomSmall">
-                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label" ng-model="season" uib-btn-radio="'Всесезонная'">
+                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label tab1_allseasons" ng-model="season" uib-btn-radio="'Всесезонная'">
                     <span class="hidden-sm">Всесезонная</span>
                     <span class="hidden-xs hidden-md hidden-lg">Всесезон.</span>
                 </label>

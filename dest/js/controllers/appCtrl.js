@@ -57,13 +57,11 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
     $scope.phoneSecond = "+375 29 3794864";
 
     $scope.newsStructure = {};
-
     $scope.setNewsStructure = function(data){
         $scope.newsStructure = data;
     };
 
     $scope.lastNews = {};
-
     $scope.setLastNews = function(lastNews){
         $scope.lastNews = lastNews;
     };
@@ -136,7 +134,7 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
         }
 
         return className;
-    }
+    };
     $scope.insertClassInLastNews = function(name) {
         var className = "";
 
@@ -157,6 +155,5 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
 
         return className;
     }
-
 
 }]);

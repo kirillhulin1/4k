@@ -7,6 +7,8 @@ app.directive("doNotFollow",[function(){
             element.bind("click",function(){
                 return false;
             });
+
+
         }
     }
 }]);

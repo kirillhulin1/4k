@@ -1,0 +1,8 @@
+<section class="container">
+    <p>Выберите год выпуска автомобиля <span ng-bind="car"></span> <span ng-bind="model"></span></p>
+    <ul class="list-unstyled">
+        <li ng-repeat="year in years" class="col-sm-2 col-xs-4">
+            <a ui-sref="home.cars.models.years.modifications({car:car,model:model,year:year})" ng-bind="year"></a>
+        </li>
+    </ul>
+</section>

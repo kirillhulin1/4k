@@ -1,4 +1,4 @@
-app.directive("tiresForCar",["$http",function($http){
+app.directive("tiresForCar",["$http","$state",function($http,$state){
     return {
         "restrict": "E",
         "templateUrl": "templates/tires-for-car.html",
@@ -118,6 +118,12 @@ app.directive("tiresForCar",["$http",function($http){
 
             });
 
+            scope.search = function() {
+                console.log(1);
+                if (!scope.models) {
+                    $state.go("home.cars");
+                }
+            }
         }
 
     }

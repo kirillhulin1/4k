@@ -628,6 +628,10 @@ var searchCar = [{},{},{},{}];
 var searchArticle = [{},{},{},{},{},{},{},{},{},{},{}];
 var searchSize = [{},{},{}];
 
+var cars = ["audi","bmw","mersedes","toyota","ford","ferrari","fiat","mazda","porshe"];
+var audiA6Years = [1999,2000,2001,2003,2004,2005,2006,2007];
+var audiModels = ["A6","A4","V2","assdas7","pirunsz90"];
+var audiA61999 = ["zDf","asdg","asdga","adgzdg","asgf"];
 
 app.get("/brands",function(req,res){
     res.send(brands);
@@ -660,7 +664,6 @@ app.get("/models/:name",function(req,res){
     });
 });
 app.get("/search",function(req,res){
-    console.log(req.query);
     var searchSection = req.query.searchSection;
     var searchText = req.query.searchText;
     if (searchSection) {
@@ -700,6 +703,25 @@ app.get("/search",function(req,res){
             article: searchArticle
         }]);
     }
+});
+app.get("/cars",function(req,res){
+    console.log(1);
+    res.send(cars);
+});
+
+
+
+app.get("/carModels/:car",function(req,res){
+    console.log(req.params.car);
+    res.send(audiModels);
+});
+app.get("/carModelYears/:model",function(req,res){
+    console.log(req.params.model);
+    res.send(audiA6Years);
+});
+app.get("/carModelYearModifications/:year",function(req,res){
+    console.log(req.params.year);
+    res.send(audiA61999);
 });
 
 console.log("Server running on port 3000...");

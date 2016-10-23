@@ -1,0 +1,7 @@
+<section class="container">
+    <ul class="list-unstyled">
+        <li ng-repeat="brand in brands" class="col-sm-2 col-xs-4">
+            <a ui-sref="home.cars.models({car:brand})" ng-bind="brand"></a>
+        </li>
+    </ul>
+</section>

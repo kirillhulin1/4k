@@ -262,6 +262,74 @@ app.config(["$stateProvider",function($stateProvider){
                 }
             }
         })
+        .state("home.cars", {
+            url:"/cars",
+            views: {
+                "main@":{
+                    templateUrl: "templates/cars.html",
+                    controller: "CarsCtrl"
+                }
+            },
+            resolve: {
+                carsData: function(CarsResource){
+                    return CarsResource.query().$promise;
+                }
+            },
+            data: {
+                displayName: 'Подбор шин по автомобилю'
+            }
+        })
+        .state("home.cars.models", {
+            url:"/:car",
+            views: {
+                "main@":{
+                    templateUrl: "templates/carModels.html",
+                    controller: "CarModelsCtrl"
+                }
+            },
+            resolve: {
+                brandData: function(CarModelsResource,$stateParams){
+                    return CarModelsResource.query({car:$stateParams.car}).$promise;
+                }
+            },
+            data: {
+                displayName: 'Подбор шин по модели автомобиля'
+            }
+        })
+        .state("home.cars.models.years", {
+            url:"/:model",
+            views: {
+                "main@":{
+                    templateUrl: "templates/carModelYears.html",
+                    controller: "CarModelYearsCtrl"
+                }
+            },
+            resolve: {
+                modelData: function(CarModelYearsResource,$stateParams){
+                    return CarModelYearsResource.query({model:$stateParams.model}).$promise;
+                }
+            },
+            data: {
+                displayName: 'Подбор шин по году выпуска'
+            }
+        })
+        .state("home.cars.models.years.modifications", {
+            url:"/:year",
+            views: {
+                "main@":{
+                    templateUrl: "templates/carModelYearModifications.html",
+                    controller: "CarModelYearModificationsCtrl"
+                }
+            },
+            resolve: {
+                yearData: function(CarModelYearModificationsResource,$stateParams){
+                    return CarModelYearModificationsResource.query({year:$stateParams.year}).$promise;
+                }
+            },
+            data: {
+                displayName: 'Подбор шин по модификации'
+            }
+        })
 }]);
 
 

@@ -1,9 +1,13 @@
 .score-block {
-  margin-top: 2em;
   border: 1px solid #ddd;
   padding: 0.7em;
   box-sizing: border-box;
   text-align: center;
+}
+@media all and (min-width: $sm-size) {
+  .score-block {
+    margin-top: 2em;
+  }
 }
 .score-block__total-score-wrap {
   width: 153px;

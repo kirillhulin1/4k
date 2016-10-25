@@ -5,3 +5,16 @@
 .view-settings {
   margin: 2em 0 1em;
 }
+.view-settings__view {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.view-settings__view_active {
+  opacity: 1;
+  cursor: default;
+}
+@media all and (max-width: $sm-size - 1) {
+  .view-settings__show {
+    display: block !important;
+  }
+}

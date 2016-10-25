@@ -15,8 +15,8 @@
 .model-card {
   padding: 0.7em;
   border: 1px solid #ddd;
-  margin-top: 1.5em;
-
+  margin-bottom: 1.5em;
+  position: relative;
   h2 {
     display: inline-block;
   }
@@ -31,6 +31,16 @@
     box-sizing: border-box;
 
   }
+}
+.model-card__label {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+.model-card__logo {
+  margin-left: 2em;
+  position: relative;
+  z-index: 3;
 }
 .model-card__picture {
   overflow: hidden;
@@ -70,6 +80,8 @@
 .model-card__title {
   font-size: 14px;
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  position: relative;
+  z-index: 3;
 }
 @media all and (min-width: $sm-size) {
   .model-card__title {
@@ -83,10 +95,12 @@
 }
 .model-card__scorebox {
   border-bottom: 1px solid #ddd;
+
   width: calc(100% + 1.4em);
   margin: 0 -0.7em;
   background-color: white;
   padding: 0.7em 0.7em;
+/*  font-size: 120%;*/
 }
 .model-card .model__quantity {
   width: 40px;
@@ -107,4 +121,9 @@
   text-overflow: ellipsis !important;
   overflow: hidden !important;
   white-space: nowrap !important;
+}
+.model-card__scorebox .score-block__score-wrap {
+  position: relative;
+  top: 3px;
+  float: right;
 }

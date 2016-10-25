@@ -632,6 +632,74 @@ var cars = ["audi","bmw","mersedes","toyota","ford","ferrari","fiat","mazda","po
 var audiA6Years = [1999,2000,2001,2003,2004,2005,2006,2007];
 var audiModels = ["A6","A4","V2","assdas7","pirunsz90"];
 var audiA61999 = ["zDf","asdg","asdga","adgzdg","asgf"];
+var audiA61999xxx = {
+    original: {
+        diameter: "16",
+        axis: [
+            {
+                size: "225/60R16",
+                applicability: "обе оси"
+            }
+        ]
+
+    },
+    variants: [
+        {
+            diameter: "17",
+            axis: [
+                {
+                    size: "225/55R17",
+                    applicability: "обе оси"
+                }
+            ]
+
+        },
+        {
+            diameter: "18",
+            axis: [
+                {
+                    size: "225/50R18",
+                    applicability: "обе оси"
+                }
+            ]
+
+        },
+        {
+            diameter: "18",
+            axis: [
+                {
+                    size: "245/45R18",
+                    applicability: "обе оси"
+                }
+            ]
+
+        },
+        {
+            diameter: "19",
+            axis: [
+                {
+                    size: "255/40R19",
+                    applicability: "обе оси"
+                }
+            ]
+
+        },
+        {
+            diameter: "20",
+            axis: [
+                {
+                    size: "255/35R20",
+                    applicability: "левая ось"
+                },
+                {
+                    size: "255/40R20",
+                    applicability: "правая ось"
+                }
+            ]
+
+        }
+    ]
+};
 
 app.get("/brands",function(req,res){
     res.send(brands);
@@ -723,5 +791,10 @@ app.get("/carModelYearModifications/:year",function(req,res){
     console.log(req.params.year);
     res.send(audiA61999);
 });
+app.get("/carModelYearModificationResult/:modification",function(req,res){
+
+    res.send(audiA61999xxx);
+});
+
 
 console.log("Server running on port 3000...");

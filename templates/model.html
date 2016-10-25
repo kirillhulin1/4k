@@ -1,7 +1,7 @@
 <article>
     <div class="container">
         <uib-tabset active="index" justified="true">
-            <uib-tab index="0" heading="В наличии">
+            <uib-tab index="0" heading="В наличии" template-url="templates/model-tab-heading.html">
                 <section class="in-stock">
                     <div>
                         <p>Выберите подходящий размер в таблице:</p>
@@ -31,7 +31,7 @@
                     </div>
                 </section>
             </uib-tab>
-            <uib-tab index="1" heading="Нет в наличии">
+            <uib-tab index="1" heading="Нет в наличии" template-url="">
                 <section class="in-stock">
                     <div>
                         <p>Выберите подходящий размер в таблице:</p>
@@ -61,7 +61,7 @@
                     </div>
                 </section>
             </uib-tab>
-            <uib-tab index="2" ng-click="changeState('description');" heading="Описание">
+            <uib-tab index="2" ng-click="changeState('description');" heading="Описание" template-url="">
                 <section class="description">
                     <section class="col-sm-4 col-md-3">
                         <img class="description__logo" src="dest/images/brand1.png">
@@ -119,7 +119,7 @@
                                     <p class="model__characteristic">Страна производства: <span>Япония</span></p>
                                 </section>
                                 <section class="col-sm-6">
-                                    <section class="model__advantages">
+                                    <section class="model__advantages hidden-xs">
                                         <div class="row model__advantage">
                                             <div class="col-sm-3 col-md-2" >
                                                 <img src="dest/images/adv1.png">
@@ -151,12 +151,12 @@
                                     <section class="model__buy">
                                         <section class="model__price">50 р.</section>
                                         <section class="row">
-                                            <section class="col-sm-7 col-md-6">
+                                            <section class="col-xs-7 col-md-6">
                                                 <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
                                                 <input type="text" class="form-control model__quantity">
                                                 <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
                                             </section>
-                                            <section class="col-sm-5 col-md-6">
+                                            <section class="col-xs-5 col-md-6">
                                                 <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
                                             </section>
                                         </section>
@@ -190,8 +190,8 @@
                     </section>
                 </section>
             </uib-tab>
-            <uib-tab index="3" heading="Тесты и обзоры(3)">Long Labeled Justified content</uib-tab>
-            <uib-tab index="4" ng-click="showComments()" heading="Отзывы(3)" >
+            <uib-tab index="3" heading="Тесты и обзоры(3)" template-url="">Long Labeled Justified content</uib-tab>
+            <uib-tab index="4" ng-click="showComments()" heading="Отзывы(3)" template-url="">
                 <section class="comments" ng-init="showComments()">
                     <div>
                         <div class="text-right comments__button">

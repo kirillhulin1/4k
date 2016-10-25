@@ -10,19 +10,23 @@
                     </select>
                 </div>
                 <div class="form-group col-sm-6 text-right hidden-xs">
-                    <a href="#"></a><a href="#"></a>
+                    <a href="" class="view-settings__view view-settings__view_active" ng-click="changeView($event);"><img src="dest/images/plitka.png"></a>
+                    <a href="" class="view-settings__view" ng-click="changeView($event);"><img src="dest/images/list.png"></a>
                 </div>
             </form>
 
         </div>
     </nav>
-    <section>
-        <article class="model container">
-            <div class="row">
+    <section class="container hidden-xs" ng-class="{'hidden': view!='list'}">
+        <article class="model clearfix">
+            <div>
                 <section class="col-sm-3 model__left">
                     <img src="dest/images/model-image-1.png" class="model__picture">
                     <img src="dest/images/season-winter.png" class="model__season">
-
+                    <section class="score-block__total-score-wrap">
+                        <section class="score-block__total-score" ng-style="{width:(score.total | score)}"></section>
+                    </section>
+                    <a class="score-block__anchor" ui-sref="home.tires.brand.model({brand:brand,model:model,tab:'comments'})">Показать отзывы (20)</a>
                 </section>
                 <section class="col-sm-9 model__right">
                     <div class="row">
@@ -91,8 +95,8 @@
                 </section>
             </div>
         </article>
-        <article class="model model_top container">
-            <div class="row">
+        <article class="model clearfix model_top">
+            <div>
                 <section class="col-sm-3 model__left">
                     <img src="dest/images/model-image-1.png" class="model__picture">
                     <img src="dest/images/season-winter.png" class="model__season">
@@ -165,8 +169,8 @@
                 </section>
             </div>
         </article>
-        <article class="model model_new container">
-            <div class="row">
+        <article class="model clearfix model_new">
+            <div>
                 <section class="col-sm-3 model__left">
                     <img src="dest/images/model-image-1.png" class="model__picture">
                     <img src="dest/images/season-winter.png" class="model__season">
@@ -240,10 +244,11 @@
             </div>
         </article>
     </section>
-    <section class="container" style="padding: 0">
+    <section class="container view-settings__show" ng-class="{'hidden': view!='tile'}" style="padding: 0">
         <div class="col-lg-3 col-md-4 col-sm-6 model-card__wrapper">
             <article class="model-card model-card_new">
-                <p><img src="dest/images/brand_bridgestone.png"></p>
+                <img class="model-card__label" src="dest/images/new-model.png">
+                <p class="model-card__logo"><img src="dest/images/brand_bridgestone.png"></p>
                 <a href="#" class="model-card__title">Bridgestone Blizzak VRX</a>
                 <p class="model__characteristic"><span>185/55R15</span> <span>82 (475 кг)</span> <span>S (180 км/ч)</span> <span>шип.</span></p>
                 <section class="model-card__picture">
@@ -266,17 +271,23 @@
 
                 </section>
                 <section class="model-card__scorebox">
-                    <a href="#">отзывы(20)</a>
+                    <section class="col-xs-4"><a href="#"><i class="glyphicon glyphicon-comment"></i> 20</a></section>
+                    <section class="col-xs-8">
+                        <section class="score-block__score-wrap">
+                            <section class="score-block__score" ng-style="{width:(score.par1 | score)}"></section>
+                        </section>
+                    </section>
+                    <section class="clearfix"></section>
                 </section>
                 <section class="model-card__pricebox">
                     <section class="model__price">50 р.</section>
                     <section class="row">
-                        <section class="col-sm-7 col-md-7">
+                        <section class="col-xs-7 col-md-7">
                             <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
                             <input type="text" class="form-control model__quantity">
                             <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
                         </section>
-                        <section class="col-sm-5 col-md-5">
+                        <section class="col-xs-5 col-md-5">
                             <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
                         </section>
                     </section>

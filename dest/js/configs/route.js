@@ -330,6 +330,38 @@ app.config(["$stateProvider",function($stateProvider){
                 displayName: 'Подбор шин по модификации'
             }
         })
+        .state("home.cars.models.years.modifications.result", {
+            url:"/:modification",
+            views: {
+                "main@":{
+                    templateUrl: "templates/carModelYearModificationResult.html",
+                    controller: "CarModelYearModificationResultCtrl"
+                }
+            },
+            resolve: {
+                resultData: function(CarModelYearModificationResultResource,$stateParams){
+                    return CarModelYearModificationResultResource.get({modification:$stateParams.modification}).$promise;
+                }
+            },
+            data: {
+                displayName: 'Подбор шин по модификации'
+            }
+        })
+        .state("home.warranty", {
+            url:"/warranty",
+            views: {
+                "main@":{
+                    templateUrl: "templates/warranty.html",
+                    controller: "WarrantyCtrl"
+                },
+                "main-top@": {
+                    templateUrl: "templates/warranty-banner.html"
+                }
+            },
+            data: {
+                displayName: "Гарантия на шины"
+            }
+        })
 }]);
 
 

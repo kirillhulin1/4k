@@ -1,5 +1,13 @@
+
 .description {
-  margin-top: 2em;
+  min-width: 300px;
+  width: 50%;
+  margin: 2em auto 0;
+}
+@media all and (min-width: $sm-size) {
+  .description {
+    width: 100%;
+  }
 }
 .description__logo {
 
@@ -11,7 +19,8 @@
   margin-top: 2em;
 }
 .description__image {
-  width: 80%;
+  width: 60%;
+  margin: 2em 0;
 }
 .description__season {
   position: absolute;

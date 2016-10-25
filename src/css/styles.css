@@ -2463,6 +2463,12 @@ h1 {
   position: relative;
   padding: 16px;
 }
+.model__left .score-block__total-score-wrap {
+  margin-top: 1em;
+}
+.model__left .score-block__anchor {
+  margin-top: 0;
+}
 
 .model__picture {
   min-width: 140px;
@@ -2550,7 +2556,7 @@ h1 {
   text-align: center;
   font-size: 19px;
   color: #fb7920;
-  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  font-family: "SegoeUIBold", Verdana, sans-serif;
   margin-bottom: 0.4em;
 }
 
@@ -2613,6 +2619,12 @@ h1 {
   background-color: #e6f9cc;
 }
 
+.model__tab-heading {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
+}
+
 .view-settings__label {
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
 }
@@ -2621,6 +2633,21 @@ h1 {
   margin: 2em 0 1em;
 }
 
+.view-settings__view {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.view-settings__view_active {
+  opacity: 1;
+  cursor: default;
+}
+
+@media all and (max-width: 767px) {
+  .view-settings__show {
+    display: block !important;
+  }
+}
 @media all and (max-width: 768px) {
   .model-card__wrapper {
     width: 50%;
@@ -2638,7 +2665,8 @@ h1 {
 .model-card {
   padding: 0.7em;
   border: 1px solid #ddd;
-  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  position: relative;
 }
 .model-card h2 {
   display: inline-block;
@@ -2652,6 +2680,18 @@ h1 {
   padding: 10px 14px;
   line-height: 1.2;
   box-sizing: border-box;
+}
+
+.model-card__label {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+
+.model-card__logo {
+  margin-left: 2em;
+  position: relative;
+  z-index: 3;
 }
 
 .model-card__picture {
@@ -2694,6 +2734,8 @@ h1 {
 .model-card__title {
   font-size: 14px;
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 @media all and (min-width: 768px) {
@@ -2712,6 +2754,7 @@ h1 {
   margin: 0 -0.7em;
   background-color: white;
   padding: 0.7em 0.7em;
+  /*  font-size: 120%;*/
 }
 
 .model-card .model__quantity {
@@ -2736,6 +2779,12 @@ h1 {
   white-space: nowrap !important;
 }
 
+.model-card__scorebox .score-block__score-wrap {
+  position: relative;
+  top: 3px;
+  float: right;
+}
+
 .brands {
   margin-top: 2em;
 }
@@ -2752,9 +2801,16 @@ h1 {
 }
 
 .description {
-  margin-top: 2em;
+  min-width: 300px;
+  width: 50%;
+  margin: 2em auto 0;
 }
 
+@media all and (min-width: 768px) {
+  .description {
+    width: 100%;
+  }
+}
 .description__logo {
   max-width: 100%;
 }
@@ -2766,7 +2822,8 @@ h1 {
 }
 
 .description__image {
-  width: 80%;
+  width: 60%;
+  margin: 2em 0;
 }
 
 .description__season {
@@ -2787,13 +2844,17 @@ h1 {
 }
 
 .score-block {
-  margin-top: 2em;
   border: 1px solid #ddd;
   padding: 0.7em;
   box-sizing: border-box;
   text-align: center;
 }
 
+@media all and (min-width: 768px) {
+  .score-block {
+    margin-top: 2em;
+  }
+}
 .score-block__total-score-wrap {
   width: 153px;
   height: 27px;
@@ -4077,6 +4138,61 @@ h4.oplata__description {
   .search__section {
     float: right;
   }
+}
+.carousel {
+  overflow: hidden;
+}
+
+.carousel__content {
+  text-align: left;
+  width: 10000px;
+}
+
+.carousel__item {
+  position: relative;
+  width: 100px;
+  top: 2px;
+}
+
+.carousel__arrow {
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  line-height: 36px;
+  text-align: center;
+  top: 0;
+  width: 15px;
+  cursor: pointer;
+}
+
+.carousel__arrow i {
+  font-size: 100%;
+  color: #2E67C2;
+}
+
+.carousel__arrow_left {
+  left: 0;
+}
+
+.carousel__arrow_right {
+  right: 0;
+}
+
+.carousel__arrow_hidden .carousel__arrow {
+  cursor: default;
+  color: white;
+}
+
+.warranty {
+  text-align: center;
+}
+.warranty img {
+  width: 100%;
+  max-width: 800px;
+  margin: 1em 0;
+}
+.warranty p {
+  text-align: justify;
 }
 
 /*# sourceMappingURL=styles.css.map */

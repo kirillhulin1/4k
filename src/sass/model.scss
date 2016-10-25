@@ -21,6 +21,12 @@
 .model__left {
   position: relative;
   padding: 16px;
+  .score-block__total-score-wrap {
+    margin-top: 1em;
+  }
+  .score-block__anchor {
+    margin-top: 0;
+  }
 }
 .model__picture {
   min-width: 140px;
@@ -112,7 +118,7 @@
   text-align: center;
   font-size: 19px;
   color: $orange;
-  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  font-family: "SegoeUIBold", Verdana, sans-serif;
   margin-bottom: 0.4em;
 }
 @media all and (min-width: $sm-size) {
@@ -166,4 +172,9 @@
 .model-card_new {
   border: 1px solid #cadeaf !important;
   background-color: #e6f9cc;
+}
+.model__tab-heading {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
 }

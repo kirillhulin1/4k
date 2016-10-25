@@ -1,4 +1,6 @@
-app.controller("CarsCtrl",["carsData","$scope",function (carsData, $scope) {
+app.controller("CarsCtrl",["carsData","$scope","$state",function (carsData, $scope, $state) {
     $scope.brands = carsData;
+
+
 }]);
 

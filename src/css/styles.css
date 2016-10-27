@@ -2843,6 +2843,28 @@ h1 {
   padding-bottom: 2em;
 }
 
+.description__controls:first-child {
+  margin-top: 2em;
+}
+
+@media all and (min-width: 768px) {
+  .description__controls:first-child {
+    margin-top: 0;
+  }
+}
+.description__list {
+  margin-top: 1em;
+  padding: 0;
+  list-style-image: url(images/arrow.png);
+}
+.description__list li {
+  margin-left: 25px;
+}
+
+.description__preview {
+  padding-top: 1em;
+}
+
 .score-block {
   border: 1px solid #ddd;
   padding: 0.7em;
@@ -4193,6 +4215,11 @@ h4.oplata__description {
 }
 .warranty p {
   text-align: justify;
+}
+
+.model-tab .nav > li > a {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -700,6 +700,319 @@ var audiA61999xxx = {
         }
     ]
 };
+var tiresOfSize = [
+    {
+        "id": "11241241",
+        "label": "new",
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": 3.5,
+        "comments": 20,
+        "price": 60,
+        "available": 13,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            },
+            {
+                "picture": "dest/images/adv3.png",
+                "name": "Отправка в течение 24 часов",
+                "text": "с собственного склада"
+            }
+        ],
+        reviews: [
+            {
+                "score": 4,
+                "name": "За рулем",
+                "src": ""
+            },
+            {
+                "score": 3,
+                "name": "Авто Центр 2015",
+                "src": ""
+            },
+            {
+                "score": 3,
+                "name": "Авто Центр 2016",
+                "src": ""
+            }
+
+        ]
+    },
+    {
+        "id": "11241242",
+        "label": "top",
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "summer",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 61,
+        "available": 13,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241243",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 62,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241244",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 63,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241244",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 64,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241244",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 65,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241244",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 66,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 50,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241244",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 67,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "3.5",
+        "comments": 20,
+        "price": 50,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    },
+    {
+        "id": "11241244",
+        "label": false,
+        "brandLogo": "dest/images/brand_bridgestone.png",
+        "brandName": "bridgestone",
+        "name": "Bridgestone Blizzak VRX",
+        "width": 185,
+        "height": 55,
+        "diameter": 15,
+        "loadIndex": "82 (475 кг)",
+        "speedIndex": "S (180 км/ч)",
+        "studded": "шип.",
+        "country": "Япония",
+        "season": "winter",
+        "picture": "dest/images/model-image-1.png",
+        "score": "4",
+        "comments": 20,
+        "price": 68,
+        "available": 2,
+        "advantages": [
+            {
+                "picture": "dest/images/adv1.png",
+                "name": "Полная гарантия от Bridgestone",
+                "text": "при покупке от двух шин"
+            },
+            {
+                "picture": "dest/images/adv2.png",
+                "name": "Гарантия производителя",
+                "text": "заводская гарантия 5 лет"
+            }
+        ]
+    }
+];
 
 app.get("/brands",function(req,res){
     res.send(brands);
@@ -776,6 +1089,11 @@ app.get("/cars",function(req,res){
     console.log(1);
     res.send(cars);
 });
+app.get("/tiresOfSize/:width/:height/:diameter",function(req,res){
+    console.log(req.params);
+    res.send(tiresOfSize);
+});
+
 
 
 

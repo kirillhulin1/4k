@@ -3,22 +3,21 @@
     <article class="modal-cart__item" ng-repeat="item in items">
         <section class="modal-cart__description">
             <section class="col-xs-4 modal-cart__left">
-                <img ng-src="dest/images/{{item.picture}}" class="modal-cart__image">
-                <img ng-if = "item.type=='summer'" ng-src="dest/images/season-summer.png" class="modal-cart__season">
-                <img ng-if = "item.type=='winter'" ng-src="dest/images/season-winter.png" class="modal-cart__season">
-                <img ng-if = "item.type=='all'" ng-src="dest/images/season-all.png" class="modal-cart__season">
+                <img ng-src="{{item.picture}}" class="modal-cart__image">
+                <img ng-src="dest/images/season-{{item.season}}.png" class="modal-cart__season">
+
             </section>
             <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
                 <h3 class="modal-cart__title" ng-bind="item.name"></h3>
                 <p>
-                    <a href="#" class="modal-cart__parameters">
+                    <a ui-sref="home.tires.brand.model({brand:item.brand,model:item.name})" class="modal-cart__parameters">
                         <span ng-bind="item.width"></span>/
-                        <span ng-bind="item.height"></span>&nbsp;
-                        R<span ng-bind="item.diameter"></span>
-                        <span ng-bind="item.something"></span>
+                        <span ng-bind="item.height"></span>
+                        R<span ng-bind="item.diameter"></span>&nbsp;
+                        <span ng-bind="item.loadIndex"></span>&nbsp;
+                        <span ng-bind="item.speedIndex"></span>
                     </a>
                 </p>
-                <p class="modal-cart__articul"><small>Арт: <span ng-bind="item.articul"></span></small></p>
             </section>
             <div class="clearfix"></div>
             <a href="#" class="modal-cart__trash" ng-click="deleteItem(item.id)"><i class="glyphicon glyphicon-trash"></i></a>

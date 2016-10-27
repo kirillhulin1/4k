@@ -34,7 +34,7 @@ app.config(["$stateProvider",function($stateProvider){
                 }
             }
         })
-        .state("home.tires.size",{
+        .state("home.size",{
             url:"/:width-:height-:diameter",
             views: {
                 "main@":{
@@ -44,6 +44,15 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: 'Шины'
+            },
+            resolve: {
+                sizeData: function(TiresOfSizeResource,$stateParams){
+                    return TiresOfSizeResource.query({
+                        width:$stateParams.width,
+                        height:$stateParams.height,
+                        diameter:$stateParams.diameter
+                    });
+                }
             }
         })
         .state("home.tires",{
@@ -200,8 +209,8 @@ app.config(["$stateProvider",function($stateProvider){
                 displayName: "Контакты"
             }
         })
-        .state("home.oplata-i-dostavka", {
-            url:"/oplata-i-dostavka",
+        .state("home.oplata-dostavka", {
+            url:"/oplata-dostavka",
             views: {
                 "main@":{
                     templateUrl: "templates/oplata-i-dostavka.html",

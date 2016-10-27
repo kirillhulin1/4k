@@ -4,10 +4,13 @@
             <form class="form-inline row">
                 <div class="form-group col-sm-6">
                     <label for="goods_sort" class="view-settings__label">Cортировка:</label>
-                    <select class="form-control view-settings__label" id="goods_sort">
-                        <option>Плитка</option>
-                        <option>Список</option>
+                    <select class="form-control view-settings__label" id="goods_sort" ng-model="sortParameter" ng-change="changeOrder();">
+                        <option value="name">Название</option>
+                        <option value="price">Цена</option>
+                        <option value="comments">Количество комментариев</option>
+                        <option value="score">Оценка пользователей</option>
                     </select>
+                    <button ng-click="sortOrder = !sortOrder; changeOrder();">sdf</button>
                 </div>
                 <div class="form-group col-sm-6 text-right hidden-xs">
                     <a href="" class="view-settings__view view-settings__view_active" ng-click="changeView($event);"><img src="dest/images/plitka.png"></a>
@@ -18,251 +21,96 @@
         </div>
     </nav>
     <section class="container hidden-xs" ng-class="{'hidden': view!='list'}">
-        <article class="model clearfix">
+        <article class="model clearfix"
+                 dir-paginate = "tire in tires | itemsPerPage : 6"
+                 ng-class="{'model_top': tire.label=='top','model_new': tire.label=='new'}">
             <div>
                 <section class="col-sm-3 model__left">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
+                    <img ng-src="{{tire.picture}}" class="model__picture">
+                    <img ng-src="dest/images/season-{{tire.season}}.png" class="model__season">
+                    <img ng-if="tire.label == 'top'" src="dest/images/hot_0.png" class="model__label">
+                    <img ng-if="tire.label == 'new'" src="dest/images/new-model.png" class="model__label">
                     <section class="score-block__total-score-wrap">
-                        <section class="score-block__total-score" ng-style="{width:(score.total | score)}"></section>
+                        <section class="score-block__total-score" ng-style="{width:(tire.score | score)}"></section>
                     </section>
-                    <a class="score-block__anchor" ui-sref="home.tires.brand.model({brand:brand,model:model,tab:'comments'})">Показать отзывы (20)</a>
+                    <a class="score-block__anchor" ui-sref="home.tires.brand.model({brand:tire.brandName,model:tire.name,tab:'comments'})">Показать отзывы (<span ng-bind="tire.comments">20</span>)</a>
                 </section>
-                <section class="col-sm-9 model__right">
+                <section style="min-height: 300px" class="col-sm-9 model__right">
                     <div class="row">
                         <section class="col-sm-6">
-                            <img src="dest/images/brand_bridgestone.png">
-                            <h2 class="model__title"><a href="#">Bridgestone Blizzak VRX</a></h2>
-                            <p class="model__characteristic">Размер: <span>185/55R15</span></p>
-                            <p class="model__characteristic">Индекс нагрузки: <span>82 (475 кг)</span></p>
-                            <p class="model__characteristic">Индекс скорости: <span>S (180 км/ч)</span></p>
-                            <p class="model__characteristic">Шипованная: <span>шип.</span></p>
-                            <p class="model__characteristic">Страна производства: <span>Япония</span></p>
+                            <img ng-src="{{tire.brandLogo}}">
+                            <h2 class="model__title"><a ui-sref="home.tires.brand({brand:tire.brandName})" ng-bind="tire.brandName"></a></h2>
+                            <p class="model__characteristic">Размер: <span ng-bind="tire.width"></span>/<span ng-bind="tire.height"></span>R<span ng-bind="tire.diameter"></span></p>
+                            <p class="model__characteristic">Индекс нагрузки: <span ng-bind="tire.loadIndex"></span></p>
+                            <p class="model__characteristic">Индекс скорости: <span ng-bind="tire.speedIndex"></span></p>
+                            <p class="model__characteristic">Шипованная: <span ng-bind="tire.studded"></span></p>
+                            <p class="model__characteristic">Страна производства: <span ng-bind="tire.country"></span></p>
                         </section>
                         <section class="col-sm-6">
-                            <section class="model__advantages">
-                                <div class="row model__advantage">
+                            <section class="model__advantages" ng-if="tire.advantages.length>0">
+                                <div class="row model__advantage" ng-repeat="advantage in tire.advantages">
                                     <div class="col-sm-3 col-md-2" >
-                                        <img src="dest/images/adv1.png">
+                                        <img ng-src="{{advantage.picture}}">
                                     </div>
                                     <div class="col-sm-9 col-md-10">
-                                        <p><strong>Полная гарантия от Bridgestone</strong></p>
-                                        <p>при покупке от двух шин</p>
-                                    </div>
-                                </div>
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2" >
-                                        <img src="dest/images/adv2.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Гарантия производителя</strong></p>
-                                        <p>заводская гарантия 5 лет</p>
-                                    </div>
-                                </div>
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2">
-                                        <img src="dest/images/adv3.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Отправка в течение 24 часов</strong></p>
-                                        <p>с собственного склада</p>
+                                        <p><strong ng-bind="advantage.name"></strong></p>
+                                        <p ng-bind="advantage.text"></p>
                                     </div>
                                 </div>
                             </section>
                             <section class="model__buy">
-                                <section class="model__price">50 р.</section>
+                                <section class="model__price"><span ng-bind="tire.price"></span> р.</section>
                                 <section class="row">
                                     <section class="col-sm-7 col-md-6">
-                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                                        <input type="text" class="form-control model__quantity">
-                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        <button class="btn btn-reverse model__quantity-btn model__quantity-btn_minus" ng-click="tire.amount = tire.amount - 1" ng-disabled="tire.amount==1"><i class="glyphicon glyphicon-minus"></i></button>
+                                        <input type="text" class="form-control model__quantity" ng-model="tire.amount">
+                                        <button class="btn btn-reverse model__quantity-btn model__quantity-btn_plus" ng-click="tire.amount = tire.amount + 1" ng-disabled="tire.amount==tire.available"><i class="glyphicon glyphicon-plus"></i></button>
                                     </section>
                                     <section class="col-sm-5 col-md-6">
-                                        <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+                                        <button class="btn btn-success form-control" ng-click="addToCart(tire);"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
                                     </section>
                                 </section>
-                                <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
+                                <p class="model__in-stock">Доступно: <span class="model__stockpile" ng-bind="tire.available | maxNumberShown"></span> шт.</p>
                             </section>
                         </section>
 
                     </div>
-                    <section class="model__reviews">
+                    <section class="model__reviews" >
                         <ul class="list-inline">
-                            <li><span class="model__score">4</span><a href="#">За рулем</a></li>
-                            <li><span class="model__score">3</span><a href="#">Авто Центр 2015</a></li>
+                            <li ng-repeat="review in tire.reviews"><span class="model__score" ng-bind="review.score"></span><a ng-href="review.src" ng-bind="review.name"></a></li>
                         </ul>
                     </section>
                 </section>
             </div>
         </article>
-        <article class="model clearfix model_top">
-            <div>
-                <section class="col-sm-3 model__left">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
-                    <img src="dest/images/hot_0.png" class="model__label hidden-xs">
-                </section>
-                <section class="col-sm-9 model__right">
-                    <div class="row">
-                        <section class="col-sm-6">
-                            <img src="dest/images/brand_bridgestone.png">
-                            <h2 class="model__title"><a href="#">Bridgestone Blizzak VRX</a></h2>
-                            <p class="model__characteristic">Размер: <span>185/55R15</span></p>
-                            <p class="model__characteristic">Индекс нагрузки: <span>82 (475 кг)</span></p>
-                            <p class="model__characteristic">Индекс скорости: <span>S (180 км/ч)</span></p>
-                            <p class="model__characteristic">Шипованная: <span>шип.</span></p>
-                            <p class="model__characteristic">Страна производства: <span>Япония</span></p>
-                        </section>
-                        <section class="col-sm-6">
-                            <section class="model__advantages">
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2" >
-                                        <img src="dest/images/adv1.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Полная гарантия от Bridgestone</strong></p>
-                                        <p>при покупке от двух шин</p>
-                                    </div>
-                                </div>
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2" >
-                                        <img src="dest/images/adv2.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Гарантия производителя</strong></p>
-                                        <p>заводская гарантия 5 лет</p>
-                                    </div>
-                                </div>
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2">
-                                        <img src="dest/images/adv3.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Отправка в течение 24 часов</strong></p>
-                                        <p>с собственного склада</p>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="model__buy">
-                                <section class="model__price">50 р.</section>
-                                <section class="row">
-                                    <section class="col-sm-7 col-md-6">
-                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                                        <input type="text" class="form-control model__quantity">
-                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                                    </section>
-                                    <section class="col-sm-5 col-md-6">
-                                        <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
-                                    </section>
-                                </section>
-                                <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
-                            </section>
-                        </section>
-
-                    </div>
-                    <section class="model__reviews">
-                        <ul class="list-inline">
-                            <li><span class="model__score">4</span><a href="#">За рулем</a></li>
-                            <li><span class="model__score">3</span><a href="#">Авто Центр 2015</a></li>
-                        </ul>
-                    </section>
-                </section>
-            </div>
-        </article>
-        <article class="model clearfix model_new">
-            <div>
-                <section class="col-sm-3 model__left">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
-                    <img src="dest/images/new-model.png" class="model__label hidden-xs">
-                </section>
-                <section class="col-sm-9 model__right">
-                    <div class="row">
-                        <section class="col-sm-6">
-                            <img src="dest/images/brand_bridgestone.png">
-                            <h2 class="model__title"><a href="#">Bridgestone Blizzak VRX</a></h2>
-                            <p class="model__characteristic">Размер: <span>185/55R15</span></p>
-                            <p class="model__characteristic">Индекс нагрузки: <span>82 (475 кг)</span></p>
-                            <p class="model__characteristic">Индекс скорости: <span>S (180 км/ч)</span></p>
-                            <p class="model__characteristic">Шипованная: <span>шип.</span></p>
-                            <p class="model__characteristic">Страна производства: <span>Япония</span></p>
-                        </section>
-                        <section class="col-sm-6">
-                            <section class="model__advantages">
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2" >
-                                        <img src="dest/images/adv1.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Полная гарантия от Bridgestone</strong></p>
-                                        <p>при покупке от двух шин</p>
-                                    </div>
-                                </div>
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2" >
-                                        <img src="dest/images/adv2.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Гарантия производителя</strong></p>
-                                        <p>заводская гарантия 5 лет</p>
-                                    </div>
-                                </div>
-                                <div class="row model__advantage">
-                                    <div class="col-sm-3 col-md-2">
-                                        <img src="dest/images/adv3.png">
-                                    </div>
-                                    <div class="col-sm-9 col-md-10">
-                                        <p><strong>Отправка в течение 24 часов</strong></p>
-                                        <p>с собственного склада</p>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="model__buy">
-                                <section class="model__price">50 р.</section>
-                                <section class="row">
-                                    <section class="col-sm-7 col-md-6">
-                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                                        <input type="text" class="form-control model__quantity">
-                                        <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                                    </section>
-                                    <section class="col-sm-5 col-md-6">
-                                        <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
-                                    </section>
-                                </section>
-                                <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
-                            </section>
-                        </section>
-
-                    </div>
-                    <section class="model__reviews">
-                        <ul class="list-inline">
-                            <li><span class="model__score">4</span><a href="#">За рулем</a></li>
-                            <li><span class="model__score">3</span><a href="#">Авто Центр 2015</a></li>
-                        </ul>
-                    </section>
-                </section>
-            </div>
-        </article>
+        <div class="clearfix"></div>
+        <dir-pagination-controls></dir-pagination-controls>
     </section>
     <section class="container view-settings__show" ng-class="{'hidden': view!='tile'}" style="padding: 0">
-        <div class="col-lg-3 col-md-4 col-sm-6 model-card__wrapper">
-            <article class="model-card model-card_new">
-                <img class="model-card__label" src="dest/images/new-model.png">
-                <p class="model-card__logo"><img src="dest/images/brand_bridgestone.png"></p>
-                <a href="#" class="model-card__title">Bridgestone Blizzak VRX</a>
-                <p class="model__characteristic"><span>185/55R15</span> <span>82 (475 кг)</span> <span>S (180 км/ч)</span> <span>шип.</span></p>
+        <div class="col-lg-3 col-md-4 col-sm-6 model-card__wrapper" dir-paginate = "tire in tires | itemsPerPage : 12">
+            <article class="model-card" ng-class="{'model-card_new':tire.label=='new','model-card_top':tire.label=='top'}">
+                <img ng-if="tire.label=='new'" class="model-card__label" src="dest/images/new-model.png">
+                <img ng-if="tire.label=='top'" class="model-card__label" src="dest/images/hot_0.png">
+                <p class="model-card__logo"><a ui-sref="home.tires.brand({brand: tire.brandName})"><img ng-src="{{tire.brandLogo}}"></a></p>
+                <a ui-sref="home.tires.brand.model({brand: tire.brandName, model: tire.name, tab: 'description'})" class="model-card__title" ng-bind="tire.name"></a>
+                <p class="model__characteristic">
+                    <span ng-bind="tire.width">185</span>/
+                    <span ng-bind="tire.height">55</span>R
+                    <span ng-bind="tire.diameter">15</span> <span ng-bind="tire.loadIndex">82 (475 кг)</span> <span ng-bind="tire.speedIndex">S (180 км/ч)</span> <span ng-bind="tire.studded">шип.</span>
+                </p>
                 <section class="model-card__picture">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
+                    <img ng-src="{{tire.picture}}" class="model__picture">
+                    <img ng-src="dest/images/season-{{tire.season}}.png" class="model__season">
+
                     <span class="model-card__favourite"><i class="glyphicon glyphicon-heart-empty"></i><i class="glyphicon glyphicon-heart"></i></span>
 
-                    <section class="model-card__reviews carousel carousel__arrow_hidden" carousel>
+                    <section ng-if="tire.reviews.length>0" class="model-card__reviews carousel carousel__arrow_hidden" carousel>
                         <section class="carousel__wrapper">
                             <ul class="list-inline carousel__content">
-                                <li class="carousel__item"><span class="model__score">4</span><a href="#">1За рулем</a></li>
-                                <li class="carousel__item"><span class="model__score">3</span><a href="#">2Авто Центр 2015</a></li>
-                                <li class="carousel__item"><span class="model__score">3</span><a href="#">3Авто Центр 2015</a></li>
-                                <li class="carousel__item"><span class="model__score">3</span><a href="#">4Авто Центр 2015</a></li>
+                                <li class="carousel__item" ng-repeat="review in tire.reviews" on-finish-render>
+                                    <span class="model__score" ng-bind="review.score"></span>
+                                    <a href="{{review.src}}" ng-bind="review.name"></a>
+                                </li>
                             </ul>
                             <div class="carousel__arrow carousel__arrow_left"><i class="glyphicon glyphicon-chevron-left"></i></div>
                             <div class="carousel__arrow carousel__arrow_right"><i class="glyphicon glyphicon-chevron-right"></i></div>
@@ -271,118 +119,31 @@
 
                 </section>
                 <section class="model-card__scorebox">
-                    <section class="col-xs-4"><a href="#"><i class="glyphicon glyphicon-comment"></i> 20</a></section>
+                    <section class="col-xs-4"><a ui-sref="home.tires.brand.model({brand: tire.brandName, model: tire.name, tab: 'comments'})"><i class="glyphicon glyphicon-comment"></i> {{tire.comments}}</a></section>
                     <section class="col-xs-8">
                         <section class="score-block__score-wrap">
-                            <section class="score-block__score" ng-style="{width:(score.par1 | score)}"></section>
+                            <section class="score-block__score" ng-style="{width:(tire.score | score)}"></section>
                         </section>
                     </section>
                     <section class="clearfix"></section>
                 </section>
                 <section class="model-card__pricebox">
-                    <section class="model__price">50 р.</section>
+                    <section class="model__price"><span ng-bind="tire.price"></span> р.</section>
                     <section class="row">
                         <section class="col-xs-7 col-md-7">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                            <input type="text" class="form-control model__quantity">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                            <button class="btn btn-reverse model__quantity-btn model__quantity-btn_minus" ng-click="tire.amount = tire.amount - 1" ng-disabled="tire.amount==1"><i class="glyphicon glyphicon-minus"></i></button>
+                            <input type="text" class="form-control model__quantity" ng-model="tire.amount">
+                            <button class="btn btn-reverse model__quantity-btn model__quantity-btn_plus" ng-click="tire.amount = tire.amount + 1" ng-disabled="tire.amount==tire.available"><i class="glyphicon glyphicon-plus"></i></button>
                         </section>
                         <section class="col-xs-5 col-md-5">
-                            <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+                            <button class="btn btn-success form-control" ng-click="addToCart(tire);"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
                         </section>
                     </section>
-                    <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
+                    <p class="model__in-stock">Доступно: <span class="model__stockpile" ng-bind="tire.available | maxNumberShown"></span> шт.</p>
                 </section>
             </article>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 model-card__wrapper">
-            <article class="model-card model-card_top">
-                <p><img src="dest/images/brand_bridgestone.png"></p>
-                <a href="#" class="model-card__title">Bridgestone Blizzak VRX</a>
-                <p class="model__characteristic"><span>185/55R15</span> <span>82 (475 кг)</span> <span>S (180 км/ч)</span> <span>шип.</span></p>
-                <section class="model-card__picture">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
-                    <span class="model-card__favourite"><i class="glyphicon glyphicon-heart-empty"></i><i class="glyphicon glyphicon-heart"></i></span>
-
-                </section>
-                <section class="model-card__scorebox">
-                    <a href="#">отзывы(20)</a>
-                </section>
-                <section class="model-card__pricebox">
-                    <section class="model__price">50 р.</section>
-                    <section class="row">
-                        <section class="col-sm-7 col-md-7">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                            <input type="text" class="form-control model__quantity">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                        </section>
-                        <section class="col-sm-5 col-md-5">
-                            <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
-                        </section>
-                    </section>
-                    <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
-                </section>
-            </article>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 model-card__wrapper">
-            <article class="model-card">
-                <p><img src="dest/images/brand_bridgestone.png"></p>
-                <a href="#" class="model-card__title">Bridgestone Blizzak VRX</a>
-                <p class="model__characteristic"><span>185/55R15</span> <span>82 (475 кг)</span> <span>S (180 км/ч)</span> <span>шип.</span></p>
-                <section class="model-card__picture">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
-                    <span class="model-card__favourite"><i class="glyphicon glyphicon-heart-empty"></i><i class="glyphicon glyphicon-heart"></i></span>
-
-                </section>
-                <section class="model-card__scorebox">
-                    <a href="#">отзывы(20)</a>
-                </section>
-                <section class="model-card__pricebox">
-                    <section class="model__price">50 р.</section>
-                    <section class="row">
-                        <section class="col-sm-7 col-md-7">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                            <input type="text" class="form-control model__quantity">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                        </section>
-                        <section class="col-sm-5 col-md-5">
-                            <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
-                        </section>
-                    </section>
-                    <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
-                </section>
-            </article>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 model-card__wrapper">
-            <article class="model-card">
-                <p><img src="dest/images/brand_bridgestone.png"></p>
-                <a href="#" class="model-card__title">Bridgestone Blizzak VRX</a>
-                <p class="model__characteristic"><span>185/55R15</span> <span>82 (475 кг)</span> <span>S (180 км/ч)</span> <span>шип.</span></p>
-                <section class="model-card__picture">
-                    <img src="dest/images/model-image-1.png" class="model__picture">
-                    <img src="dest/images/season-winter.png" class="model__season">
-                    <span class="model-card__favourite"><i class="glyphicon glyphicon-heart-empty"></i><i class="glyphicon glyphicon-heart"></i></span>
-                </section>
-                <section class="model-card__scorebox">
-                    <a href="#">отзывы(20)</a>
-                </section>
-                <section class="model-card__pricebox">
-                    <section class="model__price">50 р.</section>
-                    <section class="row">
-                        <section class="col-sm-7 col-md-7">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                            <input type="text" class="form-control model__quantity">
-                            <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                        </section>
-                        <section class="col-sm-5 col-md-5">
-                            <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
-                        </section>
-                    </section>
-                    <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
-                </section>
-            </article>
-        </div>
+        <div class="clearfix"></div>
+        <dir-pagination-controls></dir-pagination-controls>
     </section>
 </article>

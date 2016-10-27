@@ -35,4 +35,24 @@
 .description__controls {
   border-bottom: 1px solid $gray;
   padding-bottom: 2em;
+
+}
+.description__controls:first-child {
+  margin-top: 2em;
+}
+@media all and (min-width: $sm-size) {
+  .description__controls:first-child {
+    margin-top: 0;
+  }
+}
+.description__list {
+  margin-top: 1em;
+  padding: 0;
+  list-style-image: url(images/arrow.png);
+  li {
+    margin-left: 25px;
+  }
+}
+.description__preview {
+  padding-top: 1em;
 }

@@ -1,0 +1,97 @@
+.radio {
+  position: relative;
+}
+.radio__input, .radio__label {
+  touch-action: manipulation;
+}
+.radio__input {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+.radio__input:checked+label, .radio__input:not(:checked)+label {
+  position: relative;
+  height: 25px;
+  -webkit-transition: .28s ease;
+  -moz-transition: .28s ease;
+  -o-transition: .28s ease;
+  -ms-transition: .28s ease;
+  transition: .28s ease;
+  cursor: pointer;
+  font-size: 90%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  padding-left: 35px;
+  display: inline-block;
+  line-height: 25px;
+}
+.radio__label:before {
+  border-radius: 50%;
+  border: 2px solid #5a5a5a;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  -webkit-transition: .28s ease;
+  -moz-transition: .28s ease;
+  -o-transition: .28s ease;
+  -ms-transition: .28s ease;
+  transition: .28s ease;
+}
+.radio__label:after {
+  border-radius: 50%;
+  border: 2px solid #5a5a5a;
+  z-index: -1;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: .28s ease;
+  -moz-transition: .28s ease;
+  -o-transition: .28s ease;
+  -ms-transition: .28s ease;
+  transition: .28s ease;
+}
+
+
+.radio__input:checked+label:after {
+  border-radius: 50%;
+  border: 2px solid $mainColor;
+  background-color: $mainColor;
+  z-index: 0;
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
+.radio__input:checked+.radio__label:before {
+  border-radius: 50%;
+  border: 2px solid $mainColor;
+  background-color: $mainColor;
+  z-index: 0;
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
+.radio__label {
+  span {
+    position: relative;
+    top:-2px;
+  }
+}

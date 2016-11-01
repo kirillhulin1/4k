@@ -1,4 +1,4 @@
-app.directive("chooseTire",["$timeout",function($timeout){
+app.directive("chooseTire",["$timeout","$state",function($timeout,$state){
     return {
         "restrict": "E",
         "templateUrl": "templates/choose-tire.html",
@@ -94,14 +94,34 @@ app.directive("chooseTire",["$timeout",function($timeout){
                 }
             };
 
-
             scope.$watch("showMore",function(){
-                $timeout(function(){scope.$broadcast("reCalcViewDimensions");},50,false)
+                $timeout(function(){scope.$broadcast("reCalcViewDimensions");},50,false);
             });
 
+            scope.watchResults = function() {
+                var brands = [];
+                angular.forEach(scope.choosenBrands,function(brand){
+                    brands.push(brand.brand);
+                });
+                $state.go("home.tire-choice",{
+                    width: scope.width,
+                    height: scope.height,
+                    diameter: scope.diameter,
+                    brands: brands.join(","),
+                    season: scope.season,
+                    ship: scope.ship,
+                    inStock: scope.inStock,
+                    minCost: scope.noSwitchingSlider.minValue,
+                    maxCost: scope.noSwitchingSlider.maxValue
+                },{reload: true});
+            };
 
-
+        },
+        controller: function($scope) {
+            $scope.$on("changeTiresChooseParams", function(e,params){
+                console.log(3);
+                console.log(params);
+            });
         }
-
-   }
+    }
 }]);

@@ -1,0 +1,80 @@
+<section class="cart container">
+    <section class="row">
+        <section class="cart__left col-sm-6">
+            <article cart  user="user"></article>
+            <section class="row cart__total">
+                <section class="col-xs-6">
+                    Всего:
+                </section>
+                <section class="col-xs-6">
+                    <span ng-bind="user.totalCartPrice"></span> р.
+                </section>
+            </section>
+            <section class="row cart__total">
+                <section class="col-xs-6">
+                    Доставка:
+                </section>
+                <section class="col-xs-6">
+                    <span ng-bind="deliveryCost"></span> р.
+                </section>
+            </section>
+            <form>
+                <section class="radio">
+                    <input type="radio" class="radio__input" id="delivery1" name="delivery" checked="checked" value="0" ng-model="deliveryCost">
+                    <label class="radio__label" for="delivery1"><span>Самовывоз с пункта выдачи</span></label>
+                </section>
+                <section class="radio">
+                    <input type="radio" class="radio__input" id="delivery2" name="delivery" value="50" ng-model="deliveryCost">
+                    <label class="radio__label" for="delivery2"><span>Доставка в пределах Минска</span></label>
+                </section>
+                <section class="radio">
+                    <input type="radio" class="radio__input" id="delivery3" name="delivery" value="100" ng-model="deliveryCost">
+                    <label class="radio__label" for="delivery3"><span>Доставка по Беларуси</span></label>
+                </section>
+            </form>
+            <section class="cart__total-price cart__total">
+                <section class="col-xs-6">
+                    Всего к оплате:
+                </section>
+                <section class="col-xs-6">
+                    <span ng-bind="(user.totalCartPrice*1 + deliveryCost*1)"></span> р.
+                </section>
+                <div class="clearfix"></div>
+            </section>
+
+        </section>
+        <section class="col-sm-6">
+            <h3 class="write-us__header">Оформление заказа</h3>
+            <hr class="write-us__border">
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsUser" ng-model="user.name">
+                <i class="glyphicon glyphicon-user write-us__icon"></i>
+                <label class="write-us__label" for="writeUsUser" ng-class="{'active':user.name}">Имя*</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsPhone" ng-model="user.phone">
+                <i class="glyphicon glyphicon-earphone write-us__icon"></i>
+                <label class="write-us__label" for="writeUsPhone" ng-class="{'active':user.phone}">Телефон*</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsMail" ng-model="user.email">
+                <i class="glyphicon glyphicon-envelope write-us__icon"></i>
+                <label class="write-us__label" for="writeUsMail" ng-class="{'active':user.email}">Ваш email</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <textarea class="write-us__input" id="writeUsMessage" ng-model="message"></textarea>
+                <i class="glyphicon glyphicon-user write-us__icon"></i>
+                <label class="write-us__label" for="writeUsMessage" ng-class="{'active': message}">Сообщение</label>
+            </section>
+            <section class="write-us__input-wrapper">
+                <input class="write-us__input" id="writeUsCity" ng-model="user.address">
+                <i class="glyphicon glyphicon-globe write-us__icon"></i>
+                <label class="write-us__label" for="writeUsCity" ng-class="{'active':user.address}">Адрес</label>
+            </section>
+            <div class="write-us__footer">
+                <button class="btn btn-warning">Заказать</button>
+            </div>
+            <p class="cart__message">Возможность отгрузки неполного комплекта шин (нечетное количество), уточняйте у менеджера по телефону <span ng-bind="phoneFirst"></span></p>
+        </section>
+    </section>
+</section>

@@ -1,14 +1,46 @@
-<section class="container">
+<section class="container choose-result">
     <section class="row">
         <section class="col-sm-6">
             <h2>Базовая комплектация</h2>
-            <table class="table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Посадочный диаметр</th>
+                    <th>Типоразмер</th>
+                    <th>Применимость</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="variant in original">
+                    <td ng-bind = "variant.diameter"></td>
+                    <td>
+                        <table>
+                            <tr ng-repeat="ax in variant.axis">
+                                <td>
+                                    <a ui-sref="home.size({width: ax.width, height: ax.height, diameter: variant.diameter})">
+                                        <span ng-bind="ax.width"></span>/
+                                        <span ng-bind="ax.height"></span>R
+                                        <span ng-bind="variant.diameter"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr ng-repeat="ax in variant.axis">
+                                <td ng-bind="ax.applicability"></td>
+                            </tr>
+                        </table>
+                    </td>
 
+                </tr>
+                </tbody>
             </table>
         </section>
         <section class="col-sm-6">
             <h2>Варианты замены</h2>
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Посадочный диаметр</th>
@@ -17,10 +49,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr ng-repeat="variant in variants">
+                        <td ng-bind = "variant.diameter"></td>
+                        <td>
+                            <table>
+                                <tr ng-repeat="ax in variant.axis">
+                                    <td>
+                                        <a ui-sref="home.size({width: ax.width, height: ax.height, diameter: variant.diameter})">
+                                            <span ng-bind="ax.width"></span>/
+                                            <span ng-bind="ax.height"></span>R
+                                            <span ng-bind="variant.diameter"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr ng-repeat="ax in variant.axis">
+                                    <td ng-bind="ax.applicability"></td>
+                                </tr>
+                            </table>
+                        </td>
+
                     </tr>
                 </tbody>
             </table>

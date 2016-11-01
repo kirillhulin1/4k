@@ -66,25 +66,35 @@
                         </a>
                     </li>
                     <li class="tools-menu__item">
-                        <a href="" class="hidden-lg" data-toggle="modal" data-target="#log-in">
+                        <a ui-sref="home.user" class="hidden-lg tools-menu__logged-in" ng-if="user.loggedIn">
+                            <i class="glyphicon glyphicon-user tools-menu__icon"></i>
+                            <i class="glyphicon glyphicon-ok tools-menu__ok"></i>
+                        </a>
+                        <a href="" ng-if="!user.loggedIn" class="hidden-lg" data-toggle="modal" data-target="#log-in">
                             <i class="glyphicon glyphicon-user tools-menu__icon"></i>
                         </a>
                         <i class="hidden-sm hidden-md hidden-xs glyphicon glyphicon-user tools-menu__icon"></i>
-                        <ul class="hidden-sm hidden-md hidden-xs">
+                        <ul class="hidden-sm hidden-md hidden-xs" ng-if="!user.loggedIn">
                             <li><a href=""><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#log-in">Вход</span></a></li>
                             <li><a href=""><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
+
                         </ul>
+                        <a class="hidden-sm hidden-md hidden-xs" ui-sref="home.user" ng-if="user.login"><span ng-bind="user.login"></span></a>
                     </li>
                     <li class="tools-menu__item tools-menu__cart">
-                        <a ng-cloak ng-hide="user.cartItems.length" href="" uib-tooltip="Ваша корзина пуста"
+                        <a class="tools-menu__logged-in"
+                           href=""
+                           tooltip-enable="!user.cartItems.length"
+                           uib-tooltip="Ваша корзина пуста"
                            tooltip-placement="bottom-right"
                            tooltip-trigger="'mouseenter'">
                             <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
+                            <span ng-if="user.cartItems.length" class="tools-menu__cart-open" data-toggle="modal" data-target="#cart">
+                                <span   class="tools-menu__ok" ng-bind="user.cartItems.length"></span>
+                            </span>
+
                         </a>
-                        <a ng-show="user.cartItems.length" href="" data-toggle="modal" data-target="#cart">
-                            <i class="glyphicon glyphicon-shopping-cart tools-menu__icon"></i>
-                            <section  class="tools-menu__goods" ng-bind="user.cartItems.length"></section>
-                        </a>
+
                     </li>
                 </ul>
             </nav>
@@ -110,12 +120,12 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
                 <h4 class="modal-title">Корзина</h4>
             </div>
-            <div class="modal-body"  cart  items="user.cartItems">
+            <div class="modal-body"  cart  user="user">
 
             </div>
             <div class="modal-footer">
-                <span class="about__anchor modal-cart__continue-btn pull-left">Продолжить покупки</span>
-                <button class="btn btn-warning">Оформить заказ</button>
+                <span class="about__anchor modal-cart__continue-btn pull-left" data-dismiss="modal">Продолжить покупки</span>
+                <a data-dismiss="modal" ui-sref="home.cart" class="btn btn-warning">Оформить заказ</a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -220,21 +230,50 @@
                 <h4 class="modal-title">Восстановление пароля</h4>
             </div>
             <div class="modal-body">
-                <p class="hidden-lg hidden-md hidden-sm">
-                    <a href=""  data-toggle="modal" data-target="#log-in">Войти</a>
-                    <a href="" class="log-in__forget" data-toggle="modal" data-target="#register">Регистрация</a>
-                </p>
+                <section ng-if="user.loggedIn">
+                    <p>Инструкции по восстановления пароля будут высланы на <span ng-bind="user.email"></span>. Вы должны выйти с сайта для восстановления пароля согласно высланным инструкциям.</p>
+                </section>
+                <section ng-if="!user.loggedIn">
+                    <p class="hidden-lg hidden-md hidden-sm">
+                        <a href=""  data-toggle="modal" data-target="#log-in">Войти</a>
+                        <a href="" class="log-in__forget" data-toggle="modal" data-target="#register">Регистрация</a>
+                    </p>
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Логин, e-mail или номер телефона">
-                </div>
-
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Логин, e-mail или номер телефона">
+                    </div>
+                </section>
             </div>
             <div class="modal-footer">
-                <a href="" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
-                <a href="" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
+                <a  ng-if="!user.loggedIn" href="" class="pull-left hidden-xs" data-toggle="modal" data-target="#log-in">Войти</a>
+                <a  ng-if="!user.loggedIn" href="" class="pull-left log-in__forget hidden-xs" data-toggle="modal" data-target="#register">Регистрация</a>
 
                 <button class="btn btn-warning">Выслать новый пароль</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="changePassword">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+                <h4 class="modal-title">Изменения пароля</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Новый пароль">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Подтверждение нового пароля">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Старой пароль">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning">Сохранить</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

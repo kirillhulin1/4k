@@ -3,12 +3,12 @@
         <div class="tabs-tires__header">
             <div class="tabs-tires__heading hidden-sm hidden-md hidden-lg">
                 <div class="container">
-                    {{tabs[active].title}}
+                    {{tabs[topTabActive].title}}
                 </div>
             </div>
             <div class="container tabs-tires__list">
                 <ul ng-repeat = "tab in tabs" class="tabs-tires__tabs">
-                    <li class="tabs-tires__tab" ng-class="{active: active === $index}">
+                    <li class="tabs-tires__tab" ng-class="{active: topTabActive === $index}">
                         <a ng-click="changeActive($index)" class="hidden-sm hidden-lg hidden-md" href="#" ng-style="{'background-image':'url(dest/images/'+($index+1)+'.png)'}">
 
                             <span></span>
@@ -22,8 +22,8 @@
             <div class="container tab-content">
 
                 <div ng-repeat="tab in tabs"
-                     ng-class="{active: active === $index}">
-                    <div bind-html-compile="tab.content"><!--sce.trustAsHtml(tab.content)-->
+                     ng-class="{active: topTabActive === $index}">
+                    <div bind-html-compile="tab.content">
 
                     </div>
 

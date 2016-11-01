@@ -8,5 +8,7 @@ app.controller("CarModelYearsCtrl",["modelData", "$scope", "$stateParams", "$sta
     $state.$current.parent.data.displayName = $stateParams.model;
     $state.$current.parent.parent.data.displayName = $stateParams.car;
 
+    $scope.$emit("topTabActiveChanged",2);
+
 }]);
 

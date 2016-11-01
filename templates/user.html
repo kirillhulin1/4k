@@ -1,0 +1,128 @@
+<section class="container user">
+    <uib-tabset active="index" justified="true">
+    <uib-tab index="0">
+        <uib-tab-heading>
+            <i class="glyphicon glyphicon-user"></i> Личная информация
+        </uib-tab-heading>
+        <form class="user__section">
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userLogin"><span class="user__span-bottom">Имя пользователя:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userLogin" required type="text" ng-model="user.login" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top">Пробелы разрешены; знаки пунктуации запрещены, за исключением точек, тире, апострофов и знаков подчеркивания.</span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userEmail"><span class="user__span-bottom">E-mail адрес:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userEmail" required type="text" ng-model="user.email" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top">Существующий адрес электронной почты. Все почтовые сообщения с сайта будут отсылаться на этот адрес. Адрес электронной почты не будет публиковаться и будет использован только по вашему желанию: для восстановления пароля или для получения новостей и уведомлений по электронной почте.</span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userPassword"><span class="user__span-bottom">Пароль:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userPassword" type="password " ng-model="user.password" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top">
+                        Введите свой текущий пароль для изменения вашего E-mail или номера телефона. <br>
+                        <a href="" data-toggle="modal" data-target="#forget">Забыли пароль?</a>&nbsp;
+                        <a href="" data-toggle="modal" data-target="#changePassword">Изменить пароль</a>
+                    </span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userName"><span class="user__span-bottom">Имя:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userName" type="text" ng-model="user.name" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top"></span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userSurname"><span class="user__span-bottom">Фамилия:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userSurname" type="text" ng-model="user.surname" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top"></span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userPatronomic"><span class="user__span-bottom">Отчество:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userPatronomic" type="text" ng-model="user.patronomic" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top"></span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userPhone"><span class="user__span-bottom">Телефон:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userPhone" type="text" ng-model="user.phone" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top"></span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <section class="row user__field">
+                <section class="col-sm-2">
+                    <label for="userAddress"><span class="user__span-bottom">Адрес:</span></label>
+                </section>
+                <section class="col-sm-5">
+                    <input id="userAddress" type="text" ng-model="user.address" class="form-control">
+                </section>
+                <section class="col-sm-5">
+                    <span class="user__span-top"></span>
+                </section>
+                <div class="clearfix"></div>
+            </section>
+            <button type="submit" class="btn btn-warning user__save">Сохранить</button>
+        </form>
+    </uib-tab>
+    <uib-tab index="1" >
+        <uib-tab-heading>
+            <i class="glyphicon glyphicon-shopping-cart"></i> Покупки
+        </uib-tab-heading>
+        <section class="user__section">
+            фыавфыа
+        </section>
+    </uib-tab>
+    <uib-tab index="2" ng-click="changeState('description');" >
+        <uib-tab-heading>
+            <i class="glyphicon glyphicon-comment"></i> Комментарии
+        </uib-tab-heading>
+        <section class="user__section">
+            ычвывпы
+        </section>
+    </uib-tab>
+    </uib-tabset>
+</section>

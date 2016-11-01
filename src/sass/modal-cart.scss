@@ -1,14 +1,40 @@
 .modal-cart__item {
-  font-size: 115%;
-  h3 {
-    font-size: 100%;
+  font-size: 90%;
+  p {
+    font-size: 95%;
+  }
+  i {
+    font-size: 16px !important;
   }
 }
-@media all and (max-width: $sm-size) {
+@media all and (min-width: 600px) {
+  .modal-cart__items {
+    max-width: 400px;
+    margin: 0 auto;
+  }
   .modal-cart__item {
-    font-size: 140%;
+    font-size: 100%;
+
+    p {
+      font-size: 100%;
+    }
   }
 }
+@media all and (min-width: $sm-size) {
+  .modal-cart__items {
+    max-width: 2000px;
+  }
+  .modal-cart__item {
+    font-size: 115%;
+
+    h3 {
+      font-size: 100%;
+    }
+  }
+}
+
+
+
 .modal-cart__title {
   margin-top: 5px;
 }
@@ -65,19 +91,45 @@
   }
   input {
     display: inline-block;
-    width: 50%;
     text-align: center;
   }
 }
 .modal-cart__price {
-  padding-top: 2px;
-  font-size: 20px;
+  font-size: 90%;
+  padding-top: 7px;
 }
-@media all and (max-width: $sm-size) {
+@media all and (max-width: 380px) {
+  .col-xs-3, .col-xs-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@media all and (min-width: 380px) {
   .modal-cart__price {
-    font-size: 18px;
+    font-size: 100%;
+  }
+}
+@media all and (min-width: $sm-size) {
+  .modal-cart__price {
+    font-size: 80%;
+    padding-top: 7px;
+  }
+}
+@media all and (min-width: $md-size) {
+  .modal-cart__price {
+    font-size: 100%;
+    padding-top: 2px;
+  }
+}
+@media all and (min-width: $lg-size) {
+  .modal-cart__price {
+    font-size: 110%;
+
   }
 }
 .modal-cart__info {
   margin: 1em 0;
+}
+.modal-cart__amount {
+  text-align: left;
 }

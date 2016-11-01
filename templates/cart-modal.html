@@ -1,13 +1,13 @@
-<p>В вашей корзине {{items.length|goods}}</p>
+<p>В вашей корзине {{user.cartItems.length|goods}}</p>
 <section class="modal-cart__items">
-    <article class="modal-cart__item" ng-repeat="item in items">
+    <article class="modal-cart__item" ng-repeat="item in user.cartItems">
         <section class="modal-cart__description">
-            <section class="col-xs-4 modal-cart__left">
+            <section class="col-xs-5 col-sm-4 modal-cart__left">
                 <img ng-src="{{item.picture}}" class="modal-cart__image">
                 <img ng-src="dest/images/season-{{item.season}}.png" class="modal-cart__season">
 
             </section>
-            <section class="col-xs-offset-1 col-xs-7 modal-cart__right">
+            <section class="col-sm-offset-1 col-sm-7 col-xs-7 modal-cart__right">
                 <h3 class="modal-cart__title" ng-bind="item.name"></h3>
                 <p>
                     <a ui-sref="home.tires.brand.model({brand:item.brand,model:item.name})" class="modal-cart__parameters">
@@ -20,31 +20,41 @@
                 </p>
             </section>
             <div class="clearfix"></div>
-            <a href="#" class="modal-cart__trash" ng-click="deleteItem(item.id)"><i class="glyphicon glyphicon-trash"></i></a>
+            <a href="" class="modal-cart__trash" ng-click="deleteItem(item.id); user.countTotalCartPrice();"><i class="glyphicon glyphicon-trash"></i></a>
         </section>
         <section class="modal-cart__prices">
             <div class="row">
-                <div class="col-xs-4">
-                    <small>Цена<span class="hidden-xs"> за штуку</span>:</small>
-                </div>
-                <div class="col-xs-4">
+                <div class="col-xs-6 modal-cart__amount">
                     <small>Количество:</small>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
+                    <small>Цена:</small>
+                </div>
+                <div class="col-xs-3">
                     <small>Сумма:</small>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-4 modal-cart__price">
+                <div class="col-xs-6 modal-cart__amount">
+                    <table class="amount">
+                        <tr>
+                            <td>
+                                <button class="btn btn-reverse amount__minus" ng-click="item.quantity = item.quantity - 1; user.countTotalCartPrice();" ng-disabled="item.quantity==1"><i class="glyphicon glyphicon-minus"></i></button>
+                            </td>
+                            <td>
+                                <input type="text" class="amount__number" ng-model="item.quantity">
+                            </td>
+                            <td>
+                                <button class="btn btn-reverse amount__plus" ng-click="item.quantity = item.quantity + 1;  user.countTotalCartPrice();" ng-disabled="item.quantity == item.available"><i class="glyphicon glyphicon-plus"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-3 modal-cart__price">
                     <span ng-bind="item.price"></span> р.
                 </div>
-                <div class="col-xs-4">
-                    <a href="#" ng-click = "lowerQuantity(item)"><i class="glyphicon glyphicon-minus-sign"></i></a>
-                    <input class="form-control" type="text" ng-model="item.quantity">
-                    <a href="#" ng-click = "item.quantity=+item.quantity+1"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                </div>
-                <div class="col-xs-4 modal-cart__price">
-                    {{item.price * item.quantity}} р.
+                <div class="col-xs-3 modal-cart__price">
+                    <span ng-bind="(item.price * item.quantity) | toFixed2"></span> р.
                 </div>
             </div>
         </section>

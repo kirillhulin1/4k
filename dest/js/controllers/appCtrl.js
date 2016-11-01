@@ -68,13 +68,55 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
 
 
     $scope.user = {
-        cartItems: [
-
-        ],
+        login: "Кirill Hulin",
+        name: "Кирилл",
+        surname: "",
+        patronomic: "",
+        email: "kirillhulin@ya.ru",
+        password: "",
+        cartItems: [{
+            "name": "sdasfaf",
+            "brand": "sdasfaf",
+            "width": 185,
+            "height": 65,
+            "diameter": 15,
+            "loadIndex": "80(111)",
+            "speedIndex": "sa",
+            "price": 62.12,
+            "quantity": 4,
+            "season": "all",
+            "picture": "dest/images/model-image-1.png",
+            "id": 19048343814901,
+            "available": 10
+        }],
         recentItems: [],
-        selectedItems: []
+        selectedItems: [],
+        address: "",
+        phone: "",
+        purchases: [],
+        comments: [],
+        totalCartPrice: 0,
+        loggedIn: true,
+        countTotalCartPrice: function() {
+            var self = this;
+            self.totalCartPrice = 0;
+            angular.forEach(this.cartItems, function(item){
+                self.totalCartPrice += Number((item.price * item.quantity).toFixed(2));
+            });
+        }
     };
 
+    $scope.topTabActive = 0;
+    $scope.$on("topTabActiveChanged",function(e,newActiveTab){
+        $scope.$broadcast("changeTopTabs",newActiveTab);
+    });
+
+    $scope.$on("tiresParamsChosen",function(e,params){
+        console.log(1);
+        $scope.$broadcast("changeTiresChooseParams",params);
+    });
+
+    //Фунции вставляюшие нужный css класс в зависимости от раздела новостей
     $scope.insertClass = function(name) {
         var className = "";
 

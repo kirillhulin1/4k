@@ -5,7 +5,7 @@
                 <div class="select__wrapper">
                     <label class="tab1__select">
                         <span class="select__label" ng-show="!width">Ширина*</span>
-                        <select id="widthSelect" ng-model="width" class="form-control select">
+                        <select required id="widthSelect" ng-model="width" class="form-control select">
                             <option>145</option>
                             <option>155</option>
                             <option>165</option>
@@ -148,7 +148,7 @@
             </div>
         </section>
         <a href="#" class="toggle-anchor tab1__more hidden-xs" do-not-follow toggle-anchor ng-click="showMore = !showMore">дополнительные параметры</a>
-        <button class="btn btn-warning form-control tab1__button">Подобрать</button>
+        <button type="submit" class="btn btn-warning form-control tab1__button" ng-click="watchResults();">Подобрать</button>
         <p class="tab__section-title tab__section-title_condensed">Задайте вопрос специалисту:</p>
         <a class="tab1__phone" href="tel://{{phoneFirst}}" ng-bind="phoneFirst"></a>
     </section>

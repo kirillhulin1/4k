@@ -4,5 +4,7 @@ app.controller("CarModelsCtrl",["brandData", "$scope", "$stateParams", "$state",
 
     $state.current.data.displayName = "Шины для автомобиля " +  $stateParams.car;
     $state.$current.parent.data.displayName = $stateParams.car;
+
+    $scope.$emit("topTabActiveChanged",2);
 }]);
 

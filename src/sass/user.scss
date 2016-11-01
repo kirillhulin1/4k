@@ -1,0 +1,20 @@
+.user__section {
+  padding-top: 2em;
+  min-height: 300px;
+}
+.user__field {
+  margin-bottom: 1.5em;
+  input {margin: 0.5em 0};
+}
+.user__span-top {
+  position: relative;
+  top: -5px;
+}
+.user__span-bottom {
+  position: relative;
+  top: 4px;
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+}
+.user__save {
+  margin-bottom: 2em;
+}

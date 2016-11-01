@@ -1,0 +1,51 @@
+.choose-list {
+  display: inline-block;
+  border: 2px solid $gray;
+  background-color: #f8f9fb;
+  padding: 5px 7px 5px 37px;
+  line-height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  height: 44px;
+  text-align: center;
+  margin-bottom: 1em;
+  &:hover {
+    text-decoration: none;
+  }
+  .choose-list__icon {
+    transition: all 0.3s;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: url(images/choose-car.png) no-repeat;
+  }
+  .choose-list__icon_model {
+    background: url(images/choose-model.png) no-repeat;
+  }
+  .choose-list__icon_year {
+    background: url(images/choose-year.png) no-repeat;
+  }
+  .choose-list__icon_modification {
+    background: url(images/choose-modification.png) no-repeat;
+  }
+}
+.choose-list:hover {
+  background-color: $orange;
+  border-color: $orangeDark;
+  color: white;
+  .choose-list__icon {
+      background: url(images/choose-car-hover.png) no-repeat;
+  }
+  .choose-list__icon_model {
+    background: url(images/choose-model-hover.png) no-repeat;
+  }
+  .choose-list__icon_year {
+    background: url(images/choose-year-hover.png) no-repeat;
+  }
+  .choose-list__icon_modification {
+    background: url(images/choose-modification-hover.png) no-repeat;
+  }
+}

@@ -1,0 +1,30 @@
+.cart__left {
+  padding-top: 1em;
+}
+.cart__total {
+  font-family: "SegoeUIBold", Verdana, sans-serif;
+  font-size: 130%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  &>section:last-of-type {
+    text-align: right;
+  }
+}
+.cart__no-data {
+  font-size: 80%;
+  color: $green;
+}
+.cart__total-price {
+  padding: 1.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  margin-top: 2em;
+  font-size: 140%;
+  &>section:last-of-type {
+    color: $orange;
+  }
+}
+.cart__message {
+  text-align: justify;
+  margin-top: 2em;
+}

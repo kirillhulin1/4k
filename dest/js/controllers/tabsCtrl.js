@@ -1,7 +1,12 @@
-app.controller('TabsCtrl', ["$scope","$sce","$http","$interpolate", function ($scope,$sce,$http,$interpolate) {
+app.controller('TabsCtrl', ["$scope","$sce","$http","$interpolate","$stateParams", function ($scope,$sce,$http,$interpolate,$stateParams) {
+    $scope.$on("changeTopTabs",function(e,newActiveTab){
+        $scope.changeActive(newActiveTab);
+    });
+
     var startContent = '<div class="tabs-tires__start"><img src="dest/images/ajax-loader.gif"></div>';
     var content2loaded = false;
     var content3loaded = false;
+
     $scope.sce = $sce;
     function loadContent(url,index) {
         $http({
@@ -14,9 +19,8 @@ app.controller('TabsCtrl', ["$scope","$sce","$http","$interpolate", function ($s
         });
     }
 
-    $scope.active = 0;
     $scope.changeActive = function(index) {
-        $scope.active = index;
+        $scope.topTabActive = index;
 
         //Аякс-загрузка второй вкладки при первом клике по вкладке
         if (index == 1 && !content2loaded)  {
@@ -31,7 +35,7 @@ app.controller('TabsCtrl', ["$scope","$sce","$http","$interpolate", function ($s
         }
     };
 
-    loadContent("templates/tab1-content.html",0);
+    loadContent("templates/tab1-content.html",$scope.topTabActive);
 
 
     $scope.tabs = [

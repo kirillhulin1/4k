@@ -1,5 +1,6 @@
 app.controller("CarModelYearModificationResultCtrl",["resultData", "$scope", "$stateParams","$state", function (resultData, $scope, $stateParams, $state) {
-    console.log(resultData);
+    $scope.original = resultData.original;
+    $scope.variants = resultData.variants;
 
     $state.current.data.displayName = "Шины для автомобиля " +  $stateParams.car + " " + $stateParams.model + " " + $stateParams.year + " " + $stateParams.modification;
     $state.$current.parent.data.displayName = $stateParams.modification;
@@ -11,5 +12,7 @@ app.controller("CarModelYearModificationResultCtrl",["resultData", "$scope", "$s
     $scope.model = $stateParams.model;
     $scope.year = $stateParams.year;
     $scope.modification = $stateParams.modification;
+
+    $scope.$emit("topTabActiveChanged",2);
 
 }]);

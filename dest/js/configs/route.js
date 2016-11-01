@@ -286,6 +286,9 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: 'Подбор шин по автомобилю'
+            },
+            params: {
+                mainTopTab: 2
             }
         })
         .state("home.cars.models", {
@@ -302,7 +305,10 @@ app.config(["$stateProvider",function($stateProvider){
                 }
             },
             data: {
-                displayName: 'Подбор шин по модели автомобиля'
+                displayName: 'Подбор шин по автомобилю'
+            },
+            params: {
+                mainTopTab: 2
             }
         })
         .state("home.cars.models.years", {
@@ -320,6 +326,9 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: 'Подбор шин по году выпуска'
+            },
+            params: {
+                mainTopTab: 2
             }
         })
         .state("home.cars.models.years.modifications", {
@@ -337,6 +346,9 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: 'Подбор шин по модификации'
+            },
+            params: {
+                mainTopTab: 2
             }
         })
         .state("home.cars.models.years.modifications.result", {
@@ -354,6 +366,9 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: 'Подбор шин по модификации'
+            },
+            params: {
+                mainTopTab: 2
             }
         })
         .state("home.warranty", {
@@ -369,6 +384,76 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: "Гарантия на шины"
+            }
+        })
+        .state("home.user", {
+            url:"/user",
+            views: {
+                "main@":{
+                    templateUrl: "templates/user.html",
+                    controller: "UserCtrl"
+                },
+                "main-top@": {
+                    template: ""
+                }
+            },
+            data: {
+                displayName: "Личный кабинет"
+            }
+        })
+        .state("home.cart", {
+            url:"/cart",
+            views: {
+                "main@":{
+                    templateUrl: "templates/cart.html",
+                    controller: "CartCtrl"
+                },
+                "main-top@": {
+                    template: ""
+                },
+                "main-bottom@": {
+                    templateUrl: "templates/agreement.html",
+                    controller: "AgreementCtrl"
+                }
+            },
+            data: {
+                displayName: "Корзина"
+            }
+        })
+        .state("home.tire-choice", {
+            url:"/tire-choice?width&height&diameter&brands&season&ship&inStock&minCost&maxCost",
+            views: {
+                "main@":{
+                    templateUrl: "templates/tire-choice.html",
+                    controller: "TireChoiceCtrl"
+                }
+            },
+            data: {
+                displayName: "Подбор шин по параметрам"
+            },
+            resolve: {
+                sizeData: function(ChooseTireResource,$stateParams){
+                    var width = $stateParams.width || false;
+                    var height = $stateParams.height || false;
+                    var diameter = $stateParams.diameter || false;
+                    var brands = $stateParams.brands || false;
+                    var season = $stateParams.season || false;
+                    var ship = $stateParams.ship || false;
+                    var inStock = $stateParams.inStock || false;
+                    var minCost = $stateParams.minCost || false;
+                    var maxCost = $stateParams.maxCost || false;
+                    return ChooseTireResource.query({
+                        width: width,
+                        height: height,
+                        diameter: diameter,
+                        brands: brands,
+                        season: season,
+                        ship: ship,
+                        inStock: inStock,
+                        minCost: minCost,
+                        maxCost: maxCost
+                    })/*.$promise*/;
+                }
             }
         })
 }]);

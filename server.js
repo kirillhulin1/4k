@@ -633,22 +633,24 @@ var audiA6Years = [1999,2000,2001,2003,2004,2005,2006,2007];
 var audiModels = ["A6","A4","V2","assdas7","pirunsz90"];
 var audiA61999 = ["zDf","asdg","asdga","adgzdg","asgf"];
 var audiA61999xxx = {
-    original: {
+    original: [{
         diameter: "16",
         axis: [
             {
-                size: "225/60R16",
+                width: 225,
+                height: 60,
                 applicability: "обе оси"
             }
         ]
 
-    },
+    }],
     variants: [
         {
             diameter: "17",
             axis: [
                 {
-                    size: "225/55R17",
+                    width: 225,
+                    height: 55,
                     applicability: "обе оси"
                 }
             ]
@@ -658,7 +660,8 @@ var audiA61999xxx = {
             diameter: "18",
             axis: [
                 {
-                    size: "225/50R18",
+                    width: 225,
+                    height: 55,
                     applicability: "обе оси"
                 }
             ]
@@ -668,7 +671,8 @@ var audiA61999xxx = {
             diameter: "18",
             axis: [
                 {
-                    size: "245/45R18",
+                    width: 225,
+                    height: 55,
                     applicability: "обе оси"
                 }
             ]
@@ -678,7 +682,8 @@ var audiA61999xxx = {
             diameter: "19",
             axis: [
                 {
-                    size: "255/40R19",
+                    width: 225,
+                    height: 55,
                     applicability: "обе оси"
                 }
             ]
@@ -688,11 +693,13 @@ var audiA61999xxx = {
             diameter: "20",
             axis: [
                 {
-                    size: "255/35R20",
+                    width: 225,
+                    height: 55,
                     applicability: "левая ось"
                 },
                 {
-                    size: "255/40R20",
+                    width: 225,
+                    height: 55,
                     applicability: "правая ось"
                 }
             ]
@@ -1094,7 +1101,10 @@ app.get("/tiresOfSize/:width/:height/:diameter",function(req,res){
     res.send(tiresOfSize);
 });
 
-
+app.get("/chooseTire/:width/:height/:diameter/:brands/:season/:ship/:inStock/:minCost/:maxCost",function(req,res){
+    console.log(req.params);
+    res.send(tiresOfSize);
+});
 
 
 app.get("/carModels/:car",function(req,res){

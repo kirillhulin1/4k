@@ -7,7 +7,7 @@
   margin-bottom: 1em;
   line-height: 1.1;
   text-align: center;
-  color: #999999;
+  color: #333;
 }
 .write-us__border {
   border-top: 1px solid rgba(0,0,0,.1);
@@ -60,6 +60,7 @@
   margin-left: 3.2em;
   width: 92%;
   width: calc(100% - 3.2em);
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
 }
 .write-us__label {
   color: #757575;
@@ -77,6 +78,7 @@
   margin-bottom: .5em;
   display: inline-block;
 }
+
 .write-us__input:focus~.write-us__icon {
   color: $mainColorHover;
 }
@@ -95,4 +97,13 @@ textarea.write-us__input {
 }
 .write-us__footer {
   text-align: center;
+}
+.write-us__label.active {
+  font-size: 0.8em;
+  margin-left: 4em;
+  -webkit-transform: translateY(-140%);
+  -moz-transform: translateY(-140%);
+  -ms-transform: translateY(-140%);
+  -o-transform: translateY(-140%);
+  transform: translateY(-140%);
 }

@@ -10,5 +10,7 @@ app.controller("CarModelYearModificationsCtrl",["yearData", "$scope", "$statePar
     $state.$current.parent.parent.data.displayName = $stateParams.model;
     $state.$current.parent.parent.parent.data.displayName = $stateParams.car;
 
+    $scope.$emit("topTabActiveChanged",2);
+
 }]);
 

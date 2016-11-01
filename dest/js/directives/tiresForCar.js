@@ -119,9 +119,20 @@ app.directive("tiresForCar",["$http","$state",function($http,$state){
             });
 
             scope.search = function() {
-                console.log(1);
-                if (!scope.models) {
+                if (!scope.brand) {
                     $state.go("home.cars");
+                }
+                else if (!scope.model) {
+                    $state.go("home.cars.models",{car:scope.brand});
+                }
+                else if (!scope.year) {
+                    $state.go("home.cars.models.years",{car:scope.brand, model: scope.model});
+                }
+                else if (!scope.modification) {
+                    $state.go("home.cars.models.years.modifications",{car:scope.brand, model: scope.model, year: scope.year});
+                }
+                else {
+                    $state.go("home.cars.models.years.modifications.result",{car:scope.brand, model: scope.model, year: scope.year, modification: scope.modification});
                 }
             }
         }

@@ -1,5 +1,6 @@
 app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$window","PostModels","$location",function ($scope, $stateParams, modelData, $state, $window, PostModels,$location) {
     $scope.model = $stateParams.model;
+
     $scope.brand = $stateParams.brand;
     $scope.tab = $stateParams.tab;
 
@@ -9,6 +10,7 @@ app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$wind
     $scope.data= {};
     $scope.data.model = $stateParams.modelSize;
 
+console.log($scope.data.model);
 
     switch ($scope.tab) {
         case("description"): {
@@ -26,7 +28,18 @@ app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$wind
 
     $scope.score = modelData.score;
     $scope.comments = modelData.comments;
+    var sizes = modelData.sizes;
+    $scope.sizesAvailable = [];
+    $scope.sizesNotAvailable = [];
 
+    angular.forEach(sizes,function(size){
+        if (size.available>0) {
+            $scope.sizesAvailable.push(size);
+        }
+        else {
+            $scope.sizesNotAvailable.push(size);
+        }
+    });
 
     $scope.changeState = function(newTab){ //Без этой функции при повторном переходе со ссылки Показать отзывы в Описании переход не произойдет
         $stateParams.tab = newTab;
@@ -40,6 +53,7 @@ app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$wind
             $("html, body").animate({ scrollTop: "+=1px" }, 300);
         }
     };
+
 
     $($window).bind("scroll",function(e) {
         var $comments = $(".comment");
@@ -55,6 +69,7 @@ app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$wind
             });
         }
     });
+
 
     $scope.commentGood = function(comment) {
         comment.yes += 1;

@@ -12,23 +12,25 @@
                             <tr>
                                 <th></th><th>Типоразмер</th><th class="hidden-xs">Индекс нагрузки</th><th class="hidden-xs">Индекс скорости</th><th><span class="hidden-xs">Кол-во, шт</span><span class="hidden-lg hidden-md hidden-sm">Шт.</span></th><th>Цена, р.</th><th></th>
                             </tr>
-                            <tr>
-                                <td class="in-stock__diameter">13"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td class="in-stock__diameter" rowspan="2">14"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td class="in-stock__diameter" rowspan="2">15"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td class="in-stock__diameter">16"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td>2</td><td class="in-stock__price">1263.00</td><td><button class="btn btn-success"><span class="hidden-xs">Купить </span><i class="glyphicon glyphicon-shopping-cart"></i></button></td>
+                            <tr ng-repeat="size in sizesAvailable">
+                                <td class="in-stock__diameter">
+                                    <span ng-bind="size.diameter"></span>"
+                                </td>
+                                <td>
+                                    <a ui-sref-opts="{reload:true,loacation:'replace'}" ui-sref="home.tires.brand.model({brand:size.brand,model:size.name,modelSize: size.width+'/'+size.height+'R'+size.diameter})">
+                                        <span ng-bind="size.width"></span>/<span ng-bind="size.height"></span>R<span ng-bind="size.diameter"></span>
+                                    </a>
+                                </td>
+                                <td class="hidden-xs" ng-bind="size.loadIndex">82 (475 кг)</td>
+                                <td class="hidden-xs" ng-bind="size.speedIndex">T (190 км/ч)</td>
+                                <td  ng-bind="size.available">2</td>
+                                <td class="in-stock__price"  ng-bind="size.price">1263.00</td>
+                                <td>
+                                    <button class="btn btn-success">
+                                        <span class="hidden-xs">Купить </span>
+                                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -45,23 +47,8 @@
                             <tr>
                                 <th></th><th>Типоразмер</th><th class="hidden-xs">Индекс нагрузки</th><th class="hidden-xs">Индекс скорости</th><th>Цена, р.</th><th></th>
                             </tr>
-                            <tr>
-                                <td class="in-stock__diameter">13"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
-                            </tr>
-                            <tr>
-                                <td class="in-stock__diameter" rowspan="2">14"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
-                            </tr>
-                            <tr>
-                                <td class="in-stock__diameter" rowspan="2">15"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
-                            </tr>
-                            <tr>
-                                <td class="in-stock__diameter">16"</td><td><a href="#">175/70R13</a></td><td class="hidden-xs">82 (475 кг)</td><td class="hidden-xs">T (190 км/ч)</td><td class="in-stock__price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
+                            <tr ng-repeat="size in sizesNotAvailable">
+                                <td class="in-stock__diameter"><span ng-bind="size.diameter"></span>"</td><td><a href="#"><span ng-bind="size.width"></span>/<span ng-bind="size.height"></span>R<span ng-bind="size.diameter"></span></a></td><td class="hidden-xs" ng-bind="size.loadIndex">82 (475 кг)</td><td class="hidden-xs" ng-bind="size.speedIndex">T (190 км/ч)</td><td class="in-stock__price" ng-bind="size.price">1263.00</td><td class="in-stock__no">Нет в наличии</td>
                             </tr>
                         </table>
                     </div>
@@ -131,7 +118,7 @@
                                     <section class="model__advantages hidden-xs">
                                         <div class="row model__advantage">
                                             <div class="col-sm-3 col-md-2" >
-                                                <img src="dest/images/adv1.png">
+                                                <img src="dest/images/plus1.png">
                                             </div>
                                             <div class="col-sm-9 col-md-10">
                                                 <p><strong>Полная гарантия от Bridgestone</strong></p>
@@ -140,7 +127,7 @@
                                         </div>
                                         <div class="row model__advantage">
                                             <div class="col-sm-3 col-md-2" >
-                                                <img src="dest/images/adv2.png">
+                                                <img src="dest/images/plus2.png">
                                             </div>
                                             <div class="col-sm-9 col-md-10">
                                                 <p><strong>Гарантия производителя</strong></p>
@@ -149,7 +136,7 @@
                                         </div>
                                         <div class="row model__advantage">
                                             <div class="col-sm-3 col-md-2">
-                                                <img src="dest/images/adv3.png">
+                                                <img src="dest/images/plus3.png">
                                             </div>
                                             <div class="col-sm-9 col-md-10">
                                                 <p><strong>Отправка в течение 24 часов</strong></p>

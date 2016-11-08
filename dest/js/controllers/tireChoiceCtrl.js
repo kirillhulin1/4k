@@ -1,5 +1,6 @@
-app.controller("TireChoiceCtrl",["$scope","$stateParams","sizeData",function ($scope, $stateParams,sizeData) {
-    $scope.$emit("tiresParamsChosen",$stateParams);
+app.controller("TireChoiceCtrl",["$scope","$stateParams","sizeData", "chooseTireParams",function ($scope, $stateParams, sizeData, chooseTireParams) {
+
+    console.log($stateParams);
 
     $scope.tires = sizeData;
 

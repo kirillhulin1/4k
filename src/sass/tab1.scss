@@ -3,8 +3,6 @@
 }
 
 
-// добавить ховер на кнопки                           ОБЕРНУТЬ ЛЕТО И ЗИМА В SPAN В ФАЙЛЕ CHOOSE-TERI.HTML
-
 .tab1_summer:before {
   background-image:url(images/summer-blue.png) ;
 }
@@ -27,11 +25,11 @@
   transition: all 0.3s;
   position:relative;
 
-  &:hover {
+  &.tab1__label_animated:hover {
     background-color:#fff !important;
   }
 
-  &:before {
+  &.tab1__label_animated:before {
     content:"";
     position:absolute;
     height:100%;
@@ -45,11 +43,11 @@
     transition: all 0.3s;
   }
 
-  &:hover:before {
+  &.tab1__label_animated:hover:before {
     top:0;
   }
 
-  &:after{
+  &.tab1__label_animated:after{
     content: '';
     position: absolute;
     z-index: -1;
@@ -57,7 +55,7 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
-  & span {
+  &.tab1__label_animated span {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -66,35 +64,14 @@
     -moz-transition: all 0.3s;
     -moz-backface-visibility: hidden;
     transition: all 0.3s;
-    backface-visibility: hidden;
   }
-  &:hover span {
+  &.tab1__label_animated:hover span {
     -webkit-transform: translateY(300%);
     -moz-transform: translateY(300%);
     -ms-transform: translateY(300%);
     transform: translateY(300%);
   }
 }
-
-
-
-///////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media all and (min-width: $lg-size) {
   .tab1 {
     background: url("images/test2_bg.png") no-repeat left 10px;
@@ -169,26 +146,54 @@
     margin-top: 35px;
   }
 }
-.tab1__paddingBottomSmall {
 
-}
 @media all and (max-width: 600px) {
+  .tab1__season_hidden {
+    opacity: 0;
+  }
+  .tab1__label_animated:before {
+    top:0 !important;
+    transition: none;
+  }
   .tab1__paddingBottomSmall {
     width: 100%;
     margin-bottom: 15px;
     clear: both;
     float: none;
     &:last-child {
-      margin-bottom: 25px;
+      margin-bottom: 0 !important;
     }
   }
-
+  .tab1__label.active.tab1_summer:before {
+    background-image:url(images/summer-white.png) ;
+  }
+  .tab1__label.active.tab1_summer:hover:before {
+    background-image:url(images/summer-blue.png) ;
+  }
+  .tab1__label.active.tab1_winter:before {
+    background-image:url(images/winter-white.png) ;
+  }
+  .tab1__label.active.tab1_winter:hover:before {
+    background-image:url(images/winter-blue.png) ;
+  }
+  .tab1__label.active.tab1_allseasons:before {
+    background-image:url(images/allseason-white.png) ;
+  }
+  .tab1__label.active.tab1_allseasons:hover:before {
+    background-image:url(images/allseason-blue.png) ;
+  }
 }
 .tab1__button {
   clear: both;
 }
 .tab1__range {
   margin: 10px 0 30px;
+  .col-sm-2 {
+    padding: 0 !important;
+  }
+  input {
+    text-align: center;
+  }
 }
 .tab1__range-input {
   position: relative; top: 20px;

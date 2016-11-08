@@ -379,7 +379,7 @@ app.config(["$stateProvider",function($stateProvider){
                     controller: "WarrantyCtrl"
                 },
                 "main-top@": {
-                    templateUrl: "templates/warranty-banner.html"
+                    template: ""
                 }
             },
             data: {
@@ -452,7 +452,7 @@ app.config(["$stateProvider",function($stateProvider){
                         inStock: inStock,
                         minCost: minCost,
                         maxCost: maxCost
-                    })/*.$promise*/;
+                    }).$promise;
                 }
             }
         })

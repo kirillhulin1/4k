@@ -204,6 +204,158 @@ var models = [
                 score: 2
             }
 
+        ],
+        sizes: [
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 10
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 10
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 10
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 10
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 0
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 0
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 0
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 0
+            },
+            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 0
+            },            {
+                "name": "Bridgestone Blizzak VRX",
+                "brand": "bridgestown",
+                "width": 175,
+                "height": 65,
+                "diameter": 15,
+                "loadIndex": "82 (475 кг)",
+                "speedIndex": "T (190 км/ч)",
+                "price": 70,
+                "quantity": 4,
+                "season": "winter",
+                "picture": "dest/images/model-image-1.png",
+                "id": 112423545,
+                "available": 0
+            }
+
         ]
     }
 ];
@@ -624,7 +776,32 @@ var lastNews = [
 ];
 
 var searchTire = [{},{},{},{}];
-var searchCar = [{},{},{},{}];
+var searchCar = [
+    {
+        brand: "audi",
+        model: "A6",
+        year: "2015",
+        modification: "quatro"
+    },
+    {
+        brand: "audi",
+        model: "A2",
+        year: "2012",
+        modification: "quatro1"
+    },
+    {
+        brand: "audi",
+        model: "A5",
+        year: "2013",
+        modification: "quatro"
+    },
+    {
+        brand: "audi",
+        model: "A7",
+        year: "2016",
+        modification: "quatro"
+    }
+];
 var searchArticle = [{},{},{},{},{},{},{},{},{},{},{}];
 var searchSize = [{},{},{}];
 
@@ -729,17 +906,17 @@ var tiresOfSize = [
         "available": 13,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             },
             {
-                "picture": "dest/images/adv3.png",
+                "picture": "dest/images/plus3.png",
                 "name": "Отправка в течение 24 часов",
                 "text": "с собственного склада"
             }
@@ -784,12 +961,12 @@ var tiresOfSize = [
         "available": 13,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -816,12 +993,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -848,12 +1025,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -880,12 +1057,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -912,12 +1089,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -944,12 +1121,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -976,12 +1153,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -1008,12 +1185,12 @@ var tiresOfSize = [
         "available": 2,
         "advantages": [
             {
-                "picture": "dest/images/adv1.png",
+                "picture": "dest/images/plus1.png",
                 "name": "Полная гарантия от Bridgestone",
                 "text": "при покупке от двух шин"
             },
             {
-                "picture": "dest/images/adv2.png",
+                "picture": "dest/images/plus2.png",
                 "name": "Гарантия производителя",
                 "text": "заводская гарантия 5 лет"
             }
@@ -1054,6 +1231,7 @@ app.get("/models/:name",function(req,res){
 app.get("/search",function(req,res){
     var searchSection = req.query.searchSection;
     var searchText = req.query.searchText;
+
     if (searchSection) {
         switch (searchSection) {
             case "tire": {
@@ -1119,8 +1297,7 @@ app.get("/carModelYearModifications/:year",function(req,res){
     console.log(req.params.year);
     res.send(audiA61999);
 });
-app.get("/carModelYearModificationResult/:modification",function(req,res){
-
+app.get("/carModelYearModificationResult/:modification",function(req,res) {
     res.send(audiA61999xxx);
 });
 

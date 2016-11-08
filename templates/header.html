@@ -3,7 +3,7 @@
         <div class="container">
             <section class="row">
                 <section class="col-xs-4 hidden-sm hidden-sm hidden-md hidden-lg">
-                    <a href="/tires/index.html"><img class="header-top__logo" src="dest/images/logo_long.png"></a>
+                    <a ui-sref="home"><img class="header-top__logo" src="dest/images/logo_long.png"></a>
                 </section>
                 <section class="col-sm-3 col-xs-6 header-top__schedule-wrapper hidden-xs">
                     <img src="dest/images/small-clock.png">
@@ -53,20 +53,22 @@
                 </ul>
             </nav>
             <div class="menu-mobile__cover hidden-sm hidden-md hidden-lg" close-menu-mobile></div>
-            <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs"><img class="header-bottom__logo" src="dest/images/logo.png"></a>
+            <a href="#" class="header-bottom__logo-anchor pull-left hidden-xs">
+                <img class="header-bottom__logo" src="dest/images/logo.png">
+            </a>
 
             <menu></menu>
 
             <nav class="tools-menu">
                 <ul class="tools-menu__list header-bottom__tools">
                     <li class="tools-menu__item">
-                        <a href="" data-toggle="modal" data-target="#search">
+                        <a href="" ng-click="openModalSearch();">
                             <i class="glyphicon glyphicon-search tools-menu__icon"></i>
                             <span class="hidden-sm hidden-md hidden-xs">Поиск</span>
                         </a>
                     </li>
-                    <li class="tools-menu__item">
-                        <a ui-sref="home.user" class="hidden-lg tools-menu__logged-in" ng-if="user.loggedIn">
+                    <li class="tools-menu__item user-menu__parent" user-menu>
+                        <a href="" class="hidden-lg tools-menu__logged-in" ng-if="user.loggedIn">
                             <i class="glyphicon glyphicon-user tools-menu__icon"></i>
                             <i class="glyphicon glyphicon-ok tools-menu__ok"></i>
                         </a>
@@ -79,7 +81,7 @@
                             <li><a href=""><span class="hidden-sm hidden-md hidden-xs" data-toggle="modal" data-target="#register">Регистрация</span></a></li>
 
                         </ul>
-                        <a class="hidden-sm hidden-md hidden-xs" ui-sref="home.user" ng-if="user.login"><span ng-bind="user.login"></span></a>
+                        <a class="hidden-sm hidden-md hidden-xs" href="" ng-if="user.loggedIn"><span ng-bind="user.login"></span></a>
                     </li>
                     <li class="tools-menu__item tools-menu__cart">
                         <a class="tools-menu__logged-in"
@@ -279,44 +281,6 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="modal fade" tabindex="-1" role="dialog" id="search">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
-                <h4 class="modal-title">Поиск</h4>
-            </div>
-            <div class="modal-body search-modal">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <input type="text" class="search-modal__input form-control" placeholder="Искать...">
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="select__wrapper">
-                            <label class="tab1__label">
-                                <span class="select__label search-modal__label" ng-hide="search.theme">Где искать?</span>
-                                <select ng-model="search.theme" class="form-control select search-modal__theme">
-                                    <option>Везде</option>
-                                    <option>Статья</option>
-                                    <option>Обзор</option>
-                                    <option>Типоразмер: диски</option>
-                                    <option>Типоразмер: шины</option>
-                                </select>
-                            </label>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-1">
-                        <button class="btn btn-primary search-modal__button form-control">
-                            <i class="glyphicon glyphicon-search"></i>
-                            <span class="hidden-lg hidden-md hidden-sm">Искать</span>
-                        </button>
-                    </div>
-                </div><!-- /input-group -->
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 
 <script>

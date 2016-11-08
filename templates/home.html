@@ -33,7 +33,7 @@
 </section>
 <article class="popular-tires container">
     <section class="popular-tires__header">
-        <span class="popular-tires__title">Подбор шин</span>
+        <span class="popular-tires__title"><span class="hidden-xs hidden-sm">Популярные размеры</span></span>
         <ul class="popular-tires__list-top">
             <li ng-click = "season = 'Все'" class="popular-tires__item-top" ng-class="{'Все':'popular-tires__item-top_active'}[season]">Все</li>
             <li ng-click = "season = 'Лето'" class="popular-tires__item-top popular-tires__item-top_winter" ng-class="{'Лето':'popular-tires__item-top_active'}[season]"></li>
@@ -55,9 +55,13 @@
         </ul>
         <section class="popular-tires__results">
             <img class="popular-tires__preloader" src="dest/images/ajax-loader.gif" ng-show="!results.length">
-            <ul class="popular-tires__list-result" ng-show="results.length">
+            <p class="popular-tires__no-result" ng-show="!results[0].width">
+
+                <span ng-bind-html="results"></span>
+            </p>
+            <ul class="popular-tires__list-result" ng-show="results[0].width">
                 <li class="popular-tires__result col-sm-2 col-xs-6" ng-repeat="result in results track by $index">
-                    <a href="#">{{result}}</a>
+                    <a ui-sref="home.tire-choice({width: result.width, height:result.height, diameter: result.diameter, season: result.season})">{{result.width}}/{{result.height}}R{{result.diameter}}</a>
                 </li>
             </ul>
         </section>
@@ -71,7 +75,7 @@
         </section>
     </div>
     <section class="news-list container">
-        <div class="row news-list__list">
+        <div class="news-list__list">
 
             <article class="col-md-3 col-sm-4 news-list__item {{insertClass(article.sectionName)}}"
                      ng-repeat="article in lastNews | limitTo : 4"

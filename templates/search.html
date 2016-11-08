@@ -1,7 +1,7 @@
 <section class="container search">
     <form name="searchForm" class="search-modal">
         <div class="col-sm-7">
-            <input ng-model="search.text" required type="text" class="search-modal__input form-control" placeholder="Искать...">
+            <input ng-model="search.text" type="text" class="search-modal__input form-control" placeholder="Искать...">
         </div>
         <div class="col-sm-4">
             <div class="select__wrapper">
@@ -39,8 +39,21 @@
                         </section>
                     </section>
                 </article>
-                <article class="search__item" ng-switch-when="car">
-                    <h1>asdga</h1>
+                <article class="search__item search__item_car row" ng-switch-when="car">
+                    <section class="row">
+                        <section class="col-xs-12 col-sm-9">
+                            <a href="">
+                                <span ng-bind="result.brand"></span>&nbsp;
+                                <span ng-bind="result.model"></span>&nbsp;
+                                <span ng-bind="result.year"></span>&nbsp;
+                                <span ng-bind="result.modification"></span>
+                            </a>
+                        </section>
+                        <section class="col-sm-3 hidden-xs">
+                            <span class="pull-right">Автомобиль</span>
+                        </section>
+                    </section>
+
                 </article>
                 <article class="search__item" ng-switch-when="article">
                     <section class="row">

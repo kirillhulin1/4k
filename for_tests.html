@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="dest/styles.min.css">
-    <link rel="stylesheet" href="dest/rzslider.min.css">
+
+    <link rel="stylesheet" href="dest/gkg-select.css">
 
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="AppCtrl">
 
-    <test></test><br><br>
-
+<form name="myForm" method="get" action="test.php">
+    <my-select name="number" options="variants" start=2></my-select>
+    <button type="submit">Отправить</button>
+</form>
 
 <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
 <script src="dest/js/lib/angular.min.js"></script>
@@ -28,26 +31,38 @@
 
 <script src="dest/js/app.js"></script>
 
-<!--Контроллеры-->
-<script src="dest/js/controllers/appCtrl.js"></script>
+
 
 
 <script>
     var app = angular.module("app",[]);
-    app.directive("test",["$compile","$sce",function($compile,$sce){
+
+    app.controller("AppCtrl", ["$scope",function($scope){
+        $scope.variants = [
+            {name:"one", value:1},{name:"two", value:2},{name:"three", value:3},{name:"four", value:4},{name:"five", value:5}
+        ];
+    }]);
+
+    app.directive("mySelect",[function(){
         return {
             restrict: "E",
-            scope: {},
-            template: "<div></div><span class='btn'>Нажать 1</span>",
-            "link": function(scope, element){
-
-                var button = element.find("span").eq(0);
-                var div = element.find("div").eq(0);
-                scope.url = 'https://s3-eu-west-1.amazonaws.com/itq-development/slides/U0MZOLO04RJ48R46I2MVI2WN~y_cc30bf6a.jpg';
-                var el = $compile("<input ng-model='url'><img ng-src='{{url}}'>")(scope);
-                button.on("click",function(){
-                    div.append(el.clone());
+            scope: {
+                options: "=",
+                name: "@",
+                start: "@"  //значение по умолчанию
+            },
+            templateUrl: "templates/test.html",
+            link: function(scope,element){
+                var fakeSelect = element[0].querySelector(".gkg-select__fake");
+                angular.element(fakeSelect).bind("click",function(){
+                    angular.element(fakeSelect).toggleClass("gkg-select__fake_hover");
                 });
+                scope.data = {
+                    result: {
+                        name:"two", value:2
+
+                    }
+                }
             }
         }
     }]);

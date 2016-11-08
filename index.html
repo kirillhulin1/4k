@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="dest/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="dest/styles.min.css">
     <link rel="stylesheet" href="dest/rzslider.min.css">
+    <link rel="stylesheet" href="dest/temporary.css">
+    <link rel="stylesheet" href="dest/gkg-select.css">
 
 
 
 </head>
-<body ng-controller="AppCtrl as controller">
+<body ng-controller="AppCtrl as controller" send-selection>
 
     <div ui-view="header"></div>
     <main>
@@ -105,7 +107,8 @@
     <script src="dest/js/directives/carousel.js"></script>
     <script src="dest/js/directives/dirPagination.js"></script>
     <script src="dest/js/directives/onFinishRender.js"></script>
-
+    <script src="dest/js/directives/userMenu.js"></script>
+    <script src="dest/js/directives/sendSelection.js"></script>
 
 
     <!--Провайдеры-->
@@ -123,6 +126,8 @@
     <script src="dest/js/providers/tiresOfSizeResource.js"></script>
     <script src="dest/js/providers/chooseTireResource.js"></script>
 
+    <!--Фабрики-->
+    <script src="dest/js/factories/chooseTireParams.js"></script>
 
     <!--Фильтры-->
     <script src="dest/js/filters/goods.js"></script>

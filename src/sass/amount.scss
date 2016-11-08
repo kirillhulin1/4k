@@ -3,8 +3,16 @@
   * {
     height: 35px !important;
   }
-
-
+}
+.amount button {
+  line-height: 35px;
+}
+.amount button[disabled] {
+  background-color: $gray;
+  transition: none;
+  i {
+    color: #555;
+  }
 }
 
 .amount__number {
@@ -12,7 +20,7 @@
   position: relative;
   left: -1px;
   height: 35px;
-  padding: 6px 12px;
+  padding: 6px 0;
   font-size: 14px;
   line-height: 1.5;
   color: #555;
@@ -34,8 +42,19 @@
 }
 .amount__plus, .amount__minus {
   position: relative;
+  padding: 0 12px !important;
 }
 .amount__plus {
 
   left: -2px;
+}
+
+@media all and (max-width: 460px) {
+  .amount__plus, .amount__minus {
+    position: relative;
+    padding: 0 6px !important;
+  }
+  .amount__number {
+    width: 35px;
+  }
 }

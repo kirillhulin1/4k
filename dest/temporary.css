@@ -1,0 +1,62 @@
+.tires-rims__item {
+    width: 33.3%;
+}
+
+
+
+.user-menu {
+    padding: 10px !important;
+    position: absolute;
+    background-color: white;
+    top: 45px;
+    right: -1px;
+    font-size: 14px;
+    display: none;
+    border: 1px solid #cecece;
+    width: 180px;
+    box-sizing: border-box;
+}
+.user-menu ul {
+    width: 100%;
+}
+.user-menu li {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+@media all and (max-width: 768px) {
+    .user-menu {
+        top: 35px;
+    }
+}
+.user-menu__parent {
+    position: relative;
+}
+.user-menu_shown .user-menu  {
+    display: block;
+}
+
+
+.popular-tires__title {
+    text-align: left;
+}
+.popular-tires__no-result {
+    padding-top: 50px;
+}
+
+
+
+.footer__subtitle {
+    color: #000;
+    font-size: 110%;
+}
+
+
+.scroll-up {
+    transition: none;
+}
+
+
+
+.tabs-tires__tab a:first-child {
+    transition: none;
+}

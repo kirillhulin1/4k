@@ -1,0 +1,8 @@
+<select class="gkg-select" name="{{name}}" ng-options="option[name] for option in options track by option.value" ng-model="data.result">
+</select>
+<section class="gkg-select__fake">
+    {{data.result}}
+    <ul class="gkg-select__options">
+        <li class="gkg-select__option" ng-class="{'gkg-select__option_selected': option.name == data.result.name}" ng-repeat="option in options" ng-bind="option.name" ng-click="data.result={name:option.name, value:option.value}"></li>
+    </ul>
+</section>

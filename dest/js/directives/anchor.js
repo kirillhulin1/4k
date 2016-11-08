@@ -3,6 +3,7 @@ app.directive("anchor",[function(){
         "restrict": "A",
 
         "link": function(scope, element){
+
             $(window).scroll(function(){
                 if ($(this).scrollTop() > 100) {
                     $('.scroll-up').fadeIn();

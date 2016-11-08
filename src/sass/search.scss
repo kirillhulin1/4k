@@ -23,6 +23,13 @@
 .search__item {
   margin: 1.5em 0;
 }
+.search__item_car {
+  margin-bottom: 0;
+  a {
+    font-family: "SegoeUIBold", Verdana, sans-serif;
+    text-decoration: none;
+  }
+}
 .search__section {
   color: $orange;
   margin-top: 0;

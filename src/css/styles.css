@@ -129,6 +129,7 @@ h4 {
 }
 .tooltip-inner {
   background-color: #2E67C2 !important;
+  width: 300px;
 }
 
 .tooltip-arrow {
@@ -1444,7 +1445,7 @@ h1 {
 
   .advantages__text {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     height: 60px;
     text-align: right;
   }
@@ -1483,7 +1484,7 @@ h1 {
   }
 
   .advantages__text {
-    font-size: 22px;
+    font-size: 20px;
   }
   .advantages__text > * {
     top: 5px;
@@ -1647,21 +1648,20 @@ h1 {
 
 .footer__social {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: url("images/vk.png") no-repeat;
-  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  background-image: url("images/vk-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -30px 0;
+  transition: none;
 }
 
 .footer__social:hover {
-  background-image: url("images/vk-active.png");
+  background-position: 0 0;
 }
 
 .footer__social_fb {
-  background-image: url("images/fb.png");
-}
-.footer__social_fb:hover {
-  background-image: url("images/fb-active.png");
+  background-image: url("images/fb-sprite.png");
 }
 
 .footer .list-unstyled > li :hover {
@@ -1714,10 +1714,10 @@ h1 {
   transition: all 0.3s;
   position: relative;
 }
-.tab1__label:hover {
+.tab1__label.tab1__label_animated:hover {
   background-color: #fff !important;
 }
-.tab1__label:before {
+.tab1__label.tab1__label_animated:before {
   content: "";
   position: absolute;
   height: 100%;
@@ -1730,10 +1730,10 @@ h1 {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-.tab1__label:hover:before {
+.tab1__label.tab1__label_animated:hover:before {
   top: 0;
 }
-.tab1__label:after {
+.tab1__label.tab1__label_animated:after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -1741,7 +1741,7 @@ h1 {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-.tab1__label span {
+.tab1__label.tab1__label_animated span {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -1750,9 +1750,8 @@ h1 {
   -moz-transition: all 0.3s;
   -moz-backface-visibility: hidden;
   transition: all 0.3s;
-  backface-visibility: hidden;
 }
-.tab1__label:hover span {
+.tab1__label.tab1__label_animated:hover span {
   -webkit-transform: translateY(300%);
   -moz-transform: translateY(300%);
   -ms-transform: translateY(300%);
@@ -1841,6 +1840,15 @@ h1 {
   }
 }
 @media all and (max-width: 600px) {
+  .tab1__season_hidden {
+    opacity: 0;
+  }
+
+  .tab1__label_animated:before {
+    top: 0 !important;
+    transition: none;
+  }
+
   .tab1__paddingBottomSmall {
     width: 100%;
     margin-bottom: 15px;
@@ -1848,7 +1856,31 @@ h1 {
     float: none;
   }
   .tab1__paddingBottomSmall:last-child {
-    margin-bottom: 25px;
+    margin-bottom: 0 !important;
+  }
+
+  .tab1__label.active.tab1_summer:before {
+    background-image: url(images/summer-white.png);
+  }
+
+  .tab1__label.active.tab1_summer:hover:before {
+    background-image: url(images/summer-blue.png);
+  }
+
+  .tab1__label.active.tab1_winter:before {
+    background-image: url(images/winter-white.png);
+  }
+
+  .tab1__label.active.tab1_winter:hover:before {
+    background-image: url(images/winter-blue.png);
+  }
+
+  .tab1__label.active.tab1_allseasons:before {
+    background-image: url(images/allseason-white.png);
+  }
+
+  .tab1__label.active.tab1_allseasons:hover:before {
+    background-image: url(images/allseason-blue.png);
   }
 }
 .tab1__button {
@@ -1857,6 +1889,12 @@ h1 {
 
 .tab1__range {
   margin: 10px 0 30px;
+}
+.tab1__range .col-sm-2 {
+  padding: 0 !important;
+}
+.tab1__range input {
+  text-align: center;
 }
 
 .tab1__range-input {
@@ -1902,6 +1940,13 @@ h1 {
   line-height: 40px;
   text-align: center;
   color: #2E67C2;
+}
+.bottom-panel__open a {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
 
 .bottom-panel_closed .bottom-panel__list {
@@ -2086,7 +2131,6 @@ h1 {
   bottom: 70px;
   right: 30px;
   display: none;
-  transition: all 0.1s;
   z-index: 100;
 }
 .scroll-up:hover {
@@ -2095,6 +2139,7 @@ h1 {
 
 .scroll-up__image {
   width: 45px;
+  height: 45px;
 }
 
 .menu-mobile {
@@ -2321,6 +2366,10 @@ h1 {
 
 .modal-cart__amount {
   text-align: left;
+}
+
+.modal-cart__continue-btn {
+  top: 0 !important;
 }
 
 .log-in__forget {
@@ -3517,7 +3566,7 @@ h1 {
   }
 
   .banner_akzii {
-    background-image: url(images/banner-akzii.png);
+    background-image: url(images/banner-akzii.jpg);
   }
 
   .banner__text {
@@ -4018,75 +4067,46 @@ h4.oplata__description {
   height: 100%;
 }
 
-.pagination {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  border-radius: 4px;
+.pagination__list {
+  width: 100%;
+  text-align: center;
 }
 
 .pagination__item {
-  box-sizing: border-box;
-  position: relative;
-  float: left;
-  /*  padding: 6px 12px;*/
-  text-align: center;
-  text-decoration: none;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  margin-left: -1px;
-}
-.pagination__item:hover {
-  background-color: #eeeeee;
+  padding: 0 !important;
 }
 
-.pagination__item_active {
-  border-color: #34495e;
-  background-color: #34495e;
-}
-.pagination__item_active:hover {
-  border-color: #34495e;
-  background-color: #34495e;
-}
 .pagination__item_active .pagination__anchor {
-  color: white;
-}
-
-.pagination__previous {
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-
-.pagination__next {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
+  color: #5c5c5c;
+  font-size: 18px;
 }
 
 .pagination__anchor {
-  color: #34495e;
+  display: inline-block;
+  min-width: 8px;
+  padding: 3px 10px;
+  line-height: 22px;
   text-decoration: none;
-  padding: 6px 12px;
-  display: block;
+  box-sizing: content-box;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #adadae;
+}
+.pagination__anchor:hover {
+  color: #5c5c5c;
+  outline: none;
+  text-decoration: none;
 }
 
-.pagination .pagination__item_disabled {
-  background-color: #ffffff;
-  border-color: #dddddd;
-  cursor: not-allowed;
-}
-.pagination .pagination__item_disabled .pagination__anchor {
-  color: #999999;
-  cursor: not-allowed;
+.pagination__list .pagination__item_disabled {
+  display: none;
 }
 
-.pagination_color_green .pagination__item_active {
-  border-color: #16a085;
-  background-color: #16a085;
-}
-.pagination_color_green .pagination__item_active:hover {
-  border-color: #16a085;
-  background-color: #16a085;
+.pagination__arrow .pagination__anchor {
+  padding: 3px 4px;
 }
 
 .accordion .panel-group {
@@ -4239,6 +4259,14 @@ h4.oplata__description {
   margin: 1.5em 0;
 }
 
+.search__item_car {
+  margin-bottom: 0;
+}
+.search__item_car a {
+  font-family: "SegoeUIBold", Verdana, sans-serif;
+  text-decoration: none;
+}
+
 .search__section {
   color: #fb7920;
   margin-top: 0;
@@ -4352,12 +4380,24 @@ h4.oplata__description {
   height: 35px !important;
 }
 
+.amount button {
+  line-height: 35px;
+}
+
+.amount button[disabled] {
+  background-color: #ececec;
+  transition: none;
+}
+.amount button[disabled] i {
+  color: #555;
+}
+
 .amount__number {
   width: 50px;
   position: relative;
   left: -1px;
   height: 35px;
-  padding: 6px 12px;
+  padding: 6px 0;
   font-size: 14px;
   line-height: 1.5;
   color: #555;
@@ -4380,12 +4420,23 @@ h4.oplata__description {
 
 .amount__plus, .amount__minus {
   position: relative;
+  padding: 0 12px !important;
 }
 
 .amount__plus {
   left: -2px;
 }
 
+@media all and (max-width: 460px) {
+  .amount__plus, .amount__minus {
+    position: relative;
+    padding: 0 6px !important;
+  }
+
+  .amount__number {
+    width: 35px;
+  }
+}
 .radio {
   position: relative;
 }
@@ -4570,6 +4621,38 @@ h4.oplata__description {
 
 .choose-result td {
   vertical-align: middle !important;
+}
+
+.no-data {
+  font-size: 120%;
+  line-height: 1;
+  font-family: "SegoeUIBold", Verdana, sans-serif;
+  /*color: $mainColor;*/
+}
+.no-data > i {
+  /*color: $orange;*/
+}
+
+@media all and (max-width: 767px) {
+  .nav-tabs.nav-justified > .nav-item > a {
+    /*    color: #555;*/
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 5px;
+    border: 1px solid #6092E1;
+  }
+
+  .nav-tabs.nav-justified > .nav-item.active > a {
+    background-color: #ececec;
+    border: 1px solid #ddd;
+  }
+
+  .nav-tabs.nav-justified > .nav-item > a:hover {
+    background-color: #ececec !important;
+    color: #555;
+    border: 1px solid #ddd;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

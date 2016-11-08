@@ -1,4 +1,6 @@
 app.controller("SearchCtrl",["$stateParams","$state","$scope","searchData",function($stateParams,$state,$scope,searchData){
+    console.log($stateParams);
+
     $scope.results = [];
     var i; //вспомогательная переменная для циклов
 
@@ -61,8 +63,8 @@ app.controller("SearchCtrl",["$stateParams","$state","$scope","searchData",funct
 
     $scope.search = {};
 
-    $scope.search.text="";
-    $scope.search.theme="";
+    $scope.search.text = $stateParams.searchText || "";
+    $scope.search.theme = $stateParams.searchSection || "";
 
     $scope.search = function() {
         if ($scope.searchForm.$valid) {

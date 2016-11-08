@@ -7,7 +7,6 @@ app.directive("hideOnMisclick",[function(){
             $(document).click(function(event) {
                 if ($(event.target).closest(".submenu").length || $(event.target).closest(".menu__item_dropdown").length)
                 {
-
                     return;
                 }
 

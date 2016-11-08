@@ -7,8 +7,6 @@ app.controller("HomeCtrl",["$scope","$http","lastNews",function($scope,$http,las
 
     var results = {};
 
-
-
     function updateResults(search) {
         $scope.search = search;
         if (search in results) {
@@ -22,11 +20,14 @@ app.controller("HomeCtrl",["$scope","$http","lastNews",function($scope,$http,las
             }).then(function successCallback(response) {
                 $scope.results = response.data[search];
                 results[search] = response.data[search];
+                if (!$scope.results.length) {
+                    results[search] = "<span class='no-data'><i class='glyphicon glyphicon-ban-circle'></i>&nbsp;Нет шин с данными параметрами</span>";
+                    $scope.results = "<span class='no-data'><i class='glyphicon glyphicon-ban-circle'></i>&nbsp;Нет шин с данными параметрами</span>";
+                }
             }, function errorCallback(response) {
                 console.log("Произошла ошибка при загрузке данных");
             });
         }
-
     }
 
     $scope.$watch("season",function(newData,oldData){

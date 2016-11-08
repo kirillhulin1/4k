@@ -1,8 +1,18 @@
-app.directive("chooseTire",["$timeout","$state",function($timeout,$state){
+app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams",function($timeout,$state,chooseTireParams,$stateParams){
     return {
         "restrict": "E",
         "templateUrl": "templates/choose-tire.html",
         "link": function(scope, element){
+            scope.width = $stateParams.width;
+            scope.height = $stateParams.height;
+            scope.diameter = $stateParams.diameter;
+            scope.brands = $stateParams.brands;
+            scope.season = $stateParams.season;
+            scope.ship = $stateParams.ship;
+            scope.inStock = $stateParams.inStock;
+            scope.minCost = $stateParams.minCost;
+            scope.maxCost = $stateParams.maxCost;
+
             scope.showMore = false;
 
             scope.brands = [
@@ -103,7 +113,8 @@ app.directive("chooseTire",["$timeout","$state",function($timeout,$state){
                 angular.forEach(scope.choosenBrands,function(brand){
                     brands.push(brand.brand);
                 });
-                $state.go("home.tire-choice",{
+                console.log(JSON.stringify(scope.choosenBrands));
+                chooseTireParams.set({
                     width: scope.width,
                     height: scope.height,
                     diameter: scope.diameter,
@@ -113,15 +124,20 @@ app.directive("chooseTire",["$timeout","$state",function($timeout,$state){
                     inStock: scope.inStock,
                     minCost: scope.noSwitchingSlider.minValue,
                     maxCost: scope.noSwitchingSlider.maxValue
+                });
+                $state.go("home.tire-choice",{
+                    width: scope.width,
+                    height: scope.height,
+                    diameter: scope.diameter,
+                    season: scope.season,
+                    ship: scope.ship,
+                    inStock: scope.inStock,
+                    minCost: scope.noSwitchingSlider.minValue,
+                    maxCost: scope.noSwitchingSlider.maxValue,
+                    brands: JSON.stringify(scope.choosenBrands)
                 },{reload: true});
             };
 
-        },
-        controller: function($scope) {
-            $scope.$on("changeTiresChooseParams", function(e,params){
-                console.log(3);
-                console.log(params);
-            });
         }
     }
 }]);

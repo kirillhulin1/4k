@@ -1,50 +1,952 @@
 {
   "R13Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C","225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
+
   ],
   "R14Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R15Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R16Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R17Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R18Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R19Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R20Все": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R13Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R14Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R15Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R16Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R17Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R18Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    },    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ],
   "R19Лето": [
-    "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C", "225/70R15C"
+
   ],
   "R20Лето": [
-    "225/70R15C"
+    {
+      "width": 225,
+      "height": 70,
+      "diameter": 15,
+      "season": "summer"
+    }
   ]
 }

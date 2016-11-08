@@ -111,10 +111,7 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
         $scope.$broadcast("changeTopTabs",newActiveTab);
     });
 
-    $scope.$on("tiresParamsChosen",function(e,params){
-        console.log(1);
-        $scope.$broadcast("changeTiresChooseParams",params);
-    });
+
 
     //Фунции вставляюшие нужный css класс в зависимости от раздела новостей
     $scope.insertClass = function(name) {

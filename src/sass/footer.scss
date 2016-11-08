@@ -19,23 +19,20 @@
 }
 .footer__social {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: url("images/vk.png") no-repeat;
-  background-size: 100%
+  width: 30px;
+  height: 30px;
+  background-image: url("images/vk-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -30px 0;
+  transition: none;
 }
 .footer__social:hover {
-  background-image: url("images/vk-active.png");
+  background-position: 0 0;
 }
 .footer__social_fb {
-  background-image: url("images/fb.png");
-  &:hover {
-    background-image: url("images/fb-active.png");
-  }
+  background-image: url("images/fb-sprite.png");
 }
-.footer__socials {
 
-}
 
 .footer .list-unstyled >li :hover {
   padding-left:15px;

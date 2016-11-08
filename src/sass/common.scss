@@ -116,11 +116,13 @@ h4 {
 }
 .tooltip-inner{
   background-color: $mainColor !important;
+  width: 300px;
 }
 .tooltip-arrow {
   border-top-color: $mainColor !important;
   border-bottom-color: $mainColor !important;
 }
+
 label {
   font-weight: normal;
 }

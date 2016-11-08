@@ -74,24 +74,35 @@
         <p class="tab__section-title">Сезонность</p>
 
         <section class="row">
-            <div class="col-xs-4 tab1__paddingBottomSmall ">
-                    <label id="test" ng-click="toggleValue($event)" class="btn-reverse tab1__label tab1_summer" ng-model="season" uib-btn-radio="'Лето'"><span>Лето</span></label>
-
+            <div class="col-xs-4">
+                <label id="test" ng-click="toggleValue($event)"
+                        class="btn-reverse tab1__label_animated tab1__label tab1_summer"
+                        ng-model="season" uib-btn-radio="'Лето'">
+                    <span class="tab1__season_hidden">Лето</span>
+                </label>
             </div>
-            <div class="col-xs-4 tab1__paddingBottomSmall ">
-                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label tab1_winter" ng-model="season" uib-btn-radio="'Зима'"><span>Зима</span></label>
+            <div class="col-xs-4">
+                <label ng-click="toggleValue($event)"
+                       class="btn-reverse tab1__label_animated tab1__label tab1_winter"
+                       ng-model="season"
+                       uib-btn-radio="'Зима'">
+                    <span class="tab1__season_hidden">Зима</span>
+                </label>
             </div>
-            <div class="col-xs-4 tab1__paddingBottomSmall">
-                <label ng-click="toggleValue($event)" class="btn-reverse tab1__label tab1_allseasons" ng-model="season" uib-btn-radio="'Всесезонная'">
-                    <span class="hidden-sm">Всесезонная</span>
+            <div class="col-xs-4">
+                <label ng-click="toggleValue($event)"
+                       class="btn-reverse tab1__label_animated tab1__label tab1_allseasons"
+                       ng-model="season"
+                       uib-btn-radio="'Всесезонная'">
+                    <span class="tab1__season_hidden hidden-sm">Всесезонная</span>
                     <span class="hidden-xs hidden-md hidden-lg">Всесезон.</span>
                 </label>
 
             </div>
         </section>
 
-        <p class="tab__section-title"  ng-show="showMore">Тип шиповки</p>
-        <div class="select__wrapper" ng-show="showMore">
+        <p class="tab__section-title hidden-xs"  ng-show="showMore">Тип шиповки</p>
+        <div class="select__wrapper hidden-xs" ng-show="showMore">
             <label class="tab1__select">
                 <span class="select__label" ng-show="!ship">Тип шиповки</span>
                 <select ng-model="ship" class="form-control select">
@@ -101,7 +112,7 @@
                 </select>
             </label>
         </div>
-        <div class="checkbox" ng-show="showMore">
+        <div class="checkbox hidden-xs" ng-show="showMore">
             <input id = "checkbox-111" class="checkbox__input" type="checkbox" ng-model="inStock">
             <label for="checkbox-111" class="checkbox__label">
                 <span class="checkbox__span">Только в наличии</span>
@@ -110,7 +121,7 @@
     </section>
 
     <section class="col-sm-6 tab1__right col-lg-5" >
-        <div class="multiselect" multiselect  ng-show="showMore">
+        <div class="multiselect hidden-xs" multiselect  ng-show="showMore">
             <div class="form-control multiselect__input">
                 Бренды <span ng-show="choosenBrands.length">({{choosenBrands.length}})</span>
             </div>
@@ -130,7 +141,7 @@
                 <span class="close multiselect__close"><img src="dest/images/cross-close.png"></span>
             </div>
         </div>
-        <section ng-show="showMore" class="tab1__range row"><!--ng-show="showMore"-->
+        <section ng-show="showMore" class="tab1__range row hidden-xs"><!--ng-show="showMore"-->
             <div class="col-sm-2" >
                 <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.minValue">
             </div>

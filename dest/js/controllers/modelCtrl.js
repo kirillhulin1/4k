@@ -28,6 +28,8 @@ console.log($scope.data.model);
 
     $scope.score = modelData.score;
     $scope.comments = modelData.comments;
+    $scope.news = modelData.news;
+    $scope.pageIndex = 1;
     var sizes = modelData.sizes;
     $scope.sizesAvailable = [];
     $scope.sizesNotAvailable = [];

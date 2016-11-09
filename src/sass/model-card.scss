@@ -32,6 +32,7 @@
 
   }
 }
+
 .model-card__label {
   position: absolute;
   top: -3px;
@@ -41,6 +42,9 @@
   margin-left: 2em;
   position: relative;
   z-index: 3;
+}
+.model-card__brand-left {
+  margin-left: 0em;
 }
 .model-card__picture {
   overflow: hidden;

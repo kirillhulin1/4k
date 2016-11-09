@@ -1,6 +1,7 @@
 .view-settings__label {
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
-
+  width: 100% !important;
+  line-height: 35px;
 }
 .view-settings {
   margin: 2em 0 1em;
@@ -16,5 +17,13 @@
 @media all and (max-width: $sm-size - 1) {
   .view-settings__show {
     display: block !important;
+  }
+}
+.view-settings__change-sort {
+  float: right;
+}
+@media all and (min-width: $sm-size) {
+  .view-settings__change-sort {
+    float: left;
   }
 }

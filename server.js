@@ -356,6 +356,105 @@ var models = [
                 "available": 0
             }
 
+        ],
+        news: [
+            {
+                "title": "Ух ты!",
+                "titleEn": "uh_ty",
+                "date": "22.07.1986",
+                "previewText": "В Лондоне идут дожди",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230180,
+                "commentsNumber": 3,
+                "sectionName": "Тесты шин",
+                "sectionNameEn": "tires_tests",
+                "subsectionName": "Тесты зимних шин",
+                "subsectionNameEn": "winter_tires_tests"
+            },
+            {
+                "title": "Тест супершин Дабл-трабл",
+                "date": "31.07.2010",
+                "previewText": "Хотите жить, харэ тормозить. С дабл-трабл по льду, как по наждачке.",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230180,
+                "commentsNumber": 4,
+                "sectionName": "Тесты шин",
+                "sectionNameEn": "tires_tests",
+                "subsectionName": "Тесты зимних шин",
+                "subsectionNameEn": "winter_tires_tests"
+            },
+            {
+                "title": "Шумахер в гостях у 4k.by",
+                "date": "17.05.2016",
+                "previewText": "Миша тоже выбирает наш сайт",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230181,
+                "commentsNumber": 4,
+                "sectionName": "Обзоры шин",
+                "sectionNameEn": "tires_reviews",
+                "subsectionName": "Обзоры зимних шин",
+                "subsectionNameEn": "winter_tires_reviews"
+            },
+            {
+                "title": "Лысая резина - веселье на дорогах",
+                "date": "22.08.2016",
+                "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230185,
+                "commentsNumber": 4,
+                "sectionName": "Обзоры шин",
+                "sectionNameEn": "tires_reviews",
+                "subsectionName": "Обзоры зимних шин",
+                "subsectionNameEn": "winter_tires_reviews"
+            },
+            {
+                "title": "Лысая резина - веселье на дорогах",
+                "date": "22.08.2016",
+                "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230185,
+                "commentsNumber": 4,
+                "sectionName": "Обзоры шин",
+                "sectionNameEn": "tires_reviews",
+                "subsectionName": "Обзоры зимних шин",
+                "subsectionNameEn": "winter_tires_reviews"
+            },
+            {
+                "title": "Лысая резина - веселье на дорогах",
+                "date": "22.08.2016",
+                "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230185,
+                "commentsNumber": 4,
+                "sectionName": "Обзоры шин",
+                "sectionNameEn": "tires_reviews",
+                "subsectionName": "Обзоры зимних шин",
+                "subsectionNameEn": "winter_tires_reviews"
+            },
+            {
+                "title": "Лысая резина - веселье на дорогах",
+                "date": "22.08.2016",
+                "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230185,
+                "commentsNumber": 4,
+                "sectionName": "Обзоры шин",
+                "sectionNameEn": "tires_reviews",
+                "subsectionName": "Обзоры зимних шин",
+                "subsectionNameEn": "winter_tires_reviews"
+            },
+            {
+                "title": "Лысая резина - веселье на дорогах",
+                "date": "22.08.2016",
+                "previewText": "Продаем б/у по выгодным ценам! Разлетается как горясие пирожки",
+                "previewPicture": "dest/images/home-grid-01.jpg",
+                "id": 19817230186,
+                "commentsNumber": 4,
+                "sectionName": "Обзоры шин",
+                "sectionNameEn": "tires_reviews",
+                "subsectionName": "Обзоры зимних шин",
+                "subsectionNameEn": "winter_tires_reviews"
+            }
         ]
     }
 ];
@@ -583,7 +682,6 @@ var news = [
         ]
     }
 ];
-
 var newsStructure = [
     {
         "section": "Тесты шин",
@@ -673,7 +771,6 @@ var newsStructure = [
         ]
     }
 ];
-
 var lastNews = [
     {
         "title": "Ух ты!",
@@ -774,7 +871,6 @@ var lastNews = [
     }
 
 ];
-
 var searchTire = [{},{},{},{}];
 var searchCar = [
     {
@@ -1226,6 +1322,7 @@ app.get("/models/:name",function(req,res){
             console.log(1);
             res.send(models[i]);
         }
+
     });
 });
 app.get("/search",function(req,res){

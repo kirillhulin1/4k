@@ -4,8 +4,15 @@
 .accordion .panel-heading{
   background-color: #f8f9fb !important;
   border-radius: 0;
-  padding: 15px 30px;
   background-image: none;
+}
+.accordion .accordion-toggle {
+  display: block;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  color: #333;
 }
 .accordion .panel>.panel {
   border: none;

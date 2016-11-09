@@ -146,13 +146,29 @@
                                     </section>
                                     <section class="model__buy">
                                         <section class="model__price">50 р.</section>
+
                                         <section class="row">
-                                            <section class="col-xs-7 col-md-6">
+<!--                                            <section class="col-xs-7 col-md-6">
                                                 <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
                                                 <input type="text" class="form-control model__quantity">
                                                 <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                                            </section>
-                                            <section class="col-xs-5 col-md-6">
+                                            </section>-->
+                                            <div class="col-xs-7 col-md-6 model__amount">
+                                                <table class="amount">
+                                                    <tr>
+                                                        <td>
+                                                            <button class="btn btn-reverse amount__minus" ng-click="item.quantity = item.quantity - 1; user.countTotalCartPrice();" ng-disabled="item.quantity==1"><i class="glyphicon glyphicon-minus"></i></button>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="amount__number" ng-model="item.quantity">
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-reverse amount__plus" ng-click="item.quantity = item.quantity + 1;  user.countTotalCartPrice();" ng-disabled="item.quantity == item.available"><i class="glyphicon glyphicon-plus"></i></button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <section class="col-xs-5 col-md-6 model__amount-button">
                                                 <button class="btn btn-success form-control"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
                                             </section>
                                         </section>
@@ -188,13 +204,43 @@
             </uib-tab>
             <uib-tab index="3">
                 <uib-tab-heading>
-                    <i class="glyphicon glyphicon-star-empty"></i> Тесты и обзоры(3)
+                    <i class="glyphicon glyphicon-star-empty"></i> Тесты и обзоры (<span ng-bind="news.length"></span>)
                 </uib-tab-heading>
-                Long Labeled Justified content
+                <section class="news-list description">
+                    <div class="news-list__list">
+
+                        <article class="col-md-4 col-sm-6 news-list__item {{insertClass(article.sectionName)}}"
+                                 dir-paginate = "article in news | itemsPerPage: 6"
+                                 ng-class="{'news-list__item_reverse': $index%2==1}"
+                                 current-page = pageIndex
+                        >
+                            <div class="news-list__teaser">
+                                <div class="news-list__picture">
+                                    <img  class="news-list__image" ng-src="{{article.previewPicture}}">
+                                    <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
+                                    <a class="news-list__cover" ui-sref="home.news.section.subsection.article({section:article.sectionNameEn,subsection:article.subsectionNameEn,article: article.title})"></a>
+                                </div>
+                                <div class="news-list__content">
+                                    <span class="news-list__theme" ng-bind="article.sectionName"></span>
+                                    <h3 class="news-list__title"><a ui-sref="home.news.section.subsection.article({section:article.sectionNameEn,subsection:article.subsectionNameEn,article: article.title})" ng-bind="article.title"></a></h3>
+                                    <p class="news-list__text" ng-bind="article.previewText"></p>
+                                    <p class="news-list__arrow">
+                                        <a ui-sref="home.news.section.subsection.article({section:article.sectionNameEn,subsection:article.subsectionNameEn,article: article.title})"><img src="dest/images/news-arrow.png"></a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <dir-pagination-controls on-page-change="savePageIndex(newPageNumber)"></dir-pagination-controls>
+                </section>
             </uib-tab>
             <uib-tab index="4" ng-click="showComments()">
                 <uib-tab-heading>
-                    <i class="glyphicon glyphicon-edit"></i> Отзывы(3)
+                    <i class="glyphicon glyphicon-edit"></i> Отзывы (<span ng-bind="comments.length"></span>)
                 </uib-tab-heading>
                 <section class="comments" ng-init="showComments()">
                     <div>

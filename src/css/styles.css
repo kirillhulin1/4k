@@ -2751,8 +2751,19 @@ h1 {
   text-align: center;
 }
 
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .model__amount table, .model__amount, .model__amount table td *, .model__amount-button {
+    width: 100%;
+  }
+
+  .model__amount {
+    margin-bottom: 1em;
+  }
+}
 .view-settings__label {
   font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  width: 100% !important;
+  line-height: 35px;
 }
 
 .view-settings {
@@ -2772,6 +2783,15 @@ h1 {
 @media all and (max-width: 767px) {
   .view-settings__show {
     display: block !important;
+  }
+}
+.view-settings__change-sort {
+  float: right;
+}
+
+@media all and (min-width: 768px) {
+  .view-settings__change-sort {
+    float: left;
   }
 }
 @media all and (max-width: 768px) {
@@ -2818,6 +2838,10 @@ h1 {
   margin-left: 2em;
   position: relative;
   z-index: 3;
+}
+
+.model-card__brand-left {
+  margin-left: 0em;
 }
 
 .model-card__picture {
@@ -4116,8 +4140,16 @@ h4.oplata__description {
 .accordion .panel-heading {
   background-color: #f8f9fb !important;
   border-radius: 0;
-  padding: 15px 30px;
   background-image: none;
+}
+
+.accordion .accordion-toggle {
+  display: block;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-family: "SegoeUISemiBold", Verdana, sans-serif;
+  color: #333;
 }
 
 .accordion .panel > .panel {
@@ -4395,6 +4427,7 @@ h4.oplata__description {
 .amount__number {
   width: 50px;
   position: relative;
+  text-align: center;
   left: -1px;
   height: 35px;
   padding: 6px 0;

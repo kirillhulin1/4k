@@ -178,3 +178,11 @@
   padding-right: 0 !important;
   text-align: center;
 }
+@media all and (min-width: $sm-size) and (max-width: $md-size) {
+  .model__amount table, .model__amount, .model__amount table td *, .model__amount-button {
+    width: 100%;
+  }
+  .model__amount{
+    margin-bottom: 1em;
+  }
+}

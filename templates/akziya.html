@@ -1,0 +1,21 @@
+<section class="container">
+    <article class="news_list news-review__content">
+        <section class="news-review__postdate">
+            До <span ng-bind="akziya.activeTo | dateRus"></span>
+            <span ng-class="{'akzii__active': !(akziya.activeTo | earlierThanToday),'akzii__over':(akziya.activeTo | earlierThanToday)}" ng-if="!(akziya.activeTo | earlierThanToday)">
+                Акция действует
+            </span>
+            <span ng-class="{'akzii__active': !(akziya.activeTo | earlierThanToday),'akzii__over':(akziya.activeTo | earlierThanToday)}" ng-if="(akziya.activeTo | earlierThanToday)">
+                Акция завершена
+            </span>
+        </section>
+
+        <section class="row">
+            <section class="col-xs-5">
+                <img ng-src="{{akziya.picture}}" class="akziya__picture">
+            </section>
+            <section class="col-xs-7" ng-bind-html="akziya.detailedText"></section>
+        </section>
+    </article>
+
+</section>

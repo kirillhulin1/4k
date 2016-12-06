@@ -35,27 +35,27 @@
             <h3 class="write-us__header"><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;Напишите нам</h3>
             <hr class="write-us__border">
             <section class="write-us__input-wrapper">
-                <input class="write-us__input" id="writeUsUser">
+                <input class="write-us__input" id="writeUsUser" ng-model="message.name">
                 <i class="glyphicon glyphicon-user write-us__icon"></i>
-                <label class="write-us__label" for="writeUsUser">Имя</label>
+                <label class="write-us__label" for="writeUsUser" ng-class="{'active':message.name}">Имя</label>
             </section>
             <section class="write-us__input-wrapper">
-                <input class="write-us__input" id="writeUsPhone">
+                <input class="write-us__input" id="writeUsPhone" ng-model="message.phone">
                 <i class="glyphicon glyphicon-earphone write-us__icon"></i>
-                <label class="write-us__label" for="writeUsPhone">Телефон</label>
+                <label class="write-us__label" for="writeUsPhone" ng-class="{'active':message.phone}">Телефон</label>
             </section>
             <section class="write-us__input-wrapper">
-                <input class="write-us__input" id="writeUsMail">
+                <input class="write-us__input" id="writeUsMail" ng-model="message.email">
                 <i class="glyphicon glyphicon-envelope write-us__icon"></i>
-                <label class="write-us__label" for="writeUsMail">Ваш email</label>
+                <label class="write-us__label" for="writeUsMail" ng-class="{'active':message.email}">Ваш email</label>
             </section>
             <section class="write-us__input-wrapper">
-                <textarea class="write-us__input" id="writeUsMessage"></textarea>
+                <textarea class="write-us__input" id="writeUsMessage" ng-model="message.text"></textarea>
                 <i class="glyphicon glyphicon-user write-us__icon"></i>
-                <label class="write-us__label" for="writeUsMessage">Сообщение</label>
+                <label class="write-us__label" for="writeUsMessage" ng-class="{'active':message.text}">Сообщение</label>
             </section>
             <div class="write-us__footer">
-                <button class="btn btn-warning">Отправить</button>
+                <button class="btn btn-warning" ng-click="sendMessage();">Отправить</button>
             </div>
 
         </section>

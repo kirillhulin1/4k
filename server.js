@@ -147,6 +147,9 @@ var brands = [
 var models = [
     {
         name: "Bridgestone Blizzak VRX",
+        brand: "bridgestone",
+        season: "summer",
+        picture: "dest/images/bridgestone2.png",
         score: {
             total: 4.5,
             par1: 4,
@@ -458,7 +461,30 @@ var models = [
         ]
     }
 ];
-
+var searchArticle = [
+    {
+        "sectionNameEn": "tires_tests",
+        "subsectionNaneEn": "winter_tires_tests",
+        "title": "Ух ты!",
+        "titleEn": "uh_ty",
+        "date": "22.07.1986",
+        "previewText": "В Лондоне идут дожди/ В Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дожди",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230182,
+        "commentsNumber": 3
+    },
+    {
+        "sectionNameEn": "tires_tests",
+        "subsectionNaneEn": "winter_tires_tests",
+        "title": "Ух ты!",
+        "titleEn": "uh_ty",
+        "date": "22.07.1986",
+        "previewText": "В Лондоне идут дожди/ В Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дождиВ Лондоне идут дожди",
+        "previewPicture": "dest/images/home-grid-01.jpg",
+        "id": 19817230182,
+        "commentsNumber": 3
+    }
+];
 var news = [
     {
         "name": "Тесты шин",
@@ -871,7 +897,32 @@ var lastNews = [
     }
 
 ];
-var searchTire = [{},{},{},{}];
+var searchTire = [
+    {
+        "brand": "bridgestone",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone1.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi."
+    },
+    {
+        "brand": "bridgestone2",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone2.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi."
+    },
+    {
+        "brand": "bridgestone3",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone3.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi."
+    },
+    {
+        "brand": "bridgestone4",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone4.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi."
+    }
+];
 var searchCar = [
     {
         brand: "audi",
@@ -898,8 +949,45 @@ var searchCar = [
         modification: "quatro"
     }
 ];
-var searchArticle = [{},{},{},{},{},{},{},{},{},{},{}];
-var searchSize = [{},{},{}];
+
+var searchSize = [
+    {
+        "brand": "bridgestone",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone1.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.",
+        "width": 165,
+        "height": 55,
+        "diameter": 15
+    },
+    {
+        "brand": "bridgestone2",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone2.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.",
+        "width": 165,
+        "height": 55,
+        "diameter": 15
+    },
+    {
+        "brand": "bridgestone3",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone3.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.",
+        "width": 165,
+        "height": 55,
+        "diameter": 15
+    },
+    {
+        "brand": "bridgestone4",
+        "model": "Bridgestone Blizzak VRX",
+        "picture": "dest/images/bridgestone4.png",
+        "description": "... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi. ... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.",
+        "width": 165,
+        "height": 55,
+        "diameter": 15
+    }
+];
 
 var cars = ["audi","bmw","mersedes","toyota","ford","ferrari","fiat","mazda","porshe"];
 var audiA6Years = [1999,2000,2001,2003,2004,2005,2006,2007];
@@ -1294,6 +1382,42 @@ var tiresOfSize = [
     }
 ];
 
+var akzii = [
+    {
+        "id": "000000001",
+        "picture": "dest/images/akzii1.jpg",
+        "title": "Четвертое колесо в подарок",
+        "activeTo": "2016-11-10",
+        "previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "detailedText": "<h1>sdfsdg</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": "000000002",
+        "picture": "dest/images/akzii1.jpg",
+        "title": "Четвертое колесо в подарок",
+        "activeTo": "2016-02-03",
+        "previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "detailedText": "<h1>sdfsdg</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": "000000003",
+        "picture": "dest/images/akzii1.jpg",
+        "title": "Четвертое колесо в подарок",
+        "activeTo": "2017-12-09",
+        "previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "detailedText": "<h1>sdfsdg</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": "000000004",
+        "picture": "dest/images/akzii1.jpg",
+        "title": "Четвертое колесо в подарок",
+        "activeTo": "2012-02-26",
+        "previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "detailedText": "<h1>sdfsdg</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+
+];
+
 app.get("/brands",function(req,res){
     res.send(brands);
 });
@@ -1316,13 +1440,11 @@ app.get("/brands/:name",function(req,res){
     });
 });
 app.get("/models/:name",function(req,res){
-    console.log(req.params.name);
     models.forEach(function(el, i){
         if (el.name === req.params.name) {
             console.log(1);
             res.send(models[i]);
         }
-
     });
 });
 app.get("/search",function(req,res){
@@ -1378,7 +1500,15 @@ app.get("/tiresOfSize/:width/:height/:diameter",function(req,res){
 
 app.get("/chooseTire/:width/:height/:diameter/:brands/:season/:ship/:inStock/:minCost/:maxCost",function(req,res){
     console.log(req.params);
-    res.send(tiresOfSize);
+    if (req.params.width=='false') {
+        console.log(1);
+        res.send([]);
+    }
+    else {
+        console.log(1);
+        res.send(tiresOfSize);
+    }
+
 });
 
 
@@ -1397,6 +1527,19 @@ app.get("/carModelYearModifications/:year",function(req,res){
 app.get("/carModelYearModificationResult/:modification",function(req,res) {
     res.send(audiA61999xxx);
 });
-
-
+app.post("/message",function(req){
+    console.log(req.body);
+});
+app.get("/akzii",function(req,res){
+    res.send(akzii);
+});
+app.get("/akzii/:akziyaId",function(req,res){
+    console.log(req.params.akziyaId);
+    akzii.forEach(function(el, i){
+        if (el.id === req.params.akziyaId) {
+            console.log("id совпали");
+            res.send(akzii[i]);
+        }
+    });
+});
 console.log("Server running on port 3000...");

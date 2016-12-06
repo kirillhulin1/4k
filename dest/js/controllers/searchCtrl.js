@@ -69,9 +69,19 @@ app.controller("SearchCtrl",["$stateParams","$state","$scope","searchData",funct
     $scope.search = function() {
         if ($scope.searchForm.$valid) {
             var searchText = $scope.search.text ? $scope.search.text : "";
-            var searchSection = $scope.search.theme ? $scope.search.theme : "";
+            var searchSection = $scope.theme ? $scope.theme : "";
             $state.go("home.search",{searchText: searchText, searchSection: searchSection});
         }
-    }
+    };
+
+    $scope.scope = $scope;
+
+    $scope.topics = [
+        {name:"Везде",value: "all"},
+        {name:"Статья",value: "article"},
+        {name:"Шина",value: "tire"},
+        {name:"Типоразмер",value: "size"},
+        {name:"Автомобиль",value: "car"}
+    ]
 }]);
 

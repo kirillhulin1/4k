@@ -4,7 +4,7 @@
             <section class="news-list">
                 <div class="news-list__list">
 
-                    <article class="col-md-4 col-sm-6 news-list__item {{insertClass(article.sectionName)}}"
+                    <article class="col-xs-6 col-md-4 col-sm-6 news-list__item {{insertClass(article.sectionName)}}"
                              dir-paginate = "article in news | filter: search | itemsPerPage:6"
                              ng-class="{'news-list__item_reverse': $index%2==1}"
 
@@ -13,7 +13,7 @@
                         <div class="news-list__teaser">
                             <div class="news-list__picture">
                                 <img  class="news-list__image" ng-src="{{article.previewPicture}}">
-                                <div class="news-list__overlay"><img src="dest/images/news-cross.png"></div>
+                                <div class="news-list__overlay"><img src="dest/images/rev-arrow.png"></div>
                                 <a class="news-list__cover" ui-sref="home.news.section.subsection.article({section:article.sectionNameEn,subsection:article.subsectionNameEn,article: article.title})"></a>
                             </div>
                             <div class="news-list__content">

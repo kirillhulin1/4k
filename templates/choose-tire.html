@@ -3,70 +3,19 @@
         <section class="row">
             <div class="col-xs-4 tab1__paddingBottomSmall">
                 <div class="select__wrapper">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!width">Ширина*</span>
-                        <select required id="widthSelect" ng-model="width" class="form-control select">
-                            <option>145</option>
-                            <option>155</option>
-                            <option>165</option>
-                            <option>175</option>
-                            <option>185</option>
-                            <option>195</option>
-                            <option>205</option>
-                            <option>215</option>
-                            <option>225</option>
-                            <option>235</option>
-                            <option>245</option>
-                            <option>255</option>
-                            <option>265</option>
-                        </select>
-                    </label>
+                    <gkg-select name="width" options="widths" placeholder="Ширина*" parent-scope="scope" parent-variable="width" start="{{width}}"></gkg-select>
                 </div>
 
             </div>
             <div class="col-xs-4 tab1__paddingBottomSmall">
                 <div class="select__wrapper">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!height">Высота*</span>
-                        <select ng-model="height" class="form-control select ">
-                            <option>145</option>
-                            <option>155</option>
-                            <option>165</option>
-                            <option>175</option>
-                            <option>185</option>
-                            <option>195</option>
-                            <option>205</option>
-                            <option>215</option>
-                            <option>225</option>
-                            <option>235</option>
-                            <option>245</option>
-                            <option>255</option>
-                            <option>265</option>
-                        </select>
-                    </label>
+                    <gkg-select name="height" options="heights" placeholder="Высота*" parent-scope="scope" parent-variable="height" start="{{height}}"></gkg-select>
                 </div>
 
             </div>
             <div class="col-xs-4 tab1__paddingBottomSmall">
                 <div class="select__wrapper">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!diameter">Диаметр*</span>
-                        <select ng-model="diameter" class="form-control select ">
-                            <option>145</option>
-                            <option>155</option>
-                            <option>165</option>
-                            <option>175</option>
-                            <option>185</option>
-                            <option>195</option>
-                            <option>205</option>
-                            <option>215</option>
-                            <option>225</option>
-                            <option>235</option>
-                            <option>245</option>
-                            <option>255</option>
-                            <option>265</option>
-                        </select>
-                    </label>
+                    <gkg-select name="diameter" options="diameters" placeholder="Диаметр*" parent-scope="scope" parent-variable="diameter" start="{{diameter}}"></gkg-select>
                 </div>
 
             </div>
@@ -141,9 +90,9 @@
                 <span class="close multiselect__close"><img src="dest/images/cross-close.png"></span>
             </div>
         </div>
-        <section ng-show="showMore" class="tab1__range row hidden-xs"><!--ng-show="showMore"-->
+        <section ng-show="showMore" class="tab1__range row hidden-xs">
             <div class="col-sm-2" >
-                <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.minValue">
+                <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.minValue" ng-change="checkMin();">
             </div>
             <div class="col-sm-8">
                 <rzslider
@@ -151,17 +100,16 @@
                         rz-slider-high="noSwitchingSlider.maxValue"
                         rz-slider-options="noSwitchingSlider.options"
                         rz-slider-tpl-url="templates/rz-slider.html"
-
                 ></rzslider>
             </div>
             <div class="col-sm-2">
-                <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.maxValue">
+                <input type="text" class="form-control tab1__range-input" ng-model="noSwitchingSlider.maxValue" ng-change="checkMax();">
             </div>
         </section>
         <a href="#" class="toggle-anchor tab1__more hidden-xs" do-not-follow toggle-anchor ng-click="showMore = !showMore">дополнительные параметры</a>
         <button type="submit" class="btn btn-warning form-control tab1__button" ng-click="watchResults();">Подобрать</button>
         <p class="tab__section-title tab__section-title_condensed">Задайте вопрос специалисту:</p>
-        <a class="tab1__phone" href="tel://{{phoneFirst}}" ng-bind="phoneFirst"></a>
+        <a class="tab1__phone" href="tel://{{siteData.phoneFirst}}" ng-bind="siteData.phoneFirst"></a>
     </section>
 
     <section class="clearfix"></section>

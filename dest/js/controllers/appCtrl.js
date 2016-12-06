@@ -1,4 +1,4 @@
-app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootScope, $log){
+app.controller("AppCtrl",["$scope", "user", "$uibModal", "modals", function($scope, user, $uibModal, modals) {
     $scope.menu = [
         {
             "title": "Шины и диски",
@@ -53,8 +53,6 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
         }
 
     ];
-    $scope.phoneFirst = "+375 33 3668050";
-    $scope.phoneSecond = "+375 29 3794864";
 
     $scope.newsStructure = {};
     $scope.setNewsStructure = function(data){
@@ -67,44 +65,7 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
     };
 
 
-    $scope.user = {
-        login: "Кirill Hulin",
-        name: "Кирилл",
-        surname: "",
-        patronomic: "",
-        email: "kirillhulin@ya.ru",
-        password: "",
-        cartItems: [{
-            "name": "sdasfaf",
-            "brand": "sdasfaf",
-            "width": 185,
-            "height": 65,
-            "diameter": 15,
-            "loadIndex": "80(111)",
-            "speedIndex": "sa",
-            "price": 62.12,
-            "quantity": 4,
-            "season": "all",
-            "picture": "dest/images/model-image-1.png",
-            "id": 19048343814901,
-            "available": 10
-        }],
-        recentItems: [],
-        selectedItems: [],
-        address: "",
-        phone: "",
-        purchases: [],
-        comments: [],
-        totalCartPrice: 0,
-        loggedIn: true,
-        countTotalCartPrice: function() {
-            var self = this;
-            self.totalCartPrice = 0;
-            angular.forEach(this.cartItems, function(item){
-                self.totalCartPrice += Number((item.price * item.quantity).toFixed(2));
-            });
-        }
-    };
+    $scope.user = user;
 
     $scope.topTabActive = 0;
     $scope.$on("topTabActiveChanged",function(e,newActiveTab){
@@ -113,7 +74,7 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
 
 
 
-    //Фунции вставляюшие нужный css класс в зависимости от раздела новостей
+    //Фунции вставляюшие; нужный css класс в зависимости от раздела новостей
     $scope.insertClass = function(name) {
         var className = "";
 
@@ -153,6 +114,12 @@ app.controller("AppCtrl",["$scope","$rootScope","$log",function($scope, $rootSco
         }
 
         return className;
-    }
+    };
 
+    $scope.openModalSearch = modals.openModalSearch;
+    $scope.openModalCart = modals.openModalCart;
+    $scope.openModalChangePassword = modals.openModalChangePassword;
+    $scope.openModalForget = modals.openModalForget;
+    $scope.openModalLogIn = modals.openModalLogIn;
+    $scope.openModalRegister = modals.openModalRegister;
 }]);

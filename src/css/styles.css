@@ -247,6 +247,11 @@ h1 {
     font-size: 25px;
   }
 }
+@media all and (max-width: 480px) {
+  .header-top__phone_main a {
+    font-size: 23px;
+  }
+}
 @media all and (max-width: 450px) {
   .header-top__phone_main a {
     font-size: 20px;
@@ -478,7 +483,7 @@ h1 {
     margin-left: 52%;
   }
 }
-.select {
+.modal-phone-me .select {
   margin-bottom: 15px;
   color: #999;
 }
@@ -1397,6 +1402,17 @@ h1 {
   border-top-color: #2db3c4;
 }
 
+@media all and (max-width: 500px) {
+  .news-list__item {
+    margin-bottom: 2em !important;
+  }
+  .news-list__item.col-xs-6 {
+    float: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
 .advantages {
   background-color: white;
   height: 100px;
@@ -1910,7 +1926,7 @@ h1 {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 100;
   text-align: center;
   letter-spacing: -4px;
 }
@@ -2332,15 +2348,22 @@ h1 {
   padding-top: 7px;
 }
 
-@media all and (max-width: 380px) {
+@media all and (max-width: 450px) {
   .col-xs-3, .col-xs-6 {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .modal-cart__price {
+    font-size: 80%;
   }
 }
-@media all and (min-width: 380px) {
-  .modal-cart__price {
-    font-size: 100%;
+@media all and (max-width: 450px) {
+  .modal-cart__continue-btn, .modal-cart__order-btn {
+    font-size: 80%;
+    padding: 5px !important;
+    margin-right: 0 !important;
+    min-width: 10px !important;
   }
 }
 @media all and (min-width: 768px) {
@@ -2455,9 +2478,6 @@ h1 {
 
 .search-modal {
   padding-bottom: 32px;
-}
-.search-modal .row {
-  overflow: hidden;
 }
 .search-modal .row div {
   padding-bottom: 20px;
@@ -3085,6 +3105,41 @@ h1 {
 .comments__button button {
   position: relative;
   z-index: 3;
+}
+
+.comments__input {
+  margin-bottom: 2em;
+}
+
+.comments__textarea {
+  min-height: 8em;
+}
+
+.comments__title {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.comments__rule {
+  margin-bottom: 2em;
+}
+.comments__rule ul {
+  margin-bottom: 10.5px;
+}
+
+.comments__marks {
+  margin-bottom: 2em;
+}
+
+.comments__rules {
+  margin-bottom: 2em;
+  overflow: hidden;
+}
+
+.comments__hide:hover {
+  color: #fb7920;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .comment {
@@ -4686,6 +4741,9 @@ h4.oplata__description {
     color: #555;
     border: 1px solid #ddd;
   }
+}
+.akziya__picture {
+  width: 100% !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,3 +12,34 @@
     z-index: 3;
   }
 }
+.comments__input {
+  margin-bottom: 2em;
+}
+.comments__textarea {
+  min-height: 8em;
+}
+.comments__title {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+.comments__rule {
+  margin-bottom: 2em;
+  ul {
+    margin-bottom: 10.5px;
+  }
+}
+.comments__marks {
+  margin-bottom: 2em;
+}
+.comments__rules {
+  margin-bottom: 2em;
+  overflow: hidden;
+
+}
+.comments__hide {
+  &:hover {
+    color: $orange;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+}

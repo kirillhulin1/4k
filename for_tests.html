@@ -15,9 +15,9 @@
 </head>
 <body ng-app="app" ng-controller="AppCtrl">
 
-<form name="myForm" method="get" action="test.php">
-    <my-select name="number" options="variants" start=2></my-select>
-    <button type="submit">Отправить</button>
+<form>
+    <gkg-select name="number" options="variants" placeholder="Плэйсхолдер" parent-scope="scope" parent-variable="test"></gkg-select>
+    <button ng-click="show()">Отправить</button>
 </form>
 
 <script src="dest/js/lib/jquery-1.11.3.min.js"></script>
@@ -41,15 +41,23 @@
         $scope.variants = [
             {name:"one", value:1},{name:"two", value:2},{name:"three", value:3},{name:"four", value:4},{name:"five", value:5}
         ];
+        $scope.scope = $scope;
+        $scope.show = function(){
+            console.log($scope.test)
+        }
+
     }]);
 
-    app.directive("mySelect",[function(){
+    app.directive("gkgSelect",[function(){
         return {
             restrict: "E",
             scope: {
-                options: "=",
-                name: "@",
-                start: "@"  //значение по умолчанию
+                options: "=", //[{name:..., value: ...}]
+                name: "@",  //name поля select
+                start: "@",  //значение по умолчанию
+                placeholder: "@",
+                parentScope: "=",  //scope родителя-контроллера
+                parentVariable: "@" //значение свойства в scope родителя контроллера
             },
             templateUrl: "templates/test.html",
             link: function(scope,element){
@@ -58,9 +66,20 @@
                     angular.element(fakeSelect).toggleClass("gkg-select__fake_hover");
                 });
                 scope.data = {
-                    result: {
-                        name:"two", value:2
-
+                    /*result: findCurrent()*/
+                };
+                findCurrent();
+                function findCurrent() {
+                    angular.forEach(scope.options, function(option){
+                        if(option.value == scope.start){
+                            console.log(option);
+                            scope.data.result = option;
+                        }
+                    })
+                }
+                scope.changeValue = function(value){
+                    if (scope.parentScope && scope.parentVariable) {
+                        scope.parentScope[scope.parentVariable] = value;
                     }
                 }
             }

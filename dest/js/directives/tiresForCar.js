@@ -1,4 +1,4 @@
-app.directive("tiresForCar",["$http","$state",function($http,$state){
+app.directive("tiresForCar",["$http","$state","siteData",function($http,$state,siteData){
     return {
         "restrict": "E",
         "templateUrl": "templates/tires-for-car.html",
@@ -17,6 +17,8 @@ app.directive("tiresForCar",["$http","$state",function($http,$state){
             scope.modifications = false;
 
             scope.brands = [];
+
+            scope.siteData = siteData;
 
             //Получение списка брэндов при загрузке приложения
             $http({

@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.close();"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+    <h4 class="modal-title">Избранные товары</h4>
+</div>
+<div class="modal-body">
+    <article class="brand brand_modal" ng-repeat="model in user.selectedItems">
+        <section class="brand__picture-wrap">
+            <img class="brand__picture" ng-src="{{model.picture}}">
+            <img ng-if="model.season=='winter'" class="brand__season" src="dest/images/season-winter.png">
+            <img ng-if="model.season=='summer'" class="brand__season" src="dest/images/season-summer.png">
+            <img ng-if="model.season=='all'" class="brand__season" src="dest/images/season-all.png">
+        </section>
+        <section class="brand__title">
+            <a ui-sref="home.tires.brand.model({brand:model.brand, model:model.name})" data-dismiss="modal">
+                <strong>
+                    <span ng-bind="model.name"></span><br>
+                                <span ng-if="model.size">
+                                    <span ng-bind="model.size.width"></span>/
+                                    <span ng-bind="model.size.height"></span>R
+                                    <span ng-bind="model.size.diameter"></span>
+                                </span>
+                </strong>
+            </a>
+        </section>
+        <section class="brand__score">
+            <section class="score-block__score-wrap">
+                <section class="score-block__score" ng-style="{width:(model.score | score)}"></section>
+            </section>
+        </section>
+        <section class="brand__button">
+            <a ui-sref="home.tires.brand.model({brand:model.brand, model:model.name})" data-dismiss="modal" class="btn btn-primary">Подробнее</a>
+        </section>
+    </article>
+
+</div>

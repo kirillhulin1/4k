@@ -4,11 +4,11 @@
 </div>
 <div class="modal-body modal-body_gray">
     <p class="modal-more-phones__title"><strong>Горячая линия</strong></p>
-    <p class="modal-more-phones__phone" ng-bind="phoneFirst"></p>
+    <p class="modal-more-phones__phone" ng-bind="$ctrl.siteData.phoneFirst"></p>
 
 </div>
 <div class="modal-footer">
     <ul class="list-inline header-top__phones modal-more-phones__list">
-        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="phoneSecond"></small></li>
+        <li class="header-top__phone"><img class="header-top__phone-icon_small" src="dest/images/i-velc.png"><small ng-bind="$ctrl.siteData.phoneSecond"></small></li>
     </ul>
 </div>

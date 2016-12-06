@@ -1,0 +1,64 @@
+.score {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.score__image {
+
+
+}
+.score__image img{
+    width: 40px;
+    height: 40px;
+}
+.score__table {
+    width: 100%;
+}
+.score__table td {
+    width: 20%;
+    vertical-align: top;
+    line-height: 1;
+    text-align: center;
+}
+.score__table td.marked {
+    background-color: gray;
+}
+
+.score__table tr {
+    height: 20px;
+}
+.score__line td {
+    background-color: white;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.score__line td:hover {
+    background-color: gray;
+}
+.score__section_logo {
+    width: 40px;
+    float: left;
+}
+.score__section_delete {
+    float: right;
+    width: 40px;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.score__section_delete i {
+    color: #fd812e;
+}
+.score__section_delete i:hover {
+    transform: scale(1.4);
+    transition: all 0.3s;
+}
+.score__section_main {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.score h3 {
+    margin-top: 0;
+}

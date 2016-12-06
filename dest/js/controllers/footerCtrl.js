@@ -1,4 +1,4 @@
-app.controller("FooterCtrl", ["$scope",function ($scope) {
+app.controller("FooterCtrl", ["$scope","modals",function ($scope,modals) {
     $scope.hideFixedPanel = function(e){
         e.preventDefault();
         $(".bottom-panel").addClass("bottom-panel_closed");
@@ -9,4 +9,6 @@ app.controller("FooterCtrl", ["$scope",function ($scope) {
         $(".bottom-panel").removeClass("bottom-panel_closed");
         $(".footer").css("paddingBottom","44px");
     };
+    $scope.openModalSelectedGoods = modals.openModalSelectedGoods;
+    $scope.openModalRecentGoods = modals.openModalRecentGoods;
 }]);

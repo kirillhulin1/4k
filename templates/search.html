@@ -5,16 +5,7 @@
         </div>
         <div class="col-sm-4">
             <div class="select__wrapper">
-                <label class="tab1__label">
-                    <span class="select__label search-modal__label" ng-hide="search.theme">Где искать?</span>
-                    <select ng-model="search.theme" class="form-control select search-modal__theme">
-                        <option value="all">Везде</option>
-                        <option value="article">Статья</option>
-                        <option value="tire">Шина</option>
-                        <option value="size">Типоразмер</option>
-                        <option value="car">Автомобиль</option>
-                    </select>
-                </label>
+                <gkg-select name="topic" options="topics" placeholder="Где искать?*" parent-scope="scope" parent-variable="theme"></gkg-select>
             </div>
 
         </div>
@@ -27,22 +18,22 @@
         <div class="clearfix"></div>
     </form>
     <section class="search__results">
-        <div dir-paginate = "result in results | itemsPerPage: 6">
+        <div dir-paginate = "result in results | itemsPerPage: 10">
             <div ng-switch="result.searchSection">
                 <article class="search__item" ng-switch-when="tire">
                     <section class="row">
-                        <section class="col-xs-3 col-sm-2"><img class="search__picture" src="dest/images/bridgestone1.png"></section>
+                        <section class="col-xs-3 col-sm-2"><img class="search__picture" ng-src="{{result.picture}}"></section>
                         <section class="col-xs-9 col-sm-10">
                             <p class="search__section">Легковые шины</p>
-                            <h3 class="#"><a href="">Michelin Latitude Sport AO</a></h3>
-                            <p style="clear:both">... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.</p>
+                            <h3><a ui-sref="home.tires.brand.model({brand:result.brand, model:result.model})" ng-bind="result.model"></a></h3>
+                            <p style="clear:both" ng-bind="result.description"></p>
                         </section>
                     </section>
                 </article>
                 <article class="search__item search__item_car row" ng-switch-when="car">
                     <section class="row">
                         <section class="col-xs-12 col-sm-9">
-                            <a href="">
+                            <a ui-sref="home.cars.models.years.modifications.result({car:result.brand,model:result.model,year: result.year, modification: result.modification})">
                                 <span ng-bind="result.brand"></span>&nbsp;
                                 <span ng-bind="result.model"></span>&nbsp;
                                 <span ng-bind="result.year"></span>&nbsp;
@@ -50,28 +41,37 @@
                             </a>
                         </section>
                         <section class="col-sm-3 hidden-xs">
-                            <span class="pull-right">Автомобиль</span>
+                            <span class="pull-right search__section">Автомобиль</span>
                         </section>
                     </section>
 
                 </article>
-                <article class="search__item" ng-switch-when="article">
+                <article class="search__item search__item_article" ng-switch-when="article">
                     <section class="row">
-                        <section class="col-xs-3 col-sm-2"><img class="search__picture" src="dest/images/bridgestone1.png"></section>
-                        <section class="col-xs-9 col-sm-10">
-                            <p class="search__section">Легковые шины</p>
-                            <h3 class="#"><a href="">Michelin Latitude Sport AO</a></h3>
-                            <p style="clear:both">... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.</p>
+                        <section class="col-xs-4 col-md-3"><a ui-sref="home.news.section.subsection.article({section:result.sectionNameEn,subsection:result.subsectionNameEn,article:result.title})"><img class="search__picture" ng-src="{{result.previewPicture}}"></a></section>
+                        <section class="col-xs-8 col-md-9">
+                            <div class="news_list news-review__content">
+                                <div class="news-review__postdate" ng-bind="result.date"></div>
+                            </div>
+                            <h3><a ui-sref="home.news.section.subsection.article({section:result.sectionNameEn,subsection:result.subsectionNameEn,article:result.title})" ng-bind="result.title"></a></h3>
+                            <p style="clear:both" ng-bind="result.previewText"></p>
                         </section>
                     </section>
                 </article>
                 <article class="search__item" ng-switch-when="size">
                     <section class="row">
-                        <section class="col-xs-3 col-sm-2"><img class="search__picture" src="dest/images/bridgestone1.png"></section>
+                        <section class="col-xs-3 col-sm-2"><img class="search__picture" ng-src="{{result.picture}}"></section>
                         <section class="col-xs-9 col-sm-10">
                             <p class="search__section">Легковые шины</p>
-                            <h3 class="#"><a href="">Michelin Latitude Sport AO</a></h3>
-                            <p style="clear:both">... пятно контакта. Данная модель рекомендована для установки на автомобили марки Audi.</p>
+                            <h3>
+                                <a ui-sref="home.tires.brand.model({brand:result.brand, model:result.model})">
+                                    <span ng-bind="result.model"></span>&nbsp;
+                                    <span ng-bind="result.width"></span>/
+                                    <span ng-bind="result.height"></span>R
+                                    <span ng-bind="result.diameter"></span>
+                                </a>
+                            </h3>
+                            <p style="clear:both" ng-bind="result.description"></p>
                         </section>
                     </section>
                 </article>

@@ -118,8 +118,12 @@
                 <section class="model-card__picture">
                     <img ng-src="{{tire.picture}}" class="model__picture">
                     <img ng-src="dest/images/season-{{tire.season}}.png" class="model__season">
-
-                    <span class="model-card__favourite"><i class="glyphicon glyphicon-heart-empty"></i><i class="glyphicon glyphicon-heart"></i></span>
+                    <span class="model-card__favourite"
+                          ng-class="{'model-card__favourite_selected': user.isModelSelected(tire.name,{width:tire.width, height: tire.height,diameter: tire.diameter})}"
+                          ng-click="user.addToSelected({name:tire.name,brand: tire.brandName, score: tire.score, picture: tire.picture, season: tire.season, size: {width:tire.width, height: tire.height,diameter: tire.diameter}})">
+                        <i class="glyphicon glyphicon-heart-empty"></i>
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
 
                     <section ng-if="tire.reviews.length>0" class="model-card__reviews carousel carousel__arrow_hidden" carousel>
                         <section class="carousel__wrapper">

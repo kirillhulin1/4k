@@ -7,76 +7,18 @@
             <h2>Старый размер</h2>
             <section class="col-xs-4">
                 <div class="calculator__input">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!widthOld">Ширина*</span>
-                        <select id="widthOld" ng-model="widthOld" class="form-control select" ng-change="recount()">
-                            <option ng-value=145>145</option>
-                            <option ng-value=155>155</option>
-                            <option ng-value=165>165</option>
-                            <option ng-value=175>175</option>
-                            <option ng-value=185>185</option>
-                            <option ng-value=195>195</option>
-                            <option ng-value=205>205</option>
-                            <option ng-value=215>215</option>
-                            <option ng-value=225>225</option>
-                            <option ng-value=235>235</option>
-                            <option ng-value=245>245</option>
-                            <option ng-value=255>255</option>
-                            <option ng-value=265>265</option>
-                            <option ng-value=275>275</option>
-                            <option ng-value=285>285</option>
-                            <option ng-value=295>295</option>
-                            <option ng-value=305>305</option>
-                            <option ng-value=315>315</option>
-                            <option ng-value=325>325</option>
-                            <option ng-value=335>335</option>
-                            <option ng-value=345>345</option>
-                            <option ng-value=355>355</option>
-                        </select>
-                    </label>
+                    <gkg-select name="widthOld" options="widths" placeholder="Ширина*" parent-scope="scope" parent-variable="widthOld"></gkg-select>
                 </div>
             </section>
             <section class="col-xs-4">
                 <div class="calculator__input">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!heightOld">Высота*</span>
-                        <select id="heightOld" ng-model="heightOld" class="form-control select" ng-change="recount()">
-                            <option ng-value=0.35>35</option>
-                            <option ng-value=0.40>40</option>
-                            <option ng-value=0.45>45</option>
-                            <option ng-value=0.50>50</option>
-                            <option ng-value=0.55>55</option>
-                            <option ng-value=0.60>60</option>
-                            <option ng-value=0.65>65</option>
-                            <option ng-value=0.70>70</option>
-                            <option ng-value=0.75>75</option>
-                            <option ng-value=0.80>80</option>
-                            <option ng-value=1>-</option>
-                        </select>
-                    </label>
+                    <gkg-select name="heightOld" options="heights" placeholder="Высота*" parent-scope="scope" parent-variable="heightOld"></gkg-select>
                 </div>
 
             </section>
             <section class="col-xs-4">
                 <div class="calculator__input">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!diameterOld">Диаметр*</span>
-                        <select id="diameterOld" ng-model="diameterOld" class="form-control select" ng-change="recount()">
-                            <option ng-value=12>R12</option>
-                            <option ng-value=13>R13</option>
-                            <option ng-value=14>R14</option>
-                            <option ng-value=15>R15</option>
-                            <option ng-value=16>R16</option>
-                            <option ng-value=17>R17</option>
-                            <option ng-value=18>R18</option>
-                            <option ng-value=19>R19</option>
-                            <option ng-value=20>R20</option>
-                            <option ng-value=21>R21</option>
-                            <option ng-value=22>R22</option>
-                            <option ng-value=23>R23</option>
-                            <option ng-value=24>R24</option>
-                        </select>
-                    </label>
+                    <gkg-select name="diameterOld" options="diameters" placeholder="Диаметр*" parent-scope="scope" parent-variable="diameterOld"></gkg-select>
                 </div>
             </section>
             <section  class="clearfix"></section>
@@ -86,75 +28,17 @@
             <h2>Новый размер</h2>
             <section class="col-xs-4">
                 <div class="calculator__input">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!widthNew">Ширина*</span>
-                        <select id="widthNew" ng-model="widthNew" class="form-control select">
-                            <option ng-value="145">145</option>
-                            <option ng-value="155">155</option>
-                            <option ng-value="165">165</option>
-                            <option ng-value="175">175</option>
-                            <option ng-value="185">185</option>
-                            <option ng-value="195">195</option>
-                            <option ng-value="205">205</option>
-                            <option ng-value="215">215</option>
-                            <option ng-value="225">225</option>
-                            <option ng-value="235">235</option>
-                            <option ng-value="245">245</option>
-                            <option ng-value="255">255</option>
-                            <option ng-value="265">265</option>
-                            <option ng-value="275">275</option>
-                            <option ng-value="285">285</option>
-                            <option ng-value="295">295</option>
-                            <option ng-value="305">305</option>
-                            <option ng-value="315">315</option>
-                            <option ng-value="325">325</option>
-                            <option ng-value="335">335</option>
-                            <option ng-value="345">345</option>
-                            <option ng-value="355">355</option>
-                        </select>
-                    </label>
+                    <gkg-select name="widthNew" options="widths" placeholder="Ширина*" parent-scope="scope" parent-variable="widthNew"></gkg-select>
                 </div>
             </section>
             <section class="col-xs-4">
                 <div class="calculator__input">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!heightNew">Высота*</span>
-                        <select id="heightNew" ng-model="heightNew" class="form-control select">
-                            <option ng-value="0.35">35</option>
-                            <option ng-value="0.40">40</option>
-                            <option ng-value="0.45">45</option>
-                            <option ng-value="0.50">50</option>
-                            <option ng-value="0.55">55</option>
-                            <option ng-value="0.60">60</option>
-                            <option ng-value="0.65">65</option>
-                            <option ng-value="0.70" selected="selected">70</option>
-                            <option ng-value="0.75">75</option>
-                            <option ng-value="0.80">80</option>
-                            <option ng-value="1">-</option>
-                        </select>
-                    </label>
+                    <gkg-select name="heightNew" options="heights" placeholder="Высота*" parent-scope="scope" parent-variable="heightNew"></gkg-select>
                 </div>
             </section>
             <section class="col-xs-4">
                 <div class="calculator__input">
-                    <label class="tab1__select">
-                        <span class="select__label" ng-show="!diameterNew">Диаметр*</span>
-                        <select id="diameterNew" ng-model="diameterNew" class="form-control select">
-                            <option ng-value="12">R12</option>
-                            <option ng-value="13">R13</option>
-                            <option ng-value="14">R14</option>
-                            <option ng-value="15">R15</option>
-                            <option ng-value="16">R16</option>
-                            <option ng-value="17">R17</option>
-                            <option ng-value="18">R18</option>
-                            <option ng-value="19">R19</option>
-                            <option ng-value="20">R20</option>
-                            <option ng-value="21">R21</option>
-                            <option ng-value="22">R22</option>
-                            <option ng-value="23">R23</option>
-                            <option ng-value="24">R24</option>
-                        </select>
-                    </label>
+                    <gkg-select name="diameterNew" options="diameters" placeholder="Диаметр*" parent-scope="scope" parent-variable="diameterNew"></gkg-select>
                 </div>
             </section>
             <section  class="clearfix"></section>

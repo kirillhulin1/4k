@@ -21,7 +21,7 @@
             <li class="col-sm-3">
                 <h4 class="footer__subtitle">Услуги и сервис</h4>
                 <ul class="list-unstyled">
-                    <li><a href="#">Онлайн подбор шин</a></li>
+                    <li><a ui-sref="home.tire_choice_no_params">Онлайн подбор шин</a></li>
                     <li><a href="#">Подбор шин по авто</a></li>
                 </ul>
             </li>
@@ -56,7 +56,7 @@
                 </a>
             </li>
             <li class="bottom-panel__item">
-                <a href="" uib-tooltip="Недавно просмотренные товары!" data-toggle="modal" data-target="#recentGoods"
+                <a href="" uib-tooltip="Недавно просмотренные товары!" ng-click = "openModalRecentGoods();"
                    tooltip-placement="top"
                    tooltip-trigger="'mouseenter'">
                     <img class="bottom-panel__image" src="dest/images/viewed.png">
@@ -64,14 +64,14 @@
                 </a>
             </li>
             <li class="bottom-panel__item">
-                <a href="" uib-tooltip="Избранные товары"
+                <a href="" uib-tooltip="Избранные товары" ng-click = "openModalSelectedGoods();"
                    tooltip-placement="top"
                    tooltip-trigger="'mouseenter'">
                     <img  class="bottom-panel__image " src="dest/images/favorites.png">
                 </a>
             </li>
             <li class="bottom-panel__item">
-                <a href="" data-target="#search" data-toggle="modal"
+                <a href="" ng-click="openModalSearch();"
                    uib-tooltip="Нажмите, чтобы открыть окно поиска."
                    tooltip-placement="top"
                    tooltip-trigger="'mouseenter'">
@@ -96,34 +96,4 @@
     <img class="scroll-up__image" src="dest/images/anchor.png" anchor>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="recentGoods">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
-                <h4 class="modal-title">Вы также просматривали</h4>
-            </div>
-            <div class="modal-body">
-                <article class="brand brand_modal">
 
-                    <section class="brand__picture-wrap">
-                        <img class="brand__picture" src="dest/images/bridgestone1.png">
-                        <img class="brand__season" src="dest/images/season-winter.png">
-                    </section>
-                    <section class="brand__title">
-                        <a href=""><strong>salksa; a;lskal</strong></a>
-                    </section>
-                    <section class="brand__score">
-                        <section class="score-block__score-wrap">
-                            <section class="score-block__score" ng-style="{width:(model.score | score)}"></section>
-                        </section>
-                    </section>
-                    <section class="brand__button">
-                        <a href="#" class="btn btn-primary">Подробнее</a>
-                    </section>
-                </article>
-
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->

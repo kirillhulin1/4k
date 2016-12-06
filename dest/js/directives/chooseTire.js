@@ -1,20 +1,19 @@
-app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams",function($timeout,$state,chooseTireParams,$stateParams){
+app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams","siteData", function($timeout,$state,chooseTireParams,$stateParams,siteData){
     return {
         "restrict": "E",
         "templateUrl": "templates/choose-tire.html",
         "link": function(scope, element){
+            scope.scope = scope;
             scope.width = $stateParams.width;
             scope.height = $stateParams.height;
             scope.diameter = $stateParams.diameter;
-            scope.brands = $stateParams.brands;
             scope.season = $stateParams.season;
             scope.ship = $stateParams.ship;
             scope.inStock = $stateParams.inStock;
             scope.minCost = $stateParams.minCost;
             scope.maxCost = $stateParams.maxCost;
-
+            scope.siteData = siteData;
             scope.showMore = false;
-
             scope.brands = [
                 {
                     "brand": "Aeulos",
@@ -51,8 +50,17 @@ app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams
                 }
 
             ];
+            scope.choosenBrands = JSON.parse($stateParams.brands);
 
-            scope.choosenBrands = [];
+
+            angular.forEach(scope.choosenBrands,function(choosenBrand){
+                angular.forEach(scope.brands,function(brand){
+                    if(choosenBrand.id==brand.id) {
+                        brand.checked = true;
+                    }
+                });
+            });
+
             scope.deleteBrand =function(id) {
                 var index;
 
@@ -65,7 +73,7 @@ app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams
                 scope.choosenBrands.splice(index,1);
                 for (var j=0; j<scope.brands.length; j++) {
                     if (scope.brands[j].id==id) {
-                        console.log(id);
+
                         scope.brands[j].checked = false;
 
                         break;
@@ -107,7 +115,6 @@ app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams
             scope.$watch("showMore",function(){
                 $timeout(function(){scope.$broadcast("reCalcViewDimensions");},50,false);
             });
-
             scope.watchResults = function() {
                 var brands = [];
                 angular.forEach(scope.choosenBrands,function(brand){
@@ -137,6 +144,28 @@ app.directive("chooseTire",["$timeout","$state","chooseTireParams","$stateParams
                     brands: JSON.stringify(scope.choosenBrands)
                 },{reload: true});
             };
+
+            scope.checkMin = function(e) {
+                if (scope.noSwitchingSlider.minValue <= scope.noSwitchingSlider.options.floor || !scope.noSwitchingSlider.minValue) {
+                    scope.noSwitchingSlider.minValue = scope.noSwitchingSlider.options.floor;
+                }
+                else if (scope.noSwitchingSlider.minValue >= scope.noSwitchingSlider.maxValue) {
+                    scope.noSwitchingSlider.minValue = scope.noSwitchingSlider.maxValue;
+                }
+            };
+            scope.checkMax = function(e) {
+                if (scope.noSwitchingSlider.maxValue >= scope.noSwitchingSlider.options.ceil || !scope.noSwitchingSlider.maxValue) {
+                    scope.noSwitchingSlider.maxValue = scope.noSwitchingSlider.options.ceil;
+                }
+                else if (scope.noSwitchingSlider.maxValue <= scope.noSwitchingSlider.minValue) {
+                    scope.noSwitchingSlider.maxValue = scope.noSwitchingSlider.minValue;
+                }
+            };
+
+
+            scope.widths = [{name:175,value:175},{name:185,value:185},{name:195,value:195},{name:205,value:205},{name:215,value:215}];
+            scope.heights = [{name:175,value:175},{name:185,value:185},{name:195,value:195},{name:205,value:205},{name:215,value:215}];
+            scope.diameters = [{name:175,value:175},{name:185,value:185},{name:195,value:195},{name:205,value:205},{name:215,value:215}];
 
         }
     }

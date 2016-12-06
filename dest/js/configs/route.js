@@ -237,6 +237,28 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: "Акции"
+            },
+            resolve: {
+                akziiData: function(AkziiResource){
+                    return AkziiResource.query();
+                }
+            }
+        })
+        .state("home.akzii.akziya", {
+            url:"/:akziya",
+            views: {
+                "main@":{
+                    templateUrl: "templates/akziya.html",
+                    controller: "AkziyaCtrl"
+                }
+            },
+            data: {
+                displayName: "Акция"
+            },
+            resolve: {
+                akziyaData: function(AkziiResource,$stateParams){
+                    return AkziiResource.get({akziyaId:$stateParams.akziya}).$promise;
+                }
             }
         })
         .state("home.company", {
@@ -399,6 +421,9 @@ app.config(["$stateProvider",function($stateProvider){
             },
             data: {
                 displayName: "Личный кабинет"
+            },
+            params: {
+                tab: 0
             }
         })
         .state("home.cart", {
@@ -456,6 +481,19 @@ app.config(["$stateProvider",function($stateProvider){
                 }
             }
         })
+        .state("home.tire_choice_no_params", {
+            url:"/tire_choice_no_params",
+            views: {
+                "main@":{
+                    templateUrl: "templates/tire-choice-no-params.html",
+                    controller: "TireChoiceNoParamsCtrl"
+                }
+            },
+            data: {
+                displayName: "Подбор шин по параметрам"
+            }
+        })
+
 }]);
 
 

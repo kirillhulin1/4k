@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.close();" aria-label="Close"><span aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span></button>
+    <h4 class="modal-title">Восстановление пароля</h4>
+</div>
+<div class="modal-body">
+    <section ng-if="user.loggedIn">
+        <p>Инструкции по восстановления пароля будут высланы на <span ng-bind="user.email"></span>. Вы должны выйти с сайта для восстановления пароля согласно высланным инструкциям.</p>
+    </section>
+    <section ng-if="!user.loggedIn">
+        <p class="hidden-lg hidden-md hidden-sm">
+            <a href="" ng-click="$ctrl.openLogIn();">Войти</a>
+            <a href="" class="log-in__forget" ng-click="$ctrl.openRegister();">Регистрация</a>
+        </p>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Логин, e-mail или номер телефона">
+        </div>
+    </section>
+</div>
+<div class="modal-footer">
+    <a  ng-if="!user.loggedIn" href="" class="pull-left hidden-xs" ng-click="$ctrl.openLogIn();">Войти</a>
+    <a  ng-if="!user.loggedIn" href="" class="pull-left log-in__forget hidden-xs" ng-click="$ctrl.openRegister();">Регистрация</a>
+
+    <button class="btn btn-warning">Выслать новый пароль</button>
+</div>

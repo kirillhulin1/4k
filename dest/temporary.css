@@ -49,6 +49,10 @@
     color: #000;
     font-size: 110%;
 }
+.comment {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
 
 
 .scroll-up {
@@ -59,4 +63,31 @@
 
 .tabs-tires__tab a:first-child {
     transition: none;
+}
+
+
+
+.modal-body_gray {
+    text-align: center;
+}
+
+.user__section .comments {
+    margin-top: 0;
+}
+.user__section .comments h3 {
+    margin-top: 0;
+}
+
+.model-card__favourite.model-card__favourite_selected i:first-child{
+    display: none;
+}
+
+.model-card__favourite.model-card__favourite_selected i:last-child{
+    display: block;
+}
+
+@media all and (max-width: 460px) {
+    .search__item_article .col-xs-4,  .search__item_article .col-xs-8{
+        width: 100%;
+    }
 }

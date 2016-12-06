@@ -1,8 +1,12 @@
-app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$window","PostModels","$location",function ($scope, $stateParams, modelData, $state, $window, PostModels,$location) {
+app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$window","siteSettings",function ($scope, $stateParams, modelData, $state, $window, siteSettings) {
     $scope.model = $stateParams.model;
-
     $scope.brand = $stateParams.brand;
     $scope.tab = $stateParams.tab;
+
+    $scope.scope = $scope;
+    $scope.scores = {
+
+    };
 
     $state.current.data.displayName = $stateParams.model;
     $state.$current.parent.data.displayName = $stateParams.brand; //Чтобы при перезагрузке страницы название родительского раздела в хлебных крошках не пропадало
@@ -10,7 +14,6 @@ app.controller("ModelCtrl", ["$scope","$stateParams","modelData","$state","$wind
     $scope.data= {};
     $scope.data.model = $stateParams.modelSize;
 
-console.log($scope.data.model);
 
     switch ($scope.tab) {
         case("description"): {
@@ -29,7 +32,6 @@ console.log($scope.data.model);
     $scope.score = modelData.score;
     $scope.comments = modelData.comments;
     $scope.news = modelData.news;
-    $scope.pageIndex = 1;
     var sizes = modelData.sizes;
     $scope.sizesAvailable = [];
     $scope.sizesNotAvailable = [];
@@ -49,15 +51,18 @@ console.log($scope.data.model);
 
 
 
+
+
+
     //Функция вызывается для отображения комментариев, которые находятся в поле видимости при загрузке блока коментариев
-    $scope.showComments = function() {
+/*    $scope.showComments = function() {
         if ($scope.index==4) {
             $("html, body").animate({ scrollTop: "+=1px" }, 300);
         }
-    };
+    };*/
 
 
-    $($window).bind("scroll",function(e) {
+/*    $($window).bind("scroll",function(e) {
         var $comments = $(".comment");
         var $self = $(this);
 
@@ -70,7 +75,7 @@ console.log($scope.data.model);
                 }
             });
         }
-    });
+    });*/
 
 
     $scope.commentGood = function(comment) {
@@ -84,5 +89,37 @@ console.log($scope.data.model);
         var width = $scope.data.model.slice(0,3);
         var height = $scope.data.model.slice(4,6);
         var diameter = $scope.data.model.slice(7);
+    };
+
+    function inRecentGoods() {
+        var inRecentGoods = false;
+        angular.forEach($scope.user.recentItems, function(item){
+            if (item.name == modelData.name) {
+                inRecentGoods = true;
+            }
+        }) ;
+        return inRecentGoods;
     }
+
+
+    if (!inRecentGoods()) {
+        $scope.user.recentItems.unshift({
+            name: modelData.name,
+            brand: modelData.brand,
+            picture: modelData.picture,
+            score: modelData.score.total,
+            season: modelData.season
+        });
+        if ($scope.user.recentItems.length > siteSettings.recentlyWatchedNumber) {
+            $scope.user.recentItems.pop();
+        }
+    }
+
+
+    $scope.saveComment = function(){
+        console.log($scope.scores);
+    };
+
+    $scope.showCommentsRules = false;
+    $scope.showCommentsAdd = false;
 }]);

@@ -148,11 +148,6 @@
                                         <section class="model__price">50 р.</section>
 
                                         <section class="row">
-<!--                                            <section class="col-xs-7 col-md-6">
-                                                <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-minus"></i></button>
-                                                <input type="text" class="form-control model__quantity">
-                                                <button class="btn btn-reverse model__quantity-btn"><i class="glyphicon glyphicon-plus"></i></button>
-                                            </section>-->
                                             <div class="col-xs-7 col-md-6 model__amount">
                                                 <table class="amount">
                                                     <tr>
@@ -175,9 +170,7 @@
                                         <p class="model__in-stock">Доступно: <span class="model__stockpile">8</span> шт.</p>
                                     </section>
                                 </section>
-
                             </div>
-
                         </section>
                         <section class="description__controls">
                             <p class="description__preview">
@@ -204,7 +197,7 @@
             </uib-tab>
             <uib-tab index="3">
                 <uib-tab-heading>
-                    <i class="glyphicon glyphicon-star-empty"></i> Тесты и обзоры (<span ng-bind="news.length"></span>)
+                    <i class="glyphicon glyphicon-star-empty"></i> Тесты<span class="hidden-sm"> и обзоры</span> (<span ng-bind="news.length"></span>)
                 </uib-tab-heading>
                 <section class="news-list description">
                     <div class="news-list__list">
@@ -243,36 +236,92 @@
                     <i class="glyphicon glyphicon-edit"></i> Отзывы (<span ng-bind="comments.length"></span>)
                 </uib-tab-heading>
                 <section class="comments" ng-init="showComments()">
-                    <div>
-                        <div class="text-right comments__button">
-                            <button class="btn btn-primary">Оставить отзыв</button>
-                        </div>
-                        <div class="clearfix"> </div>
-
-                        <article class="comment" ng-repeat="comment in comments">
-                            <div>
-                                <section class="comment__left col-xs-3">
-                                    <p class="comment__user"><strong ng-bind="comment.user"></strong></p>
-                                    <p class="comment__date"><small ng-bind="comment.date"></small></p>
-                                </section>
-                                <section class="comment__right col-xs-9">
-                                    <section class="score-block__score-wrap comment__score">
-                                        <section class="score-block__score" ng-style="{width:(comment.score | score)}"></section>
-                                    </section>
-                                    <section class="comment__text" ng-bind="comment.text"></section>
-
-                                    <p class="comment__ok">
-                                        Отзыв полезен?
-                                        <a href="#" class="comment__yes" ng-click="commentGood(comment)" do-not-follow>Да</a>: <span ng-bind="comment.yes"></span>
-                                        <a href="#" class="comment__no" ng-click="commentShit(comment)" do-not-follow>Нет</a>: <span ng-bind="comment.no"></span>
-                                    </p>
-
-                                </section>
-                                <div class="clearfix"></div>
-                            </div>
-                        </article>
-
+                    <div class="text-right comments__button">
+                        <button class="btn btn-primary" ng-click="showCommentsAdd = true">Оставить отзыв</button>
                     </div>
+                    <div class="clearfix"> </div>
+
+                    <section class="row" ng-show="showCommentsAdd">
+                        <section class="col-xs-11">
+                            <h3 class="comments__title" ng-click="saveComment();">Оставить отзыв:</h3>
+                        </section>
+                        <section class="col-xs-1">
+                            <span class="pull-right comments__hide">
+                                <i class="glyphicon glyphicon-remove" ng-click="showCommentsAdd = false; test();"></i>
+                            </span>
+                        </section>
+                        <section class="col-xs-6">
+                            <input type="text" class="form-control comments__input" name="commentUser" placeholder="Ваше имя *:">
+                        </section>
+                        <section class="col-xs-6">
+                            <input type="text" class="form-control comments__input" name="commentEmail" placeholder="EMail:">
+                        </section>
+                        <section class="comments__input col-xs-12">
+                            <textarea class="form-control comments__textarea" name="commentText" placeholder="Комментарий *:"></textarea>
+                        </section>
+                        <section class="col-xs-12">
+                            <h3 class="comments__title">Оставить оценку:</h3>
+                        </section>
+                        <div class="clearfix"></div>
+
+                        <section class="comments__marks">
+                            <section class="col-sm-4"><score picture="dest/images/score-quality.png" characteristic="Качество изготовления" array="scores" key="quality" parent-scope="scope"></score></section>
+                            <section class="col-sm-4"><score picture="dest/images/score-correlation.png" characteristic="Соотношение цена/качество" array="scores" key="correlation" parent-scope="scope"></score></section>
+                            <section class="col-sm-4"><score picture="dest/images/score-comfort.png" characteristic="Удобство эксплуатации" array="scores" key="comfort" parent-scope="scope"></score></section>
+                            <div class="clearfix"></div>
+                        </section>
+
+                        <section class="comments__rule">
+                            <section class="col-xs-9">
+                                Перед тем как оставить комментарий, ознакомьтесь с <a href="" ng-click = "showCommentsRules = !showCommentsRules">правилами размещения комментариев.</a>
+                            </section>
+                            <section class="col-xs-3">
+                                <button class="btn btn-primary pull-right">Отправить</button>
+                            </section>
+                            <div class="clearfix"></div>
+                            <section class="comments__rules col-xs-12" ng-if="showCommentsRules">
+                                <h3>Правила размещения комментариев</h3>
+                                <p>На сайте 4k.by модерация сообщений Пользователей производится после их размещения.</p>
+                                <p>Администрацией сайта не осуществляется оперативный контроль комментариев, а также проверка достоверности и полноты информации, использованной Пользователем в своем комментарии.</p>
+                                <p>Администрация сайта не несет никакой ответственности за достоверность и законность комментариев, размещенных на сайте.</p>
+                                <ul class="description__list">На сайте 4k.by запрещаются:
+                                    <li>Использование в комментариях нецензурных выражений, а также любых сообщений, порнографического, эротического или сексуального характера.</li>
+                                    <li>Оскорбления кого-либо, прямые или косвенные, по национальным, этническим, расовым или религиозным признакам.</li>
+                                    <li>Любые сообщения, а также другие действия, которые запрещены действующим законодательством Беларуси.</li>
+                                    <li>Сообщения и комментарии, не имеющие отношения к тематике сайта.</li>
+                                </ul>
+                                <p>Размещая комментарий на сайте 4k.by, Пользователь автоматически соглашается с тем, что он несет самостоятельную ответственность за свои действия перед третьими лицами, связанные с размещением комментария. Также Пользователь самостоятельно и за свой счет обязуется урегулировать все претензии третьих лиц, связанные с размещенными им комментариями на Сайте.</p>
+                                <p>Каждый Пользователь имеет право пожаловаться на комментарий, размещенный на сайте 4k.by, и потребовать его удаления. Для этого необходимо отправить электронное письмо с указанием контактных данных Пользователю на e-mail: info@prokoleso.ua. В случае, если жалоба обоснована, такой комментарий будет удален.</p>
+                                <p>Если Администрация сайта принимает решение, что комментарий Пользователя нарушает правила установленные на сайте, то она оставляет за собой право удалить комментарий без предварительного уведомления об этом автора (Пользователя).</p>
+                                <p>Администрация всегда готова принять к сведению пожелания и предложения любого Пользователя, связанные с улучшением работы сайта 4k.by.</p>
+                            </section>
+                        </section>
+
+                    </section>
+
+
+                    <article class="comment" ng-repeat="comment in comments">
+                        <div>
+                            <section class="comment__left col-xs-3">
+                                <p class="comment__user"><strong ng-bind="comment.user"></strong></p>
+                                <p class="comment__date"><small ng-bind="comment.date"></small></p>
+                            </section>
+                            <section class="comment__right col-xs-9">
+                                <section class="score-block__score-wrap comment__score">
+                                    <section class="score-block__score" ng-style="{width:(comment.score | score)}"></section>
+                                </section>
+                                <section class="comment__text" ng-bind="comment.text"></section>
+
+                                <p class="comment__ok">
+                                    Отзыв полезен?
+                                    <a href="#" class="comment__yes" ng-click="commentGood(comment)" do-not-follow>Да</a>: <span ng-bind="comment.yes"></span>
+                                    <a href="#" class="comment__no" ng-click="commentShit(comment)" do-not-follow>Нет</a>: <span ng-bind="comment.no"></span>
+                                </p>
+
+                            </section>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
                 </section>
             </uib-tab>
         </uib-tabset>

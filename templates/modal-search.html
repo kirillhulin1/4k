@@ -11,16 +11,7 @@
         </div>
         <div class="col-sm-4">
             <div class="select__wrapper">
-                <label class="tab1__label">
-                    <span class="select__label search-modal__label" ng-hide="$ctrl.search.theme">Где искать?</span>
-                    <select ng-model="$ctrl.search.theme" class="form-control select search-modal__theme">
-                        <option value="all">Везде</option>
-                        <option value="article">Статья</option>
-                        <option value="tire">Шина</option>
-                        <option value="size">Типоразмер</option>
-                        <option value="car">Автомобиль</option>
-                    </select>
-                </label>
+                <gkg-select name="theme" options="themes" placeholder="Где искать?" parent-scope="scope" parent-variable="theme"></gkg-select>
             </div>
 
         </div>

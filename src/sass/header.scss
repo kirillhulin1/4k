@@ -77,6 +77,11 @@
     font-size: 25px;
   }
 }
+@media all and (max-width: 480px) {
+  .header-top__phone_main a {
+    font-size: 23px;
+  }
+}
 @media all and (max-width: 450px) {
   .header-top__phone_main a {
     font-size: 20px;

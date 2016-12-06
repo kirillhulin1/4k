@@ -3,17 +3,25 @@
         <nav class="view-settings">
             <div class="container">
                 <form class="form-inline row">
-                    <div class="form-group col-sm-6">
-                        <label for="goods_sort" class="view-settings__label">Cортировка:</label>
-                        <select class="form-control view-settings__label" id="goods_sort" ng-model="sortParameter" ng-change="changeOrder();">
-                            <option value="name">Название</option>
-                            <option value="price">Цена</option>
-                            <option value="comments">Количество комментариев</option>
-                            <option value="score">Оценка пользователей</option>
-                        </select>
-                        <button ng-click="sortOrder = !sortOrder; changeOrder();">sdf</button>
+                    <div class="form-group col-sm-9">
+                        <section class="row">
+                            <div class="col-xs-12 col-sm-2">
+                                <label for="goods_sort" class="view-settings__label">Cортировка:</label>
+                            </div>
+                            <div class="col-xs-10 col-sm-6">
+                                <select class="col-xs-10 form-control view-settings__label" id="goods_sort" ng-model="sortParameter" ng-change="changeOrder();">
+                                    <option value="name">Название</option>
+                                    <option value="price">Цена</option>
+                                    <option value="comments">Количество комментариев</option>
+                                    <option value="score">Оценка пользователей</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-2 col-sm-2">
+                                <button class="view-settings__change-sort" ng-click="sortOrder = !sortOrder; changeOrder();">sdf</button>
+                            </div>
+                        </section>
                     </div>
-                    <div class="form-group col-sm-6 text-right hidden-xs">
+                    <div class="form-group col-sm-3 text-right hidden-xs">
                         <a href="" class="view-settings__view view-settings__view_active" ng-click="changeView($event);"><img src="dest/images/plitka.png"></a>
                         <a href="" class="view-settings__view" ng-click="changeView($event);"><img src="dest/images/list.png"></a>
                     </div>
@@ -62,9 +70,19 @@
                                     <section class="model__price"><span ng-bind="tire.price"></span> р.</section>
                                     <section class="row">
                                         <section class="col-sm-7 col-md-6">
-                                            <button class="btn btn-reverse model__quantity-btn model__quantity-btn_minus" ng-click="tire.amount = tire.amount - 1" ng-disabled="tire.amount==1"><i class="glyphicon glyphicon-minus"></i></button>
-                                            <input type="text" class="form-control model__quantity" ng-model="tire.amount">
-                                            <button class="btn btn-reverse model__quantity-btn model__quantity-btn_plus" ng-click="tire.amount = tire.amount + 1" ng-disabled="tire.amount==tire.available"><i class="glyphicon glyphicon-plus"></i></button>
+                                            <table class="amount">
+                                                <tr>
+                                                    <td>
+                                                        <button class="btn btn-reverse amount__minus" ng-click="tire.amount = tire.amount - 1" ng-disabled="tire.amount==1"><i class="glyphicon glyphicon-minus"></i></button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="amount__number" ng-model="tire.amount">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-reverse amount__plus" ng-click="tire.amount = tire.amount + 1;" ng-disabled="tire.amount == tire.available"><i class="glyphicon glyphicon-plus"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </section>
                                         <section class="col-sm-5 col-md-6">
                                             <button class="btn btn-success form-control" ng-click="addToCart(tire);"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
@@ -91,7 +109,7 @@
                 <article class="model-card" ng-class="{'model-card_new':tire.label=='new','model-card_top':tire.label=='top'}">
                     <img ng-if="tire.label=='new'" class="model-card__label" src="dest/images/new-model.png">
                     <img ng-if="tire.label=='top'" class="model-card__label" src="dest/images/hot_0.png">
-                    <p class="model-card__logo"><a ui-sref="home.tires.brand({brand: tire.brandName})"><img ng-src="{{tire.brandLogo}}"></a></p>
+                    <p class="model-card__logo" ng-class="{'model-card__brand-left': !tire.label}"><a ui-sref="home.tires.brand({brand: tire.brandName})"><img ng-src="{{tire.brandLogo}}"></a></p>
                     <a ui-sref="home.tires.brand.model({brand: tire.brandName, model: tire.name, tab: 'description'})" class="model-card__title" ng-bind="tire.name"></a>
                     <p class="model__characteristic">
                         <span ng-bind="tire.width">185</span>/

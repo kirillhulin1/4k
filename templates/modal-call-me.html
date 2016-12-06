@@ -6,23 +6,18 @@
     <p>Для того что бы оставить заявку на обратный звонок, пожалуйста, заполните форму ниже:</p>
     <form>
         <div class="form-group modal-phone-me__half modal-phone-me__half_left">
-            <input type="text" class="form-control" placeholder="ФИО *">
+            <input type="text" class="form-control" ng-model="$ctrl.fio" placeholder="ФИО *">
         </div>
         <div class="form-group modal-phone-me__half modal-phone-me__half_right">
-            <input type="text" class="form-control" placeholder="Телефон *">
+            <input type="text" class="form-control" ng-model="$ctrl.phone" placeholder="Телефон *">
         </div>
-        <select class="form-control modal-phone-me__select">
-            <option selected>Выберите тему</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-        <textarea placeholder="Комментарий" class="form-control" rows="3"></textarea>
+        <div class="select__wrapper" style="margin-bottom: 1em">
+            <gkg-select name="topic" options="topics" placeholder="Выберите тему*" parent-scope="scope" parent-variable="topic"></gkg-select>
+        </div>
+        <textarea placeholder="Комментарий" class="form-control" rows="3" ng-model="$ctrl.message"></textarea>
     </form>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-warning">Отправить</button>
+    <button type="button" class="btn btn-warning" ng-click="$ctrl.sendMessage();">Отправить</button>
 </div>
 

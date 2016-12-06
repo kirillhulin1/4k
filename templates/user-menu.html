@@ -4,8 +4,8 @@
         <li><a ui-sref="home.user({tab:0})">Профиль пользователя</a></li>
         <li><a ui-sref="home.user({tab:1})">Покупки</a></li>
         <li><a ui-sref="home.user({tab:2})">Коментарии</a></li>
-        <li><a href="">Смена пароля</a></li>
-        <li><a href="">Восстановление пароля</a></li>
-        <li><a href="">Выйти</a></li>
+        <li><a href="" data-toggle="modal" data-target="#changePassword">Смена пароля</a></li>
+        <li><a href="" data-toggle="modal" data-target="#forget">Восстановление пароля</a></li>
+        <li><a href="" ng-click="user.leave();">Выйти</a></li>
     </ul>
 </section>

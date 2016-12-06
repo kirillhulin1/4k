@@ -1,0 +1,14 @@
+<section class="score">
+    <h3 ng-bind="characteristic"></h3>
+
+    <section class="score__section score__section_logo">
+        <div class="score__image"><img src="{{picture}}"></div>
+    </section>
+    <section class="score__section score__section_delete" ng-click="removeMark();" ng-if="mark"><i class="glyphicon glyphicon-minus-sign"></i></section>
+    <section class="score__section score__section_main">
+        <table class="score__table">
+            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+            <tr class="score__line"><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+    </section>
+</section>

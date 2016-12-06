@@ -1,5 +1,5 @@
 app.controller("ArticleCtrl",["$scope", "$stateParams","$state","newsData",function ($scope, $stateParams, $state, newsData) {
-    $state.$current.data.displayName = $stateParams.article
+    $state.$current.data.displayName = $stateParams.article;
     outer: for (var i=0; i < newsData.length; i++) {
         for (var j=0; j < newsData[i].subsections.length; j++) {
             if (newsData[i].subsections[j].nameEn == $stateParams.subsection) {

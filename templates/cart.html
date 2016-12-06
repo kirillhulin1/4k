@@ -1,5 +1,12 @@
 <section class="cart container">
-    <section class="row">
+    <section class="cart__no-items" ng-if="!user.cartItems.length">
+        <p>В вашей корзине нет товаров.</p>
+        <ul class="list-unstyled">Для подбора шин вы можете воспользоваться одним из наших инструментов:
+            <li><a ui-sref="home.tire-choice">Подбор шин по параментрам</a></li>
+            <li><a ui-sref="home.cars">Подбор шин по авто</a></li>
+        </ul>
+    </section>
+    <section class="row" ng-if="user.cartItems.length">
         <section class="cart__left col-sm-6">
             <article cart  user="user"></article>
             <section class="row cart__total">
